@@ -16,5 +16,6 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/Decathlon/vitamin-ios.git', :tag => s.version.to_s }
   s.source_files     = 'Sources/**/*.swift'
   s.resources        = 'Sources/**/*.{xcassets,ttf,xib}'
+  s.swift_version    = '5.3'
 
 end
