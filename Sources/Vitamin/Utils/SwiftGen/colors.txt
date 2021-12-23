@@ -1,0 +1,75 @@
+blue50:         #E7F3F9
+blue100:		#BEDEEF
+blue200:		#7EBEE0
+blue300:		#3D9ACC
+blue400:		#007DBC
+blue500:		#00689D
+blue600:		#00537D
+blue700:		#012B49
+
+green50:        #E4F9F3
+green100:		#BEEFE2
+green200:		#7CDFC4
+green300:		#21CE9C
+green400:		#02BE8A
+green500:		#029E73
+green600:		#017F5C
+green700:		#006F43
+
+conifer50:      #EAFBE8
+conifer100:		#CBF0C7
+conifer200:		#88D77F
+conifer300:		#74C76A
+conifer400:		#23A942
+conifer500:		#41A036
+conifer600:		#378D2E
+conifer700:		#256C1D
+
+yellow50:		#FFFEF0 
+yellow100:		#FFFBC7
+yellow200:		#FFF58D
+yellow300:		#FFF370
+yellow400:		#FFEA28
+yellow500:		#BCB02C
+yellow600:		#999028
+yellow700:		#67611B
+
+orange50:		#FFF3ED
+orange100:		#FFE4D6
+orange200:		#FAC3A5
+orange300:		#FA9C69
+orange400:		#FF600A
+orange500:		#C15E29
+orange600:		#9A4B21
+orange700:		#673216
+
+red50:			#FEECED
+red100:			#FEC9CB
+red200:			#FD9297
+red300:			#FD7278
+red400:			#E3262F
+red500:			#AB0009
+red600:			#870007
+red700:			#5A0005
+
+purple50:		#F2EDF2
+purple100:		#DCCFDD
+purple200:		#AC8DAF
+purple300:		#966F9A
+purple400:		#6C4E6F
+purple500:		#5B415D
+purple600:		#49354B
+purple700:		#2C202D
+
+white:			#FFFFFF
+grey50:         #F7F8F9
+grey100:		#EFF1F3
+grey200:		#D9DDE1
+grey300:		#B3BAC3
+grey400:		#8C96A2
+grey500:		#687787
+grey600:		#4E5D6B
+grey700:		#344450
+grey800:		#1A2A34
+grey900:		#001018
+black:			#001018

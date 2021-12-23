@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8hX-Rc-nBl">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Vitamin Showcase-->
+        <scene sceneID="uAy-Rh-goS">
+            <objects>
+                <tableViewController storyboardIdentifier="MainTableViewController" title="Vitamin Showcase" id="IUc-Wp-bXd" customClass="MainTableViewController" customModule="Showcase" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="nTT-nc-t0c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <connections>
+                            <outlet property="dataSource" destination="IUc-Wp-bXd" id="cFR-7c-YrM"/>
+                            <outlet property="delegate" destination="IUc-Wp-bXd" id="7ge-aT-aNJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Rwf-JY-44g"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qf2-eS-qhK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3342.0289855072465" y="4.6875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lij-jx-tLr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8hX-Rc-nBl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wOl-IG-gR5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IUc-Wp-bXd" kind="relationship" relationship="rootViewController" id="qyg-Id-QYd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b9x-mt-JIa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2431.8840579710145" y="4.6875"/>
+        </scene>
+    </scenes>
+</document>

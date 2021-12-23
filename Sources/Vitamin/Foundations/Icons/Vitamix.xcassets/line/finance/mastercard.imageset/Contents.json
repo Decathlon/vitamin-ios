@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "mastercard-line.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

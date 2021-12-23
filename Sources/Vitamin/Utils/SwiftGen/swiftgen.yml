@@ -1,0 +1,42 @@
+##########
+# Vitamin
+##########
+
+# Colors
+
+colors:
+  inputs: colors.txt
+  outputs:
+    templatePath: colors.stencil
+    output: ../../Foundations/Colors/Colors.swift
+    params:
+        enumName: VitaminColor
+        publicAccess: true
+
+# Icons
+
+xcassets:
+  inputs: [../../Foundations/Icons/Vitamix.xcassets]
+  outputs:
+    - templatePath: images.stencil
+      output: ../../Foundations/Icons/Vitamix.swift
+      params:
+        enumName: Vitamix
+        imageTypeName: VitaminImageAsset
+        bundle: Bundle.module
+        publicAccess: true
+        forceProvidesNamespaces: true
+
+# Fonts
+
+fonts:
+  inputs: ../../Foundations/Typography/Fonts
+  outputs:
+    templatePath: fonts.stencil
+    output: ../../Foundations/Typography/Fonts.swift
+    params:
+        enumName: VitaminFontFamily
+        fontTypeName: VitaminFontConvertible
+        fontAliasName: VitaminPlatformFont
+        bundle: Bundle.module
+        publicAccess: true

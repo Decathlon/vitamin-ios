@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VitaminTextField" customModule="Vitamin">
+            <connections>
+                <outlet property="counter" destination="Vkg-ne-YMS" id="3xT-JE-rdU"/>
+                <outlet property="helper" destination="uKP-x2-F5I" id="v55-T1-Lcs"/>
+                <outlet property="label" destination="fnF-Hc-8xq" id="S3G-db-daJ"/>
+                <outlet property="textField" destination="W96-KI-6uq" id="EoL-Tb-R3w"/>
+                <outlet property="underline" destination="hLu-Ss-P9n" id="hZF-Bd-uqf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnF-Hc-8xq">
+                    <rect key="frame" x="10" y="36" width="300" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W96-KI-6uq" customClass="DesignableUITextField" customModule="Vitamin">
+                    <rect key="frame" x="10" y="56.5" width="300" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qcv-Td-dyC">
+                    <rect key="frame" x="10" y="90.5" width="300" height="20"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKP-x2-F5I">
+                            <rect key="frame" x="0.0" y="0.0" width="232.5" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999/999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vkg-ne-YMS">
+                            <rect key="frame" x="232.5" y="0.0" width="67.5" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="ZJ3-mj-SwO"/>
+                    </constraints>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hLu-Ss-P9n">
+                    <rect key="frame" x="10" y="89.5" width="300" height="1"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="gaa-PP-Hin"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="qcv-Td-dyC" firstAttribute="top" secondItem="W96-KI-6uq" secondAttribute="bottom" id="Ovz-8N-IVx"/>
+                <constraint firstItem="hLu-Ss-P9n" firstAttribute="bottom" secondItem="W96-KI-6uq" secondAttribute="bottom" id="Q9a-aX-8NY"/>
+                <constraint firstItem="hLu-Ss-P9n" firstAttribute="trailing" secondItem="W96-KI-6uq" secondAttribute="trailing" id="TLk-6J-i14"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fnF-Hc-8xq" secondAttribute="trailing" constant="10" id="Zii-eP-tV4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="fnF-Hc-8xq" secondAttribute="top" constant="8" id="fRq-XI-MRi"/>
+                <constraint firstItem="W96-KI-6uq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="fyU-bY-AHW"/>
+                <constraint firstItem="hLu-Ss-P9n" firstAttribute="leading" secondItem="W96-KI-6uq" secondAttribute="leading" id="hMq-S9-obn"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="W96-KI-6uq" secondAttribute="trailing" constant="10" id="hrz-8d-muk"/>
+                <constraint firstItem="qcv-Td-dyC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="kC2-mh-hEN"/>
+                <constraint firstItem="fnF-Hc-8xq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="lDQ-Wy-1Cj"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qcv-Td-dyC" secondAttribute="trailing" constant="10" id="u8x-dp-Alp"/>
+                <constraint firstItem="W96-KI-6uq" firstAttribute="top" secondItem="fnF-Hc-8xq" secondAttribute="bottom" id="wiN-mI-1Lm"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="5.7971014492753632" y="103.79464285714285"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="W96-KI-6uq">
+            <size key="intrinsicContentSize" width="32" height="34"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
