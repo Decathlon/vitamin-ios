@@ -7,7 +7,7 @@
 
 <h1 align="center">Vitamin iOS</h1>
 
-<p align="center">Decathlon Design System libraries for iOS applications</p>
+<p align="center">Decathlon Design System libraries for iOS & iPadOS applications</p>
 
 <p align="center">
   <a href="https://www.decathlon.design">Website</a>
