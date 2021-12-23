@@ -23,7 +23,6 @@ xcassets:
       params:
         enumName: Vitamix
         imageTypeName: VitaminImageAsset
-        bundle: Bundle.module
         publicAccess: true
         forceProvidesNamespaces: true
 
@@ -38,5 +37,4 @@ fonts:
         enumName: VitaminFontFamily
         fontTypeName: VitaminFontConvertible
         fontAliasName: VitaminPlatformFont
-        bundle: Bundle.module
         publicAccess: true

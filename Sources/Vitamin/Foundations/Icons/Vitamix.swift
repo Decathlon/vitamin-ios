@@ -470,7 +470,7 @@ public struct VitaminImageAsset {
   public fileprivate(set) var name: String
 
   public var image: UIImage {
-    let bundle = Bundle.module
+    let bundle = BundleToken.bundle
     #if os(iOS) || os(tvOS)
     let resultImage = UIImage(named: name, in: bundle, compatibleWith: nil)
     #elseif os(watchOS)
@@ -486,10 +486,22 @@ public struct VitaminImageAsset {
 public extension UIImage {
   convenience init?(asset: VitaminImageAsset) {
     #if os(iOS) || os(tvOS)
-    let bundle = Bundle.module
+    let bundle = BundleToken.bundle
     self.init(named: asset.name, in: bundle, compatibleWith: nil)
     #elseif os(watchOS)
     self.init(named: asset.name)
     #endif
   }
 }
+
+// swiftlint:disable convenience_type
+private final class BundleToken {
+  static let bundle: Bundle = {
+    #if SWIFT_PACKAGE
+    return Bundle.module
+    #else
+    return Bundle(for: BundleToken.self)
+    #endif
+  }()
+}
+// swiftlint:enable convenience_type
