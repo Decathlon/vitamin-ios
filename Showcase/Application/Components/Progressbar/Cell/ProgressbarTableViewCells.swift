@@ -37,7 +37,7 @@ class ProgressbarTableViewCell: UITableViewCell {
         self.delegate = delegate
         self.indexPath = indexPath
 
-        startStopButton.isHidden = !(vitaminProgressbar.progressType == .indeterminate)
+        startStopButton.isHidden = (vitaminProgressbar.progressType == .determinate)
         progressTextField.isHidden = (vitaminProgressbar.progressType == .indeterminate)
 
         vitaminProgressbar.stopAnimationForIndeterminate()
