@@ -1,3 +1,8 @@
+//
+//  Vitamin iOS
+//  Apache License 2.0
+//
+
 import UIKit
 
 /// Implementation of Vitamin circular progress bar

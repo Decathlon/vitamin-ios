@@ -1,8 +1,6 @@
 //
-//  ProgressbarViewController.swift
-//  Example
-//
-//  Created by Daniel on 18/11/2021.
+//  Vitamin iOS
+//  Apache License 2.0
 //
 
 import UIKit
