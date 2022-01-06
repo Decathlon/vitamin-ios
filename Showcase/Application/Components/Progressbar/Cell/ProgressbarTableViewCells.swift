@@ -6,7 +6,7 @@
 import UIKit
 import Vitamin
 
-class ProgressbarTableViewCell: UITableViewCell {
+final class ProgressbarTableViewCell: UITableViewCell {
     @IBOutlet weak var vitaminProgressbar: VitaminProgressbar!
     @IBOutlet weak var progressTextField: UITextField!
     @IBOutlet weak var startStopButton: UIButton!

@@ -6,7 +6,7 @@
 import UIKit
 import Vitamin
 
-class ProgressbarViewController: UITableViewController {
+final class ProgressbarViewController: UITableViewController {
     convenience init() {
         self.init(style: .grouped)
     }
