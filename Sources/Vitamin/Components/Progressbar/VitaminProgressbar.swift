@@ -6,7 +6,7 @@
 import UIKit
 
 /// Implementation of Vitamin circular progress bar
-public class VitaminProgressbar: UIView {
+public final class VitaminProgressbar: UIView {
     /// An initializer that allows to set directly a size, a style, and the fact to show the track or not
     public required init(
         variant: Variant = .circular(size: . medium, style: .empty),
