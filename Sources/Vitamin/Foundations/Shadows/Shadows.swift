@@ -5,7 +5,7 @@
 
 import UIKit
 
-public enum VitaminShadowType: String {
+public enum VitaminShadow: String {
     case shadow100
     case shadow200
     case shadow300
@@ -61,10 +61,10 @@ public enum VitaminShadowType: String {
 
 extension UIView {
     /// Drops a shadow below this view.
-    /// - Parameters shadowType : the `VitaminShadowType`you wqnt to drop
+    /// - Parameters shadowType : the `VitaminShadow`you wqnt to drop
     /// Since the shadow os added to the layer of the view, the background color is
     /// forwarded from the view to the view'layer not to overlay the shadow
-    public func dropShadow(shadowType: VitaminShadowType) {
+    public func dropShadow(shadowType: VitaminShadow) {
         layer.applyShadow(
             color: shadowType.color,
             opacity: shadowType.opacity,

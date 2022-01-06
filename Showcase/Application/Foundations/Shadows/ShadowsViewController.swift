@@ -18,7 +18,7 @@ final class ShadowsViewController: UITableViewController {
         tableView.register(UINib(nibName: "ShadowTableViewCell", bundle: nil), forCellReuseIdentifier: "shadow")
     }
 
-    var shadows: [VitaminShadowType] = [
+    var shadows: [VitaminShadow] = [
         .shadow100,
         .shadow200,
         .shadow300,

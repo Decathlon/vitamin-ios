@@ -9,7 +9,7 @@ import Vitamin
 public class ShadowTableViewCell: UITableViewCell {
     @IBOutlet weak var ibLabel: UILabel!
 
-    func update(for shadowType: VitaminShadowType) {
+    func update(for shadowType: VitaminShadow) {
         ibLabel.removeShadow()
         ibLabel.layer.cornerRadius = 20
         ibLabel.backgroundColor = VitaminColor.Core.Background.accent
