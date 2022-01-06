@@ -46,10 +46,10 @@ public class VitaminProgressbar: UIView {
         } else if case .linear(let linearSize, _) = variant {
             textStyle = linearSize.textStyle
         }
-        self.backgroundColor = UIColor.clear
+        self.backgroundColor = viewBackgroundColor
         percentageLabel.attributedText = displayableProgress().styled(
             as: textStyle,
-            with: VitaminColor.Core.Content.primary)
+            with: labelColor)
         setupView()
         applySize()
         applyStyle()
@@ -258,7 +258,7 @@ public class VitaminProgressbar: UIView {
                 height: percentageLabel.frame.height)
             leftLabel.attributedText = (leftLabelText ?? "").styled(
                 as: size.textStyle,
-                with: VitaminColor.Core.Content.primary)
+                with: labelColor)
             leftLabel.sizeToFit()
             leftLabel.frame = CGRect(
                 x: 0,
@@ -321,16 +321,16 @@ extension VitaminProgressbar {
         if case .circular(let circularSize, _) = variant {
             percentageLabel.attributedText = displayableProgress().styled(
                 as: circularSize.textStyle,
-                with: VitaminColor.Core.Content.primary)
+                with: labelColor)
             configLabels()
             configCircularCenterImage()
         } else if case .linear(let linearSize, _) = variant {
             percentageLabel.attributedText = displayableProgress().styled(
                 as: linearSize.textStyle,
-                with: VitaminColor.Core.Content.primary)
+                with: labelColor)
             leftLabel.attributedText = leftLabelText?.styled(
                 as: linearSize.textStyle,
-                with: VitaminColor.Core.Content.primary)
+                with: labelColor)
             configLabels()
         }
     }
@@ -392,7 +392,7 @@ extension VitaminProgressbar {
                 self.progressLayer.strokeEnd = newProgress
                 self.percentageLabel.attributedText = "\(displayableProgress())".styled(
                     as: circularSize.textStyle,
-                    with: VitaminColor.Core.Content.primary)
+                    with: labelColor)
                 self.configLabels()
             } else {
                 drawProgressbar()
@@ -402,7 +402,7 @@ extension VitaminProgressbar {
                 self.progressLayer.strokeEnd = newProgress
                 self.percentageLabel.attributedText = "\(displayableProgress())".styled(
                     as: linearSize.textStyle,
-                    with: VitaminColor.Core.Content.primary)
+                    with: labelColor)
                 self.configLabels()
             } else {
                 drawProgressbar()
@@ -473,22 +473,5 @@ extension VitaminProgressbar {
             animation.beginTime = CACurrentMediaTime() + delay
         }
         return animation
-    }
-}
-
-// MARK: coloring
-extension VitaminProgressbar {
-    /// Color used to display the track
-    var trackColor: UIColor {
-        if !self.showTrack {
-            return UIColor.clear
-        } else {
-            return VitaminColor.Core.Background.tertiary
-        }
-    }
-
-    /// Color used to display the achieved progress part of the progress bar
-    var progressColor: UIColor {
-        VitaminColor.Core.Content.active
     }
 }
