@@ -12,7 +12,7 @@ public enum VitaminShadow: String {
     case shadow400
     case none
 
-    /// blur value of the shadow, and height
+    /// Blur value of the shadow, and height
     var blur: CGFloat {
         switch self {
         case .shadow100:
@@ -28,7 +28,7 @@ public enum VitaminShadow: String {
         }
     }
 
-    /// size of the shadow, i.e. offset of the light source creating the shadow
+    /// Size of the shadow, i.e. offset of the light source creating the shadow
     var size: CGSize {
         // In fact, in Vitamin, the blur always equals to the height, we reuse the property to avoid dupliication
         // If this changes in the fiture, we will just have to provide the independant value
@@ -36,12 +36,12 @@ public enum VitaminShadow: String {
     }
 
     /// Spread value of the shadow
-    /// Always 0 at the lmoment, but could evolve, that is why this property exists
+    /// Always 0 at the moment, but could evolve, that is why this property exists
     var spread: CGFloat {
         0
     }
 
-    /// opacity of the shadow
+    /// Opacity of the shadow
     var opacity: Float {
         if self == .none {
             return 0
@@ -49,13 +49,13 @@ public enum VitaminShadow: String {
         return 1
     }
 
-    /// color of the shadow
-    /// It is not a VitamoinColor, and s the same for dark and light mode
+    /// Color of the shadow
+    /// For the moment, it is the same for dark and light mode
     var color: UIColor {
         if self == .none {
             return UIColor.clear
         }
-        return UIColor(red: 0, green: 0.325, blue: 0.49, alpha: 0.1)
+        return VitaminColor.Base.blue600.color.withAlphaComponent(0.1)
     }
 }
 

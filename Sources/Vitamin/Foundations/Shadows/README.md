@@ -13,7 +13,7 @@ To apply a shadow to any view, you can call the `dropShadow(shadowType: VitaminS
 ```swift
 import Vitamin
 
-let label = UILabel.init(
+let label = UILabel(
     frame: CGRect(
         origin: .zero,
         size: CGSize(width: 200, height: 80)
