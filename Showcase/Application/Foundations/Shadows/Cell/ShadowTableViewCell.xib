@@ -34,7 +34,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="ibLabel" destination="G2W-Tt-v1K" id="pot-4N-e1y"/>
+                <outlet property="exampleLabel" destination="G2W-Tt-v1K" id="J0u-mZ-Cu6"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="113.50446428571428"/>
         </tableViewCell>

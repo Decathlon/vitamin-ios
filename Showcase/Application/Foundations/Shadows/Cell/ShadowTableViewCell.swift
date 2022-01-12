@@ -7,15 +7,15 @@ import UIKit
 import Vitamin
 
 public class ShadowTableViewCell: UITableViewCell {
-    @IBOutlet weak var ibLabel: UILabel!
+    @IBOutlet weak var exampleLabel: UILabel!
 
     func update(for shadowType: VitaminShadow) {
-        ibLabel.removeShadow()
-        ibLabel.layer.cornerRadius = 20
-        ibLabel.backgroundColor = VitaminColor.Core.Background.accent
-        ibLabel.dropShadow(shadowType: shadowType)
+        exampleLabel.removeShadow()
+        exampleLabel.layer.cornerRadius = 20
+        exampleLabel.backgroundColor = VitaminColor.Core.Background.accent
+        exampleLabel.dropShadow(shadowType: shadowType)
 
-        ibLabel.attributedText = "This is a test label \nwith a \(shadowType.rawValue) shadow type".styled(as: .callout)
-        ibLabel.textAlignment = .center
+        exampleLabel.attributedText = "This is a test label \nwith a \(shadowType.rawValue) shadow type".styled(as: .callout)
+        exampleLabel.textAlignment = .center
     }
 }

@@ -30,8 +30,8 @@ public enum VitaminShadow: String {
 
     /// Size of the shadow, i.e. offset of the light source creating the shadow
     var size: CGSize {
-        // In fact, in Vitamin, the blur always equals to the height, we reuse the property to avoid dupliication
-        // If this changes in the fiture, we will just have to provide the independant value
+        // In fact, in Vitamin, the blur always equals to the height, we reuse the property to avoid duplication
+        // If this changes in the future, we will just have to provide the independant value
         CGSize(width: 0, height: self.blur)
     }
 
