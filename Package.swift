@@ -32,6 +32,7 @@ let package = Package(
                 "Components/TextField/README.md",
                 "Foundations/Colors/README.md",
                 "Foundations/Icons/README.md",
+                "Foundations/Shadows/README.md",
                 "Foundations/Typography/README.md"
             ],
             resources: [

@@ -64,6 +64,7 @@ The following foundations are available :
 |---------|-------------|---------------|
 |Colors   | Semantics and base colors of the Design System. | [Documentation](./Sources/Vitamin/Foundations/Colors#readme)|
 |Icons   | Set of icons usable in the Design System. | [Documentation](./Sources/Vitamin/Foundations/Icons#readme)|
+|Shadows   | Shadows applicable to any view in the Design System. | [Documentation](./Sources/Vitamin/Foundations/Shadows#readme)|
 |Typography | Text styles usable in the Design System. | [Documentation](./Sources/Vitamin/Foundations/Typography#readme)|
 
 
