@@ -64,6 +64,7 @@ extension MainTableViewController {
             MenuSection(name: "🌳 Foundations", items: [
                 MenuItem(name: "🎨 Colors", viewController: ColorsViewController()),
                 MenuItem(name: "🖼 Icons", viewController: IconsViewController()),
+                MenuItem(name: "🌘 Shadows", viewController: ShadowsViewController()),
                 MenuItem(name: "🖋 Typography", viewController: TypographyViewController())
             ]),
             MenuSection(name: "🧩 Components", items: [
