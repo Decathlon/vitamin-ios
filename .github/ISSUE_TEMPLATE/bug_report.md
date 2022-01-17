@@ -38,7 +38,7 @@ labels: bug 🐛
 **Screenshots**
 <!-- If applicable, add screenshots to help explain your problem. -->
 
-**Smartphone (please complete the following information):**
-- Device: [e.g. One Plus]
-- OS: [e.g. Lollipop]
-- Version [e.g. 21]
+**Device (please complete the following information):**
+- Model: [e.g. iPhone 12 or iPad Air 3]
+- OS: [e.g. iOS or iPadOS]
+- Version [e.g. 15.2]

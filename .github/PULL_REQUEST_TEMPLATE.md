@@ -12,8 +12,8 @@
 - [ ] Check commits & PR names matches our requested structure. It must follow the https://www.conventionalcommits.org pattern.
 - [ ] Check your code additions will fail neither code linting checks.
 - [ ] I have reviewed the submitted code.
-- [ ] I have tested on a phone device/emulator.
-- [ ] I have tested on a tablet device/emulator.
+- [ ] I have tested on an iPhone device/simulator.
+- [ ] I have tested on an iPad device/simulator.
 - [ ] If it's a new component, please ask for design review.
 
 ## Does this introduce a breaking change?
@@ -24,11 +24,11 @@
 
 ## Screenshots
 
-#### Phone
-<!--- Put your phone screenshots here. -->
+#### iPhone
+<!--- Put your iPhone screenshots here. -->
 
-#### Tablet
-<!--- Put your tablet screenshots here. -->
+#### iPad
+<!--- Put your iPad screenshots here. -->
 
 #### Large screen
 <!--- Put your large screen screenshots here. -->
