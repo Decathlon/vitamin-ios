@@ -30,8 +30,5 @@
 #### iPad
 <!--- Put your iPad screenshots here. -->
 
-#### Large screen
-<!--- Put your large screen screenshots here. -->
-
 ## Other information
 <!-- Any other information that is important to this PR such as screenshots of how the component looks before and after the change. You can also remove this section. -->
