@@ -45,6 +45,11 @@ extension ButtonsViewController {
         cell.update(for: styles[indexPath.row], isEnabled: showEnabledState)
         return cell
     }
+
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        52
+    }
+
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         makeSwitchButtonStateView()
     }

@@ -53,6 +53,14 @@ extension IconsViewController: UICollectionViewDelegateFlowLayout {
     ) -> CGSize {
         CGSize(width: view.frame.width / 5, height: 80)
     }
+
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAt section: Int
+    ) -> UIEdgeInsets {
+        UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
+    }
 }
 
 extension IconsViewController {

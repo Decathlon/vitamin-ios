@@ -42,6 +42,10 @@ extension SwitchViewController {
         cell.selectionStyle = .none
         return cell
     }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        44
+    }
 }
 
 private struct VitaminSwitchDemoConfig {

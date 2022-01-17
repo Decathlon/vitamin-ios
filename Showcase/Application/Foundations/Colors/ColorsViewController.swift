@@ -39,6 +39,10 @@ extension ColorsViewController {
         cell.setColor(item.name, color: item.color)
         return cell
     }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        76
+    }
 }
 
 extension ColorsViewController {
