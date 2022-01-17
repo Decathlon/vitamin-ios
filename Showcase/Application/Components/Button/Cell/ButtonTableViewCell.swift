@@ -36,8 +36,8 @@ final class ButtonTableViewCell: UITableViewCell {
         ibLargeButton.isEnabled = isEnabled
 
         contentView.backgroundColor = style.needsDarkBackground ?
-        VitaminColor.Theme.Core.Dark.backgroundPrimary :
-        VitaminColor.Theme.Core.Light.backgroundPrimary
+        VitaminColor.Core.Background.brandPrimary :
+        VitaminColor.Core.Background.primary
     }
 }
 

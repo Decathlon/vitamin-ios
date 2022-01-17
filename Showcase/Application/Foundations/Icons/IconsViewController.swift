@@ -8,8 +8,7 @@ import UIKit
 import Vitamin
 
 final class IconsViewController: UICollectionViewController {
-    private static let headerBackgroundColor = UIColor(red: 242 / 255, green: 242 / 255, blue: 247 / 255, alpha: 1)
-    private static let headerTextColor = UIColor(red: 137 / 255, green: 137 / 255, blue: 142 / 255, alpha: 1)
+    private static let cellTextColor = VitaminColor.Core.Content.primary
 
     private lazy var sections: [IconSection] = makeSections()
 
@@ -25,7 +24,7 @@ final class IconsViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = Self.headerBackgroundColor
+        view.backgroundColor = VitaminColor.Core.Background.primary
 
         navigationItem.title = "Icons"
         collectionView.register(
@@ -41,20 +40,6 @@ final class IconsViewController: UICollectionViewController {
 
         if let flow = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flow.headerReferenceSize = CGSize(width: view.frame.width, height: 55)
-        }
-
-        if #available(iOS 15, *) {
-            let appearance = UINavigationBarAppearance()
-            appearance.configureWithTransparentBackground()
-            appearance.backgroundColor = Self.headerBackgroundColor
-            navigationController?.navigationBar
-                .standardAppearance = appearance
-            navigationController?.navigationBar
-                .scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
-        } else {
-            navigationController?.navigationBar.barTintColor = Self.headerBackgroundColor
-            navigationController?.navigationBar.isTranslucent = false
-            navigationController?.navigationBar.barStyle = .blackTranslucent
         }
     }
 }
@@ -93,7 +78,8 @@ extension IconsViewController {
                     return cell
                 }
         let iconItem = sections[indexPath.section].items[indexPath.row]
-        cell.setImage(iconItem.image, name: iconItem.shortName)
+        cell.setImage(iconItem.image, name: iconItem.shortName, color: Self.cellTextColor)
+        cell.ibLabel.textColor = Self.cellTextColor
         return cell
     }
 
@@ -110,7 +96,7 @@ extension IconsViewController {
             withReuseIdentifier: "header",
             for: indexPath)
 
-        headerView.backgroundColor = Self.headerBackgroundColor
+        headerView.backgroundColor = VitaminColor.Core.Background.secondary
         if headerView.subviews.isEmpty {
             headerView.addSubview(
                 UILabel(
@@ -122,10 +108,10 @@ extension IconsViewController {
         }
 
         if let headerLabel = headerView.subviews[0] as? UILabel {
-            headerLabel.backgroundColor = Self.headerBackgroundColor
+            headerLabel.backgroundColor = .clear
             headerLabel.text = self.sections[indexPath.section].name.uppercased()
             headerLabel.font = UIFont.systemFont(ofSize: 13)
-            headerLabel.textColor = Self.headerTextColor
+            headerLabel.textColor = VitaminColor.Core.Content.tertiary
             headerLabel.textAlignment = .left
         }
 
