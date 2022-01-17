@@ -20,14 +20,7 @@ final class ButtonTableViewCell: UITableViewCell {
         }
     }
 
-    @IBOutlet weak var ibSwitch: UISwitch!
-
-    @IBAction func didUpdateSwitchValue() {
-        ibMediumButton.isEnabled = ibSwitch.isOn
-        ibLargeButton.isEnabled = ibSwitch.isOn
-    }
-
-    func update(for style: VitaminButton.Style) {
+    func update(for style: VitaminButton.Style, isEnabled: Bool) {
         ibMediumButton.style = style
         ibLargeButton.style = style
 
@@ -38,6 +31,9 @@ final class ButtonTableViewCell: UITableViewCell {
             Vitamix.Line.System.arrowRightS.image,
             for: .normal,
             renderingMode: .alwaysTemplate)
+
+        ibMediumButton.isEnabled = isEnabled
+        ibLargeButton.isEnabled = isEnabled
 
         contentView.backgroundColor = style.needsDarkBackground ?
         VitaminColor.Theme.Core.Dark.backgroundPrimary :
