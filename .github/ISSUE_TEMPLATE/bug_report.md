@@ -35,16 +35,10 @@ labels: bug 🐛
 **Expected behavior**
 <!-- A clear and concise description of what you expected to happen. -->
 
-**Browsers affected**
+**Screenshots**
+<!-- If applicable, add screenshots to help explain your problem. -->
 
-<!-- Choose your browser(s):
-    - Chrome
-    - Firefox
-    - Edge
-    - Safari
--->
-
-**Version affected**
-<!--
-@vtmn/...: vX.X.X
--->
+**Smartphone (please complete the following information):**
+- Device: [e.g. One Plus]
+- OS: [e.g. Lollipop]
+- Version [e.g. 21]

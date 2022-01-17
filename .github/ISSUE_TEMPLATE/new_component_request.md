@@ -28,10 +28,3 @@ labels: enhancement 🚀
 - [Documentation](https://decathlon.design/...)
 - [Figma](https://figma.com/...)
 
-**Checklist**
-<!-- Please, don't modify this checklist. -->
-
-- [ ] CSS
-- [ ] React
-- [ ] Svelte
-- [ ] Vue
