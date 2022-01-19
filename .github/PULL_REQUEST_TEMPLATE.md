@@ -14,7 +14,7 @@
 - [ ] I have reviewed the submitted code.
 - [ ] I have tested on an iPhone device/simulator.
 - [ ] I have tested on an iPad device/simulator.
-- [ ] If it includes design changes, please ask for a review with a core designer.
+- [ ] If it includes design changes, please ask for a review with a core team designer.
 
 ## Does this introduce a breaking change?
 <!-- If this introduces a breaking change, please describe the impact and migration path for existing applications below. -->
