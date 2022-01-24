@@ -8,45 +8,41 @@ import UIKit
 import Vitamin
 
 final class ButtonTableViewCell: UITableViewCell {
-    @IBOutlet weak var ibMediumButton: VitaminButton! {
+    @IBOutlet weak var mediumButton: VitaminButton! {
         didSet {
-            ibMediumButton.size = .medium
+            mediumButton.size = .medium
         }
     }
 
-    @IBOutlet weak var ibLargeButton: VitaminButton! {
+    @IBOutlet weak var largeButton: VitaminButton! {
         didSet {
-            ibLargeButton.size = .large
+            largeButton.size = .large
         }
     }
 
-    @IBOutlet weak var ibSwitch: UISwitch!
+    func update(for style: VitaminButton.Style, isEnabled: Bool) {
+        mediumButton.style = style
+        largeButton.style = style
 
-    @IBAction func didUpdateSwitchValue() {
-        ibMediumButton.isEnabled = ibSwitch.isOn
-        ibLargeButton.isEnabled = ibSwitch.isOn
-    }
-
-    func update(for style: VitaminButton.Style) {
-        ibMediumButton.style = style
-        ibLargeButton.style = style
-
-        ibMediumButton.setTitle("\(style)", for: .normal)
-        ibLargeButton.setTitle("\(style)", for: .normal)
-        ibMediumButton.setLeadingImage(Vitamix.Line.Logos.apple.image, for: .normal, renderingMode: .alwaysTemplate)
-        ibLargeButton.setTrailingImage(
+        mediumButton.setTitle("\(style)", for: .normal)
+        largeButton.setTitle("\(style)", for: .normal)
+        mediumButton.setLeadingImage(Vitamix.Line.Logos.apple.image, for: .normal, renderingMode: .alwaysTemplate)
+        largeButton.setTrailingImage(
             Vitamix.Line.System.arrowRightS.image,
             for: .normal,
             renderingMode: .alwaysTemplate)
 
-        contentView.backgroundColor = style.needsDarkBackground ?
-        VitaminColor.Theme.Core.Dark.backgroundPrimary :
-        VitaminColor.Theme.Core.Light.backgroundPrimary
+        mediumButton.isEnabled = isEnabled
+        largeButton.isEnabled = isEnabled
+
+        contentView.backgroundColor = style.needsReversedBackground ?
+        VitaminColor.Core.Background.brandPrimary :
+        VitaminColor.Core.Background.primary
     }
 }
 
 private extension VitaminButton.Style {
-    var needsDarkBackground: Bool {
+    var needsReversedBackground: Bool {
         self == .primaryReversed || self == .ghostReversed
     }
 }

@@ -14,7 +14,8 @@ final class ShadowsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Button"
+        navigationItem.title = "Shadows"
+
         tableView.register(UINib(nibName: "ShadowTableViewCell", bundle: nil), forCellReuseIdentifier: "shadow")
     }
 
@@ -39,5 +40,9 @@ extension ShadowsViewController {
         cell.selectionStyle = .none
         cell.update(for: shadows[indexPath.row])
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        170
     }
 }

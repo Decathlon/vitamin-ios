@@ -1,4 +1,4 @@
-# Decathlon/vitamin-web contributors (sorted alphabetically)
+# Decathlon/vitamin-ios contributors (sorted alphabetically)
 
 - **[Amaury David](https://github.com/amaurydavid)**
 

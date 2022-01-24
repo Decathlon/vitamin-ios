@@ -12,7 +12,7 @@ public class ShadowTableViewCell: UITableViewCell {
     func update(for shadowType: VitaminShadow) {
         exampleLabel.removeShadow()
         exampleLabel.layer.cornerRadius = 20
-        exampleLabel.backgroundColor = VitaminColor.Core.Background.accent
+        exampleLabel.backgroundColor = VitaminColor.Core.Background.brandPrimary
         exampleLabel.dropShadow(shadowType: shadowType)
 
         exampleLabel.attributedText = "This is a test label \nwith a \(shadowType.rawValue) shadow type".styled(as: .callout)
