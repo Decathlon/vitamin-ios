@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -70,8 +70,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="ibColorHexaLabel" destination="rTQ-ni-E85" id="p8w-hC-FOw"/>
-                <outlet property="ibColorView" destination="f6a-55-uRi" id="9jj-aZ-w0C"/>
+                <outlet property="colorNameLabel" destination="rTQ-ni-E85" id="REf-7V-49t"/>
+                <outlet property="colorPreviewView" destination="f6a-55-uRi" id="8nG-qz-Wxt"/>
             </connections>
             <point key="canvasLocation" x="550.72463768115949" y="75"/>
         </tableViewCell>

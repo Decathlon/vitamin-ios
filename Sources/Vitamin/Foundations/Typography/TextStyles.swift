@@ -72,7 +72,7 @@ extension VitaminTextStyle {
         }
         let scaledFont = makeScaledFont(for: font, textStyle: textStyle)
         return [
-            .foregroundColor: VitaminColor.Base.black.color,
+            .foregroundColor: VitaminColor.Core.Content.primary,
             .font: scaledFont,
             .paragraphStyle: paragraphStyle,
             .baselineOffset: baseLineOffset

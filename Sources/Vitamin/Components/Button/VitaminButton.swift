@@ -58,6 +58,11 @@ public class VitaminButton: UIButton {
         applyNewTextStyle()
     }
 
+    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        applyNewStyle()
+    }
+
     public override var intrinsicContentSize: CGSize {
         let baseSize = super.intrinsicContentSize
         return CGSize(
