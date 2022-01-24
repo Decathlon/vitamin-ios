@@ -233,6 +233,10 @@
 				65D1B65D27835FCE00C1560B /* LinearProgressbarTableViewCell.xib */,
 				65D1B65E27835FCE00C1560B /* CircularProgressbarTableViewCell.xib */,
 				65D1B65F27835FCE00C1560B /* ProgressbarTableViewCells.swift */,
+				);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		65D1B6642787422000C1560B /* Shadows */ = {
 			isa = PBXGroup;
 			children = (
