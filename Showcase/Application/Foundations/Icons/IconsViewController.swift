@@ -8,8 +8,6 @@ import UIKit
 import Vitamin
 
 final class IconsViewController: UICollectionViewController {
-    private static let cellTextColor = VitaminColor.Core.Content.primary
-
     private lazy var sections: [IconSection] = makeSections()
 
     convenience init() {
@@ -86,8 +84,9 @@ extension IconsViewController {
                     return cell
                 }
         let iconItem = sections[indexPath.section].items[indexPath.row]
-        cell.setImage(iconItem.image, name: iconItem.shortName, color: Self.cellTextColor)
-        cell.ibLabel.textColor = Self.cellTextColor
+        cell.setImage(iconItem.image,
+                      name: iconItem.shortName,
+                      color: VitaminColor.Core.Content.primary)
         return cell
     }
 

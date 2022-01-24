@@ -44,8 +44,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="ibLargeButton" destination="wmJ-0t-lzC" id="iBv-E2-5Eg"/>
-                <outlet property="ibMediumButton" destination="riL-iH-YB3" id="zc1-UU-F2l"/>
+                <outlet property="largeButton" destination="wmJ-0t-lzC" id="Jm9-4K-gse"/>
+                <outlet property="mediumButton" destination="riL-iH-YB3" id="sYZ-in-0qP"/>
             </connections>
             <point key="canvasLocation" x="-123" y="1"/>
         </tableViewCell>

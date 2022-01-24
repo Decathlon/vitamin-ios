@@ -6,12 +6,13 @@
 import UIKit
 
 final class IconCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var ibImageView: UIImageView!
-    @IBOutlet weak var ibLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var iconNameLabel: UILabel!
 
     func setImage(_ image: UIImage, name: String, color: UIColor) {
-        ibImageView.image = image.withRenderingMode(.alwaysTemplate)
-        ibImageView.tintColor = color
-        ibLabel.text = name
+        iconImageView.image = image.withRenderingMode(.alwaysTemplate)
+        iconImageView.tintColor = color
+        iconNameLabel.text = name
+        iconNameLabel.textColor = color
     }
 }

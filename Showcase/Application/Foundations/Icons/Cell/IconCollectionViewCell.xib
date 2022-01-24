@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,8 +41,8 @@
             </collectionViewCellContentView>
             <size key="customSize" width="165" height="89"/>
             <connections>
-                <outlet property="ibImageView" destination="0ds-f6-tX6" id="06W-Az-eWa"/>
-                <outlet property="ibLabel" destination="tIv-wm-yWt" id="img-3x-u4n"/>
+                <outlet property="iconImageView" destination="0ds-f6-tX6" id="Fc0-Xh-1na"/>
+                <outlet property="iconNameLabel" destination="tIv-wm-yWt" id="ed0-r6-YCm"/>
             </connections>
             <point key="canvasLocation" x="221.01449275362322" y="103.45982142857143"/>
         </collectionViewCell>
