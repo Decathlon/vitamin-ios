@@ -43,6 +43,6 @@ public class VitaminSwitch: UISwitch {
         self.tintColor = VitaminColor.Core.Content.inactive
         self.backgroundColor = VitaminColor.Core.Content.inactive
         self.onTintColor = VitaminColor.Core.Content.active
-        self.thumbTintColor = VitaminColor.Core.Content.primaryReversed
+        self.thumbTintColor = VitaminColor.Base.white.color
     }
 }
