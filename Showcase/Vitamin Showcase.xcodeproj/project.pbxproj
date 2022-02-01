@@ -10,6 +10,10 @@
 		4AAD2B67276772D200727D8E /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD2B66276772D200727D8E /* MainTableViewController.swift */; };
 		651EF24D272BE8D500121F7A /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EF24C272BE8D500121F7A /* TextFieldTableViewCell.swift */; };
 		651EF252272C0AD500121F7A /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651EF251272C0AD500121F7A /* TextFieldTableViewCell.xib */; };
+		6531B78A27A9E11A00808E1E /* AssetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6531B78727A9E11A00808E1E /* AssetCollectionViewCell.xib */; };
+		6531B78B27A9E11A00808E1E /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6531B78827A9E11A00808E1E /* AssetCollectionViewCell.swift */; };
+		6531B78C27A9E11A00808E1E /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6531B78927A9E11A00808E1E /* AssetsViewController.swift */; };
+		6531B78E27A9E5DB00808E1E /* LargeAssetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6531B78D27A9E5DB00808E1E /* LargeAssetCollectionViewCell.xib */; };
 		654642B8276A9F5700213415 /* Vitamin in Frameworks */ = {isa = PBXBuildFile; productRef = 654642B7276A9F5700213415 /* Vitamin */; };
 		65B52A1927392EDD008D9B5E /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B52A1827392EDD008D9B5E /* SwitchViewController.swift */; };
 		65B52A1D27394136008D9B5E /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B52A1C27394136008D9B5E /* SwitchTableViewCell.swift */; };
@@ -38,6 +42,10 @@
 		4AAD2B66276772D200727D8E /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		651EF24C272BE8D500121F7A /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		651EF251272C0AD500121F7A /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		6531B78727A9E11A00808E1E /* AssetCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssetCollectionViewCell.xib; sourceTree = "<group>"; };
+		6531B78827A9E11A00808E1E /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
+		6531B78927A9E11A00808E1E /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
+		6531B78D27A9E5DB00808E1E /* LargeAssetCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LargeAssetCollectionViewCell.xib; sourceTree = "<group>"; };
 		654642B3276A513C00213415 /* vitamin-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "vitamin-ios"; path = ..; sourceTree = "<group>"; };
 		654642B4276A528C00213415 /* vitamin-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "vitamin-ios"; path = ..; sourceTree = "<group>"; };
 		65B52A1827392EDD008D9B5E /* SwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +164,7 @@
 		4AAD2B6B2767733500727D8E /* Foundations */ = {
 			isa = PBXGroup;
 			children = (
+				6531B78527A9E11A00808E1E /* Assets */,
 				65D1B6642787422000C1560B /* Shadows */,
 				65BD9F382768D06900EEDC0D /* Icons */,
 				AAB029E725680D7500F08C74 /* Colors */,
@@ -180,6 +189,25 @@
 				65B52A1827392EDD008D9B5E /* SwitchViewController.swift */,
 			);
 			path = Switch;
+			sourceTree = "<group>";
+		};
+		6531B78527A9E11A00808E1E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				6531B78627A9E11A00808E1E /* Cell */,
+				6531B78927A9E11A00808E1E /* AssetsViewController.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		6531B78627A9E11A00808E1E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6531B78D27A9E5DB00808E1E /* LargeAssetCollectionViewCell.xib */,
+				6531B78727A9E11A00808E1E /* AssetCollectionViewCell.xib */,
+				6531B78827A9E11A00808E1E /* AssetCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		654642B2276A513C00213415 /* Packages */ = {
@@ -344,11 +372,13 @@
 			files = (
 				65D1B66B2787422100C1560B /* ShadowTableViewCell.xib in Resources */,
 				AAC5D44D2567FE720070667D /* LaunchScreen.storyboard in Resources */,
+				6531B78E27A9E5DB00808E1E /* LargeAssetCollectionViewCell.xib in Resources */,
 				65B52A1F273944DC008D9B5E /* SwitchTableViewCell.xib in Resources */,
 				651EF252272C0AD500121F7A /* TextFieldTableViewCell.xib in Resources */,
 				65BD9F3D2768D06900EEDC0D /* IconCollectionViewCell.xib in Resources */,
 				AAB029ED25680DEE00F08C74 /* ColorTableViewCell.xib in Resources */,
 				AA68B4CE25681A6700F1A4D7 /* ButtonTableViewCell.xib in Resources */,
+				6531B78A27A9E11A00808E1E /* AssetCollectionViewCell.xib in Resources */,
 				AAC5D44A2567FE720070667D /* Assets.xcassets in Resources */,
 				AAC5D4482567FE710070667D /* Main.storyboard in Resources */,
 			);
@@ -395,8 +425,10 @@
 				65B52A232739553A008D9B5E /* TextFieldViewController.swift in Sources */,
 				AA68B4CB25681A5A00F1A4D7 /* ButtonTableViewCell.swift in Sources */,
 				651EF24D272BE8D500121F7A /* TextFieldTableViewCell.swift in Sources */,
+				6531B78C27A9E11A00808E1E /* AssetsViewController.swift in Sources */,
 				AAB029E925680D8D00F08C74 /* ColorTableViewCell.swift in Sources */,
 				65BD9F3E2768D06900EEDC0D /* IconCollectionViewCell.swift in Sources */,
+				6531B78B27A9E11A00808E1E /* AssetCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

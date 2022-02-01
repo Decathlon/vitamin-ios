@@ -62,6 +62,7 @@ Foundations are core bricks of Vitamin Design System, and Components are high le
 The following foundations are available :
 | Element | Description | Documentation |
 |---------|-------------|---------------|
+|Assets   | Set of graphic assets usable in the Design System. | [Documentation](./Sources/Vitamin/Foundations/Assets#readme)|
 |Colors   | Semantics and base colors of the Design System. | [Documentation](./Sources/Vitamin/Foundations/Colors#readme)|
 |Icons   | Set of icons usable in the Design System. | [Documentation](./Sources/Vitamin/Foundations/Icons#readme)|
 |Shadows   | Shadows applicable to any view in the Design System. | [Documentation](./Sources/Vitamin/Foundations/Shadows#readme)|
