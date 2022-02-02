@@ -7,9 +7,7 @@
 import UIKit
 import Vitamin
 
-final class AssetsViewController: UICollectionViewController {
-    private lazy var sections: [AssetSection] = makeSections()
-
+final class AssetsViewController: BaseImageCollectionViewController {
     convenience init() {
         let layout = UICollectionViewFlowLayout()
         layout.sectionHeadersPinToVisibleBounds = false
@@ -21,6 +19,7 @@ final class AssetsViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        sections = makeSections()
 
         view.backgroundColor = VitaminColor.Core.Background.primary
 
@@ -54,14 +53,19 @@ extension AssetsViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        let assetItem = sections[indexPath.section].items[indexPath.row]
+        let defaultSize = CGSize(width: view.frame.width / 5, height: 90)
+        guard
+            let assetItem = sections[indexPath.section].items[indexPath.row] as? AssetItem
+        else {
+            return defaultSize
+        }
         switch assetItem.type {
         case .large:
             return CGSize(width: view.frame.width, height: 110)
         case.medium:
             return CGSize(width: view.frame.width / 2.1, height: 90)
         case .standard:
-            return CGSize(width: view.frame.width / 5, height: 90)
+            return defaultSize
         }
     }
 
@@ -91,13 +95,14 @@ extension AssetsViewController {
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        let assetItem = sections[indexPath.section].items[indexPath.row]
+        guard let assetItem = sections[indexPath.section].items[indexPath.row] as? AssetItem else {
+            return AssetCollectionViewCell()
+        }
         let reuseId = (assetItem.type == .large ? "largeAsset" : "asset")
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: reuseId,
             for: indexPath) as? AssetCollectionViewCell else {
-                    let cell = AssetCollectionViewCell()
-                    return cell
+                    return AssetCollectionViewCell()
                 }
 
         cell.setImage(assetItem.image,
@@ -105,58 +110,16 @@ extension AssetsViewController {
                       textColor: VitaminColor.Core.Content.primary)
         return cell
     }
-
-    override func collectionView(
-        _ collectionView: UICollectionView,
-        viewForSupplementaryElementOfKind kind: String,
-        at indexPath: IndexPath
-    ) -> UICollectionReusableView {
-        guard kind == UICollectionView.elementKindSectionHeader else {
-            fatalError("Only section header is handled")
-        }
-        let headerView = collectionView.dequeueReusableSupplementaryView(
-            ofKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: "header",
-            for: indexPath)
-
-        headerView.backgroundColor = VitaminColor.Core.Background.secondary
-        if headerView.subviews.isEmpty {
-            headerView.addSubview(
-                UILabel(
-                    frame: CGRect(
-                        x: 15,
-                        y: 25,
-                        width: (view.frame.width - 15),
-                        height: 30)))
-        }
-
-        if let headerLabel = headerView.subviews[0] as? UILabel {
-            headerLabel.backgroundColor = .clear
-            headerLabel.text = self.sections[indexPath.section].name.uppercased()
-            headerLabel.font = UIFont.systemFont(ofSize: 13)
-            headerLabel.textColor = VitaminColor.Core.Content.tertiary
-            headerLabel.textAlignment = .left
-        }
-
-        return headerView
-    }
-
-    override func collectionView(
-        _ collectionView: UICollectionView,
-        didSelectItemAt indexPath: IndexPath
-    ) {
-        UIPasteboard.general.string = sections[indexPath.section].items[indexPath.row].name
-    }
 }
 
 // MARK: - private structs and functions
 extension AssetsViewController {
-    private struct AssetSection {
+    private struct AssetSection: BaseImageSection {
         let name: String
-        let items: [AssetItem]
+        let items: [BaseImageItem]
     }
 
-    private struct AssetItem {
+    private struct AssetItem: BaseImageItem {
         let name: String
         let image: UIImage
         var type: AssetItemType = .standard
