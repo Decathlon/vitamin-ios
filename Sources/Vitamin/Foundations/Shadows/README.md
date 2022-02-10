@@ -33,8 +33,5 @@ label.removeShadow()
 ```
 
 **Notes**: 
-- Calling `removeShadow()` is equivalent to calling `dropShadow(shadowType: .none)`
-- These methods reset all the properties of the layer that are modified by `dropShadow(shadowType: VitaminShadow)`, its usage could lead to strange behavior if used on a view whose shadow was not added by this method
-- 
-
-
+- Calling `removeShadow()` is equivalent to calling `dropShadow(shadowType: .none)`.
+- These methods reset all the properties of the layer that are modified by `dropShadow(shadowType: VitaminShadow)`, its usage could lead to strange behavior if used on a view whose shadow was not added by this method.
