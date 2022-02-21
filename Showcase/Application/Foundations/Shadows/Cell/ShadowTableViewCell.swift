@@ -15,7 +15,8 @@ public class ShadowTableViewCell: UITableViewCell {
         exampleLabel.backgroundColor = VitaminColor.Core.Background.brandPrimary
         exampleLabel.dropShadow(shadowType: shadowType)
 
-        exampleLabel.attributedText = "This is a test label \nwith a \(shadowType.rawValue) shadow type".styled(as: .callout)
+        exampleLabel.attributedText = "This is a test label \nwith a \(shadowType.rawValue) shadow type"
+            .styled(as: .callout)
         exampleLabel.textAlignment = .center
     }
 }
