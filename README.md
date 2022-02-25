@@ -28,7 +28,7 @@
   <a aria-label="license" href="https://github.com/Decathlon/vitamin-ios/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/Decathlon/vitamin-ios.svg" alt="">
   </a>
-  <a aria-label="slack" href="https://join.slack.com/t/decathlon-design/shared_invite/zt-ou0n9qas-n_oamDSVUIqvLqNO1LETJg">
+  <a aria-label="slack" href="https://join.slack.com/t/decathlon-design/shared_invite/zt-13kxb50ar-iHzqV~Olsu4~NCkEPj5c4g">
     <img src="https://img.shields.io/badge/slack-Decathlon%20Design%20System-purple.svg?logo=slack" alt="">
   </a>
 </p>
