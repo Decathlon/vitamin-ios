@@ -10,6 +10,9 @@
 		4AAD2B67276772D200727D8E /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD2B66276772D200727D8E /* MainTableViewController.swift */; };
 		651EF24D272BE8D500121F7A /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EF24C272BE8D500121F7A /* TextFieldTableViewCell.swift */; };
 		651EF252272C0AD500121F7A /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651EF251272C0AD500121F7A /* TextFieldTableViewCell.xib */; };
+		6531B78227A9A23600808E1E /* RadiusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6531B77F27A9A23600808E1E /* RadiusTableViewCell.swift */; };
+		6531B78327A9A23600808E1E /* RadiusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6531B78027A9A23600808E1E /* RadiusTableViewCell.xib */; };
+		6531B78427A9A23600808E1E /* RadiusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6531B78127A9A23600808E1E /* RadiusViewController.swift */; };
 		654642B8276A9F5700213415 /* Vitamin in Frameworks */ = {isa = PBXBuildFile; productRef = 654642B7276A9F5700213415 /* Vitamin */; };
 		65B52A1927392EDD008D9B5E /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B52A1827392EDD008D9B5E /* SwitchViewController.swift */; };
 		65B52A1D27394136008D9B5E /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B52A1C27394136008D9B5E /* SwitchTableViewCell.swift */; };
@@ -18,13 +21,14 @@
 		65BD9F3D2768D06900EEDC0D /* IconCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65BD9F3A2768D06900EEDC0D /* IconCollectionViewCell.xib */; };
 		65BD9F3E2768D06900EEDC0D /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD9F3B2768D06900EEDC0D /* IconCollectionViewCell.swift */; };
 		65BD9F3F2768D06900EEDC0D /* IconsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD9F3C2768D06900EEDC0D /* IconsViewController.swift */; };
-		65D1B66027835FCE00C1560B /* ProgressbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D1B65B27835FCE00C1560B /* ProgressbarViewController.swift */; };
-		65D1B66127835FCE00C1560B /* LinearProgressbarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65D1B65D27835FCE00C1560B /* LinearProgressbarTableViewCell.xib */; };
-		65D1B66227835FCE00C1560B /* CircularProgressbarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65D1B65E27835FCE00C1560B /* CircularProgressbarTableViewCell.xib */; };
-		65D1B66327835FCE00C1560B /* ProgressbarTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D1B65F27835FCE00C1560B /* ProgressbarTableViewCells.swift */; };
 		65D1B6692787422100C1560B /* ShadowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D1B6652787422100C1560B /* ShadowsViewController.swift */; };
 		65D1B66A2787422100C1560B /* ShadowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D1B6672787422100C1560B /* ShadowTableViewCell.swift */; };
 		65D1B66B2787422100C1560B /* ShadowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65D1B6682787422100C1560B /* ShadowTableViewCell.xib */; };
+		65F1BC1227CE2101002D08D8 /* LargeAssetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65F1BC0E27CE2101002D08D8 /* LargeAssetCollectionViewCell.xib */; };
+		65F1BC1327CE2101002D08D8 /* AssetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65F1BC0F27CE2101002D08D8 /* AssetCollectionViewCell.xib */; };
+		65F1BC1427CE2101002D08D8 /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F1BC1027CE2101002D08D8 /* AssetCollectionViewCell.swift */; };
+		65F1BC1527CE2101002D08D8 /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F1BC1127CE2101002D08D8 /* AssetsViewController.swift */; };
+		65F1BC1827CE22EF002D08D8 /* BaseImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F1BC1727CE22EE002D08D8 /* BaseImageCollectionViewController.swift */; };
 		AA68B4CB25681A5A00F1A4D7 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA68B4CA25681A5A00F1A4D7 /* ButtonTableViewCell.swift */; };
 		AA68B4CE25681A6700F1A4D7 /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA68B4CD25681A6700F1A4D7 /* ButtonTableViewCell.xib */; };
 		AAB029CE256805A900F08C74 /* ColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB029CD256805A900F08C74 /* ColorsViewController.swift */; };
@@ -42,6 +46,9 @@
 		4AAD2B66276772D200727D8E /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		651EF24C272BE8D500121F7A /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		651EF251272C0AD500121F7A /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		6531B77F27A9A23600808E1E /* RadiusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusTableViewCell.swift; sourceTree = "<group>"; };
+		6531B78027A9A23600808E1E /* RadiusTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadiusTableViewCell.xib; sourceTree = "<group>"; };
+		6531B78127A9A23600808E1E /* RadiusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusViewController.swift; sourceTree = "<group>"; };
 		654642B3276A513C00213415 /* vitamin-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "vitamin-ios"; path = ..; sourceTree = "<group>"; };
 		654642B4276A528C00213415 /* vitamin-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "vitamin-ios"; path = ..; sourceTree = "<group>"; };
 		65B52A1827392EDD008D9B5E /* SwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
@@ -51,13 +58,14 @@
 		65BD9F3A2768D06900EEDC0D /* IconCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IconCollectionViewCell.xib; sourceTree = "<group>"; };
 		65BD9F3B2768D06900EEDC0D /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
 		65BD9F3C2768D06900EEDC0D /* IconsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconsViewController.swift; sourceTree = "<group>"; };
-		65D1B65B27835FCE00C1560B /* ProgressbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressbarViewController.swift; sourceTree = "<group>"; };
-		65D1B65D27835FCE00C1560B /* LinearProgressbarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LinearProgressbarTableViewCell.xib; sourceTree = "<group>"; };
-		65D1B65E27835FCE00C1560B /* CircularProgressbarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircularProgressbarTableViewCell.xib; sourceTree = "<group>"; };
-		65D1B65F27835FCE00C1560B /* ProgressbarTableViewCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressbarTableViewCells.swift; sourceTree = "<group>"; };
 		65D1B6652787422100C1560B /* ShadowsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowsViewController.swift; sourceTree = "<group>"; };
 		65D1B6672787422100C1560B /* ShadowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowTableViewCell.swift; sourceTree = "<group>"; };
 		65D1B6682787422100C1560B /* ShadowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShadowTableViewCell.xib; sourceTree = "<group>"; };
+		65F1BC0E27CE2101002D08D8 /* LargeAssetCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LargeAssetCollectionViewCell.xib; sourceTree = "<group>"; };
+		65F1BC0F27CE2101002D08D8 /* AssetCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssetCollectionViewCell.xib; sourceTree = "<group>"; };
+		65F1BC1027CE2101002D08D8 /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
+		65F1BC1127CE2101002D08D8 /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
+		65F1BC1727CE22EE002D08D8 /* BaseImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseImageCollectionViewController.swift; sourceTree = "<group>"; };
 		AA68B4CA25681A5A00F1A4D7 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		AA68B4CD25681A6700F1A4D7 /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
 		AAB029CD256805A900F08C74 /* ColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsViewController.swift; sourceTree = "<group>"; };
@@ -145,7 +153,6 @@
 		4AAD2B692767730300727D8E /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				65D1B65A27835FCE00C1560B /* Progressbar */,
 				AA68B4C7256811FC00F1A4D7 /* Button */,
 				4AAD2B6D2767A99900727D8E /* Switch */,
 				4AAD2B60276771DB00727D8E /* TextField */,
@@ -165,10 +172,13 @@
 		4AAD2B6B2767733500727D8E /* Foundations */ = {
 			isa = PBXGroup;
 			children = (
+				65F1BC0C27CE2101002D08D8 /* Assets */,
+				6531B77D27A9A23600808E1E /* Radiuses */,
 				65D1B6642787422000C1560B /* Shadows */,
 				65BD9F382768D06900EEDC0D /* Icons */,
 				AAB029E725680D7500F08C74 /* Colors */,
 				AA68B4DB25683AF300F1A4D7 /* Typography */,
+				65F1BC1627CE22EE002D08D8 /* Utils */,
 			);
 			path = Foundations;
 			sourceTree = "<group>";
@@ -189,6 +199,24 @@
 				65B52A1827392EDD008D9B5E /* SwitchViewController.swift */,
 			);
 			path = Switch;
+			sourceTree = "<group>";
+		};
+		6531B77D27A9A23600808E1E /* Radiuses */ = {
+			isa = PBXGroup;
+			children = (
+				6531B77E27A9A23600808E1E /* Cell */,
+				6531B78127A9A23600808E1E /* RadiusViewController.swift */,
+			);
+			path = Radiuses;
+			sourceTree = "<group>";
+		};
+		6531B77E27A9A23600808E1E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6531B77F27A9A23600808E1E /* RadiusTableViewCell.swift */,
+				6531B78027A9A23600808E1E /* RadiusTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		654642B2276A513C00213415 /* Packages */ = {
@@ -218,25 +246,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		65D1B65A27835FCE00C1560B /* Progressbar */ = {
-			isa = PBXGroup;
-			children = (
-				65D1B65B27835FCE00C1560B /* ProgressbarViewController.swift */,
-				65D1B65C27835FCE00C1560B /* Cell */,
-			);
-			path = Progressbar;
-			sourceTree = "<group>";
-		};
-		65D1B65C27835FCE00C1560B /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				65D1B65D27835FCE00C1560B /* LinearProgressbarTableViewCell.xib */,
-				65D1B65E27835FCE00C1560B /* CircularProgressbarTableViewCell.xib */,
-				65D1B65F27835FCE00C1560B /* ProgressbarTableViewCells.swift */,
-				);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		65D1B6642787422000C1560B /* Shadows */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +262,33 @@
 				65D1B6682787422100C1560B /* ShadowTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		65F1BC0C27CE2101002D08D8 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				65F1BC0D27CE2101002D08D8 /* Cell */,
+				65F1BC1127CE2101002D08D8 /* AssetsViewController.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		65F1BC0D27CE2101002D08D8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				65F1BC0E27CE2101002D08D8 /* LargeAssetCollectionViewCell.xib */,
+				65F1BC0F27CE2101002D08D8 /* AssetCollectionViewCell.xib */,
+				65F1BC1027CE2101002D08D8 /* AssetCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		65F1BC1627CE22EE002D08D8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				65F1BC1727CE22EE002D08D8 /* BaseImageCollectionViewController.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		AA68B4C7256811FC00F1A4D7 /* Button */ = {
@@ -372,15 +408,16 @@
 			files = (
 				65D1B66B2787422100C1560B /* ShadowTableViewCell.xib in Resources */,
 				AAC5D44D2567FE720070667D /* LaunchScreen.storyboard in Resources */,
+				65F1BC1227CE2101002D08D8 /* LargeAssetCollectionViewCell.xib in Resources */,
+				65F1BC1327CE2101002D08D8 /* AssetCollectionViewCell.xib in Resources */,
 				65B52A1F273944DC008D9B5E /* SwitchTableViewCell.xib in Resources */,
 				651EF252272C0AD500121F7A /* TextFieldTableViewCell.xib in Resources */,
-				65D1B66227835FCE00C1560B /* CircularProgressbarTableViewCell.xib in Resources */,
 				65BD9F3D2768D06900EEDC0D /* IconCollectionViewCell.xib in Resources */,
-				65D1B66127835FCE00C1560B /* LinearProgressbarTableViewCell.xib in Resources */,
 				AAB029ED25680DEE00F08C74 /* ColorTableViewCell.xib in Resources */,
 				AA68B4CE25681A6700F1A4D7 /* ButtonTableViewCell.xib in Resources */,
 				AAC5D44A2567FE720070667D /* Assets.xcassets in Resources */,
 				AAC5D4482567FE710070667D /* Main.storyboard in Resources */,
+				6531B78327A9A23600808E1E /* RadiusTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,12 +449,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6531B78427A9A23600808E1E /* RadiusViewController.swift in Sources */,
 				65BD9F3F2768D06900EEDC0D /* IconsViewController.swift in Sources */,
 				AAB029D1256805CC00F08C74 /* TypographyViewController.swift in Sources */,
+				65F1BC1427CE2101002D08D8 /* AssetCollectionViewCell.swift in Sources */,
+				65F1BC1527CE2101002D08D8 /* AssetsViewController.swift in Sources */,
 				65D1B6692787422100C1560B /* ShadowsViewController.swift in Sources */,
 				AAC5D4412567FE710070667D /* AppDelegate.swift in Sources */,
 				65B52A1D27394136008D9B5E /* SwitchTableViewCell.swift in Sources */,
-				65D1B66327835FCE00C1560B /* ProgressbarTableViewCells.swift in Sources */,
 				4AAD2B67276772D200727D8E /* MainTableViewController.swift in Sources */,
 				65D1B66A2787422100C1560B /* ShadowTableViewCell.swift in Sources */,
 				AAB029CE256805A900F08C74 /* ColorsViewController.swift in Sources */,
@@ -428,7 +467,8 @@
 				651EF24D272BE8D500121F7A /* TextFieldTableViewCell.swift in Sources */,
 				AAB029E925680D8D00F08C74 /* ColorTableViewCell.swift in Sources */,
 				65BD9F3E2768D06900EEDC0D /* IconCollectionViewCell.swift in Sources */,
-				65D1B66027835FCE00C1560B /* ProgressbarViewController.swift in Sources */,
+				6531B78227A9A23600808E1E /* RadiusTableViewCell.swift in Sources */,
+				65F1BC1827CE22EF002D08D8 /* BaseImageCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,7 +616,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TWLCQ9R2FN;
+				DEVELOPMENT_TEAM = 6F8Y5QNU44;
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -594,8 +634,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TWLCQ9R2FN;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: FONDATION D'ENTREPRISE OXYLANE ART";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = EZELTPWNWS;
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -603,6 +644,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.decathlon.vitamin.showcase;
 				PRODUCT_NAME = Showcase;
+				PROVISIONING_PROFILE_SPECIFIER = "Vitamin Showcase - Bitrise - inHouse";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

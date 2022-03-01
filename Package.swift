@@ -30,8 +30,10 @@ let package = Package(
                 "Components/Progressbar/README.md",
                 "Components/Switch/README.md",
                 "Components/TextField/README.md",
+                "Foundations/Assets/README.md",
                 "Foundations/Colors/README.md",
                 "Foundations/Icons/README.md",
+                "Foundations/Radiuses/README.md",
                 "Foundations/Shadows/README.md",
                 "Foundations/Typography/README.md"
             ],

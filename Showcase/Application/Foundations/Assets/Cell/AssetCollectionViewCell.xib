@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="DuY-Xt-CPo" customClass="AssetCollectionViewCell" customModule="Showcase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="165" height="89"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ptW-85-tqU">
+                <rect key="frame" x="0.0" y="0.0" width="165" height="89"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0ds-f6-tX6">
+                        <rect key="frame" x="60.5" y="10" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="BsH-VW-vGh"/>
+                            <constraint firstAttribute="width" secondItem="0ds-f6-tX6" secondAttribute="height" id="X4M-SD-PO2"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIv-wm-yWt">
+                        <rect key="frame" x="0.0" y="59" width="165" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="tIv-wm-yWt" firstAttribute="top" secondItem="0ds-f6-tX6" secondAttribute="bottom" constant="5" id="ApB-9t-OHh"/>
+                    <constraint firstItem="tIv-wm-yWt" firstAttribute="width" secondItem="ptW-85-tqU" secondAttribute="width" id="EJr-FB-FsF"/>
+                    <constraint firstItem="tIv-wm-yWt" firstAttribute="centerX" secondItem="ptW-85-tqU" secondAttribute="centerX" id="FKv-C9-0ej"/>
+                    <constraint firstItem="0ds-f6-tX6" firstAttribute="top" secondItem="ptW-85-tqU" secondAttribute="top" constant="10" id="gwQ-DZ-maJ"/>
+                    <constraint firstItem="0ds-f6-tX6" firstAttribute="centerX" secondItem="ptW-85-tqU" secondAttribute="centerX" id="lrt-gJ-SCM"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="165" height="89"/>
+            <connections>
+                <outlet property="assetImageView" destination="0ds-f6-tX6" id="yaw-7R-Ay4"/>
+                <outlet property="assetNameLabel" destination="tIv-wm-yWt" id="qth-bR-gPn"/>
+            </connections>
+            <point key="canvasLocation" x="221.01449275362322" y="103.45982142857143"/>
+        </collectionViewCell>
+    </objects>
+</document>
