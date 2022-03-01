@@ -32,6 +32,7 @@ let package = Package(
                 "Foundations/Assets/README.md",
                 "Foundations/Colors/README.md",
                 "Foundations/Icons/README.md",
+                "Foundations/Radiuses/README.md",
                 "Foundations/Shadows/README.md",
                 "Foundations/Typography/README.md"
             ],

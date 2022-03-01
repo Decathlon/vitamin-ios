@@ -28,7 +28,7 @@
   <a aria-label="license" href="https://github.com/Decathlon/vitamin-ios/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/Decathlon/vitamin-ios.svg" alt="">
   </a>
-  <a aria-label="slack" href="https://join.slack.com/t/decathlon-design/shared_invite/zt-ou0n9qas-n_oamDSVUIqvLqNO1LETJg">
+  <a aria-label="slack" href="https://join.slack.com/t/decathlon-design/shared_invite/zt-13kxb50ar-iHzqV~Olsu4~NCkEPj5c4g">
     <img src="https://img.shields.io/badge/slack-Decathlon%20Design%20System-purple.svg?logo=slack" alt="">
   </a>
 </p>
@@ -65,6 +65,7 @@ The following foundations are available :
 |Assets   | Set of graphic assets usable in the Design System. | [Documentation](./Sources/Vitamin/Foundations/Assets#readme)|
 |Colors   | Semantics and base colors of the Design System. | [Documentation](./Sources/Vitamin/Foundations/Colors#readme)|
 |Icons   | Set of icons usable in the Design System. | [Documentation](./Sources/Vitamin/Foundations/Icons#readme)|
+|Radiuses   | Radiuses applicable to any view in the Design System. | [Documentation](./Sources/Vitamin/Foundations/Radiuses#readme)|
 |Shadows   | Shadows applicable to any view in the Design System. | [Documentation](./Sources/Vitamin/Foundations/Shadows#readme)|
 |Typography | Text styles usable in the Design System. | [Documentation](./Sources/Vitamin/Foundations/Typography#readme)|
 
