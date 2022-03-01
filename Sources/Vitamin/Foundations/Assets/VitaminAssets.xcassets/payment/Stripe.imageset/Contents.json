@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Stripe.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

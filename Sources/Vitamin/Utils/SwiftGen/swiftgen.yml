@@ -16,15 +16,25 @@ colors:
 # Icons
 
 xcassets:
-  inputs: [../../Foundations/Icons/Vitamix.xcassets]
-  outputs:
-    - templatePath: images.stencil
-      output: ../../Foundations/Icons/Vitamix.swift
-      params:
-        enumName: Vitamix
-        imageTypeName: VitaminImageAsset
-        publicAccess: true
-        forceProvidesNamespaces: true
+  - inputs: [../../Foundations/Icons/Vitamix.xcassets]
+    outputs:
+      - templatePath: images.stencil
+        output: ../../Foundations/Icons/Vitamix.swift
+        params:
+          enumName: Vitamix
+          imageTypeName: VitaminImageAsset
+          publicAccess: true
+          forceProvidesNamespaces: true
+
+  - inputs: [../../Foundations/Assets/VitaminAssets.xcassets]
+    outputs:
+      - templatePath: images.stencil
+        output: ../../Foundations/Assets/VitaminAssets.swift
+        params:
+          enumName: VitaminAssets
+          imageTypeName: VitaminAsset
+          publicAccess: true
+          forceProvidesNamespaces: true
 
 # Fonts
 

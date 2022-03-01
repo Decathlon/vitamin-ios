@@ -7,9 +7,7 @@
 import UIKit
 import Vitamin
 
-final class IconsViewController: UICollectionViewController {
-    private lazy var sections: [IconSection] = makeSections()
-
+final class IconsViewController: BaseImageCollectionViewController {
     convenience init() {
         let layout = UICollectionViewFlowLayout()
         layout.sectionHeadersPinToVisibleBounds = false
@@ -21,6 +19,8 @@ final class IconsViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        sections = makeSections()
 
         view.backgroundColor = VitaminColor.Core.Background.primary
 
@@ -79,67 +79,24 @@ extension IconsViewController {
     ) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: "icon",
-            for: indexPath) as? IconCollectionViewCell else {
-                    let cell = IconCollectionViewCell()
-                    return cell
+            for: indexPath) as? IconCollectionViewCell,
+              let iconItem = sections[indexPath.section].items[indexPath.row] as? IconItem else {
+                    return IconCollectionViewCell()
                 }
-        let iconItem = sections[indexPath.section].items[indexPath.row]
         cell.setImage(iconItem.image,
                       name: iconItem.shortName,
                       color: VitaminColor.Core.Content.primary)
         return cell
     }
-
-    override func collectionView(
-        _ collectionView: UICollectionView,
-        viewForSupplementaryElementOfKind kind: String,
-        at indexPath: IndexPath
-    ) -> UICollectionReusableView {
-        guard kind == UICollectionView.elementKindSectionHeader else {
-            fatalError("Only section header is handled")
-        }
-        let headerView = collectionView.dequeueReusableSupplementaryView(
-            ofKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: "header",
-            for: indexPath)
-
-        headerView.backgroundColor = VitaminColor.Core.Background.secondary
-        if headerView.subviews.isEmpty {
-            headerView.addSubview(
-                UILabel(
-                    frame: CGRect(
-                        x: 15,
-                        y: 25,
-                        width: (view.frame.width - 15),
-                        height: 30)))
-        }
-
-        if let headerLabel = headerView.subviews[0] as? UILabel {
-            headerLabel.backgroundColor = .clear
-            headerLabel.text = self.sections[indexPath.section].name.uppercased()
-            headerLabel.font = UIFont.systemFont(ofSize: 13)
-            headerLabel.textColor = VitaminColor.Core.Content.tertiary
-            headerLabel.textAlignment = .left
-        }
-
-        return headerView
-    }
-
-    override func collectionView(
-        _ collectionView: UICollectionView,
-        didSelectItemAt indexPath: IndexPath
-    ) {
-        UIPasteboard.general.string = sections[indexPath.section].items[indexPath.row].name
-    }
 }
 
 extension IconsViewController {
-    private struct IconSection {
+    private struct IconSection: BaseImageSection {
         let name: String
-        let items: [IconItem]
+        let items: [BaseImageItem]
     }
 
-    private struct IconItem {
+    private struct IconItem: BaseImageItem {
         let name: String
         let image: UIImage
 
