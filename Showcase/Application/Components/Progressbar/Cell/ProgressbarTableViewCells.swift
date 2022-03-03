@@ -23,13 +23,17 @@ final class ProgressbarTableViewCell: UITableViewCell {
         progress: CGFloat = 0,
         indexPath: IndexPath,
         delegate: ProgressViewCellDelegate?,
-        leftLabelText: String?
+        leftLabelText: String?,
+        accessibilityLabel: String?
     ) {
         vitaminProgressbar.variant = variant
         vitaminProgressbar.progressType = progressType
         vitaminProgressbar.showTrack = withTrack
         vitaminProgressbar.progress = progress
         vitaminProgressbar.leftLabelText = leftLabelText
+        if let label = accessibilityLabel {
+            vitaminProgressbar.vitaminAccessibilityLabel = label
+        }
         progressTextField.text = "\(Int(progress * 100))"
         progressTextField.delegate = self
         self.delegate = delegate

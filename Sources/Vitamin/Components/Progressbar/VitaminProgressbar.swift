@@ -12,12 +12,16 @@ public final class VitaminProgressbar: UIView {
         variant: Variant = .circular(size: . medium, style: .empty),
         progressType: ProgressType,
         showTrack: Bool = true,
-        leftLabelText: String? = nil
+        leftLabelText: String? = nil,
+        vitaminAccessibilityLabel: String? = nil
     ) {
         super.init(frame: .zero)
         self.variant = variant
         self.showTrack = showTrack
         self.leftLabelText = leftLabelText
+        if let label = vitaminAccessibilityLabel {
+            self.vitaminAccessibilityLabel = label
+        }
         commonInit()
     }
 
@@ -102,6 +106,12 @@ public final class VitaminProgressbar: UIView {
                 internalProgress = newValue
             }
             applyProgress(internalProgress)
+        }
+    }
+
+    public var vitaminAccessibilityLabel = UIProgressView().accessibilityLabel {
+        didSet {
+            setupView()
         }
     }
 
@@ -286,6 +296,8 @@ public final class VitaminProgressbar: UIView {
 
     // Setup the different views (progress bar, label, image)
     private func setupView() {
+        isAccessibilityElement = true
+        accessibilityLabel = self.vitaminAccessibilityLabel
         drawProgressbar()
         configLabels()
         self.subviews.forEach { $0.removeFromSuperview() }
@@ -311,6 +323,11 @@ public final class VitaminProgressbar: UIView {
             layoutDone = true
         }
     }
+
+
+
+    // MARK: accessibility
+
 }
 
 // MARK: sizing
@@ -354,6 +371,7 @@ extension VitaminProgressbar {
             case .image:
                 self.percentageLabel.isHidden = true
                 self.centerImage.isHidden = false
+                accessibilityValue = nil
             }
 
             // since the style has an effect on the circular progressLayer
@@ -387,23 +405,33 @@ extension VitaminProgressbar {
     // change the cuurent progress of the progress bar
     // has no effect in `.indeterminate` progress type
     private func applyProgress(_ newProgress: CGFloat) {
-        if case .circular(let circularSize, _) = self.variant {
+        if case .circular(let circularSize, let style) = self.variant {
             if progressType != .indeterminate {
                 self.progressLayer.strokeEnd = newProgress
+
                 self.percentageLabel.attributedText = "\(displayableProgress())".styled(
                     as: circularSize.textStyle,
                     with: labelColor)
                 self.configLabels()
+                switch style {
+                    case .percentage:
+                        accessibilityValue = displayableProgress()
+                case .empty, .image:
+                    break
+                }
             } else {
                 drawProgressbar()
             }
-        } else if case .linear(let linearSize, _) = self.variant {
+        } else if case .linear(let linearSize, let style) = self.variant {
             if progressType != .indeterminate {
                 self.progressLayer.strokeEnd = newProgress
                 self.percentageLabel.attributedText = "\(displayableProgress())".styled(
                     as: linearSize.textStyle,
                     with: labelColor)
                 self.configLabels()
+                if case style = LinearStyle.percentage {
+                    accessibilityValue = displayableProgress()
+                }
             } else {
                 drawProgressbar()
             }
