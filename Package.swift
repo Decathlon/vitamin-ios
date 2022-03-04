@@ -28,6 +28,7 @@ let package = Package(
                 "Utils/SwiftGen",
                 "Components/Button/README.md",
                 "Components/Switch/README.md",
+                "Components/Tag/README.md",
                 "Components/TextField/README.md",
                 "Foundations/Assets/README.md",
                 "Foundations/Colors/README.md",

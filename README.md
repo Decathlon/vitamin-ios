@@ -76,6 +76,7 @@ The following components are available :
 |-----------|-------------|---------------|
 |Button | Different button styles from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/Button#readme)|
 |Switch | Swicth from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/Switch#readme)|
+|Tag | Tag from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/Tag#readme)|
 |TextField | Different text fields styles from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/TextField#readme)|
 
 ## Special thanks

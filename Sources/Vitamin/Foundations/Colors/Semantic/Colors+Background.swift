@@ -23,10 +23,6 @@ extension VitaminColor.Core {
             UIColor.dynamicColor(light: VitaminColor.Theme.Core.Light.backgroundBrandSecondary,
                                  dark: VitaminColor.Theme.Core.Dark.backgroundBrandSecondary)
         }
-        public static var discount: UIColor {
-            UIColor.dynamicColor(light: VitaminColor.Theme.Core.Light.backgroundDiscount,
-                                 dark: VitaminColor.Theme.Core.Dark.backgroundDiscount)
-        }
         public static var primary: UIColor {
             UIColor.dynamicColor(light: VitaminColor.Theme.Core.Light.backgroundPrimary,
                                  dark: VitaminColor.Theme.Core.Dark.backgroundPrimary)
@@ -42,6 +38,10 @@ extension VitaminColor.Core {
         public static var tertiary: UIColor {
             UIColor.dynamicColor(light: VitaminColor.Theme.Core.Light.backgroundTertiary,
                                  dark: VitaminColor.Theme.Core.Dark.backgroundTertiary)
+        }
+        public static var alert: UIColor {
+            UIColor.dynamicColor(light: VitaminColor.Theme.Core.Light.backgroundAlert,
+                                 dark: VitaminColor.Theme.Core.Dark.backgroundAlert)
         }
     }
 }
