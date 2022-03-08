@@ -16,7 +16,7 @@ public class VitaminTag: UILabel {
         }
     }
 
-    /// Icon displayed on the VitaminTag
+    /// Icon displayed on the `VitaminTag`
     public var icon: UIImage? {
         didSet {
             applyTextAndIcon()
@@ -31,19 +31,19 @@ public class VitaminTag: UILabel {
         }
     }
 
-    /// An initializer that restores a `VitaminTextField` from a serialized version (used in storyboard)
+    /// An initializer that restores a `VitaminTag` from a serialized version (used in storyboard)
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
 
-    /// An initializer that instantiate a `VitaminTextField` in a frame, with all default valmues for properties
+    /// An initializer that instantiate a `VitaminTag` in a frame, with all default valmues for properties
     override public init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
 
-    // COmmon initialization
+    // Common initialization
     private func commonInit() {
         self.backgroundColor = .clear
         self.layer.cornerRadius = VitaminRadius.radius100.rawValue
@@ -122,25 +122,26 @@ extension VitaminTag {
 
 // MARK: - private styling method
 extension VitaminTag {
+    // apply text and icon when they change
     private func applyTextAndIcon() {
-        let myString = NSMutableAttributedString(string: "")
+        let tagLabel = NSMutableAttributedString(string: "")
         if let icon = icon {
-            let leftAttachment = NSTextAttachment()
+            let leftIcon = NSTextAttachment()
             let image = icon.withRenderingMode(.alwaysTemplate)
-            leftAttachment.image = image
-            leftAttachment.bounds = CGRect(x: 0, y: 0, width: 13, height: 13)
-            let leftAttachmentStr = NSAttributedString(attachment: leftAttachment)
+            leftIcon.image = image
+            letfIcon.bounds = CGRect(x: 0, y: 0, width: 13, height: 13)
+            let leftIconAsString = NSAttributedString(attachment: leftAttachment)
 
-            myString.append(leftAttachmentStr)
-            myString.append(" ".styled(as: .footnote))
+            tagLabel.append(leftIconAsString)
+            tagLabel.append(" ".styled(as: .footnote))
         }
 
-        myString.append(label.styled(as: .footnote))
-        myString.addAttributes(
+        tagLabel.append(label.styled(as: .footnote))
+        tagLabel.addAttributes(
             [.foregroundColor: variant.foregroundColor],
-            range: NSRange(location: 0, length: myString.length)
+            range: NSRange(location: 0, length: tagLabel.length)
         )
 
-        attributedText = myString
+        attributedText = tagLabel
     }
 }
