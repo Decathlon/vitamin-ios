@@ -108,10 +108,14 @@ extension VitaminTag {
         }
 
         var foregroundColor: UIColor {
-            guard self == .brandAlert || self == .brandPrimary else {
+            switch self {
+            case .brandAlert, .brandPrimary:
+                return VitaminColor.Core.Content.primaryReversed
+            case .brandAccent:
+                return VitaminColor.Core.Content.accent
+            default:
                 return VitaminColor.Core.Content.primary
             }
-            return VitaminColor.Core.Content.primaryReversed
         }
     }
 }
