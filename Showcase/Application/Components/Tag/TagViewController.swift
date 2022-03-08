@@ -27,85 +27,159 @@ final class TagViewController: UITableViewController {
             forCellReuseIdentifier: "multiTagCell")
     }
 
+
     private let datasourceMono: [VitaminTagDemoConfig] = [
         VitaminTagDemoConfig(
             variant: .brandPrimary,
-            text: "Brand primary",
-            image: Vitamix.Line.Finance.gift.image),
-        VitaminTagDemoConfig(variant: .brandAlert, text: "Brand alert"),
-        VitaminTagDemoConfig(variant: .brandAccent, text: "Brand Accent"),
-        VitaminTagDemoConfig(variant: .decorativeAmethyst, text: "Amethyst"),
+            text: VitaminTag.Variant.brandPrimary.name,
+            image: Vitamix.Line.Finance.gift.image
+        ),
+        VitaminTagDemoConfig(
+            variant: .brandAlert,
+            text: VitaminTag.Variant.brandAlert.name
+        ),
+        VitaminTagDemoConfig(
+            variant: .brandAccent,
+            text: VitaminTag.Variant.brandAccent.name
+        ),
+        VitaminTagDemoConfig(
+            variant: .decorativeAmethyst,
+            text: VitaminTag.Variant.decorativeAmethyst.name
+        ),
         VitaminTagDemoConfig(
             variant: .decorativeBrick,
-            text: "Brick",
-            image: Vitamix.Line.Finance.gift.image),
-        VitaminTagDemoConfig(variant: .decorativeCobalt, text: "Cobalt"),
-        VitaminTagDemoConfig(variant: .decorativeEmerald, text: "Emerald"),
-        VitaminTagDemoConfig(variant: .decorativeGold, text: "Gold"),
-        VitaminTagDemoConfig(variant: .decorativeGravel, text: "Gravel"),
-        VitaminTagDemoConfig(variant: .decorativeJade, text: "Jade"),
-        VitaminTagDemoConfig(variant: .decorativeSaffron, text: "Saffron")
+            text: VitaminTag.Variant.decorativeBrick.name,
+            image: Vitamix.Line.Finance.gift.image
+        ),
+        VitaminTagDemoConfig(
+            variant: .decorativeCobalt,
+            text: VitaminTag.Variant.decorativeCobalt.name
+        ),
+        VitaminTagDemoConfig(
+            variant: .decorativeEmerald,
+            text: VitaminTag.Variant.decorativeEmerald.name
+        ),
+        VitaminTagDemoConfig(
+            variant: .decorativeGold,
+            text: VitaminTag.Variant.decorativeGold.name
+        ),
+        VitaminTagDemoConfig(
+            variant: .decorativeGravel,
+            text: VitaminTag.Variant.decorativeGravel.name
+        ),
+        VitaminTagDemoConfig(
+            variant: .decorativeJade,
+            text: VitaminTag.Variant.decorativeJade.name
+        ),
+        VitaminTagDemoConfig(
+            variant: .decorativeSaffron,
+            text: VitaminTag.Variant.decorativeSaffron.name
+        )
     ]
 
     private let datasourceMulti: [[VitaminTagDemoConfig]] = [
         [
-            VitaminTagDemoConfig(variant: .brandPrimary, text: "Brand primary"),
-            VitaminTagDemoConfig(variant: .brandAlert, text: "Brand alert"),
-            VitaminTagDemoConfig(variant: .brandAccent, text: "Brand Accent"),
-            VitaminTagDemoConfig(variant: .decorativeAmethyst, text: "Amethyst"),
-            VitaminTagDemoConfig(variant: .decorativeBrick, text: "Brick"),
-            VitaminTagDemoConfig(variant: .decorativeCobalt, text: "Cobalt"),
-            VitaminTagDemoConfig(variant: .decorativeEmerald, text: "Emerald"),
-            VitaminTagDemoConfig(variant: .decorativeGold, text: "Gold"),
-            VitaminTagDemoConfig(variant: .decorativeGravel, text: "Gravel"),
-            VitaminTagDemoConfig(variant: .decorativeJade, text: "Jade"),
-            VitaminTagDemoConfig(variant: .decorativeSaffron, text: "Saffron")
+            VitaminTagDemoConfig(
+                variant: .brandPrimary,
+                text: VitaminTag.Variant.brandPrimary.name
+            ),
+            VitaminTagDemoConfig(
+                variant: .brandAlert,
+                text: VitaminTag.Variant.brandAlert.name
+            ),
+            VitaminTagDemoConfig(
+                variant: .brandAccent,
+                text: VitaminTag.Variant.brandAccent.name
+            ),
+            VitaminTagDemoConfig(
+                variant: .decorativeAmethyst,
+                text: VitaminTag.Variant.decorativeAmethyst.name
+            ),
+            VitaminTagDemoConfig(
+                variant: .decorativeBrick,
+                text: VitaminTag.Variant.decorativeBrick.name
+            ),
+            VitaminTagDemoConfig(
+                variant: .decorativeCobalt,
+                text: VitaminTag.Variant.decorativeCobalt.name
+            ),
+            VitaminTagDemoConfig(
+                variant: .decorativeEmerald,
+                text: VitaminTag.Variant.decorativeEmerald.name
+            ),
+            VitaminTagDemoConfig(
+                variant: .decorativeGold,
+                text: VitaminTag.Variant.decorativeGold.name
+            ),
+            VitaminTagDemoConfig(
+                variant: .decorativeGravel,
+                text: VitaminTag.Variant.decorativeGravel.name
+            ),
+            VitaminTagDemoConfig(
+                variant: .decorativeJade,
+                text: VitaminTag.Variant.decorativeJade.name
+            ),
+            VitaminTagDemoConfig(
+                variant: .decorativeSaffron,
+                text: VitaminTag.Variant.decorativeSaffron.name
+            )
         ],
         [
             VitaminTagDemoConfig(
                 variant: .brandPrimary,
-                text: "Brand primary",
-                image: Vitamix.Line.Finance.gift.image),
+                text: VitaminTag.Variant.brandPrimary.name,
+                image: Vitamix.Line.Finance.gift.image
+            ),
             VitaminTagDemoConfig(
                 variant: .brandAlert,
-                text: "Brand alert",
-                image: Vitamix.Line.Finance.gift.image),
+                text: VitaminTag.Variant.brandAlert.name,
+                image: Vitamix.Line.Finance.gift.image
+            ),
             VitaminTagDemoConfig(
                 variant: .brandAccent,
-                text: "Brand Accent",
-                image: Vitamix.Line.Finance.gift.image),
+                text: VitaminTag.Variant.brandAccent.name,
+                image: Vitamix.Line.Finance.gift.image
+            ),
             VitaminTagDemoConfig(
                 variant: .decorativeAmethyst,
-                text: "Amethyst",
-                image: Vitamix.Line.Finance.gift.image),
+                text: VitaminTag.Variant.decorativeAmethyst.name,
+                image: Vitamix.Line.Finance.gift.image
+            ),
             VitaminTagDemoConfig(
                 variant: .decorativeBrick,
-                text: "Brick",
-                image: Vitamix.Line.Finance.gift.image),
+                text: VitaminTag.Variant.decorativeBrick.name,
+                image: Vitamix.Line.Finance.gift.image
+            ),
             VitaminTagDemoConfig(
                 variant: .decorativeCobalt,
-                text: "Cobalt",
-                image: Vitamix.Line.Finance.gift.image),
+                text: VitaminTag.Variant.decorativeCobalt.name,
+                image: Vitamix.Line.Finance.gift.image
+            ),
             VitaminTagDemoConfig(
                 variant: .decorativeEmerald,
-                text: "Emerald",
-                image: Vitamix.Line.Finance.gift.image),
+                text: VitaminTag.Variant.decorativeEmerald.name,
+                image: Vitamix.Line.Finance.gift.image
+            ),
             VitaminTagDemoConfig(
                 variant: .decorativeGold,
-                text: "Gold",
-                image: Vitamix.Line.Finance.gift.image),
+                text: VitaminTag.Variant.decorativeGold.name,
+                image: Vitamix.Line.Finance.gift.image
+            ),
             VitaminTagDemoConfig(
                 variant: .decorativeGravel,
-                text: "Gravel",
-                image: Vitamix.Line.Finance.gift.image),
+                text: VitaminTag.Variant.decorativeGravel.name,
+                image: Vitamix.Line.Finance.gift.image
+            ),
             VitaminTagDemoConfig(
                 variant: .decorativeJade,
-                text: "Jade",
-                image: Vitamix.Line.Finance.gift.image),
+                text: VitaminTag.Variant.decorativeJade.name,
+                image: Vitamix.Line.Finance.gift.image
+            ),
             VitaminTagDemoConfig(
                 variant: .decorativeSaffron,
-                text: "Saffron",
-                image: Vitamix.Line.Finance.gift.image)
+                text: VitaminTag.Variant.decorativeSaffron.name,
+                image: Vitamix.Line.Finance.gift.image
+            )
         ]
     ]
 }
@@ -170,4 +244,33 @@ struct VitaminTagDemoConfig {
     var variant: VitaminTag.Variant = .brandPrimary
     var text = "Tag"
     var image: UIImage?
+}
+
+private extension VitaminTag.Variant {
+    var name: String {
+        switch self {
+        case .brandPrimary:
+            return "Brand primary"
+        case .brandAccent:
+            return "Brand accent"
+        case .brandAlert:
+            return "Brand alert"
+        case .decorativeAmethyst:
+            return "Amethyst"
+        case .decorativeBrick:
+            return "Brick"
+        case .decorativeCobalt:
+            return "Cobalt"
+        case .decorativeEmerald:
+            return "Emerald"
+        case .decorativeGravel:
+            return "Gravel"
+        case .decorativeGold:
+            return "Gold"
+        case .decorativeJade:
+            return "Jade"
+        case .decorativeSaffron:
+            return "Saffron"
+        }
+    }
 }

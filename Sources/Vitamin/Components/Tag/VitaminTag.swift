@@ -129,8 +129,8 @@ extension VitaminTag {
             let leftIcon = NSTextAttachment()
             let image = icon.withRenderingMode(.alwaysTemplate)
             leftIcon.image = image
-            letfIcon.bounds = CGRect(x: 0, y: 0, width: 13, height: 13)
-            let leftIconAsString = NSAttributedString(attachment: leftAttachment)
+            leftIcon.bounds = CGRect(x: 0, y: 0, width: 13, height: 13)
+            let leftIconAsString = NSAttributedString(attachment: leftIcon)
 
             tagLabel.append(leftIconAsString)
             tagLabel.append(" ".styled(as: .footnote))

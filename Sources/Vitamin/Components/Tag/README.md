@@ -21,14 +21,14 @@ The eleven variants are :
 - `.brandPrimary`
 - `.brandAccent`
 - `.brandAlert`
-- `.amethyst`
-- `.brick`
-- `.cobalt`
-- `.emerald`
-- `.gold`
-- `.gravel`
-- `.jade`
-- `.saffron`
+- `.decorativeAmethyst`
+- `.decorativeBrick`
+- `.decorativeCobalt`
+- `.decorativeEmerald`
+- `.decorativeGold`
+- `.decorativeGravel`
+- `.decorativeJade`
+- `.decorativeSaffron`
 
 You must provide a mandatory `label` displayed in the tag
 
