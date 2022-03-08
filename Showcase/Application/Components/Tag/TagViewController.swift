@@ -28,11 +28,10 @@ final class TagViewController: UITableViewController {
     }
 
 
-    private let datasourceMono: [VitaminTagDemoConfig] = [
+    private let datasourceBase: [VitaminTagDemoConfig] = [
         VitaminTagDemoConfig(
             variant: .brandPrimary,
-            text: VitaminTag.Variant.brandPrimary.name,
-            image: Vitamix.Line.Finance.gift.image
+            text: VitaminTag.Variant.brandPrimary.name
         ),
         VitaminTagDemoConfig(
             variant: .brandAlert,
@@ -48,8 +47,7 @@ final class TagViewController: UITableViewController {
         ),
         VitaminTagDemoConfig(
             variant: .decorativeBrick,
-            text: VitaminTag.Variant.decorativeBrick.name,
-            image: Vitamix.Line.Finance.gift.image
+            text: VitaminTag.Variant.decorativeBrick.name
         ),
         VitaminTagDemoConfig(
             variant: .decorativeCobalt,
@@ -77,53 +75,15 @@ final class TagViewController: UITableViewController {
         )
     ]
 
-    private let datasourceMulti: [[VitaminTagDemoConfig]] = [
-        [
-            VitaminTagDemoConfig(
-                variant: .brandPrimary,
-                text: VitaminTag.Variant.brandPrimary.name
-            ),
-            VitaminTagDemoConfig(
-                variant: .brandAlert,
-                text: VitaminTag.Variant.brandAlert.name
-            ),
-            VitaminTagDemoConfig(
-                variant: .brandAccent,
-                text: VitaminTag.Variant.brandAccent.name
-            ),
-            VitaminTagDemoConfig(
-                variant: .decorativeAmethyst,
-                text: VitaminTag.Variant.decorativeAmethyst.name
-            ),
-            VitaminTagDemoConfig(
-                variant: .decorativeBrick,
-                text: VitaminTag.Variant.decorativeBrick.name
-            ),
-            VitaminTagDemoConfig(
-                variant: .decorativeCobalt,
-                text: VitaminTag.Variant.decorativeCobalt.name
-            ),
-            VitaminTagDemoConfig(
-                variant: .decorativeEmerald,
-                text: VitaminTag.Variant.decorativeEmerald.name
-            ),
-            VitaminTagDemoConfig(
-                variant: .decorativeGold,
-                text: VitaminTag.Variant.decorativeGold.name
-            ),
-            VitaminTagDemoConfig(
-                variant: .decorativeGravel,
-                text: VitaminTag.Variant.decorativeGravel.name
-            ),
-            VitaminTagDemoConfig(
-                variant: .decorativeJade,
-                text: VitaminTag.Variant.decorativeJade.name
-            ),
-            VitaminTagDemoConfig(
-                variant: .decorativeSaffron,
-                text: VitaminTag.Variant.decorativeSaffron.name
-            )
-        ],
+    private var datasourceMono: [VitaminTagDemoConfig] {
+        var datasource = datasourceBase
+        datasource[0].image = Vitamix.Line.Finance.gift.image
+        datasource[4].image = Vitamix.Line.Finance.gift.image
+        return datasource
+    }
+
+    private lazy var datasourceMulti: [[VitaminTagDemoConfig]] = [
+        datasourceBase,
         [
             VitaminTagDemoConfig(
                 variant: .brandPrimary,
