@@ -16,7 +16,7 @@ vitaminTag.variant = .cobalt
 
 ### Basic properties
 
-You must provide a variant among the eleven available. Variant will onmly impact backcground and foreground color of the tag.
+You must provide a variant among the eleven available. Variant will only impact background and foreground color of the tag.
 The eleven variants are :
 - `.brandPrimary`
 - `.brandAccent`
@@ -37,6 +37,6 @@ You can provide an optional `icon` that will be displayed on the left side of th
 
 ### Sizing
 
-Since `VitaminTag` inherits from `UILabel`, you dont have to provide any widtj and height constraints, it will adapt to the content
+Since `VitaminTag` inherits from `UILabel`, you don't have to provide any width and height constraints, it will adapt to the content
 
-Since a `VotaminTag`should always be on one line, please do not use the `numberOflines` property
+Since a `VitaminTag` should always be on one line, please do not use the `numberOfLines` property

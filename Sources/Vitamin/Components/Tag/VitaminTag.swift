@@ -7,27 +7,28 @@ import UIKit
 
 public class VitaminTag: UILabel {
     // padding constants of the `VitaminTag`
-    private let padding = UIEdgeInsets(top: 2, left: 8, bottom: 2, right: 8)
+    private let paddingWithIcon = UIEdgeInsets(top: 1, left: 8, bottom: 1, right: 8)
+    private let paddingWithoutIcon = UIEdgeInsets(top: 2, left: 8, bottom: 0, right: 8)
+
 
     /// Label of the `VitaminTag`
     public var label: String = "" {
         didSet {
-            applyTextAndIcon()
+            applyTextAndIconAndColor()
         }
     }
 
     /// Icon displayed on the `VitaminTag`
     public var icon: UIImage? {
         didSet {
-            applyTextAndIcon()
+            applyTextAndIconAndColor()
         }
     }
 
     /// Variant of the `VitaminTag`
-    public var variant: Variant = .brandPrimary {
+    public var variant: VitaminTagVariant = .brandPrimary {
         didSet {
-            self.layer.backgroundColor = variant.backgroundColor.cgColor
-            self.textColor = variant.foregroundColor
+            applyTextAndIconAndColor()
         }
     }
 
@@ -53,10 +54,12 @@ public class VitaminTag: UILabel {
 // MARK: - Padding methods
 extension VitaminTag {
     override public func drawText(in rect: CGRect) {
+        let padding = (icon != nil) ? paddingWithIcon : paddingWithoutIcon
         super.drawText(in: rect.inset(by: padding))
     }
 
     override public var intrinsicContentSize: CGSize {
+        let padding = (icon != nil) ? paddingWithIcon : paddingWithoutIcon
         let superContentSize = super.intrinsicContentSize
         let width = superContentSize.width + padding.left + padding.right
         let heigth = superContentSize.height + padding.top + padding.bottom
@@ -64,72 +67,16 @@ extension VitaminTag {
     }
 }
 
-// MARK: - Tag Variant
-extension VitaminTag {
-    /// enum containing the different variants of VitaminTag
-    public enum Variant {
-        case brandAccent
-        case brandPrimary
-        case brandAlert
-        case decorativeAmethyst
-        case decorativeBrick
-        case decorativeCobalt
-        case decorativeEmerald
-        case decorativeGold
-        case decorativeGravel
-        case decorativeJade
-        case decorativeSaffron
-
-        var backgroundColor: UIColor {
-            switch self {
-            case .brandPrimary:
-                return VitaminColor.Core.Background.brandPrimary
-            case .brandAccent:
-                return VitaminColor.Core.Background.accent
-            case .brandAlert:
-                return VitaminColor.Core.Background.alert
-            case .decorativeAmethyst:
-                return VitaminColor.Core.Decorative.amethyst
-            case .decorativeBrick:
-                return VitaminColor.Core.Decorative.brick
-            case .decorativeCobalt:
-                return VitaminColor.Core.Decorative.cobalt
-            case .decorativeEmerald:
-                return VitaminColor.Core.Decorative.emerald
-            case .decorativeGravel:
-                return VitaminColor.Core.Decorative.gravel
-            case .decorativeGold:
-                return VitaminColor.Core.Decorative.gold
-            case .decorativeJade:
-                return VitaminColor.Core.Decorative.jade
-            case .decorativeSaffron:
-                return VitaminColor.Core.Decorative.saffron
-            }
-        }
-
-        var foregroundColor: UIColor {
-            switch self {
-            case .brandAlert, .brandPrimary:
-                return VitaminColor.Core.Content.primaryReversed
-            case .brandAccent:
-                return VitaminColor.Core.Content.accent
-            default:
-                return VitaminColor.Core.Content.primary
-            }
-        }
-    }
-}
-
 // MARK: - private styling method
 extension VitaminTag {
     // apply text and icon when they change
-    private func applyTextAndIcon() {
+    private func applyTextAndIconAndColor() {
         let tagLabel = NSMutableAttributedString(string: "")
         if let icon = icon {
             let leftIcon = NSTextAttachment()
             let image = icon.withRenderingMode(.alwaysTemplate)
             leftIcon.image = image
-            leftIcon.bounds = CGRect(x: 0, y: 0, width: 13, height: 13)
+            leftIcon.bounds = CGRect(x: 0, y: 0, width: 12, height: 12)
             let leftIconAsString = NSAttributedString(attachment: leftIcon)
 
             tagLabel.append(leftIconAsString)
@@ -143,5 +90,16 @@ extension VitaminTag {
         )
 
         attributedText = tagLabel
+
+        layer.backgroundColor = variant.backgroundColor.cgColor
+        textColor = variant.foregroundColor
+    }
+}
+
+// MARK: - dark/light mode change handling
+extension VitaminTag {
+    override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        applyTextAndIconAndColor()
     }
 }

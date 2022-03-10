@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,112 +17,38 @@
                 <rect key="frame" x="0.0" y="0.0" width="449" height="227"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqI-CO-5FP" customClass="VitaminTag" customModule="Vitamin">
-                        <rect key="frame" x="10" y="20" width="35" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88s-0L-9Wk" customClass="VitaminTag" customModule="Vitamin">
-                        <rect key="frame" x="55" y="20" width="38" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hc3-NZ-a3L" customClass="VitaminTag" customModule="Vitamin">
-                        <rect key="frame" x="103" y="20" width="38" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1b-HD-LnE" customClass="VitaminTag" customModule="Vitamin">
-                        <rect key="frame" x="10" y="61" width="38" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndr-XZ-a7t" customClass="VitaminTag" customModule="Vitamin">
-                        <rect key="frame" x="58" y="61" width="38" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5y-yE-yOB" customClass="VitaminTag" customModule="Vitamin">
-                        <rect key="frame" x="106" y="61" width="38" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgk-q9-XOh" customClass="VitaminTag" customModule="Vitamin">
-                        <rect key="frame" x="10" y="102" width="37" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62F-f6-Q9v" customClass="VitaminTag" customModule="Vitamin">
-                        <rect key="frame" x="57" y="102" width="38" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pon-fk-rWc" customClass="VitaminTag" customModule="Vitamin">
-                        <rect key="frame" x="105" y="102" width="38" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66n-Nm-r4k" customClass="VitaminTag" customModule="Vitamin">
-                        <rect key="frame" x="5" y="143" width="46" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5Z-Nx-Vnt" customClass="VitaminTag" customModule="Vitamin">
-                        <rect key="frame" x="59" y="143" width="43" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="XJd-9Q-hzn">
+                        <rect key="frame" x="0.0" y="0.0" width="449" height="227"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="227" id="NnU-aQ-0Zz"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="am5-gZ-Kil" customClass="LeftAlignedCollectionViewFlowLayout" customModule="Showcase" customModuleProvider="target">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="X1b-HD-LnE" firstAttribute="leading" secondItem="WaI-11-7ub" secondAttribute="leading" constant="10" id="1E5-eh-16x"/>
-                    <constraint firstItem="u5y-yE-yOB" firstAttribute="leading" secondItem="Ndr-XZ-a7t" secondAttribute="trailing" constant="10" id="1Eo-Yf-lP9"/>
-                    <constraint firstItem="Pon-fk-rWc" firstAttribute="leading" secondItem="62F-f6-Q9v" secondAttribute="trailing" constant="10" id="8ab-SG-AyQ"/>
-                    <constraint firstItem="62F-f6-Q9v" firstAttribute="leading" secondItem="bgk-q9-XOh" secondAttribute="trailing" constant="10" id="Dwh-5n-THu"/>
-                    <constraint firstItem="oqI-CO-5FP" firstAttribute="top" secondItem="WaI-11-7ub" secondAttribute="top" constant="20" id="JdQ-3b-aOh"/>
-                    <constraint firstItem="u5y-yE-yOB" firstAttribute="top" secondItem="oqI-CO-5FP" secondAttribute="bottom" constant="20" id="MnQ-Il-cur"/>
-                    <constraint firstItem="oqI-CO-5FP" firstAttribute="leading" secondItem="WaI-11-7ub" secondAttribute="leading" constant="10" id="N6f-3H-nKS"/>
-                    <constraint firstItem="hc3-NZ-a3L" firstAttribute="leading" secondItem="88s-0L-9Wk" secondAttribute="trailing" constant="10" id="PXO-gd-MM8"/>
-                    <constraint firstItem="Ndr-XZ-a7t" firstAttribute="top" secondItem="oqI-CO-5FP" secondAttribute="bottom" constant="20" id="RoB-Hr-Rph"/>
-                    <constraint firstItem="Pon-fk-rWc" firstAttribute="top" secondItem="X1b-HD-LnE" secondAttribute="bottom" constant="20" id="VSl-tl-hlz"/>
-                    <constraint firstItem="e5Z-Nx-Vnt" firstAttribute="leading" secondItem="66n-Nm-r4k" secondAttribute="trailing" constant="8" id="VWh-gw-Gpo"/>
-                    <constraint firstItem="62F-f6-Q9v" firstAttribute="top" secondItem="X1b-HD-LnE" secondAttribute="bottom" constant="20" id="Zzv-ih-z23"/>
-                    <constraint firstItem="e5Z-Nx-Vnt" firstAttribute="top" secondItem="bgk-q9-XOh" secondAttribute="bottom" constant="20" id="dFY-XT-WjT"/>
-                    <constraint firstItem="88s-0L-9Wk" firstAttribute="top" secondItem="WaI-11-7ub" secondAttribute="top" constant="20" id="fFV-Oo-btX"/>
-                    <constraint firstItem="88s-0L-9Wk" firstAttribute="leading" secondItem="oqI-CO-5FP" secondAttribute="trailing" constant="10" id="gUz-zu-oWO"/>
-                    <constraint firstItem="hc3-NZ-a3L" firstAttribute="top" secondItem="WaI-11-7ub" secondAttribute="top" constant="20" id="lYn-KB-bVA"/>
-                    <constraint firstItem="66n-Nm-r4k" firstAttribute="leading" secondItem="WaI-11-7ub" secondAttribute="leading" constant="5" id="mVX-76-WcR"/>
-                    <constraint firstItem="X1b-HD-LnE" firstAttribute="top" secondItem="oqI-CO-5FP" secondAttribute="bottom" constant="20" id="qA8-aV-U0r"/>
-                    <constraint firstItem="bgk-q9-XOh" firstAttribute="leading" secondItem="WaI-11-7ub" secondAttribute="leading" constant="10" id="u4x-E2-Wj6"/>
-                    <constraint firstItem="66n-Nm-r4k" firstAttribute="top" secondItem="bgk-q9-XOh" secondAttribute="bottom" constant="20" id="v2V-Gi-aUm"/>
-                    <constraint firstItem="bgk-q9-XOh" firstAttribute="top" secondItem="X1b-HD-LnE" secondAttribute="bottom" constant="20" id="vYi-Xp-O4W"/>
-                    <constraint firstItem="Ndr-XZ-a7t" firstAttribute="leading" secondItem="X1b-HD-LnE" secondAttribute="trailing" constant="10" id="ylw-AR-O0V"/>
+                    <constraint firstItem="XJd-9Q-hzn" firstAttribute="top" secondItem="WaI-11-7ub" secondAttribute="top" id="3mg-LV-e0W"/>
+                    <constraint firstAttribute="trailing" secondItem="XJd-9Q-hzn" secondAttribute="trailing" id="I98-RX-dlr"/>
+                    <constraint firstAttribute="bottom" secondItem="XJd-9Q-hzn" secondAttribute="bottom" id="XdQ-2n-sxu"/>
+                    <constraint firstItem="XJd-9Q-hzn" firstAttribute="leading" secondItem="WaI-11-7ub" secondAttribute="leading" id="ggT-Hc-rEE"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="vitaminTag1" destination="oqI-CO-5FP" id="alt-p1-zcz"/>
-                <outlet property="vitaminTag10" destination="66n-Nm-r4k" id="ZKw-U5-k1M"/>
-                <outlet property="vitaminTag11" destination="e5Z-Nx-Vnt" id="phH-g1-QFY"/>
-                <outlet property="vitaminTag2" destination="88s-0L-9Wk" id="cLL-as-JWW"/>
-                <outlet property="vitaminTag3" destination="hc3-NZ-a3L" id="yP7-xs-oUF"/>
-                <outlet property="vitaminTag4" destination="X1b-HD-LnE" id="uOG-9f-8BB"/>
-                <outlet property="vitaminTag5" destination="Ndr-XZ-a7t" id="MIp-81-OpX"/>
-                <outlet property="vitaminTag6" destination="u5y-yE-yOB" id="oSA-zm-Hqr"/>
-                <outlet property="vitaminTag7" destination="bgk-q9-XOh" id="4n5-Sw-OAc"/>
-                <outlet property="vitaminTag8" destination="62F-f6-Q9v" id="uUQ-Ng-ZXK"/>
-                <outlet property="vitaminTag9" destination="Pon-fk-rWc" id="0mW-Vq-qXo"/>
+                <outlet property="collectionView" destination="XJd-9Q-hzn" id="0mv-rn-DIu"/>
+                <outlet property="collectionViewHeightConstraint" destination="NnU-aQ-0Zz" id="m7x-be-20O"/>
+                <outlet property="flowLayout" destination="am5-gZ-Kil" id="by5-f9-5ZI"/>
             </connections>
             <point key="canvasLocation" x="194.92753623188406" y="136.27232142857142"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

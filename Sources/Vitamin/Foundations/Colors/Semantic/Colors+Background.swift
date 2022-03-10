@@ -43,5 +43,7 @@ extension VitaminColor.Core {
             UIColor.dynamicColor(light: VitaminColor.Theme.Core.Light.backgroundAlert,
                                  dark: VitaminColor.Theme.Core.Dark.backgroundAlert)
         }
+        @available(*, deprecated, renamed: "alert")
+        public static var discount: UIColor = alert
     }
 }

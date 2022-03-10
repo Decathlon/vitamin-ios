@@ -25,53 +25,56 @@ final class TagViewController: UITableViewController {
                 nibName: "MultipleTagTableViewCell",
                 bundle: nil),
             forCellReuseIdentifier: "multiTagCell")
+
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.rowHeight = 150
     }
 
 
     private let datasourceBase: [VitaminTagDemoConfig] = [
         VitaminTagDemoConfig(
             variant: .brandPrimary,
-            text: VitaminTag.Variant.brandPrimary.name
+            text: VitaminTagVariant.brandPrimary.name
         ),
         VitaminTagDemoConfig(
             variant: .brandAlert,
-            text: VitaminTag.Variant.brandAlert.name
+            text: VitaminTagVariant.brandAlert.name
         ),
         VitaminTagDemoConfig(
             variant: .brandAccent,
-            text: VitaminTag.Variant.brandAccent.name
+            text: VitaminTagVariant.brandAccent.name
         ),
         VitaminTagDemoConfig(
             variant: .decorativeAmethyst,
-            text: VitaminTag.Variant.decorativeAmethyst.name
+            text: VitaminTagVariant.decorativeAmethyst.name
         ),
         VitaminTagDemoConfig(
             variant: .decorativeBrick,
-            text: VitaminTag.Variant.decorativeBrick.name
+            text: VitaminTagVariant.decorativeBrick.name
         ),
         VitaminTagDemoConfig(
             variant: .decorativeCobalt,
-            text: VitaminTag.Variant.decorativeCobalt.name
+            text: VitaminTagVariant.decorativeCobalt.name
         ),
         VitaminTagDemoConfig(
             variant: .decorativeEmerald,
-            text: VitaminTag.Variant.decorativeEmerald.name
+            text: VitaminTagVariant.decorativeEmerald.name
         ),
         VitaminTagDemoConfig(
             variant: .decorativeGold,
-            text: VitaminTag.Variant.decorativeGold.name
+            text: VitaminTagVariant.decorativeGold.name
         ),
         VitaminTagDemoConfig(
             variant: .decorativeGravel,
-            text: VitaminTag.Variant.decorativeGravel.name
+            text: VitaminTagVariant.decorativeGravel.name
         ),
         VitaminTagDemoConfig(
             variant: .decorativeJade,
-            text: VitaminTag.Variant.decorativeJade.name
+            text: VitaminTagVariant.decorativeJade.name
         ),
         VitaminTagDemoConfig(
             variant: .decorativeSaffron,
-            text: VitaminTag.Variant.decorativeSaffron.name
+            text: VitaminTagVariant.decorativeSaffron.name
         )
     ]
 
@@ -87,57 +90,57 @@ final class TagViewController: UITableViewController {
         [
             VitaminTagDemoConfig(
                 variant: .brandPrimary,
-                text: VitaminTag.Variant.brandPrimary.name,
+                text: VitaminTagVariant.brandPrimary.name,
                 image: Vitamix.Line.Finance.gift.image
             ),
             VitaminTagDemoConfig(
                 variant: .brandAlert,
-                text: VitaminTag.Variant.brandAlert.name,
+                text: VitaminTagVariant.brandAlert.name,
                 image: Vitamix.Line.Finance.gift.image
             ),
             VitaminTagDemoConfig(
                 variant: .brandAccent,
-                text: VitaminTag.Variant.brandAccent.name,
+                text: VitaminTagVariant.brandAccent.name,
                 image: Vitamix.Line.Finance.gift.image
             ),
             VitaminTagDemoConfig(
                 variant: .decorativeAmethyst,
-                text: VitaminTag.Variant.decorativeAmethyst.name,
+                text: VitaminTagVariant.decorativeAmethyst.name,
                 image: Vitamix.Line.Finance.gift.image
             ),
             VitaminTagDemoConfig(
                 variant: .decorativeBrick,
-                text: VitaminTag.Variant.decorativeBrick.name,
+                text: VitaminTagVariant.decorativeBrick.name,
                 image: Vitamix.Line.Finance.gift.image
             ),
             VitaminTagDemoConfig(
                 variant: .decorativeCobalt,
-                text: VitaminTag.Variant.decorativeCobalt.name,
+                text: VitaminTagVariant.decorativeCobalt.name,
                 image: Vitamix.Line.Finance.gift.image
             ),
             VitaminTagDemoConfig(
                 variant: .decorativeEmerald,
-                text: VitaminTag.Variant.decorativeEmerald.name,
+                text: VitaminTagVariant.decorativeEmerald.name,
                 image: Vitamix.Line.Finance.gift.image
             ),
             VitaminTagDemoConfig(
                 variant: .decorativeGold,
-                text: VitaminTag.Variant.decorativeGold.name,
+                text: VitaminTagVariant.decorativeGold.name,
                 image: Vitamix.Line.Finance.gift.image
             ),
             VitaminTagDemoConfig(
                 variant: .decorativeGravel,
-                text: VitaminTag.Variant.decorativeGravel.name,
+                text: VitaminTagVariant.decorativeGravel.name,
                 image: Vitamix.Line.Finance.gift.image
             ),
             VitaminTagDemoConfig(
                 variant: .decorativeJade,
-                text: VitaminTag.Variant.decorativeJade.name,
+                text: VitaminTagVariant.decorativeJade.name,
                 image: Vitamix.Line.Finance.gift.image
             ),
             VitaminTagDemoConfig(
                 variant: .decorativeSaffron,
-                text: VitaminTag.Variant.decorativeSaffron.name,
+                text: VitaminTagVariant.decorativeSaffron.name,
                 image: Vitamix.Line.Finance.gift.image
             )
         ]
@@ -175,21 +178,28 @@ extension TagViewController {
                 withIdentifier: "multiTagCell"
             ) as? MultipleTagTableViewCell else {
                 let cell = MultipleTagTableViewCell(style: .default, reuseIdentifier: "multiTagCell")
-                cell.update(arrayOfTagConfig: config)
+                cell.update(tagConfigs: config)
                 cell.selectionStyle = .none
                 return cell
             }
-            cell.update(arrayOfTagConfig: config)
+            cell.update(tagConfigs: config)
             cell.selectionStyle = .none
             return cell
         }
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 150
+        guard indexPath.section == 0  else {
+            return UITableView.automaticDimension
         }
-        return 190
+        return 150
+    }
+
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard indexPath.section == 0  else {
+            return UITableView.automaticDimension
+        }
+        return 150
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -201,12 +211,12 @@ extension TagViewController {
 }
 
 struct VitaminTagDemoConfig {
-    var variant: VitaminTag.Variant = .brandPrimary
+    var variant: VitaminTagVariant = .brandPrimary
     var text = "Tag"
     var image: UIImage?
 }
 
-private extension VitaminTag.Variant {
+private extension VitaminTagVariant {
     var name: String {
         switch self {
         case .brandPrimary:
