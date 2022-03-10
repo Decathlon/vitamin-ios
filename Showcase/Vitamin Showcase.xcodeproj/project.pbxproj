@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A07433927D94BB0005BD446 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07433827D94BB0005BD446 /* MainView.swift */; };
+		4A07433E27D9541F005BD446 /* NavigationTitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07433D27D9541F005BD446 /* NavigationTitleModifier.swift */; };
 		4AAD2B67276772D200727D8E /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD2B66276772D200727D8E /* MainTableViewController.swift */; };
+		4ACCCBCE2805E28600FD184B /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07433A27D94C90005BD446 /* MainTabController.swift */; };
 		4AFF2B2D27F4D12600F6C3F8 /* Vitamin in Frameworks */ = {isa = PBXBuildFile; productRef = 4AFF2B2C27F4D12600F6C3F8 /* Vitamin */; };
 		651EF24D272BE8D500121F7A /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EF24C272BE8D500121F7A /* TextFieldTableViewCell.swift */; };
 		651EF252272C0AD500121F7A /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651EF251272C0AD500121F7A /* TextFieldTableViewCell.xib */; };
@@ -16,7 +19,6 @@
 		6531B78227A9A23600808E1E /* RadiusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6531B77F27A9A23600808E1E /* RadiusTableViewCell.swift */; };
 		6531B78327A9A23600808E1E /* RadiusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6531B78027A9A23600808E1E /* RadiusTableViewCell.xib */; };
 		6531B78427A9A23600808E1E /* RadiusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6531B78127A9A23600808E1E /* RadiusViewController.swift */; };
-		654642B8276A9F5700213415 /* Vitamin in Frameworks */ = {isa = PBXBuildFile; productRef = 654642B7276A9F5700213415 /* Vitamin */; };
 		6551745B27EDBDFA0043700F /* BadgeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6551745827EDBDFA0043700F /* BadgeCollectionViewCell.xib */; };
 		6551745C27EDBDFA0043700F /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551745927EDBDFA0043700F /* BadgeCollectionViewCell.swift */; };
 		6551745D27EDBDFA0043700F /* BadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551745A27EDBDFA0043700F /* BadgesViewController.swift */; };
@@ -58,6 +60,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A07433827D94BB0005BD446 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4A07433A27D94C90005BD446 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		4A07433D27D9541F005BD446 /* NavigationTitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleModifier.swift; sourceTree = "<group>"; };
 		4AAD2B66276772D200727D8E /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		651EF24C272BE8D500121F7A /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		651EF251272C0AD500121F7A /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
@@ -122,6 +127,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A07433027D949F2005BD446 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				4AAD2B692767730300727D8E /* Components */,
+				4AAD2B6B2767733500727D8E /* Foundations */,
+				4A07433227D94A1C005BD446 /* Main */,
+				6551745E27EDBFAE0043700F /* Utils */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		4A07433127D94A10005BD446 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				4A07433727D94B9B005BD446 /* Main */,
+				4A07433C27D953D0005BD446 /* Utils */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		4A07433227D94A1C005BD446 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4AAD2B66276772D200727D8E /* MainTableViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4A07433727D94B9B005BD446 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4A07433827D94BB0005BD446 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4A07433C27D953D0005BD446 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4A07433D27D9541F005BD446 /* NavigationTitleModifier.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		4A8962EF276366EB00D9B8E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,10 +185,9 @@
 			isa = PBXGroup;
 			children = (
 				AAC5D4402567FE710070667D /* AppDelegate.swift */,
-				4AAD2B692767730300727D8E /* Components */,
-				4AAD2B6B2767733500727D8E /* Foundations */,
 				4AAD2B6C2767734700727D8E /* Main */,
-				6551745E27EDBFAE0043700F /* Utils */,
+				4A07433127D94A10005BD446 /* SwiftUI */,
+				4A07433027D949F2005BD446 /* UIKit */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -219,7 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				AAC5D4462567FE710070667D /* Main.storyboard */,
-				4AAD2B66276772D200727D8E /* MainTableViewController.swift */,
+				4A07433A27D94C90005BD446 /* MainTabController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -497,24 +545,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65D1B66B2787422100C1560B /* ShadowTableViewCell.xib in Resources */,
-				AAC5D44D2567FE720070667D /* LaunchScreen.storyboard in Resources */,
-				65F1BC1227CE2101002D08D8 /* LargeAssetCollectionViewCell.xib in Resources */,
-				65F1BC2127CE8836002D08D8 /* CircularProgressbarTableViewCell.xib in Resources */,
-				65F1BC1327CE2101002D08D8 /* AssetCollectionViewCell.xib in Resources */,
-				65C518C927D673FF00B87FF0 /* MonoTagTableViewCell.xib in Resources */,
-				65B52A1F273944DC008D9B5E /* SwitchTableViewCell.xib in Resources */,
-				651EF252272C0AD500121F7A /* TextFieldTableViewCell.xib in Resources */,
-				65BD9F3D2768D06900EEDC0D /* IconCollectionViewCell.xib in Resources */,
-				65F1BC2027CE8836002D08D8 /* LinearProgressbarTableViewCell.xib in Resources */,
-				AAB029ED25680DEE00F08C74 /* ColorTableViewCell.xib in Resources */,
-				AA68B4CE25681A6700F1A4D7 /* ButtonTableViewCell.xib in Resources */,
-				AAC5D44A2567FE720070667D /* Assets.xcassets in Resources */,
-				AAC5D4482567FE710070667D /* Main.storyboard in Resources */,
 				6551745B27EDBDFA0043700F /* BadgeCollectionViewCell.xib in Resources */,
+				AA68B4CE25681A6700F1A4D7 /* ButtonTableViewCell.xib in Resources */,
+				65F1BC2027CE8836002D08D8 /* LinearProgressbarTableViewCell.xib in Resources */,
+				65F1BC2127CE8836002D08D8 /* CircularProgressbarTableViewCell.xib in Resources */,
+				65B52A1F273944DC008D9B5E /* SwitchTableViewCell.xib in Resources */,
 				6521D85F27DA100A00A15A06 /* TagCollectionViewCell.xib in Resources */,
 				65C518CC27D6B64800B87FF0 /* MultipleTagTableViewCell.xib in Resources */,
+				65C518C927D673FF00B87FF0 /* MonoTagTableViewCell.xib in Resources */,
+				651EF252272C0AD500121F7A /* TextFieldTableViewCell.xib in Resources */,
+				65F1BC1227CE2101002D08D8 /* LargeAssetCollectionViewCell.xib in Resources */,
+				65F1BC1327CE2101002D08D8 /* AssetCollectionViewCell.xib in Resources */,
 				6531B78327A9A23600808E1E /* RadiusTableViewCell.xib in Resources */,
+				65D1B66B2787422100C1560B /* ShadowTableViewCell.xib in Resources */,
+				65BD9F3D2768D06900EEDC0D /* IconCollectionViewCell.xib in Resources */,
+				AAB029ED25680DEE00F08C74 /* ColorTableViewCell.xib in Resources */,
+				AAC5D4482567FE710070667D /* Main.storyboard in Resources */,
+				AAC5D44D2567FE720070667D /* LaunchScreen.storyboard in Resources */,
+				AAC5D44A2567FE720070667D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,7 +614,10 @@
 				AAB029CE256805A900F08C74 /* ColorsViewController.swift in Sources */,
 				AAB029D4256805E200F08C74 /* ButtonsViewController.swift in Sources */,
 				65B52A1927392EDD008D9B5E /* SwitchViewController.swift in Sources */,
+				4ACCCBCE2805E28600FD184B /* MainTabController.swift in Sources */,
 				65F1BC1F27CE8836002D08D8 /* ProgressbarViewController.swift in Sources */,
+				4A07433927D94BB0005BD446 /* MainView.swift in Sources */,
+				4A07433E27D9541F005BD446 /* NavigationTitleModifier.swift in Sources */,
 				65B52A232739553A008D9B5E /* TextFieldViewController.swift in Sources */,
 				AA68B4CB25681A5A00F1A4D7 /* ButtonTableViewCell.swift in Sources */,
 				651EF24D272BE8D500121F7A /* TextFieldTableViewCell.swift in Sources */,
