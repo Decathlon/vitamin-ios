@@ -15,6 +15,7 @@ public class VitaminTag: UILabel {
     public var label: String = "" {
         didSet {
             applyTextAndIconAndColor()
+            accessibilityLabel = label
         }
     }
 
