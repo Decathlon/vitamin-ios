@@ -13,15 +13,14 @@ public final class VitaminProgressbar: UIView {
         progressType: ProgressType,
         showTrack: Bool = true,
         leftLabelText: String? = nil,
-        vitaminAccessibilityLabel: String? = nil
+        accessibilityLabel: String? = nil
     ) {
         super.init(frame: .zero)
         self.variant = variant
         self.showTrack = showTrack
         self.leftLabelText = leftLabelText
-        if let label = vitaminAccessibilityLabel {
-            self.vitaminAccessibilityLabel = label
-        }
+        self.accessibilityLabel = accessibilityLabel
+
         commonInit()
     }
 
@@ -106,12 +105,6 @@ public final class VitaminProgressbar: UIView {
                 internalProgress = newValue
             }
             applyProgress(internalProgress)
-        }
-    }
-
-    public var vitaminAccessibilityLabel = UIProgressView().accessibilityLabel {
-        didSet {
-            setupView()
         }
     }
 
@@ -297,7 +290,9 @@ public final class VitaminProgressbar: UIView {
     // Setup the different views (progress bar, label, image)
     private func setupView() {
         isAccessibilityElement = true
-        accessibilityLabel = self.vitaminAccessibilityLabel
+        if accessibilityLabel == nil {
+            accessibilityLabel = UIProgressView().accessibilityLabel
+        }
         drawProgressbar()
         configLabels()
         self.subviews.forEach { $0.removeFromSuperview() }

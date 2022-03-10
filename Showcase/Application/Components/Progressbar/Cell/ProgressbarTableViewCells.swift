@@ -31,9 +31,7 @@ final class ProgressbarTableViewCell: UITableViewCell {
         vitaminProgressbar.showTrack = withTrack
         vitaminProgressbar.progress = progress
         vitaminProgressbar.leftLabelText = leftLabelText
-        if let label = accessibilityLabel {
-            vitaminProgressbar.vitaminAccessibilityLabel = label
-        }
+        vitaminProgressbar.accessibilityLabel = accessibilityLabel
         progressTextField.text = "\(Int(progress * 100))"
         progressTextField.delegate = self
         self.delegate = delegate
