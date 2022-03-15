@@ -22,6 +22,14 @@ public class VitaminBadge: UILabel {
         }
     }
 
+    // indicates if the badge is added manually or automatically
+    // it allows to adjust precisely the insets
+    var automatic = false
+
+    /// An initializer that instantiates a `VitaminBadge` with provided values
+    ///  - Parameters :
+    ///     - value: the value displayed on the badge. If nil, no value is displayed, if greater than 99, 99+ will be displayed
+    ///     - variant: the `VitaminBadgeVariant`  to be applied
     public required init(value: Int?, variant: VitaminBadgeVariant = .standard) {
         self.value = value
         self.variant = variant
@@ -35,7 +43,8 @@ public class VitaminBadge: UILabel {
         commonInit()
     }
 
-    /// An initializer that instantiate a `VitaminBadge` in a frame, with all default valmues for properties
+    /// An initializer that instantiates a `VitaminBadge` in a frame, with all default values for properties
+    /// - Parameter frame: the frame of the `VitaminBadge`
     override public init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -53,7 +62,8 @@ public class VitaminBadge: UILabel {
         }
 
         if "\(intValue)".count == 1 {
-            return UIEdgeInsets(top: 3, left: 3, bottom: 1, right: 3)
+            return automatic ? UIEdgeInsets(top: 3, left: 4, bottom: 1, right: 2) :
+                UIEdgeInsets(top: 3, left: 3, bottom: 1, right: 3)
         }
 
         return UIEdgeInsets(top: 3, left: 4, bottom: 1, right: 4)
@@ -109,6 +119,7 @@ extension VitaminBadge {
 }
 
 extension VitaminBadge {
+    // Width of the badge, used when added automatically
     var theoricWidth: CGFloat {
         guard let intValue = value else {
             return 6
@@ -116,7 +127,7 @@ extension VitaminBadge {
 
         switch "\(intValue)".count {
         case 1:
-            return 11
+            return 12
         case 2:
             return 17
         default:
@@ -124,6 +135,7 @@ extension VitaminBadge {
         }
     }
 
+    // Height of the badge, used when added automatically
     var theoricHeight: CGFloat {
         guard value != nil else {
             return 6
@@ -131,6 +143,7 @@ extension VitaminBadge {
         return 12
     }
 
+    // Horizontal and Vertical offset with the corner of the superview, used when added automatically
     var offset: CGFloat {
         guard value != nil else {
             return 3
@@ -147,40 +160,59 @@ extension VitaminBadge {
     }
 }
 
+// MARK: - convenience UIView method
 public extension UIView {
     private static var badgeTag = Int.max
 
+    /// Allows to add a badge automatically over the upper roght corner of the view
+    /// - Parameters :
+    ///  - with: the value displayed on the badge. If nil, no value is displayed, if greater than 99, 99+ will be displayed
+    ///  - variant: the `VitaminBadgeVariant`  to be applied
     func addBadge(with value: Int? = nil, variant: VitaminBadgeVariant = .standard) {
         let badge = VitaminBadge()
         badge.value = value
         badge.variant = variant
+        badge.automatic = true
         badge.tag = Self.badgeTag
-        badge.frame = CGRect(
-            x: self.frame.width - badge.offset,
-            y: badge.offset - badge.theoricHeight,
-            width: badge.theoricWidth,
-            height: badge.theoricHeight)
+        badge.frame = getBadgeFrame(badge: badge)
         self.addSubview(badge)
     }
 
+    /// Allows to modify an already automatically added badge to the view
+    /// - Parameters :
+    ///  - with: the value displayed on the badge. If nil, no value is displayed, if greater than 99, `99+` will be displayed
+    ///  - variant: the `VitaminBadgeVariant`  to be applied
     func modifyBadge(with value: Int? = nil, variant: VitaminBadgeVariant = .standard) {
         if let badge = getBadge() {
             badge.value = value
             badge.variant = variant
+            badge.frame = getBadgeFrame(badge: badge)
         }
     }
 
+    /// Allows to remove an already automatically added badge from the view
     func removeBadge() {
         if let badge = getBadge() {
             badge.removeFromSuperview()
         }
     }
 
+    /// Allows to know whether a badge has already automatically added to the view
+    func hasBadge() -> Bool {
+        getBadge() != nil
+    }
+
+    // get the automatically added badge if exists
     private func getBadge() -> VitaminBadge? {
         subviews.first { ($0 is VitaminBadge) && ($0.tag == Self.badgeTag) } as? VitaminBadge
     }
 
-    func hasBadge() -> Bool {
-        getBadge() != nil
+    // Computes the badge frame relative to this view frame
+    private func getBadgeFrame(badge: VitaminBadge) -> CGRect {
+        CGRect(
+            x: self.frame.width - badge.offset,
+            y: badge.offset - badge.theoricHeight,
+            width: badge.theoricWidth,
+            height: badge.theoricHeight)
     }
 }

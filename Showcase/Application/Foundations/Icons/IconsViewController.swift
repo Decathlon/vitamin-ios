@@ -671,7 +671,6 @@ extension IconsViewController {
                 IconItem(name: "Vitamix.Fill.Weather.windy.image", image: Vitamix.Fill.Weather.windy.image)
             ])
         ]
-        fillBaseHeaderSections(namedSections: tempSections)
         return tempSections
     }
 }

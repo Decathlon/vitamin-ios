@@ -7,7 +7,11 @@ import UIKit
 import Vitamin
 
 class BaseImageCollectionViewController: BaseHeaderedCollectionViewController {
-    var sections: [BaseImageSection] = []
+    var sections: [BaseImageSection] = [] {
+        didSet {
+            sectionHeaders = fillBaseHeaderSections(namedSections: sections)
+        }
+    }
 
     override func collectionView(
         _ collectionView: UICollectionView,

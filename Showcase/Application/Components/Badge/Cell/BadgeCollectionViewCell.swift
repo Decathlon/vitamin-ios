@@ -29,12 +29,13 @@ class BadgeCollectionViewCell: UICollectionViewCell {
             badge.isHidden = true
             button.isHidden = false
             if fakeView.hasBadge() {
+                fakeView.modifyBadge(with: badgeValue, variant: badgeVariant)
                 button.setTitle("Remove badge", for: .normal)
             } else {
                 button.setTitle("Add badge", for: .normal)
             }
         } else {
-            removeBadge()
+            fakeView.removeBadge()
             badge.isHidden = false
             button.isHidden = true
             badge.value = value

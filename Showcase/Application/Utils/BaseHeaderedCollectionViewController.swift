@@ -7,13 +7,7 @@ import UIKit
 import Vitamin
 
 class BaseHeaderedCollectionViewController: UICollectionViewController, UICollectionViewControllerWithHeader {
-    var headerSections: [BaseNamedSection] = []
-
-    func fillBaseHeaderSections(namedSections: [BaseNamedSection]) {
-        namedSections.forEach {
-            headerSections.append(NamedSection(name: $0.name))
-        }
-    }
+    var sectionHeaders: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +47,7 @@ class BaseHeaderedCollectionViewController: UICollectionViewController, UICollec
 
         if let headerLabel = headerView.subviews[0] as? UILabel {
             headerLabel.backgroundColor = .clear
-            headerLabel.text = self.headerSections[indexPath.section].name.uppercased()
+            headerLabel.text = self.sectionHeaders[indexPath.section].uppercased()
             headerLabel.font = UIFont.systemFont(ofSize: 13)
             headerLabel.textColor = VitaminColor.Core.Content.tertiary
             headerLabel.textAlignment = .left
@@ -72,14 +66,15 @@ struct NamedSection: BaseNamedSection {
 }
 
 protocol UICollectionViewControllerWithHeader {
-    var headerSections: [BaseNamedSection] { get set }
-    func fillBaseHeaderSections(namedSections: [BaseNamedSection])
+    func fillBaseHeaderSections(namedSections: [BaseNamedSection]) -> [String]
 }
 
 extension UICollectionViewControllerWithHeader {
-    mutating func fillBaseHeaderSections(namedSections: [BaseNamedSection]) {
+    func fillBaseHeaderSections(namedSections: [BaseNamedSection]) -> [String] {
+        var localSectionsHeaders: [String] = []
         namedSections.forEach {
-            headerSections.append(NamedSection(name: $0.name))
+            localSectionsHeaders.append($0.name)
         }
+        return localSectionsHeaders
     }
 }

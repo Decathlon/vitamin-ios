@@ -8,7 +8,11 @@ import Vitamin
 
 final class BadgesViewController: BaseHeaderedCollectionViewController {
     private static let reuseId = "badge"
-    private var sections: [VitaminBadgeSection] = []
+    private var sections: [VitaminBadgeSection] = [] {
+        didSet {
+            sectionHeaders = fillBaseHeaderSections(namedSections: sections)
+        }
+    }
 
     convenience init() {
         let layout = UICollectionViewFlowLayout()
@@ -21,23 +25,23 @@ final class BadgesViewController: BaseHeaderedCollectionViewController {
 
     private let datasource: [VitaminBadgeDemoConfig] = [
         VitaminBadgeDemoConfig(),
-        VitaminBadgeDemoConfig(value: 1),
+        VitaminBadgeDemoConfig(value: 2),
         VitaminBadgeDemoConfig(value: 50),
         VitaminBadgeDemoConfig(value: 100),
         VitaminBadgeDemoConfig(variant: .brand),
-        VitaminBadgeDemoConfig(value: 1, variant: .brand),
+        VitaminBadgeDemoConfig(value: 2, variant: .brand),
         VitaminBadgeDemoConfig(value: 50, variant: .brand),
         VitaminBadgeDemoConfig(value: 100, variant: .brand),
         VitaminBadgeDemoConfig(variant: .reversed),
-        VitaminBadgeDemoConfig(value: 1, variant: .reversed),
+        VitaminBadgeDemoConfig(value: 2, variant: .reversed),
         VitaminBadgeDemoConfig(value: 50, variant: .reversed),
         VitaminBadgeDemoConfig(value: 100, variant: .reversed),
         VitaminBadgeDemoConfig(variant: .accent),
-        VitaminBadgeDemoConfig(value: 1, variant: .accent),
+        VitaminBadgeDemoConfig(value: 2, variant: .accent),
         VitaminBadgeDemoConfig(value: 50, variant: .accent),
         VitaminBadgeDemoConfig(value: 100, variant: .accent),
         VitaminBadgeDemoConfig(variant: .alert),
-        VitaminBadgeDemoConfig(value: 1, variant: .alert),
+        VitaminBadgeDemoConfig(value: 2, variant: .alert),
         VitaminBadgeDemoConfig(value: 50, variant: .alert),
         VitaminBadgeDemoConfig(value: 100, variant: .alert)
     ]
@@ -85,41 +89,6 @@ extension BadgesViewController {
         cell.update(with: badgeItem.value, variant: badgeItem.variant, automatic: indexPath.section == 1)
         return cell
     }
-
-    override func collectionView(
-        _ collectionView: UICollectionView,
-        viewForSupplementaryElementOfKind kind: String,
-        at indexPath: IndexPath
-    ) -> UICollectionReusableView {
-        guard kind == UICollectionView.elementKindSectionHeader else {
-            fatalError("Only section header is handled")
-        }
-        let headerView = collectionView.dequeueReusableSupplementaryView(
-            ofKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: "header",
-            for: indexPath)
-
-        headerView.backgroundColor = VitaminColor.Core.Background.secondary
-        if headerView.subviews.isEmpty {
-            headerView.addSubview(
-                UILabel(
-                    frame: CGRect(
-                        x: 15,
-                        y: 25,
-                        width: (view.frame.width - 15),
-                        height: 30)))
-        }
-
-        if let headerLabel = headerView.subviews[0] as? UILabel {
-            headerLabel.backgroundColor = .clear
-            headerLabel.text = self.sections[indexPath.section].name.uppercased()
-            headerLabel.font = UIFont.systemFont(ofSize: 13)
-            headerLabel.textColor = VitaminColor.Core.Content.tertiary
-            headerLabel.textAlignment = .left
-        }
-
-        return headerView
-    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -148,15 +117,14 @@ extension BadgesViewController {
     private func makeSections() {
         sections = [
             VitaminBadgeSection(
-                name: "Mannual Badges",
+                name: "Manually Added Badges",
                 configs: datasource
             ),
             VitaminBadgeSection(
-                name: "Automatic Badges",
+                name: "Automatically Added Badges",
                 configs: datasource
             )
         ]
-        fillBaseHeaderSections(namedSections: sections)
     }
 }
 

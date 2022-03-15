@@ -461,8 +461,6 @@ extension AssetsViewController {
                           image: VitaminAssets.Placeholder.landscape.image)
             ])
         ]
-        fillBaseHeaderSections(namedSections: tempSections)
-
         return tempSections
     }
 }

@@ -82,6 +82,7 @@ public struct VitaminTextStyle {
                                                 fontType: VitaminFontFamily.Roboto.bold,
                                                 textStyle: .body,
                                                 rawValue: "button")
+    // internal text style used for badges
     static let badge = VitaminTextStyle(size: 8,
                                         lineHeight: 8,
                                         fontType: VitaminFontFamily.Roboto.bold,
