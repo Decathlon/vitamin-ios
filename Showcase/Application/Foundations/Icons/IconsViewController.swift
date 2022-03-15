@@ -111,7 +111,7 @@ extension IconsViewController {
 
     // swiftlint:disable function_body_length
     private func makeSections() -> [IconSection] {
-        [
+        let tempSections = [
             IconSection(name: "Buildings - Line", items: [
                 IconItem(name: "Vitamix.Line.Buildings.home.image", image: Vitamix.Line.Buildings.home.image),
                 IconItem(name: "Vitamix.Line.Buildings.store.image", image: Vitamix.Line.Buildings.store.image)
@@ -671,5 +671,7 @@ extension IconsViewController {
                 IconItem(name: "Vitamix.Fill.Weather.windy.image", image: Vitamix.Fill.Weather.windy.image)
             ])
         ]
+        fillBaseHeaderSections(namedSections: tempSections)
+        return tempSections
     }
 }

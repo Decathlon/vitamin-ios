@@ -139,7 +139,7 @@ extension AssetsViewController {
 
     // swiftlint:disable function_body_length
     private func makeSections() -> [AssetSection] {
-        [
+        let tempSections = [
             AssetSection(name: "Logos", items: [
                 AssetItem(name: "VitaminAssets.Logo.logo.image",
                           image: VitaminAssets.Logo.logo.image,
@@ -461,5 +461,8 @@ extension AssetsViewController {
                           image: VitaminAssets.Placeholder.landscape.image)
             ])
         ]
+        fillBaseHeaderSections(namedSections: tempSections)
+
+        return tempSections
     }
 }

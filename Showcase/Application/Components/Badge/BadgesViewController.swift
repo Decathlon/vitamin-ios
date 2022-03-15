@@ -6,7 +6,7 @@
 import UIKit
 import Vitamin
 
-final class BadgesViewController: UICollectionViewController {
+final class BadgesViewController: BaseHeaderedCollectionViewController {
     private static let reuseId = "badge"
     private var sections: [VitaminBadgeSection] = []
 
@@ -52,15 +52,6 @@ final class BadgesViewController: UICollectionViewController {
                 nibName: "BadgeCollectionViewCell",
                 bundle: nil),
             forCellWithReuseIdentifier: Self.reuseId)
-
-        collectionView.register(
-            UICollectionReusableView.self,
-            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: "header")
-
-        if let flow = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flow.headerReferenceSize = CGSize(width: view.frame.width, height: 55)
-        }
     }
 }
 
@@ -165,6 +156,7 @@ extension BadgesViewController {
                 configs: datasource
             )
         ]
+        fillBaseHeaderSections(namedSections: sections)
     }
 }
 
@@ -173,7 +165,7 @@ private struct VitaminBadgeDemoConfig {
     var variant: VitaminBadgeVariant = .standard
 }
 
-private struct VitaminBadgeSection {
+private struct VitaminBadgeSection: BaseNamedSection {
     var name: String = ""
     var configs: [VitaminBadgeDemoConfig] = []
 }

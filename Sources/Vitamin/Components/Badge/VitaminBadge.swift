@@ -52,12 +52,11 @@ public class VitaminBadge: UILabel {
             return UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
         }
 
-        switch "\(intValue)".count {
-        case 1:
+        if "\(intValue)".count == 1 {
             return UIEdgeInsets(top: 3, left: 3, bottom: 1, right: 3)
-        default:
-            return UIEdgeInsets(top: 3, left: 4, bottom: 1, right: 4)
         }
+
+        return UIEdgeInsets(top: 3, left: 4, bottom: 1, right: 4)
     }
 
     // max displayable value

@@ -38,12 +38,10 @@ public enum VitaminBadgeVariant {
     }
 
     var borderColor: UIColor {
-        switch self {
-        case .standard:
+        if self == .standard {
             return VitaminColor.Core.Border.secondary
-        default:
-            return .clear
         }
+        return .clear
     }
 
     var borderWidth: CGFloat {

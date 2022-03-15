@@ -13,6 +13,7 @@
 		6521D86727DF7BB500A15A06 /* BadgeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6521D86427DF7BB500A15A06 /* BadgeCollectionViewCell.xib */; };
 		6521D86827DF7BB600A15A06 /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521D86527DF7BB500A15A06 /* BadgeCollectionViewCell.swift */; };
 		6521D86927DF7BB600A15A06 /* BadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521D86627DF7BB500A15A06 /* BadgesViewController.swift */; };
+		6521D86B27E00AA800A15A06 /* BaseHeaderedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521D86A27E00AA800A15A06 /* BaseHeaderedCollectionViewController.swift */; };
 		6531B78227A9A23600808E1E /* RadiusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6531B77F27A9A23600808E1E /* RadiusTableViewCell.swift */; };
 		6531B78327A9A23600808E1E /* RadiusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6531B78027A9A23600808E1E /* RadiusTableViewCell.xib */; };
 		6531B78427A9A23600808E1E /* RadiusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6531B78127A9A23600808E1E /* RadiusViewController.swift */; };
@@ -52,6 +53,7 @@
 		6521D86427DF7BB500A15A06 /* BadgeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BadgeCollectionViewCell.xib; sourceTree = "<group>"; };
 		6521D86527DF7BB500A15A06 /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
 		6521D86627DF7BB500A15A06 /* BadgesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgesViewController.swift; sourceTree = "<group>"; };
+		6521D86A27E00AA800A15A06 /* BaseHeaderedCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHeaderedCollectionViewController.swift; sourceTree = "<group>"; };
 		6531B77F27A9A23600808E1E /* RadiusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusTableViewCell.swift; sourceTree = "<group>"; };
 		6531B78027A9A23600808E1E /* RadiusTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadiusTableViewCell.xib; sourceTree = "<group>"; };
 		6531B78127A9A23600808E1E /* RadiusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				4AAD2B692767730300727D8E /* Components */,
 				4AAD2B6B2767733500727D8E /* Foundations */,
 				4AAD2B6C2767734700727D8E /* Main */,
+				65F1BC1627CE22EE002D08D8 /* Utils */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -185,7 +188,6 @@
 				65BD9F382768D06900EEDC0D /* Icons */,
 				AAB029E725680D7500F08C74 /* Colors */,
 				AA68B4DB25683AF300F1A4D7 /* Typography */,
-				65F1BC1627CE22EE002D08D8 /* Utils */,
 			);
 			path = Foundations;
 			sourceTree = "<group>";
@@ -311,6 +313,7 @@
 		65F1BC1627CE22EE002D08D8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				6521D86A27E00AA800A15A06 /* BaseHeaderedCollectionViewController.swift */,
 				65F1BC1727CE22EE002D08D8 /* BaseImageCollectionViewController.swift */,
 			);
 			path = Utils;
@@ -492,6 +495,7 @@
 				65B52A232739553A008D9B5E /* TextFieldViewController.swift in Sources */,
 				AA68B4CB25681A5A00F1A4D7 /* ButtonTableViewCell.swift in Sources */,
 				651EF24D272BE8D500121F7A /* TextFieldTableViewCell.swift in Sources */,
+				6521D86B27E00AA800A15A06 /* BaseHeaderedCollectionViewController.swift in Sources */,
 				AAB029E925680D8D00F08C74 /* ColorTableViewCell.swift in Sources */,
 				65BD9F3E2768D06900EEDC0D /* IconCollectionViewCell.swift in Sources */,
 				6531B78227A9A23600808E1E /* RadiusTableViewCell.swift in Sources */,
