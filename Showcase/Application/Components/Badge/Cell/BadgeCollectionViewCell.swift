@@ -55,12 +55,31 @@ class BadgeCollectionViewCell: UICollectionViewCell {
 
         // Specific colors for reversed variant
         if variant == .reversed {
-            contentView.backgroundColor = VitaminColor.Core.Background.primaryReversed
-            fakeView.backgroundColor = VitaminColor.Core.Background.brandPrimary
+            contentView.backgroundColor = VitaminColor.Core.Background.brandPrimary
+            fakeView.backgroundColor = VitaminColor.Core.Background.brandSecondary
             detailLabel.textColor = VitaminColor.Core.Content.primaryReversed
             detailLabel.attributedText = text.styled(
                 as: .footnote,
-                with: VitaminColor.Core.Content.primaryReversed)
+                with: VitaminColor.Core.Content.primaryReversed
+            )
+            button.style = .ghostReversed
+        }
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        contentView.backgroundColor = VitaminColor.Core.Background.primary
+        fakeView.backgroundColor = VitaminColor.Core.Background.tertiary
+        detailLabel.textColor = VitaminColor.Core.Content.primary
+        button.style = .ghost
+
+        if badgeVariant == .reversed {
+            contentView.backgroundColor = VitaminColor.Core.Background.brandPrimary
+            fakeView.backgroundColor = VitaminColor.Core.Background.brandSecondary
+            detailLabel.textColor = VitaminColor.Core.Content.primaryReversed
+            detailLabel.attributedText = detailLabel.text?.styled(
+                as: .footnote,
+                with: VitaminColor.Core.Content.primaryReversed
+            )
             button.style = .ghostReversed
         }
     }

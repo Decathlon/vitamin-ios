@@ -30,8 +30,10 @@ public enum VitaminBadgeVariant {
 
     var foregroundColor: UIColor {
         switch self {
-        case .standard, .reversed, .accent:
+        case .standard, .reversed:
             return VitaminColor.Core.Content.primary
+        case .accent:
+            return VitaminColor.Core.Content.accent
         case .brand, .alert:
             return VitaminColor.Core.Content.primaryReversed
         }
