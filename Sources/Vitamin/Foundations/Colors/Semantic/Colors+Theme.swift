@@ -15,7 +15,7 @@ extension VitaminColor {
                 public static let backgroundBrandPrimary = VitaminColor.Base.blue400.color
                 public static let backgroundBrandSecondary = VitaminColor.Base.blue50.color
                 public static let backgroundAccent = VitaminColor.Base.yellow400.color
-                public static let backgroundDiscount = VitaminColor.Base.red400.color
+                public static let backgroundAlert = VitaminColor.Base.red400.color
                 public static let backgroundPrimaryReversed = VitaminColor.Base.black.color
                 public static let backgroundBrandPrimaryReversed = VitaminColor.Base.white.color
 
@@ -37,6 +37,7 @@ extension VitaminColor {
 
                 public static let borderPrimary = VitaminColor.Base.black.color
                 public static let borderSecondary = VitaminColor.Base.grey200.color
+                public static let borderTertiary = VitaminColor.Base.grey100.color
                 public static let borderActive = VitaminColor.Base.blue400.color
                 public static let borderInactive = VitaminColor.Base.grey400.color
                 public static let borderNegative = VitaminColor.Base.red400.color
@@ -44,6 +45,17 @@ extension VitaminColor {
                 public static let borderPositive = VitaminColor.Base.conifer400.color
                 public static let borderInformation = VitaminColor.Base.blue400.color
                 public static let borderPrimaryReversed = VitaminColor.Base.white.color
+
+                public static let decorativeGravel = VitaminColor.Base.grey100.color
+                public static let decorativeBrick = VitaminColor.Base.red100.color
+                public static let decorativeSaffron = VitaminColor.Base.orange100.color
+                public static let decorativeGold = VitaminColor.Base.yellow100.color
+                public static let decorativeJade = VitaminColor.Base.conifer100.color
+                public static let decorativeEmerald = VitaminColor.Base.green100.color
+                public static let decorativeCobalt = VitaminColor.Base.blue100.color
+                public static let decorativeAmethyst = VitaminColor.Base.purple100.color
+
+                public static let shadowShadow = VitaminColor.Base.blue600.color.withAlphaComponent(0.1)
             }
 
             public enum Dark {
@@ -53,7 +65,7 @@ extension VitaminColor {
                 public static let backgroundBrandPrimary = VitaminColor.Base.blue300.color
                 public static let backgroundBrandSecondary = VitaminColor.Base.blue700.color
                 public static let backgroundAccent = VitaminColor.Base.yellow400.color
-                public static let backgroundDiscount = VitaminColor.Base.red400.color
+                public static let backgroundAlert = VitaminColor.Base.red400.color
                 public static let backgroundPrimaryReversed = VitaminColor.Base.black.color
                 public static let backgroundBrandPrimaryReversed = VitaminColor.Base.black.color
 
@@ -75,6 +87,7 @@ extension VitaminColor {
 
                 public static let borderPrimary = VitaminColor.Base.white.color
                 public static let borderSecondary = VitaminColor.Base.grey200.color
+                public static let borderTertiary = VitaminColor.Base.black.color
                 public static let borderActive = VitaminColor.Base.blue300.color
                 public static let borderInactive = VitaminColor.Base.grey500.color
                 public static let borderNegative = VitaminColor.Base.red300.color
@@ -82,6 +95,17 @@ extension VitaminColor {
                 public static let borderPositive = VitaminColor.Base.conifer300.color
                 public static let borderInformation = VitaminColor.Base.blue300.color
                 public static let borderPrimaryReversed = VitaminColor.Base.black.color
+
+                public static let decorativeGravel = VitaminColor.Base.grey600.color
+                public static let decorativeBrick = VitaminColor.Base.red600.color
+                public static let decorativeSaffron = VitaminColor.Base.orange600.color
+                public static let decorativeGold = VitaminColor.Base.yellow700.color
+                public static let decorativeJade = VitaminColor.Base.conifer700.color
+                public static let decorativeEmerald = VitaminColor.Base.green600.color
+                public static let decorativeCobalt = VitaminColor.Base.blue600.color
+                public static let decorativeAmethyst = VitaminColor.Base.purple600.color
+
+                public static let shadowShadow = VitaminColor.Base.blue200.color.withAlphaComponent(0.1)
             }
         }
     }
