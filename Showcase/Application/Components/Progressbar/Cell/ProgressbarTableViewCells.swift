@@ -23,15 +23,14 @@ final class ProgressbarTableViewCell: UITableViewCell {
         progress: CGFloat = 0,
         indexPath: IndexPath,
         delegate: ProgressViewCellDelegate?,
-        leftLabelText: String?,
-        accessibilityLabel: String?
+        progressbarTexts: ProgressbarTexts?
     ) {
         vitaminProgressbar.variant = variant
         vitaminProgressbar.progressType = progressType
         vitaminProgressbar.showTrack = withTrack
         vitaminProgressbar.progress = progress
-        vitaminProgressbar.leftLabelText = leftLabelText
-        vitaminProgressbar.accessibilityLabel = accessibilityLabel
+        vitaminProgressbar.leftLabelText = progressbarTexts?.leftLabelText
+        vitaminProgressbar.accessibilityLabel = progressbarTexts?.accessibilityLabel
         progressTextField.text = "\(Int(progress * 100))"
         progressTextField.delegate = self
         self.delegate = delegate
@@ -87,4 +86,9 @@ extension ProgressbarTableViewCell {
 /// protocol for updating the datasource when a value is modified in a cell
 protocol ProgressViewCellDelegate: AnyObject {
     func didUpdateProgressField(at index: IndexPath, with value: CGFloat)
+}
+
+struct ProgressbarTexts {
+    let leftLabelText: String?
+    let accessibilityLabel: String?
 }

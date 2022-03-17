@@ -233,8 +233,11 @@ extension ProgressbarViewController {
             progress: config.progress,
             indexPath: indexPath,
             delegate: self,
-            leftLabelText: config.leftLabelText,
-            accessibilityLabel: config.accessibilityLabel)
+            progressbarTexts: ProgressbarTexts(
+                    leftLabelText: config.leftLabelText,
+                    accessibilityLabel: config.accessibilityLabel
+                )
+            )
         cell.selectionStyle = .none
         return cell
     }
