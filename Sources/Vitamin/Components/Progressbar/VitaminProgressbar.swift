@@ -366,7 +366,6 @@ extension VitaminProgressbar {
             case .image:
                 self.percentageLabel.isHidden = true
                 self.centerImage.isHidden = false
-                accessibilityValue = nil
             }
 
             // since the style has an effect on the circular progressLayer
@@ -400,7 +399,7 @@ extension VitaminProgressbar {
     // change the cuurent progress of the progress bar
     // has no effect in `.indeterminate` progress type
     private func applyProgress(_ newProgress: CGFloat) {
-        if case .circular(let circularSize, let style) = self.variant {
+        if case .circular(let circularSize, _) = self.variant {
             if progressType != .indeterminate {
                 self.progressLayer.strokeEnd = newProgress
 
@@ -408,25 +407,16 @@ extension VitaminProgressbar {
                     as: circularSize.textStyle,
                     with: labelColor)
                 self.configLabels()
-                switch style {
-                    case .percentage:
-                        accessibilityValue = displayableProgress()
-                case .empty, .image:
-                    break
-                }
             } else {
                 drawProgressbar()
             }
-        } else if case .linear(let linearSize, let style) = self.variant {
+        } else if case .linear(let linearSize, _) = self.variant {
             if progressType != .indeterminate {
                 self.progressLayer.strokeEnd = newProgress
                 self.percentageLabel.attributedText = "\(displayableProgress())".styled(
                     as: linearSize.textStyle,
                     with: labelColor)
                 self.configLabels()
-                if case style = LinearStyle.percentage {
-                    accessibilityValue = displayableProgress()
-                }
             } else {
                 drawProgressbar()
             }
