@@ -31,7 +31,13 @@ final class ProgressbarViewController: UITableViewController {
     }
 
     private lazy var datasourceCircular: [ProgressbarDemoConfig] = [
-        ProgressbarDemoConfig(variant: .circular(size: .small, style: .percentage), withTrack: true, progress: 0.30, accessibilityLabel: "Chargement en cours"),
+        ProgressbarDemoConfig(
+            variant: .circular(
+                size: .small,
+                style: .percentage),
+            withTrack: true,
+            progress: 0.30,
+            accessibilityLabel: "Chargement en cours"),
         ProgressbarDemoConfig(variant: .circular(size: .small, style: .percentage), withTrack: false, progress: 0.40),
         ProgressbarDemoConfig(variant: .circular(size: .small, style: .empty), withTrack: true, progress: 0.50),
         ProgressbarDemoConfig(variant: .circular(size: .small, style: .empty), withTrack: false, progress: 0.60),
@@ -253,14 +259,13 @@ extension ProgressbarViewController {
 }
 
 private struct ProgressbarDemoConfig {
-    var variant: VitaminProgressbar.Variant = .circular(size: .medium, style: .percentage)
-    var progressType: VitaminProgressbar.ProgressType = .determinate
+    var variant: VitaminProgressbarVariant = .circular(size: .medium, style: .percentage)
+    var progressType: VitaminProgressbarProgressType = .determinate
     var withTrack = true
     var progress: CGFloat = 0
     weak var delegate: ProgressViewCellDelegate?
     var leftLabelText: String?
     var accessibilityLabel: String?
-
 }
 
 extension ProgressbarViewController: ProgressViewCellDelegate {

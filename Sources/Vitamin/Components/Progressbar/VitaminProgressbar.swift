@@ -9,8 +9,8 @@ import UIKit
 public final class VitaminProgressbar: UIView {
     /// An initializer that allows to set directly a size, a style, and the fact to show the track or not
     public required init(
-        variant: Variant = .circular(size: . medium, style: .empty),
-        progressType: ProgressType,
+        variant: VitaminProgressbarVariant = .circular(size: .medium, style: .empty),
+        progressType: VitaminProgressbarProgressType,
         showTrack: Bool = true,
         leftLabelText: String? = nil,
         accessibilityLabel: String? = nil
@@ -62,7 +62,7 @@ public final class VitaminProgressbar: UIView {
 
     /// The variant of the progress bar.
     /// Can be .linear or .circular, and must be associated with a type and size
-    public var variant: Variant = .linear(size: .medium, style: .empty) {
+    public var variant: VitaminProgressbarVariant = .linear(size: .medium, style: .empty) {
         didSet {
             applySize()
             applyStyle()
@@ -72,7 +72,7 @@ public final class VitaminProgressbar: UIView {
 
     /// The type of progress of the progress abr
     /// Can be .determinate or .indeterminate
-    public var progressType: ProgressType = .determinate
+    public var progressType: VitaminProgressbarProgressType = .determinate
 
     /// A boolean indicating if the track should be displayed or not
     public var showTrack = true {
@@ -318,11 +318,6 @@ public final class VitaminProgressbar: UIView {
             layoutDone = true
         }
     }
-
-
-
-    // MARK: accessibility
-
 }
 
 // MARK: sizing

@@ -15,10 +15,10 @@ final class ProgressbarTableViewCell: UITableViewCell {
     public weak var delegate: ProgressViewCellDelegate?
 
     func update(
-        variant: VitaminProgressbar.Variant = .circular(
+        variant: VitaminProgressbarVariant = .circular(
             size: .medium,
             style: .percentage),
-        progressType: VitaminProgressbar.ProgressType,
+        progressType: VitaminProgressbarProgressType,
         withTrack: Bool = true,
         progress: CGFloat = 0,
         indexPath: IndexPath,

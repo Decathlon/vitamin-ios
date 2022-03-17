@@ -5,58 +5,57 @@
 
 import UIKit
 
-extension VitaminProgressbar {
-    public enum Variant {
-        case linear(size: LinearSize, style: LinearStyle)
-        case circular(size: CircularSize, style: CircularStyle)
-    }
 
-    /// Size of the progress bar, that can be `.small`(64pt of diameter) or `.medium` (128pt of diameter)
-    public enum LinearSize {
-        case large
-        /// The progress bar will be 128pt of diameter
-        case medium
-        /// The progress bar will be 64pt of diameter
-        case small
-    }
+public enum VitaminProgressbarVariant {
+    case linear(size: VitaminProgressbarLinearSize, style: VitaminProgressbarLinearStyle)
+    case circular(size: VitaminProgressbarCircularSize, style: VitaminProgressbarCircularStyle)
+}
 
-    /// Style of a progress bar
-    public enum LinearStyle {
-        /// Only the cicular progress bar will be displayed
-        case empty
-        /// The progress percentage will be displayed in the center of the progress bar
-        case percentage
-    }
+/// Size of the progress bar, that can be `.small`(64pt of diameter) or `.medium` (128pt of diameter)
+public enum VitaminProgressbarLinearSize {
+    case large
+    /// The progress bar will be 128pt of diameter
+    case medium
+    /// The progress bar will be 64pt of diameter
+    case small
+}
 
-    /// Size of the progress bar, that can be `.small`(64pt of diameter) or `.medium` (128pt of diameter)
-    public enum CircularSize {
-        /// The progress bar will be 128pt of diameter
-        case medium
-        /// The progress bar will be 64pt of diameter
-        case small
-    }
+/// Style of a progress bar
+public enum VitaminProgressbarLinearStyle {
+    /// Only the cicular progress bar will be displayed
+    case empty
+    /// The progress percentage will be displayed in the center of the progress bar
+    case percentage
+}
 
-    /// Style of a progress bar
-    public enum CircularStyle {
-        /// Only the cicular progress bar will be displayed
-        case empty
-        /// The progress percentage will be displayed in the center of the progress bar
-        case percentage
-        /// A checkered flag will be displayed in the center of the progress bar
-        case image(UIImage)
-    }
+/// Size of the progress bar, that can be `.small`(64pt of diameter) or `.medium` (128pt of diameter)
+public enum VitaminProgressbarCircularSize {
+    /// The progress bar will be 128pt of diameter
+    case medium
+    /// The progress bar will be 64pt of diameter
+    case small
+}
 
-    /// Type of progress bar
-    public enum ProgressType {
-        /// The progress has a detarmined length, its progress depends on the `progress`property value
-        case determinate
-        /// The progress has an undetermined length, it turns around until it is manually stopped
-        case indeterminate
-    }
+/// Style of a progress bar
+public enum VitaminProgressbarCircularStyle {
+    /// Only the cicular progress bar will be displayed
+    case empty
+    /// The progress percentage will be displayed in the center of the progress bar
+    case percentage
+    /// A checkered flag will be displayed in the center of the progress bar
+    case image(UIImage)
+}
+
+/// Type of progress bar
+public enum VitaminProgressbarProgressType {
+    /// The progress has a detarmined length, its progress depends on the `progress`property value
+    case determinate
+    /// The progress has an undetermined length, it turns around until it is manually stopped
+    case indeterminate
 }
 
 // MARK: sizing properties
-extension VitaminProgressbar.CircularSize {
+extension VitaminProgressbarCircularSize {
     /// Diameter of the progress bar for a specific size
     var outerDiameter: CGFloat {
         if self == .medium {
@@ -91,7 +90,7 @@ extension VitaminProgressbar.CircularSize {
     }
 }
 
-extension VitaminProgressbar.LinearSize {
+extension VitaminProgressbarLinearSize {
     /// Line width of the progressbar for a specific size
     var lineWidth: CGFloat {
         switch self {
