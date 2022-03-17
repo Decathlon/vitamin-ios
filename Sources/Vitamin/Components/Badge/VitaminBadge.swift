@@ -57,15 +57,23 @@ public class VitaminBadge: UILabel {
 
     // padding constants of the `VitaminTag`
     private var padding: UIEdgeInsets {
+        // Insets will depend on the length of the text displayed in the badge :
+        // - if no test, insets are all equals on four sides to create a circle
         guard let intValue = value else {
             return UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
         }
 
+        // else if the value has one digit, we still want a cricle,
+        // but the size of the text should be taken into account
         if "\(intValue)".count == 1 {
+            // the insets will be slightly different between the automatic added badge
+            // (which do not use autolayout) and the manually added (which does)
             return automatic ? UIEdgeInsets(top: 3, left: 4, bottom: 1, right: 2) :
                 UIEdgeInsets(top: 3, left: 3, bottom: 1, right: 3)
         }
 
+        // else if the value has two digits or more (if more, it will be "99+"),
+        // insets are defined to create a rounded rect around the text
         return UIEdgeInsets(top: 3, left: 4, bottom: 1, right: 4)
     }
 

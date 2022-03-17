@@ -74,7 +74,7 @@ The following foundations are available :
 The following components are available :
 | Component | Description | Documentation |
 |-----------|-------------|---------------|
-|Badge | Different button styles from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/Button#readme)|
+|Badge | Badges from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/Badge#readme)|
 |Button | Different button styles from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/Button#readme)|
 |Switch | Swicth from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/Switch#readme)|
 |TextField | Different text fields styles from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/TextField#readme)|

@@ -37,7 +37,7 @@ You will have to handle everything on your own, Vitamin only provides the badge 
 
 
 #### Automatic method
-if you choose to use the method `addBadge(with:variant)`, it will instantiate the Badge, add it as a subview, and place it at the upper right corner od the view.
+if you choose to use the method `addBadge(with:variant)`, it will instantiate the Badge, add it as a subview, and place it at the upper right corner of the view.
 
 ```swift
 import Vitamin
@@ -45,7 +45,7 @@ import Vitamin
 myView.addBadge(with: 2, variant: .alert)
 ```
 
-You also can modify it by calling it with the convenience UIView extension method `modifyBadge(with:variant:)
+You also can modify it by calling it with the convenience UIView extension method `modifyBadge(with:variant:)`
 
 ```swift
 import Vitamin
@@ -58,9 +58,9 @@ You finally can remove it by calling the convenience UIView extension method `re
 ```swift
 import Vitamin
 
-// won't do anything if no badge is added by the above mlethod
+// won't do anything if no badge is added by the above method
 myView.removeBadge()
 ```
 
 
-Note: `VitaminBdage` inherits from UILabel, but you should not try to modify standard properties such as `numberOfLines`, or `text`, because that could lead to unexpected behaviours.
+Note: `VitaminBadge` inherits from UILabel, but you should not try to modify standard properties such as `numberOfLines`, or `text`, because that could lead to unexpected behaviors.
