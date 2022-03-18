@@ -45,7 +45,11 @@ public class VitaminTag: UILabel {
     /// indicates if the tag should be interactive, i.e. clickable, or not
     /// If set to true, it will launch the `vitaminTagWasClicked`method of the delegate
     /// if set to true but no delegate provided, nothing will happen
-    public var interactive = false
+    public var interactive = false {
+        didSet {
+            isUserInteractionEnabled = interactive
+        }
+    }
 
     /// Delegates that allows to define what to do when an interactive tag is clicked
     public weak var interactiveDelegate: VitaminTagInteractiveDelegate?
@@ -54,12 +58,6 @@ public class VitaminTag: UILabel {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
-        let tap = UITapGestureRecognizer(
-            target: self,
-            action: #selector(VitaminTag.tagClicked)
-        )
-        addGestureRecognizer(tap)
-        isUserInteractionEnabled = true
     }
 
     /// An initializer that instantiate a `VitaminTag` in a frame, with all default valmues for properties
@@ -72,6 +70,12 @@ public class VitaminTag: UILabel {
     private func commonInit() {
         self.backgroundColor = .clear
         self.layer.cornerRadius = VitaminRadius.radius100.rawValue
+        let tap = UITapGestureRecognizer(
+            target: self,
+            action: #selector(VitaminTag.tagClicked)
+        )
+        addGestureRecognizer(tap)
+        isUserInteractionEnabled = false
     }
 
     // Override the method to add padding when interactive
