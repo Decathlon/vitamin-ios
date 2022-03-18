@@ -85,6 +85,14 @@ final class TagViewController: UITableViewController {
         return datasource
     }
 
+    private var datasourceMonoInteractive: [VitaminTagDemoConfig] {
+        var datasource = datasourceBase
+        for i in 0..<datasource.count {
+            datasource[i].interactive = true
+        }
+        return datasource
+    }
+
     private lazy var datasourceMulti: [[VitaminTagDemoConfig]] = [
         datasourceBase,
         [
@@ -149,27 +157,44 @@ final class TagViewController: UITableViewController {
 
 extension TagViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
+        switch section {
+        case 0:
             return datasourceMono.count
-        } else {
+        case 1:
+            return datasourceMonoInteractive.count
+        default:
             return datasourceMulti.count
         }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            let config = datasourceMono[indexPath.row]
+        if indexPath.section == 0 || indexPath.section == 1 {
+            let config = indexPath.section == 0 ?
+                datasourceMono[indexPath.row] :
+                datasourceMonoInteractive[indexPath.row]
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "tagCell") as? MonoTagTableViewCell else {
                 let cell = MonoTagTableViewCell(style: .default, reuseIdentifier: "tagCell")
-                cell.update(variant: config.variant, text: config.text, icon: config.image)
+                cell.update(
+                    variant: config.variant,
+                    text: config.text,
+                    icon: config.image,
+                    interactive: config.interactive,
+                    delegate: self
+                )
                 cell.selectionStyle = .none
                 return cell
             }
-            cell.update(variant: config.variant, text: config.text, icon: config.image)
+            cell.update(
+                variant: config.variant,
+                text: config.text,
+                icon: config.image,
+                interactive: config.interactive,
+                delegate: self
+            )
             cell.selectionStyle = .none
             return cell
         } else {
@@ -189,24 +214,41 @@ extension TagViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard indexPath.section == 0  else {
-            return UITableView.automaticDimension
+        guard indexPath.section > 1   else {
+            return 150
         }
-        return 150
+        return UITableView.automaticDimension
     }
 
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard indexPath.section == 0  else {
-            return UITableView.automaticDimension
+        guard indexPath.section > 1   else {
+            return 150
         }
-        return 150
+        return UITableView.automaticDimension
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
+        switch section {
+        case 0:
             return "Mono Tag usage"
+        case 1:
+            return "Mono Interactive Tag usage"
+        default:
+            return "Multi Tag usage"
         }
-        return "Multiple Tag Usage"
+    }
+}
+
+extension TagViewController: VitaminTagInteractiveDelegate {
+    func vitaminTagWasClicked(_ vitaminTag: VitaminTag) {
+        let alert = UIAlertController(
+            title: "Interactive tag triggering",
+            message: "you clicked on the \(vitaminTag.variant.name) interactive tag",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+        self.present(alert, animated: false)
     }
 }
 
@@ -214,6 +256,7 @@ struct VitaminTagDemoConfig {
     var variant: VitaminTagVariant = .brandPrimary
     var text = "Tag"
     var image: UIImage?
+    var interactive = false
 }
 
 private extension VitaminTagVariant {

@@ -11,13 +11,21 @@ class MonoTagTableViewCell: UITableViewCell {
     @IBOutlet weak var fakeView: UIView!
     @IBOutlet weak var fakeLabel: UILabel!
 
-    func update(variant: VitaminTagVariant = .brandPrimary, text: String = "Tag", icon: UIImage? = nil) {
+    func update(
+        variant: VitaminTagVariant = .brandPrimary,
+        text: String = "Tag",
+        icon: UIImage? = nil,
+        interactive: Bool = false,
+        delegate: VitaminTagInteractiveDelegate? = nil
+    ) {
         fakeView.backgroundColor = VitaminColor.Core.Background.brandSecondary
         fakeLabel.attributedText = "This is a \(text) tag \(icon != nil ? "with an": "without") icon"
             .styled(as: .callout)
         vitaminTag.label = text
         vitaminTag.variant = variant
         vitaminTag.icon = icon
+        vitaminTag.interactive = interactive
+        vitaminTag.interactiveDelegate = delegate
     }
 }
 
