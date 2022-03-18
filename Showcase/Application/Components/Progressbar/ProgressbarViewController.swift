@@ -12,7 +12,7 @@ final class ProgressbarViewController: UITableViewController {
     }
 
     private var exampleImage: UIImage {
-        UIImage(named: "flag") ?? UIImage()
+        UIImage(named: "placeholder") ?? UIImage()
     }
 
     override func viewDidLoad() {

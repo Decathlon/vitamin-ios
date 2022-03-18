@@ -483,3 +483,10 @@ extension VitaminProgressbar {
         return animation
     }
 }
+
+// MARK: theme switching handling
+extension VitaminProgressbar {
+    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        trackLayer.strokeColor = self.trackColor.cgColor
+    }
+}
