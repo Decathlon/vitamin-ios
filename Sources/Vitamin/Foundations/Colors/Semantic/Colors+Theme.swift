@@ -15,6 +15,7 @@ extension VitaminColor {
                 public static let backgroundBrandPrimary = VitaminColor.Base.blue400.color
                 public static let backgroundBrandSecondary = VitaminColor.Base.blue50.color
                 public static let backgroundAccent = VitaminColor.Base.yellow400.color
+                public static let backgroundDiscount = VitaminColor.Base.red400.color
                 public static let backgroundAlert = VitaminColor.Base.red400.color
                 public static let backgroundPrimaryReversed = VitaminColor.Base.black.color
                 public static let backgroundBrandPrimaryReversed = VitaminColor.Base.white.color
@@ -65,6 +66,7 @@ extension VitaminColor {
                 public static let backgroundBrandPrimary = VitaminColor.Base.blue300.color
                 public static let backgroundBrandSecondary = VitaminColor.Base.blue700.color
                 public static let backgroundAccent = VitaminColor.Base.yellow400.color
+                public static let backgroundDiscount = VitaminColor.Base.red400.color
                 public static let backgroundAlert = VitaminColor.Base.red400.color
                 public static let backgroundPrimaryReversed = VitaminColor.Base.black.color
                 public static let backgroundBrandPrimaryReversed = VitaminColor.Base.black.color
