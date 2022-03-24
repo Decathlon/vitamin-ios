@@ -29,6 +29,10 @@
 		65F1BC1427CE2101002D08D8 /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F1BC1027CE2101002D08D8 /* AssetCollectionViewCell.swift */; };
 		65F1BC1527CE2101002D08D8 /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F1BC1127CE2101002D08D8 /* AssetsViewController.swift */; };
 		65F1BC1827CE22EF002D08D8 /* BaseImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F1BC1727CE22EE002D08D8 /* BaseImageCollectionViewController.swift */; };
+		65F1BC1F27CE8836002D08D8 /* ProgressbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F1BC1A27CE8836002D08D8 /* ProgressbarViewController.swift */; };
+		65F1BC2027CE8836002D08D8 /* LinearProgressbarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65F1BC1C27CE8836002D08D8 /* LinearProgressbarTableViewCell.xib */; };
+		65F1BC2127CE8836002D08D8 /* CircularProgressbarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65F1BC1D27CE8836002D08D8 /* CircularProgressbarTableViewCell.xib */; };
+		65F1BC2227CE8836002D08D8 /* ProgressbarTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F1BC1E27CE8836002D08D8 /* ProgressbarTableViewCells.swift */; };
 		AA68B4CB25681A5A00F1A4D7 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA68B4CA25681A5A00F1A4D7 /* ButtonTableViewCell.swift */; };
 		AA68B4CE25681A6700F1A4D7 /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA68B4CD25681A6700F1A4D7 /* ButtonTableViewCell.xib */; };
 		AAB029CE256805A900F08C74 /* ColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB029CD256805A900F08C74 /* ColorsViewController.swift */; };
@@ -66,6 +70,10 @@
 		65F1BC1027CE2101002D08D8 /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
 		65F1BC1127CE2101002D08D8 /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
 		65F1BC1727CE22EE002D08D8 /* BaseImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseImageCollectionViewController.swift; sourceTree = "<group>"; };
+		65F1BC1A27CE8836002D08D8 /* ProgressbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressbarViewController.swift; sourceTree = "<group>"; };
+		65F1BC1C27CE8836002D08D8 /* LinearProgressbarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LinearProgressbarTableViewCell.xib; sourceTree = "<group>"; };
+		65F1BC1D27CE8836002D08D8 /* CircularProgressbarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircularProgressbarTableViewCell.xib; sourceTree = "<group>"; };
+		65F1BC1E27CE8836002D08D8 /* ProgressbarTableViewCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressbarTableViewCells.swift; sourceTree = "<group>"; };
 		AA68B4CA25681A5A00F1A4D7 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		AA68B4CD25681A6700F1A4D7 /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
 		AAB029CD256805A900F08C74 /* ColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				AA68B4C7256811FC00F1A4D7 /* Button */,
+				65F1BC1927CE8836002D08D8 /* Progressbar */,
 				4AAD2B6D2767A99900727D8E /* Switch */,
 				4AAD2B60276771DB00727D8E /* TextField */,
 			);
@@ -291,6 +300,25 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		65F1BC1927CE8836002D08D8 /* Progressbar */ = {
+			isa = PBXGroup;
+			children = (
+				65F1BC1A27CE8836002D08D8 /* ProgressbarViewController.swift */,
+				65F1BC1B27CE8836002D08D8 /* Cell */,
+			);
+			path = Progressbar;
+			sourceTree = "<group>";
+		};
+		65F1BC1B27CE8836002D08D8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				65F1BC1C27CE8836002D08D8 /* LinearProgressbarTableViewCell.xib */,
+				65F1BC1D27CE8836002D08D8 /* CircularProgressbarTableViewCell.xib */,
+				65F1BC1E27CE8836002D08D8 /* ProgressbarTableViewCells.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		AA68B4C7256811FC00F1A4D7 /* Button */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,10 +437,12 @@
 				65D1B66B2787422100C1560B /* ShadowTableViewCell.xib in Resources */,
 				AAC5D44D2567FE720070667D /* LaunchScreen.storyboard in Resources */,
 				65F1BC1227CE2101002D08D8 /* LargeAssetCollectionViewCell.xib in Resources */,
+				65F1BC2127CE8836002D08D8 /* CircularProgressbarTableViewCell.xib in Resources */,
 				65F1BC1327CE2101002D08D8 /* AssetCollectionViewCell.xib in Resources */,
 				65B52A1F273944DC008D9B5E /* SwitchTableViewCell.xib in Resources */,
 				651EF252272C0AD500121F7A /* TextFieldTableViewCell.xib in Resources */,
 				65BD9F3D2768D06900EEDC0D /* IconCollectionViewCell.xib in Resources */,
+				65F1BC2027CE8836002D08D8 /* LinearProgressbarTableViewCell.xib in Resources */,
 				AAB029ED25680DEE00F08C74 /* ColorTableViewCell.xib in Resources */,
 				AA68B4CE25681A6700F1A4D7 /* ButtonTableViewCell.xib in Resources */,
 				AAC5D44A2567FE720070667D /* Assets.xcassets in Resources */,
@@ -455,6 +485,7 @@
 				65F1BC1427CE2101002D08D8 /* AssetCollectionViewCell.swift in Sources */,
 				65F1BC1527CE2101002D08D8 /* AssetsViewController.swift in Sources */,
 				65D1B6692787422100C1560B /* ShadowsViewController.swift in Sources */,
+				65F1BC2227CE8836002D08D8 /* ProgressbarTableViewCells.swift in Sources */,
 				AAC5D4412567FE710070667D /* AppDelegate.swift in Sources */,
 				65B52A1D27394136008D9B5E /* SwitchTableViewCell.swift in Sources */,
 				4AAD2B67276772D200727D8E /* MainTableViewController.swift in Sources */,
@@ -462,6 +493,7 @@
 				AAB029CE256805A900F08C74 /* ColorsViewController.swift in Sources */,
 				AAB029D4256805E200F08C74 /* ButtonsViewController.swift in Sources */,
 				65B52A1927392EDD008D9B5E /* SwitchViewController.swift in Sources */,
+				65F1BC1F27CE8836002D08D8 /* ProgressbarViewController.swift in Sources */,
 				65B52A232739553A008D9B5E /* TextFieldViewController.swift in Sources */,
 				AA68B4CB25681A5A00F1A4D7 /* ButtonTableViewCell.swift in Sources */,
 				651EF24D272BE8D500121F7A /* TextFieldTableViewCell.swift in Sources */,
