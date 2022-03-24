@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="253" id="2Yf-r3-uGN" customClass="MonoTagTableViewCell" customModule="Showcase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="253"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Yf-r3-uGN" id="D8e-Pg-om8">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="253"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UbD-6B-pAr">
+                        <rect key="frame" x="10" y="10" width="384" height="202"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfd-a3-Stx" customClass="VitaminTag" customModule="Vitamin">
+                                <rect key="frame" x="15" y="15" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hfd-a3-Stx" firstAttribute="leading" secondItem="UbD-6B-pAr" secondAttribute="leading" constant="15" id="iau-7K-uqS"/>
+                            <constraint firstItem="hfd-a3-Stx" firstAttribute="top" secondItem="UbD-6B-pAr" secondAttribute="top" constant="15" id="yQc-RN-PpI"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtZ-Yo-h4R">
+                        <rect key="frame" x="20" y="222" width="103" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="UbD-6B-pAr" firstAttribute="leading" secondItem="D8e-Pg-om8" secondAttribute="leading" constant="10" id="6wP-3p-PeX"/>
+                    <constraint firstAttribute="bottom" secondItem="WtZ-Yo-h4R" secondAttribute="bottom" constant="10" id="EgW-9w-KiC"/>
+                    <constraint firstAttribute="trailing" secondItem="UbD-6B-pAr" secondAttribute="trailing" constant="20" id="HfE-h4-abg"/>
+                    <constraint firstItem="WtZ-Yo-h4R" firstAttribute="top" secondItem="UbD-6B-pAr" secondAttribute="bottom" constant="10" id="Kal-Od-6zz"/>
+                    <constraint firstItem="UbD-6B-pAr" firstAttribute="top" secondItem="D8e-Pg-om8" secondAttribute="top" constant="10" id="QbS-pU-Duf"/>
+                    <constraint firstItem="WtZ-Yo-h4R" firstAttribute="leading" secondItem="D8e-Pg-om8" secondAttribute="leading" constant="20" id="e5M-0p-KHu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="fakeLabel" destination="WtZ-Yo-h4R" id="sve-hr-Lcx"/>
+                <outlet property="fakeView" destination="UbD-6B-pAr" id="u6K-Dk-ptL"/>
+                <outlet property="vitaminTag" destination="hfd-a3-Stx" id="ac0-K3-KOw"/>
+            </connections>
+            <point key="canvasLocation" x="142.02898550724638" y="86.71875"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
