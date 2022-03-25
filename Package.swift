@@ -26,6 +26,7 @@ let package = Package(
             dependencies: [],
             exclude: [
                 "Utils/SwiftGen",
+                "Components/Badge/README.md",
                 "Components/Button/README.md",
                 "Components/Progressbar/README.md",
                 "Components/Switch/README.md",

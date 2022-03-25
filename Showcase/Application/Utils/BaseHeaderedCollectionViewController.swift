@@ -6,8 +6,20 @@
 import UIKit
 import Vitamin
 
-class BaseImageCollectionViewController: UICollectionViewController {
-    var sections: [BaseImageSection] = []
+class BaseHeaderedCollectionViewController: UICollectionViewController, UICollectionViewControllerWithHeader {
+    var sectionHeaders: [String] = []
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionView.register(
+            UICollectionReusableView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: "header")
+
+        if let flow = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flow.headerReferenceSize = CGSize(width: view.frame.width, height: 55)
+        }
+    }
 
     override func collectionView(
         _ collectionView: UICollectionView,
@@ -35,7 +47,7 @@ class BaseImageCollectionViewController: UICollectionViewController {
 
         if let headerLabel = headerView.subviews[0] as? UILabel {
             headerLabel.backgroundColor = .clear
-            headerLabel.text = self.sections[indexPath.section].name.uppercased()
+            headerLabel.text = self.sectionHeaders[indexPath.section].uppercased()
             headerLabel.font = UIFont.systemFont(ofSize: 13)
             headerLabel.textColor = VitaminColor.Core.Content.tertiary
             headerLabel.textAlignment = .left
@@ -43,20 +55,26 @@ class BaseImageCollectionViewController: UICollectionViewController {
 
         return headerView
     }
+}
 
-    override func collectionView(
-        _ collectionView: UICollectionView,
-        didSelectItemAt indexPath: IndexPath
-    ) {
-        UIPasteboard.general.string = sections[indexPath.section].items[indexPath.row].name
+protocol BaseNamedSection {
+    var name: String { get }
+}
+
+struct NamedSection: BaseNamedSection {
+    let name: String
+}
+
+protocol UICollectionViewControllerWithHeader {
+    func fillBaseHeaderSections(namedSections: [BaseNamedSection]) -> [String]
+}
+
+extension UICollectionViewControllerWithHeader {
+    func fillBaseHeaderSections(namedSections: [BaseNamedSection]) -> [String] {
+        var localSectionsHeaders: [String] = []
+        namedSections.forEach {
+            localSectionsHeaders.append($0.name)
+        }
+        return localSectionsHeaders
     }
-}
-
-protocol BaseImageSection {
-    var name: String { get }
-    var items: [BaseImageItem] { get }
-}
-
-protocol BaseImageItem {
-    var name: String { get }
 }

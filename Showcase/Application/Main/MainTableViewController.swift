@@ -70,6 +70,7 @@ extension MainTableViewController {
                 MenuItem(name: "🖋 Typography", viewController: TypographyViewController())
             ]),
             MenuSection(name: "🧩 Components", items: [
+                MenuItem(name: "🥇 Badge", viewController: BadgesViewController()),
                 MenuItem(name: "🕹 Button", viewController: ButtonsViewController()),
                 MenuItem(name: "⏳ Progressbar", viewController: ProgressbarViewController()),
                 MenuItem(name: "🎚 Switch", viewController: SwitchViewController()),
