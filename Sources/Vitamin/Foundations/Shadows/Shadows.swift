@@ -55,7 +55,7 @@ public enum VitaminShadow: String {
         if self == .none {
             return UIColor.clear
         }
-        return VitaminColor.Base.blue600.color.withAlphaComponent(0.1)
+        return VitaminColor.Core.Shadow.shadow
     }
 }
 
