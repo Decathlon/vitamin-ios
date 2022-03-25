@@ -62,7 +62,9 @@ extension ColorsViewController {
             ColorSection(name: "Content", items: makeContentColorItems()),
             ColorSection(name: "Border", items: makeBorderColorItems()),
             ColorSection(name: "Hover", items: makeHoverColorItems()),
-            ColorSection(name: "Active", items: makeActiveColorItems())
+            ColorSection(name: "Active", items: makeActiveColorItems()),
+            ColorSection(name: "Decorative", items: makeDecorativeColorItems()),
+            ColorSection(name: "Shadow", items: makeShadowColorItems())
         ]
     }
 
@@ -161,8 +163,8 @@ extension ColorsViewController {
                       color: VitaminColor.Core.Hover.primaryReversedTransparent),
             ColorItem(name: "SecondaryReversedTransparent",
                       color: VitaminColor.Core.Hover.secondaryReversedTransparent),
-            ColorItem(name: "BrandReversedTransparent",
-                      color: VitaminColor.Core.Hover.brandReversedTransparent)
+            ColorItem(name: "TertiaryReversedTransparent",
+                      color: VitaminColor.Core.Hover.tertiaryReversedTransparent)
         ]
     }
 
@@ -190,6 +192,34 @@ extension ColorsViewController {
                       color: VitaminColor.Core.Active.tertiaryReversedTransparent),
             ColorItem(name: "BrandReversedTransparent",
                       color: VitaminColor.Core.Active.brandReversedTransparent)
+        ]
+    }
+
+    private func makeDecorativeColorItems() -> [ColorItem] {
+        [
+            ColorItem(name: "DecorativeGravel",
+                      color: VitaminColor.Core.Decorative.gravel),
+            ColorItem(name: "DecorativeBrick",
+                      color: VitaminColor.Core.Decorative.brick),
+            ColorItem(name: "DecorativeSaffron",
+                      color: VitaminColor.Core.Decorative.saffron),
+            ColorItem(name: "DecorativeGold",
+                      color: VitaminColor.Core.Decorative.gold),
+            ColorItem(name: "DecorativeJade",
+                      color: VitaminColor.Core.Decorative.jade),
+            ColorItem(name: "DecorativeEmerald",
+                      color: VitaminColor.Core.Decorative.emerald),
+            ColorItem(name: "DecorativeCobalt",
+                      color: VitaminColor.Core.Decorative.cobalt),
+            ColorItem(name: "DecorativeAmethyst",
+                      color: VitaminColor.Core.Decorative.amethyst)
+        ]
+    }
+
+    private func makeShadowColorItems() -> [ColorItem] {
+        [
+            ColorItem(name: "ShadowShadow",
+                      color: VitaminColor.Core.Shadow.shadow)
         ]
     }
 }

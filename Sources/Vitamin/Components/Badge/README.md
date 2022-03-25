@@ -50,7 +50,7 @@ You also can modify it by calling it with the convenience UIView extension metho
 ```swift
 import Vitamin
 
-// won't do anything if no badge is added by the above mlethod
+// won't do anything if no badge is added by the above method
 myView.modifyBadge(with: nil, variant: .brand)
 ```
 
