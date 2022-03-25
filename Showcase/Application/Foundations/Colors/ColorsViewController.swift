@@ -82,7 +82,7 @@ extension ColorsViewController {
                       color: VitaminColor.Core.Background.brandSecondary),
             ColorItem(name: "Accent",
                       color: VitaminColor.Core.Background.accent),
-            ColorItem(name: "Discount",
+            ColorItem(name: "Alert",
                       color: VitaminColor.Core.Background.alert),
             ColorItem(name: "PrimaryReversed",
                       color: VitaminColor.Core.Background.primaryReversed),

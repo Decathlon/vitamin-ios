@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gQz-jh-bh3" customClass="BadgeCollectionViewCell" customModule="Showcase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="442" height="298"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iV9-8d-4ME">
+                <rect key="frame" x="0.0" y="0.0" width="442" height="298"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7A1-PR-Pv3">
+                        <rect key="frame" x="189" y="97" width="64" height="64"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="64" id="ckG-ND-naD"/>
+                            <constraint firstAttribute="width" constant="64" id="gvZ-NT-cBY"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0v-XC-awW" customClass="VitaminBadge" customModule="Vitamin">
+                        <rect key="frame" x="232" y="86.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uu9-FO-hSc">
+                        <rect key="frame" x="10" y="171" width="422" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXc-7b-grT" customClass="VitaminButton" customModule="Vitamin">
+                        <rect key="frame" x="10" y="194.5" width="422" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="zFi-5S-kDQ"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="addRemoveButtonClicked" destination="gQz-jh-bh3" eventType="touchUpInside" id="EIe-Wn-5Tb"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="T0v-XC-awW" firstAttribute="centerX" secondItem="7A1-PR-Pv3" secondAttribute="trailing" id="54k-Zj-wfz"/>
+                    <constraint firstItem="uu9-FO-hSc" firstAttribute="leading" secondItem="iV9-8d-4ME" secondAttribute="leading" constant="10" id="5Dc-AM-4ct"/>
+                    <constraint firstItem="OXc-7b-grT" firstAttribute="top" secondItem="uu9-FO-hSc" secondAttribute="bottom" constant="3" id="BsN-Q4-wiw"/>
+                    <constraint firstItem="uu9-FO-hSc" firstAttribute="centerX" secondItem="iV9-8d-4ME" secondAttribute="centerX" id="Eo1-gz-EuF"/>
+                    <constraint firstItem="OXc-7b-grT" firstAttribute="leading" secondItem="iV9-8d-4ME" secondAttribute="leading" constant="10" id="N1C-S1-qM6"/>
+                    <constraint firstItem="uu9-FO-hSc" firstAttribute="top" secondItem="7A1-PR-Pv3" secondAttribute="bottom" constant="10" id="R6a-cV-2Lh"/>
+                    <constraint firstAttribute="trailing" secondItem="OXc-7b-grT" secondAttribute="trailing" constant="10" id="REn-3X-RL0"/>
+                    <constraint firstAttribute="trailing" secondItem="uu9-FO-hSc" secondAttribute="trailing" constant="10" id="UJh-Iw-l6u"/>
+                    <constraint firstItem="7A1-PR-Pv3" firstAttribute="centerY" secondItem="iV9-8d-4ME" secondAttribute="centerY" constant="-20" id="V1c-0k-EAp"/>
+                    <constraint firstItem="7A1-PR-Pv3" firstAttribute="centerX" secondItem="iV9-8d-4ME" secondAttribute="centerX" id="mkK-eW-Bbm"/>
+                    <constraint firstItem="T0v-XC-awW" firstAttribute="centerY" secondItem="7A1-PR-Pv3" secondAttribute="top" id="zqq-09-p79"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="442" height="298"/>
+            <connections>
+                <outlet property="badge" destination="T0v-XC-awW" id="vbs-VL-Zp4"/>
+                <outlet property="button" destination="OXc-7b-grT" id="O1i-HM-9Bq"/>
+                <outlet property="detailLabel" destination="uu9-FO-hSc" id="BVn-Ej-9Iv"/>
+                <outlet property="fakeView" destination="7A1-PR-Pv3" id="M4q-bS-3py"/>
+            </connections>
+            <point key="canvasLocation" x="282.60869565217394" y="205.58035714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
