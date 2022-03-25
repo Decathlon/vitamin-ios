@@ -163,8 +163,8 @@ extension ColorsViewController {
                       color: VitaminColor.Core.Hover.primaryReversedTransparent),
             ColorItem(name: "SecondaryReversedTransparent",
                       color: VitaminColor.Core.Hover.secondaryReversedTransparent),
-            ColorItem(name: "BrandReversedTransparent",
-                      color: VitaminColor.Core.Hover.brandReversedTransparent)
+            ColorItem(name: "TertiaryReversedTransparent",
+                      color: VitaminColor.Core.Hover.tertiaryReversedTransparent)
         ]
     }
 

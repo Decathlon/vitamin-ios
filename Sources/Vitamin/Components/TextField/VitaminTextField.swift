@@ -648,9 +648,9 @@ extension VitaminTextField.State {
         case .error:
             return VitaminColor.Core.Content.negative
         case .disabled:
-            return VitaminColor.Core.Content.tertiary.disabledColor()
+            return VitaminColor.Core.Content.secondary.disabledColor()
         default:
-            return VitaminColor.Core.Content.tertiary
+            return VitaminColor.Core.Content.secondary
         }
     }
 

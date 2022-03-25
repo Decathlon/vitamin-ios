@@ -11,7 +11,7 @@ extension VitaminColor.Core {
             let components = VitaminColor.Core.Hover.primary.hslComponents()
             return UIColor(hue: components.hue,
                            saturation: components.saturation,
-                           lightness: components.lightness + (1 - components.lightness) * 0.35,
+                           lightness: components.lightness * 0.97,
                            alpha: 1)
         }
 

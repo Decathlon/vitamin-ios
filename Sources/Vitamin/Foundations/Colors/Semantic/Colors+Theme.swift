@@ -69,7 +69,7 @@ extension VitaminColor {
                 public static let backgroundAccent = VitaminColor.Base.yellow400.color
                 @available(*, deprecated, renamed: "backgroundAlert")
                 public static let backgroundDiscount = VitaminColor.Base.red400.color
-                public static let backgroundAlert = VitaminColor.Base.red400.color
+                public static let backgroundAlert = VitaminColor.Base.red300.color
                 public static let backgroundPrimaryReversed = VitaminColor.Base.black.color
                 public static let backgroundBrandPrimaryReversed = VitaminColor.Base.black.color
 

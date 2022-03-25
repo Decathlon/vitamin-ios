@@ -60,8 +60,13 @@ extension VitaminColor.Core {
             VitaminColor.Core.Content.primaryReversed.withAlphaComponent(0.02)
         }
 
-        public static var brandReversedTransparent: UIColor {
+        public static var tertiaryReversedTransparent: UIColor {
             VitaminColor.Core.Content.primaryReversed.withAlphaComponent(0.8)
+        }
+
+        @available(*, deprecated, renamed: "tertiaryReversedTransparent")
+        public static var brandReversedTransparent: UIColor {
+            tertiaryReversedTransparent
         }
     }
 }
