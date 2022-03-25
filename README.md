@@ -76,7 +76,9 @@ The following components are available :
 |-----------|-------------|---------------|
 |Badge | Badges from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/Badge#readme)|
 |Button | Different button styles from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/Button#readme)|
+|Progressbar | Different progressbar styles from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/Progressbar#readme)|
 |Switch | Swicth from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/Switch#readme)|
+|Tag | Tag from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/Tag#readme)|
 |TextField | Different text fields styles from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/TextField#readme)|
 
 ## Special thanks

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="I6P-g1-DRn" customClass="TagCollectionViewCell" customModule="Showcase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="63" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iqZ-yi-6Dv">
+                <rect key="frame" x="0.0" y="0.0" width="63" height="66"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvL-px-DxA" customClass="VitaminTag" customModule="Vitamin">
+                        <rect key="frame" x="0.0" y="0.0" width="63" height="66"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="IvL-px-DxA" secondAttribute="bottom" id="6ez-FF-cRT"/>
+                    <constraint firstItem="IvL-px-DxA" firstAttribute="leading" secondItem="iqZ-yi-6Dv" secondAttribute="leading" id="QLa-fR-M3T"/>
+                    <constraint firstItem="IvL-px-DxA" firstAttribute="top" secondItem="iqZ-yi-6Dv" secondAttribute="top" id="UyD-iZ-PMI"/>
+                    <constraint firstAttribute="trailing" secondItem="IvL-px-DxA" secondAttribute="trailing" id="heR-7p-e9u"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="63" height="66"/>
+            <connections>
+                <outlet property="vitaminTag" destination="IvL-px-DxA" id="7fZ-w8-a1P"/>
+            </connections>
+            <point key="canvasLocation" x="334.05797101449281" y="62.946428571428569"/>
+        </collectionViewCell>
+    </objects>
+</document>

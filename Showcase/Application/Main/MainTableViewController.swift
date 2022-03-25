@@ -72,7 +72,9 @@ extension MainTableViewController {
             MenuSection(name: "🧩 Components", items: [
                 MenuItem(name: "🥇 Badge", viewController: BadgesViewController()),
                 MenuItem(name: "🕹 Button", viewController: ButtonsViewController()),
+                MenuItem(name: "⏳ Progressbar", viewController: ProgressbarViewController()),
                 MenuItem(name: "🎚 Switch", viewController: SwitchViewController()),
+                MenuItem(name: "🏷 Tag", viewController: TagViewController()),
                 MenuItem(name: "💬 TextField", viewController: TextFieldViewController())
             ])
         ]

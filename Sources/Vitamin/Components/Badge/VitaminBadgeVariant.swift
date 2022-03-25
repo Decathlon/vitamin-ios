@@ -24,7 +24,7 @@ public enum VitaminBadgeVariant {
         case .accent:
             return VitaminColor.Core.Background.accent
         case .alert:
-            return VitaminColor.Core.Background.discount
+            return VitaminColor.Core.Background.alert
         }
     }
 
