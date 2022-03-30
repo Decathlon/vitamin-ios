@@ -17,7 +17,10 @@ let package = Package(
             targets: ["VitaminCommon"]),
         .library(
             name: "VitaminUIKit",
-            targets: ["VitaminUIKit"])
+            targets: ["VitaminUIKit"]),
+        .library(
+            name: "VitaminSwiftUI",
+            targets: ["VitaminSwiftUI"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -26,7 +29,7 @@ let package = Package(
     targets: [
         .target(
             name: "Vitamin",
-            dependencies: ["VitaminUIKit"],
+            dependencies: ["VitaminUIKit", "VitaminSwiftUI"],
             path: "Sources/Vitamin"),
         .target(
             name: "VitaminCommon",
@@ -62,6 +65,12 @@ let package = Package(
             ],
             resources: [
                 .process("Components/TextField/VitaminTextField.xib")
+            ]),
+        .target(
+            name: "VitaminSwiftUI",
+            dependencies: ["VitaminCommon"],
+            path: "Sources/VitaminSwiftUI",
+            exclude: [
             ])
     ]
 )
