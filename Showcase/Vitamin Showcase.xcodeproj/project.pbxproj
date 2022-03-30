@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4AAD2B67276772D200727D8E /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD2B66276772D200727D8E /* MainTableViewController.swift */; };
+		4AFF2B2D27F4D12600F6C3F8 /* Vitamin in Frameworks */ = {isa = PBXBuildFile; productRef = 4AFF2B2C27F4D12600F6C3F8 /* Vitamin */; };
 		651EF24D272BE8D500121F7A /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EF24C272BE8D500121F7A /* TextFieldTableViewCell.swift */; };
 		651EF252272C0AD500121F7A /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651EF251272C0AD500121F7A /* TextFieldTableViewCell.xib */; };
 		6521D85F27DA100A00A15A06 /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6521D85E27DA100A00A15A06 /* TagCollectionViewCell.xib */; };
@@ -114,7 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				654642B8276A9F5700213415 /* Vitamin in Frameworks */,
+				4AFF2B2D27F4D12600F6C3F8 /* Vitamin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,7 +452,7 @@
 			);
 			name = Showcase;
 			packageProductDependencies = (
-				654642B7276A9F5700213415 /* Vitamin */,
+				4AFF2B2C27F4D12600F6C3F8 /* Vitamin */,
 			);
 			productName = VitaminDemo;
 			productReference = AAC5D43D2567FE710070667D /* Showcase.app */;
@@ -778,7 +779,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		654642B7276A9F5700213415 /* Vitamin */ = {
+		4AFF2B2C27F4D12600F6C3F8 /* Vitamin */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Vitamin;
 		};
