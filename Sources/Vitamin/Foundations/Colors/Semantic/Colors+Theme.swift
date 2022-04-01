@@ -70,7 +70,7 @@ extension VitaminColor {
                 @available(*, deprecated, renamed: "backgroundAlert")
                 public static let backgroundDiscount = VitaminColor.Base.red400.color
                 public static let backgroundAlert = VitaminColor.Base.red300.color
-                public static let backgroundPrimaryReversed = VitaminColor.Base.black.color
+                public static let backgroundPrimaryReversed = VitaminColor.Base.white.color
                 public static let backgroundBrandPrimaryReversed = VitaminColor.Base.black.color
 
                 public static let contentPrimary = VitaminColor.Base.white.color
