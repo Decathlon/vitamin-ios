@@ -120,7 +120,7 @@ extension IconsViewController {
                 IconItem(name: "Vitamix.Fill.Buildings.home.image", image: Vitamix.Fill.Buildings.home.image),
                 IconItem(name: "Vitamix.Fill.Buildings.store.image", image: Vitamix.Fill.Buildings.store.image)
             ]),
-            IconSection(name: "Buildings - Line", items: [
+            IconSection(name: "Business - Line", items: [
                 IconItem(name: "Vitamix.Line.Business.award.image", image: Vitamix.Line.Business.award.image),
                 IconItem(name: "Vitamix.Line.Business.calendar.image", image: Vitamix.Line.Business.calendar.image),
                 IconItem(name: "Vitamix.Line.Business.calendar2.image", image: Vitamix.Line.Business.calendar2.image),
@@ -134,7 +134,7 @@ extension IconsViewController {
                 IconItem(name: "Vitamix.Line.Business.mailSend.image", image: Vitamix.Line.Business.mailSend.image),
                 IconItem(name: "Vitamix.Line.Business.printer.image", image: Vitamix.Line.Business.printer.image)
             ]),
-            IconSection(name: "Buildings - Fill", items: [
+            IconSection(name: "Business - Fill", items: [
                 IconItem(name: "Vitamix.Fill.Business.award.image", image: Vitamix.Fill.Business.award.image),
                 IconItem(name: "Vitamix.Fill.Business.calendar.image", image: Vitamix.Fill.Business.calendar.image),
                 IconItem(name: "Vitamix.Fill.Business.calendar2.image", image: Vitamix.Fill.Business.calendar2.image),

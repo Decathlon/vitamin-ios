@@ -13,7 +13,7 @@ struct MainView: View {
                 makeSection("🌳 Foundations") {
                     NavigationLink("🎇 Assets", destination: AssetsView())
                     NavigationLink("🎨 Colors", destination: EmptyView())
-                    NavigationLink("🖼 Icons", destination: EmptyView())
+                    NavigationLink("🖼 Icons", destination: IconsView())
                     NavigationLink("⭕️ Radius", destination: EmptyView())
                     NavigationLink("🌘 Shadows", destination: EmptyView())
                     NavigationLink("🖋 Typography", destination: EmptyView())

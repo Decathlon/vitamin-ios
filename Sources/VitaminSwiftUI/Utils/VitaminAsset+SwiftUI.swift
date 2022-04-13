@@ -12,3 +12,10 @@ extension VitaminAsset {
         image.swiftUIImage
     }
 }
+
+@available(iOS 13, *)
+extension VitaminImageAsset {
+    public var swiftUIImage: Image {
+        image.swiftUIImage
+    }
+}
