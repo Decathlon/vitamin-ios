@@ -38,23 +38,17 @@ extension AssetsView {
 
     @ViewBuilder
     private func makeFlagsSection() -> some View {
-        makeAssetSection("Flags") {
-            EmptyView()
-        }
+        makeAssetSection("Flags", assets: AssetsModel.flags)
     }
 
     @ViewBuilder
     private func makePaymentSection() -> some View {
-        makeAssetSection("Payment") {
-            EmptyView()
-        }
+        makeAssetSection("Payment", assets: AssetsModel.payment)
     }
 
     @ViewBuilder
     private func makePlaceholdersSection() -> some View {
-        makeAssetSection("Placeholders") {
-            makeSmallRow(asset: VitaminAssets.Placeholder.landscape)
-        }
+        makeAssetSection("Placeholders", assets: AssetsModel.placeholders)
     }
 }
 
@@ -75,6 +69,15 @@ extension AssetsView {
         }
     }
 
+    private func makeAssetSection(_ title: String, assets: [VitaminAsset]) -> some View {
+        makeAssetSection(title) {
+            let splitAssets = assets.chunked(into: 4)
+            ForEach(splitAssets, id: \.self) { assetsLine in
+                makeMultiRow(assets: assetsLine)
+            }
+        }
+    }
+
     private func makeRow(asset: VitaminAsset) -> some View {
         makeRow(asset.name) {
             asset.swiftUIImage
@@ -85,7 +88,16 @@ extension AssetsView {
         makeRow(asset.name) {
             asset.swiftUIImage
                 .resizable()
+                .aspectRatio(contentMode: .fit)
                 .frame(width: 44, height: 44)
+        }
+    }
+
+    private func makeMultiRow(assets: [VitaminAsset]) -> some View {
+        HStack {
+            ForEach(assets, id: \.name) { asset in
+                makeSmallRow(asset: asset)
+            }
         }
     }
 }
