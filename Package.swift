@@ -10,14 +10,11 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "Vitamin",
-            targets: ["Vitamin"]),
-        .library(
             name: "VitaminCommon",
             targets: ["VitaminCommon"]),
         .library(
-            name: "VitaminUIKit",
-            targets: ["VitaminUIKit"]),
+            name: "Vitamin",
+            targets: ["Vitamin"]),
         .library(
             name: "VitaminSwiftUI",
             targets: ["VitaminSwiftUI"])
@@ -27,10 +24,6 @@ let package = Package(
         // .package(url: /* package url */, from: "1.0.0"),
     ],
     targets: [
-        .target(
-            name: "Vitamin",
-            dependencies: ["VitaminUIKit", "VitaminSwiftUI"],
-            path: "Sources/Vitamin"),
         .target(
             name: "VitaminCommon",
             dependencies: [],
@@ -52,7 +45,7 @@ let package = Package(
                 .process("Foundations/Typography/Fonts/RobotoCondensed-BoldItalic.ttf")
             ]),
         .target(
-            name: "VitaminUIKit",
+            name: "Vitamin",
             dependencies: ["VitaminCommon"],
             path: "Sources/VitaminUIKit",
             exclude: [

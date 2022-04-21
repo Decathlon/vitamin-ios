@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4A07433927D94BB0005BD446 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07433827D94BB0005BD446 /* MainView.swift */; };
 		4A07433E27D9541F005BD446 /* NavigationTitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07433D27D9541F005BD446 /* NavigationTitleModifier.swift */; };
+		4A35E4602811EE2E001526D8 /* Vitamin in Frameworks */ = {isa = PBXBuildFile; productRef = 4A35E45F2811EE2E001526D8 /* Vitamin */; };
+		4A35E4622811EE2E001526D8 /* VitaminCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 4A35E4612811EE2E001526D8 /* VitaminCommon */; };
+		4A35E4642811EE2E001526D8 /* VitaminSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4A35E4632811EE2E001526D8 /* VitaminSwiftUI */; };
 		4A4643902806C91700942AD7 /* AssetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A46438F2806C91700942AD7 /* AssetsModel.swift */; };
 		4A4643932806D60B00942AD7 /* IconsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4643922806D60B00942AD7 /* IconsView.swift */; };
 		4A4643952806D61C00942AD7 /* IconsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4643942806D61C00942AD7 /* IconsModel.swift */; };
@@ -17,7 +20,6 @@
 		4ACCCBD52805E71400FD184B /* AssetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCCBD42805E71400FD184B /* AssetsView.swift */; };
 		4ACCCBD72805E7AE00FD184B /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCCBD62805E7AE00FD184B /* ViewExtension.swift */; };
 		4ACCCBD92805FF7100FD184B /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCCBD82805FF7100FD184B /* ArrayExtension.swift */; };
-		4AFF2B2D27F4D12600F6C3F8 /* Vitamin in Frameworks */ = {isa = PBXBuildFile; productRef = 4AFF2B2C27F4D12600F6C3F8 /* Vitamin */; };
 		651EF24D272BE8D500121F7A /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EF24C272BE8D500121F7A /* TextFieldTableViewCell.swift */; };
 		651EF252272C0AD500121F7A /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651EF251272C0AD500121F7A /* TextFieldTableViewCell.xib */; };
 		6521D85F27DA100A00A15A06 /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6521D85E27DA100A00A15A06 /* TagCollectionViewCell.xib */; };
@@ -132,7 +134,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AFF2B2D27F4D12600F6C3F8 /* Vitamin in Frameworks */,
+				4A35E4622811EE2E001526D8 /* VitaminCommon in Frameworks */,
+				4A35E4642811EE2E001526D8 /* VitaminSwiftUI in Frameworks */,
+				4A35E4602811EE2E001526D8 /* Vitamin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,7 +562,9 @@
 			);
 			name = Showcase;
 			packageProductDependencies = (
-				4AFF2B2C27F4D12600F6C3F8 /* Vitamin */,
+				4A35E45F2811EE2E001526D8 /* Vitamin */,
+				4A35E4612811EE2E001526D8 /* VitaminCommon */,
+				4A35E4632811EE2E001526D8 /* VitaminSwiftUI */,
 			);
 			productName = VitaminDemo;
 			productReference = AAC5D43D2567FE710070667D /* Showcase.app */;
@@ -894,9 +900,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4AFF2B2C27F4D12600F6C3F8 /* Vitamin */ = {
+		4A35E45F2811EE2E001526D8 /* Vitamin */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Vitamin;
+		};
+		4A35E4612811EE2E001526D8 /* VitaminCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VitaminCommon;
+		};
+		4A35E4632811EE2E001526D8 /* VitaminSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VitaminSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
