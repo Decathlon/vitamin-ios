@@ -10,21 +10,23 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             List {
-                makeSection("🌳 Foundations") {
-                    NavigationLink("🎇 Assets", destination: AssetsView())
-                    NavigationLink("🎨 Colors", destination: EmptyView())
-                    NavigationLink("🖼 Icons", destination: IconsView())
-                    NavigationLink("⭕️ Radius", destination: EmptyView())
-                    NavigationLink("🌘 Shadows", destination: EmptyView())
-                    NavigationLink("🖋 Typography", destination: EmptyView())
-                }
-                makeSection("🧩 Components") {
-                    NavigationLink("🕹 Button", destination: EmptyView())
-                    NavigationLink("🎚 Switch", destination: EmptyView())
-                    NavigationLink("💬 TextField", destination: EmptyView())
-                }
+                makeFoundationsSection()
+                makeComponentsSection()
             }
             .customNavigationTitle("Vitamin Showcase", displayMode: .inline)
+        }
+    }
+
+    private func makeFoundationsSection() -> some View {
+        makeSection("🌳 Foundations") {
+            NavigationLink("🎇 Assets", destination: AssetsView())
+            NavigationLink("🖼 Icons", destination: IconsView())
+        }
+    }
+
+    private func makeComponentsSection() -> some View {
+        makeSection("🧩 Components") {
+            EmptyView()
         }
     }
 }
