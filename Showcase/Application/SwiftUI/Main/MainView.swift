@@ -15,6 +15,7 @@ struct MainView: View {
             }
             .customNavigationTitle("Vitamin Showcase", displayMode: .inline)
         }
+        .navigationViewStyle(.stack)
     }
 
     private func makeFoundationsSection() -> some View {
