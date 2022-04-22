@@ -21,6 +21,7 @@ struct MainView: View {
     private func makeFoundationsSection() -> some View {
         makeSection("🌳 Foundations") {
             NavigationLink("🎇 Assets", destination: AssetsView())
+            NavigationLink("🎨 Colors", destination: ColorsView())
             NavigationLink("🖼 Icons", destination: IconsView())
         }
     }
