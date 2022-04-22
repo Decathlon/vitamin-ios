@@ -29,12 +29,6 @@ let package = Package(
             dependencies: [],
             path: "Sources/VitaminCommon",
             exclude: [
-                "Foundations/Assets/README.md",
-                "Foundations/Colors/README.md",
-                "Foundations/Icons/README.md",
-                "Foundations/Radiuses/README.md",
-                "Foundations/Shadows/README.md",
-                "Foundations/Typography/README.md",
                 "Utils/SwiftGen"
             ],
             resources: [
@@ -54,7 +48,13 @@ let package = Package(
                 "Components/Progressbar/README.md",
                 "Components/Switch/README.md",
                 "Components/Tag/README.md",
-                "Components/TextField/README.md"
+                "Components/TextField/README.md",
+                "Foundations/Assets/README.md",
+                "Foundations/Colors/README.md",
+                "Foundations/Icons/README.md",
+                "Foundations/Radiuses/README.md",
+                "Foundations/Shadows/README.md",
+                "Foundations/Typography/README.md"
             ],
             resources: [
                 .process("Components/TextField/VitaminTextField.xib")
@@ -64,6 +64,12 @@ let package = Package(
             dependencies: ["VitaminCommon"],
             path: "Sources/VitaminSwiftUI",
             exclude: [
+                "Foundations/Assets/README.md",
+                "Foundations/Colors/README.md",
+                "Foundations/Icons/README.md",
+                "Foundations/Radiuses/README.md",
+                "Foundations/Shadows/README.md",
+                "Foundations/Typography/README.md"
             ])
     ]
 )

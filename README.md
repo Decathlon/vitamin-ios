@@ -62,24 +62,24 @@ Foundations are core bricks of Vitamin Design System, and Components are high le
 The following foundations are available :
 | Element | Description | Documentation |
 |---------|-------------|---------------|
-|Assets   | Set of graphic assets usable in the Design System. | [Documentation](./Sources/Vitamin/Foundations/Assets#readme)|
-|Colors   | Semantics and base colors of the Design System. | [Documentation](./Sources/Vitamin/Foundations/Colors#readme)|
-|Icons   | Set of icons usable in the Design System. | [Documentation](./Sources/Vitamin/Foundations/Icons#readme)|
-|Radiuses   | Radiuses applicable to any view in the Design System. | [Documentation](./Sources/Vitamin/Foundations/Radiuses#readme)|
-|Shadows   | Shadows applicable to any view in the Design System. | [Documentation](./Sources/Vitamin/Foundations/Shadows#readme)|
-|Typography | Text styles usable in the Design System. | [Documentation](./Sources/Vitamin/Foundations/Typography#readme)|
+|Assets   | Set of graphic assets usable in the Design System. | [UIKit](./Sources/VitaminUIKit/Foundations/Assets#readme) [SwiftUI](./Sources/VitaminSwiftUI/Foundations/Assets#readme)|
+|Colors   | Semantics and base colors of the Design System. | [UIKit](./Sources/VitaminUIKit/Foundations/Colors#readme) [SwiftUI](./Sources/VitaminSwiftUI/Foundations/Colors#readme)|
+|Icons   | Set of icons usable in the Design System. | [UIKit](./Sources/VitaminUIKit/Foundations/Icons#readme) [SwiftUI](./Sources/VitaminSwiftUI/Foundations/Icons#readme)|
+|Radiuses   | Radiuses applicable to any view in the Design System. | [UIKit](./Sources/VitaminUIKit/Foundations/Radiuses#readme) [SwiftUI](./Sources/VitaminSwiftUI/Foundations/Radiuses#readme)|
+|Shadows   | Shadows applicable to any view in the Design System. | [UIKit](./Sources/VitaminUIKit/Foundations/Shadows#readme) [SwiftUI](./Sources/VitaminSwiftUI/Foundations/Shadows#readme)|
+|Typography | Text styles usable in the Design System. | [UIKit](./Sources/VitaminUIKit/Foundations/Typography#readme) [SwiftUI](./Sources/VitaminSwiftUI/Foundations/Typography#readme)|
 
 
 ### Components
 The following components are available :
 | Component | Description | Documentation |
 |-----------|-------------|---------------|
-|Badge | Badges from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/Badge#readme)|
-|Button | Different button styles from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/Button#readme)|
-|Progressbar | Different progressbar styles from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/Progressbar#readme)|
-|Switch | Swicth from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/Switch#readme)|
-|Tag | Tag from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/Tag#readme)|
-|TextField | Different text fields styles from the Vitamin Design System. | [Documentation](./Sources/Vitamin/Components/TextField#readme)|
+|Badge | Badges from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Badge#readme)|
+|Button | Different button styles from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Button#readme)|
+|Progressbar | Different progressbar styles from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Progressbar#readme)|
+|Switch | Swicth from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Switch#readme)|
+|Tag | Tag from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Tag#readme)|
+|TextField | Different text fields styles from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/TextField#readme)|
 
 ## Special thanks
 
