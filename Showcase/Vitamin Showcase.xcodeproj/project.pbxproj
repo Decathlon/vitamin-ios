@@ -20,6 +20,8 @@
 		4A35E483281304A1001526D8 /* RadiusesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E482281304A1001526D8 /* RadiusesView.swift */; };
 		4A35E4872816C1F4001526D8 /* ShadowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E4862816C1F4001526D8 /* ShadowsView.swift */; };
 		4A35E4892816C20A001526D8 /* ShadowsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E4882816C20A001526D8 /* ShadowsModel.swift */; };
+		4A35E48E2816D124001526D8 /* TypographyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E48D2816D124001526D8 /* TypographyModel.swift */; };
+		4A35E4902816D1B5001526D8 /* TypographyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E48F2816D1B5001526D8 /* TypographyView.swift */; };
 		4A4643902806C91700942AD7 /* AssetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A46438F2806C91700942AD7 /* AssetsModel.swift */; };
 		4A4643932806D60B00942AD7 /* IconsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4643922806D60B00942AD7 /* IconsView.swift */; };
 		4A4643952806D61C00942AD7 /* IconsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4643942806D61C00942AD7 /* IconsModel.swift */; };
@@ -87,6 +89,8 @@
 		4A35E482281304A1001526D8 /* RadiusesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusesView.swift; sourceTree = "<group>"; };
 		4A35E4862816C1F4001526D8 /* ShadowsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowsView.swift; sourceTree = "<group>"; };
 		4A35E4882816C20A001526D8 /* ShadowsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowsModel.swift; sourceTree = "<group>"; };
+		4A35E48D2816D124001526D8 /* TypographyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyModel.swift; sourceTree = "<group>"; };
+		4A35E48F2816D1B5001526D8 /* TypographyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyView.swift; sourceTree = "<group>"; };
 		4A46438F2806C91700942AD7 /* AssetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsModel.swift; sourceTree = "<group>"; };
 		4A4643922806D60B00942AD7 /* IconsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsView.swift; sourceTree = "<group>"; };
 		4A4643942806D61C00942AD7 /* IconsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsModel.swift; sourceTree = "<group>"; };
@@ -227,6 +231,7 @@
 				4A35E47A2812E44B001526D8 /* Colors */,
 				4A35E484281305D0001526D8 /* Radiuses */,
 				4A35E48A2816C20E001526D8 /* Shadows */,
+				4A35E48C2816D066001526D8 /* Typography */,
 			);
 			path = Foundations;
 			sourceTree = "<group>";
@@ -271,6 +276,22 @@
 				4A35E4882816C20A001526D8 /* ShadowsModel.swift */,
 			);
 			path = Shadows;
+			sourceTree = "<group>";
+		};
+		4A35E48B2816D03E001526D8 /* Typography */ = {
+			isa = PBXGroup;
+			children = (
+				4A35E48F2816D1B5001526D8 /* TypographyView.swift */,
+			);
+			path = Typography;
+			sourceTree = "<group>";
+		};
+		4A35E48C2816D066001526D8 /* Typography */ = {
+			isa = PBXGroup;
+			children = (
+				4A35E48D2816D124001526D8 /* TypographyModel.swift */,
+			);
+			path = Typography;
 			sourceTree = "<group>";
 		};
 		4A4643912806D5F100942AD7 /* Icons */ = {
@@ -418,6 +439,7 @@
 				4A4643912806D5F100942AD7 /* Icons */,
 				4A35E47F28130476001526D8 /* Radiuses */,
 				4A35E4852816C1D2001526D8 /* Shadows */,
+				4A35E48B2816D03E001526D8 /* Typography */,
 			);
 			path = Foundations;
 			sourceTree = "<group>";
@@ -751,7 +773,9 @@
 				6551745D27EDBDFA0043700F /* BadgesViewController.swift in Sources */,
 				4ACCCBD72805E7AE00FD184B /* ViewExtension.swift in Sources */,
 				65BD9F3F2768D06900EEDC0D /* IconsViewController.swift in Sources */,
+				4A35E4902816D1B5001526D8 /* TypographyView.swift in Sources */,
 				AAB029D1256805CC00F08C74 /* TypographyViewController.swift in Sources */,
+				4A35E48E2816D124001526D8 /* TypographyModel.swift in Sources */,
 				65F1BC1427CE2101002D08D8 /* AssetCollectionViewCell.swift in Sources */,
 				4A35E47E2812FEDE001526D8 /* ColorsModel+Base.swift in Sources */,
 				65F1BC1527CE2101002D08D8 /* AssetsViewController.swift in Sources */,

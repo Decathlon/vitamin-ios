@@ -11,9 +11,12 @@ struct TextStylesModifier: ViewModifier {
     let textStyle: VitaminTextStyle
 
     func body(content: Content) -> some View {
+        let font = textStyle.scaledFont
+        let lineSpacing = textStyle.lineHeight - textStyle.scaledLineHeight(for: font)
         content
-            .font(textStyle.scaledFont.swiftUIFont)
-            .lineSpacing(textStyle.lineHeight)
+            .font(font.swiftUIFont)
+            .lineSpacing(lineSpacing)
+            .padding(.vertical, lineSpacing / 2)
     }
 }
 

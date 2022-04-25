@@ -7,7 +7,7 @@ import UIKit
 import Vitamin
 
 final class TypographyViewController: UITableViewController {
-    private lazy var items: [TypographyItem] = makeItems()
+    private lazy var items: [TypographyModel.Item] = TypographyModel.items
 
     convenience init() {
         self.init(style: .grouped)
@@ -51,53 +51,8 @@ extension TypographyViewController {
     }
 }
 
-extension TypographyViewController {
-    private struct TypographyItem {
-        let name: String
-        let attributedText: NSAttributedString
-
-        init(name: String, style: VitaminTextStyle) {
-            self.name = name
-            var text = "Sphinx of black quartz, judge my vow."
-            if style == .display ||
-                style == .largeTitle1 ||
-                style == .largeTitle2 {
-                text = text.uppercased()
-            }
-            self.attributedText = text.styled(as: style)
-        }
-    }
-
-    private func makeItems() -> [TypographyItem] {
-        [
-            TypographyItem(name: "Display",
-                           style: .display),
-            TypographyItem(name: "Large Title 1",
-                           style: .largeTitle1),
-            TypographyItem(name: "Large Title 2",
-                           style: .largeTitle2),
-            TypographyItem(name: "Title 1",
-                           style: .title1),
-            TypographyItem(name: "Title 2",
-                           style: .title2),
-            TypographyItem(name: "Title 3",
-                           style: .title3),
-            TypographyItem(name: "Headline",
-                           style: .headline),
-            TypographyItem(name: "Body",
-                           style: .body),
-            TypographyItem(name: "Callout",
-                           style: .callout),
-            TypographyItem(name: "Subhead",
-                           style: .subhead),
-            TypographyItem(name: "Footnote",
-                           style: .footnote),
-            TypographyItem(name: "Caption 1",
-                           style: .caption1),
-            TypographyItem(name: "Caption 2",
-                           style: .caption2),
-            TypographyItem(name: "Button",
-                           style: .button)
-        ]
+extension TypographyModel.Item {
+    var attributedText: NSAttributedString {
+        text.styled(as: value)
     }
 }
