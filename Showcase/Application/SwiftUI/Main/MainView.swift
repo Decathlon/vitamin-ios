@@ -24,6 +24,7 @@ struct MainView: View {
             NavigationLink("🎨 Colors", destination: ColorsView())
             NavigationLink("🖼 Icons", destination: IconsView())
             NavigationLink("⭕️ Radius", destination: RadiusesView())
+            NavigationLink("🌘 Shadows", destination: ShadowsView())
         }
     }
 

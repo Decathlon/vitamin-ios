@@ -18,18 +18,11 @@ final class ShadowsViewController: UITableViewController {
 
         tableView.register(UINib(nibName: "ShadowTableViewCell", bundle: nil), forCellReuseIdentifier: "shadow")
     }
-
-    var shadows: [VitaminShadow] = [
-        .shadow100,
-        .shadow200,
-        .shadow300,
-        .shadow400
-    ]
 }
 
 extension ShadowsViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        shadows.count
+        ShadowsModel.items.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,8 +30,9 @@ extension ShadowsViewController {
                     let cell = ShadowTableViewCell(style: .default, reuseIdentifier: "shadow")
                     return cell
                 }
+        let item = ShadowsModel.items[indexPath.row]
         cell.selectionStyle = .none
-        cell.update(for: shadows[indexPath.row])
+        cell.update(for: item.value, shadowName: item.name)
         return cell
     }
 
