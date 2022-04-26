@@ -56,7 +56,7 @@ extension VitaminColor {
                 public static let decorativeEmerald = VitaminColor.Base.green100.color
                 public static let decorativeCobalt = VitaminColor.Base.blue100.color
                 public static let decorativeAmethyst = VitaminColor.Base.purple100.color
-                
+
                 public static let hoverPrimary = VitaminColor.Base.blue50.color
 
                 public static let shadowShadow = VitaminColor.Base.blue600.color.withAlphaComponent(0.1)
@@ -110,7 +110,7 @@ extension VitaminColor {
                 public static let decorativeEmerald = VitaminColor.Base.green600.color
                 public static let decorativeCobalt = VitaminColor.Base.blue600.color
                 public static let decorativeAmethyst = VitaminColor.Base.purple600.color
-                
+
                 public static let hoverPrimary = VitaminColor.Base.blue700.color
 
                 public static let shadowShadow = VitaminColor.Base.blue200.color.withAlphaComponent(0.1)
