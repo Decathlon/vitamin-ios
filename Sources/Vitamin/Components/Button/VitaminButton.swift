@@ -223,7 +223,7 @@ extension VitaminButton.Style {
                 .ghostReversed:
             return UIColor.clear
         case .secondary:
-            return VitaminColor.Core.Border.secondary
+            return VitaminColor.Core.Border.primary
         }
     }
 
@@ -238,7 +238,7 @@ extension VitaminButton.Style {
         case .primaryReversed:
             return VitaminColor.Core.Border.primaryReversed
         case .secondary:
-            return VitaminColor.Core.Border.secondary
+            return VitaminColor.Core.Border.primary
         }
     }
 }

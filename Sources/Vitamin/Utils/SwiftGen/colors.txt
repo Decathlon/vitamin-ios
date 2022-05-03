@@ -66,10 +66,10 @@ grey50:         #F7F8F9
 grey100:		#EFF1F3
 grey200:		#D9DDE1
 grey300:		#B3BAC3
-grey400:		#8C96A2
+grey400:		#8996A2
 grey500:		#687787
 grey600:		#4E5D6B
 grey700:		#344450
 grey800:		#1A2A34
-grey900:		#001018
+grey900:		#142129
 black:			#001018

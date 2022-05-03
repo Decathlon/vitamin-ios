@@ -37,9 +37,9 @@ extension VitaminColor {
                 public static let contentActionReversed = VitaminColor.Base.white.color
                 public static let contentVisitedReversed = VitaminColor.Base.purple200.color
 
-                public static let borderPrimary = VitaminColor.Base.white.color
-                public static let borderSecondary = VitaminColor.Base.grey200.color
-                public static let borderTertiary = VitaminColor.Base.grey100.color
+                public static let borderPrimary = VitaminColor.Base.grey200.color
+                public static let borderSecondary = VitaminColor.Base.grey100.color
+                public static let borderTertiary = VitaminColor.Base.white.color
                 public static let borderActive = VitaminColor.Base.blue400.color
                 public static let borderInactive = VitaminColor.Base.grey400.color
                 public static let borderNegative = VitaminColor.Base.red400.color
@@ -91,9 +91,9 @@ extension VitaminColor {
                 public static let contentActionReversed = VitaminColor.Base.black.color
                 public static let contentVisitedReversed = VitaminColor.Base.purple300.color
 
-                public static let borderPrimary = VitaminColor.Base.grey800.color
-                public static let borderSecondary = VitaminColor.Base.grey700.color
-                public static let borderTertiary = VitaminColor.Base.black.color
+                public static let borderPrimary = VitaminColor.Base.grey700.color
+                public static let borderSecondary = VitaminColor.Base.black.color
+                public static let borderTertiary = VitaminColor.Base.grey800.color
                 public static let borderActive = VitaminColor.Base.blue300.color
                 public static let borderInactive = VitaminColor.Base.grey500.color
                 public static let borderNegative = VitaminColor.Base.red300.color
