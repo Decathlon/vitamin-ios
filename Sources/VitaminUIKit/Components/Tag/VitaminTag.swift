@@ -4,7 +4,7 @@
 //
 
 import UIKit
-import VitaminCommon
+import VitaminCore
 
 public class VitaminTag: UILabel {
     // padding constants of the `VitaminTag`

@@ -18,9 +18,9 @@ Pod::Spec.new do |s|
 
   s.default_subspecs = "UIKit"
 
-  s.subspec "Common" do |spec|
-    spec.source_files   = 'Sources/VitaminCommon/**/*.swift'
-    spec.resources      = 'Sources/VitaminCommon/**/*.{xcassets,ttf}'
+  s.subspec "Core" do |spec|
+    spec.source_files   = 'Sources/VitaminCore/**/*.swift'
+    spec.resources      = 'Sources/VitaminCore/**/*.{xcassets,ttf}'
   end
 
   s.subspec "UIKit" do |spec|

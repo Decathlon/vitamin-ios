@@ -4,7 +4,7 @@
 //
 
 import UIKit
-import VitaminCommon
+import VitaminCore
 
 enum RadiusesModel {
     struct Item: Identifiable {

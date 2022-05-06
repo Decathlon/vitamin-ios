@@ -4,7 +4,7 @@
 //
 
 import UIKit
-import VitaminCommon
+import VitaminCore
 
 public typealias VitaminTextFieldValidationResult = Result<Void, VitaminTextField.ValidationError>
 public typealias VitaminTextFieldValidation = (String?, ((VitaminTextFieldValidationResult) -> Void)) -> Void

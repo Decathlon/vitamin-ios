@@ -4,7 +4,7 @@
 //
 
 import UIKit
-import VitaminCommon
+import VitaminCore
 
 extension ColorsModel {
     static func makeBaseItems(sectionName: String) -> [ColorsModel.Item] {

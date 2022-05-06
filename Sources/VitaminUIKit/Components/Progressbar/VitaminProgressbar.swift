@@ -4,7 +4,7 @@
 //
 
 import UIKit
-import VitaminCommon
+import VitaminCore
 
 /// Implementation of Vitamin circular progress bar
 public final class VitaminProgressbar: UIView {

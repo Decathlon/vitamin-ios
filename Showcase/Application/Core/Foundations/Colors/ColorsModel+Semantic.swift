@@ -4,7 +4,7 @@
 //
 
 import UIKit
-import VitaminCommon
+import VitaminCore
 
 extension ColorsModel {
     static func makeBackgroundItems(sectionName: String) -> [ColorsModel.Item] {

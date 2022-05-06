@@ -4,7 +4,7 @@
 //
 
 import Foundation
-import VitaminCommon
+import VitaminCore
 
 // swiftlint:disable file_length
 // swiftlint:disable:next type_body_length

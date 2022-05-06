@@ -4,7 +4,7 @@
 //
 
 import UIKit
-import VitaminCommon
+import VitaminCore
 
 extension UIView {
     /// Drops a shadow below this view.

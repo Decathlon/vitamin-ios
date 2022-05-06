@@ -4,7 +4,7 @@
 //
 
 import UIKit
-import VitaminCommon
+import VitaminCore
 
 public class VitaminBadge: UILabel {
     /// Integer value of the `VitaminBadge`

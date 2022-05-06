@@ -4,7 +4,7 @@
 //
 
 import SwiftUI
-import VitaminCommon
+import VitaminCore
 
 @available(iOS 13, *)
 extension VitaminAsset {

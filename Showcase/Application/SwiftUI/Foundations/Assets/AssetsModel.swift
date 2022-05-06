@@ -4,7 +4,7 @@
 //
 
 import Foundation
-import VitaminCommon
+import VitaminCore
 
 enum AssetsModel {
     struct Section: Identifiable {

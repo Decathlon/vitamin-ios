@@ -5,4 +5,4 @@
 
 import Foundation
 
-@_exported import VitaminCommon
+@_exported import VitaminCore

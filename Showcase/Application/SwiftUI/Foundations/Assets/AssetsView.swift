@@ -4,7 +4,7 @@
 //
 
 import SwiftUI
-import VitaminCommon
+import VitaminCore
 import VitaminSwiftUI
 
 @available(iOS 13, *)

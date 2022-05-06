@@ -4,7 +4,7 @@
 //
 
 import UIKit
-import VitaminCommon
+import VitaminCore
 
 enum ColorsModel {
     struct Section: Identifiable {

@@ -10,7 +10,6 @@
 		4A07433927D94BB0005BD446 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07433827D94BB0005BD446 /* MainView.swift */; };
 		4A07433E27D9541F005BD446 /* NavigationTitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07433D27D9541F005BD446 /* NavigationTitleModifier.swift */; };
 		4A35E4602811EE2E001526D8 /* Vitamin in Frameworks */ = {isa = PBXBuildFile; productRef = 4A35E45F2811EE2E001526D8 /* Vitamin */; };
-		4A35E4622811EE2E001526D8 /* VitaminCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 4A35E4612811EE2E001526D8 /* VitaminCommon */; };
 		4A35E4642811EE2E001526D8 /* VitaminSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4A35E4632811EE2E001526D8 /* VitaminSwiftUI */; };
 		4A35E4752812B34E001526D8 /* ColorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E4742812B34E001526D8 /* ColorsModel.swift */; };
 		4A35E4772812B357001526D8 /* ColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E4762812B357001526D8 /* ColorsView.swift */; };
@@ -26,6 +25,7 @@
 		4A4643932806D60B00942AD7 /* IconsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4643922806D60B00942AD7 /* IconsView.swift */; };
 		4A4643952806D61C00942AD7 /* IconsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4643942806D61C00942AD7 /* IconsModel.swift */; };
 		4AAD2B67276772D200727D8E /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD2B66276772D200727D8E /* MainTableViewController.swift */; };
+		4AB763AE2825725300092033 /* VitaminCore in Frameworks */ = {isa = PBXBuildFile; productRef = 4AB763AD2825725300092033 /* VitaminCore */; };
 		4ACCCBCE2805E28600FD184B /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07433A27D94C90005BD446 /* MainTabController.swift */; };
 		4ACCCBD52805E71400FD184B /* AssetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCCBD42805E71400FD184B /* AssetsView.swift */; };
 		4ACCCBD72805E7AE00FD184B /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCCBD62805E7AE00FD184B /* ViewExtension.swift */; };
@@ -154,7 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A35E4622811EE2E001526D8 /* VitaminCommon in Frameworks */,
+				4AB763AE2825725300092033 /* VitaminCore in Frameworks */,
 				4A35E4642811EE2E001526D8 /* VitaminSwiftUI in Frameworks */,
 				4A35E4602811EE2E001526D8 /* Vitamin in Frameworks */,
 			);
@@ -217,12 +217,12 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
-		4A35E4782812E432001526D8 /* Common */ = {
+		4A35E4782812E432001526D8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				4A35E4792812E443001526D8 /* Foundations */,
 			);
-			path = Common;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		4A35E4792812E443001526D8 /* Foundations */ = {
@@ -334,7 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				AAC5D4402567FE710070667D /* AppDelegate.swift */,
-				4A35E4782812E432001526D8 /* Common */,
+				4A35E4782812E432001526D8 /* Core */,
 				4AAD2B6C2767734700727D8E /* Main */,
 				4A07433127D94A10005BD446 /* SwiftUI */,
 				4A07433027D949F2005BD446 /* UIKit */,
@@ -673,8 +673,8 @@
 			name = Showcase;
 			packageProductDependencies = (
 				4A35E45F2811EE2E001526D8 /* Vitamin */,
-				4A35E4612811EE2E001526D8 /* VitaminCommon */,
 				4A35E4632811EE2E001526D8 /* VitaminSwiftUI */,
+				4AB763AD2825725300092033 /* VitaminCore */,
 			);
 			productName = VitaminDemo;
 			productReference = AAC5D43D2567FE710070667D /* Showcase.app */;
@@ -1024,13 +1024,13 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Vitamin;
 		};
-		4A35E4612811EE2E001526D8 /* VitaminCommon */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = VitaminCommon;
-		};
 		4A35E4632811EE2E001526D8 /* VitaminSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = VitaminSwiftUI;
+		};
+		4AB763AD2825725300092033 /* VitaminCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VitaminCore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

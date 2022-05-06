@@ -10,8 +10,8 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "VitaminCommon",
-            targets: ["VitaminCommon"]),
+            name: "VitaminCore",
+            targets: ["VitaminCore"]),
         .library(
             name: "Vitamin",
             targets: ["Vitamin"]),
@@ -25,9 +25,9 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "VitaminCommon",
+            name: "VitaminCore",
             dependencies: [],
-            path: "Sources/VitaminCommon",
+            path: "Sources/VitaminCore",
             exclude: [
                 "Utils/SwiftGen"
             ],
@@ -40,7 +40,7 @@ let package = Package(
             ]),
         .target(
             name: "Vitamin",
-            dependencies: ["VitaminCommon"],
+            dependencies: ["VitaminCore"],
             path: "Sources/VitaminUIKit",
             exclude: [
                 "Components/Badge/README.md",
@@ -61,7 +61,7 @@ let package = Package(
             ]),
         .target(
             name: "VitaminSwiftUI",
-            dependencies: ["VitaminCommon"],
+            dependencies: ["VitaminCore"],
             path: "Sources/VitaminSwiftUI",
             exclude: [
                 "Foundations/Assets/README.md",

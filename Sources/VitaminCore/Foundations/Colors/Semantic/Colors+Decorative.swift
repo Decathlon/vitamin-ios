@@ -5,7 +5,6 @@
 
 import UIKit
 
-
 extension VitaminColor.Core {
     public enum Decorative {
         public static var gravel: UIColor {

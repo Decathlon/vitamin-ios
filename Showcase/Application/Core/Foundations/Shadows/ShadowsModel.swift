@@ -4,7 +4,7 @@
 //
 
 import UIKit
-import VitaminCommon
+import VitaminCore
 
 enum ShadowsModel {
     struct Item: Identifiable {

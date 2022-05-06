@@ -4,7 +4,7 @@
 //
 
 import UIKit
-import VitaminCommon
+import VitaminCore
 
 public enum VitaminProgressbarVariant {
     case linear(size: VitaminProgressbarLinearSize, style: VitaminProgressbarLinearStyle)

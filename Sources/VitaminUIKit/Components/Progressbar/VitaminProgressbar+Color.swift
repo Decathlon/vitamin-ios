@@ -4,7 +4,7 @@
 //
 
 import UIKit
-import VitaminCommon
+import VitaminCore
 
 extension VitaminProgressbar {
     /// Color used to display the track

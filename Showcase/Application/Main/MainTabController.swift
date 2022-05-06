@@ -5,7 +5,7 @@
 
 import UIKit
 import SwiftUI
-import VitaminCommon
+import VitaminCore
 
 final class MainTabController: UITabBarController {
     override func viewDidLoad() {
