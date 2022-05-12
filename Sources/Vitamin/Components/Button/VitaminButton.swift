@@ -111,6 +111,9 @@ public class VitaminButton: UIButton {
 
 extension VitaminButton {
     private func applyNewStyle() {
+        if #available(iOS 15, *) {
+            self.configuration = nil
+        }
         let states: [UIControl.State] = [.normal, .disabled, .highlighted]
         states.forEach {
             setBackgroundImage(UIImage.imageWithColor(style.backgroundColor(for: $0)), for: $0)
