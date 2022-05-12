@@ -20,3 +20,5 @@ As the default button size is handled with the intrinsicSize, you can still resi
 A good example of that would be to make your button stretched to fit its parent's width.
 
 Note: `VitaminButton` styles its title as  `TextStyle.xxxbutton`, so make sure you setup the Roboto fonts properly.
+
+If you create your button through Storyboard or Xib, do not forget to set its type to `Custom` (instead of `System`, which is the default value). If not set to `Custom`, `VitaminButton` may act oddly in some circumstances.
