@@ -3,6 +3,7 @@
 //  Apache License 2.0
 //
 
+#if arch(x86_64) || arch(arm64)
 import SwiftUI
 import VitaminCore
 
@@ -33,3 +34,4 @@ extension TypographyView {
         }
     }
 }
+#endif

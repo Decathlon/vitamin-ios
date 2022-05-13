@@ -119,5 +119,6 @@ To reach this goal we fixed some rule in our team and we would love to go ahead 
 2. Add comments on the code if you want to explain better what is happening in the code.
 3. Add documentation for any API, if needed, or functional explaining what changed/added with your code.
 4. After you proposed the PullRequest. If you will receive any mail or find any automatic comment on the Pull Request you opened, it means there is something which is not respecting the project defined code style or your broke any previously created test.
+5. Apply the [specificities for SwiftUI](./Sources/VitaminSwiftUI#readme).
 
 If you respect all these rules you will help us saving time and we will be able to check your pull request faster.

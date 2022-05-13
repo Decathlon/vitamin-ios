@@ -64,6 +64,7 @@ let package = Package(
             dependencies: ["VitaminCore"],
             path: "Sources/VitaminSwiftUI",
             exclude: [
+                "README.md",
                 "Foundations/Assets/README.md",
                 "Foundations/Colors/README.md",
                 "Foundations/Icons/README.md",

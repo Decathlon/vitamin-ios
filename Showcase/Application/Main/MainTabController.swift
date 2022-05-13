@@ -3,6 +3,7 @@
 //  Apache License 2.0
 //
 
+#if arch(x86_64) || arch(arm64)
 import UIKit
 import SwiftUI
 import VitaminCore
@@ -40,3 +41,4 @@ final class MainTabController: UITabBarController {
         }
     }
 }
+#endif

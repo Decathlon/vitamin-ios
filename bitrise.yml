@@ -16,9 +16,7 @@ workflows:
         run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
     - git-clone@6: {}
     - cache-pull@2: {}
-    - xcode-build-for-simulator@0:
-        inputs:
-        - cache_level: none
+    - xcode-build-for-simulator@0: {}
     - script@1:
         title: Do anything with Script step
         inputs:
@@ -38,9 +36,7 @@ workflows:
         run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
     - git-clone@6: {}
     - cache-pull@2: {}
-    - xcode-build-for-simulator@0:
-        inputs:
-        - cache_level: none
+    - xcode-build-for-simulator@0: {}
     - cache-push@2: {}
 app:
   envs:
