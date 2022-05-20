@@ -52,11 +52,21 @@ public struct VitaminTextStyle {
                                               fontType: VitaminFontFamily.Roboto.regular,
                                               textStyle: .body,
                                               rawValue: "body")
+    public static let bodyBold = VitaminTextStyle(size: 17,
+                                                  lineHeight: 28,
+                                                  fontType: VitaminFontFamily.Roboto.bold,
+                                                  textStyle: .body,
+                                                  rawValue: "bodyBold")
     public static let callout = VitaminTextStyle(size: 16,
                                                  lineHeight: 24,
                                                  fontType: VitaminFontFamily.Roboto.regular,
                                                  textStyle: .callout,
                                                  rawValue: "callout")
+    public static let calloutBold = VitaminTextStyle(size: 16,
+                                                     lineHeight: 24,
+                                                     fontType: VitaminFontFamily.Roboto.bold,
+                                                     textStyle: .callout,
+                                                     rawValue: "calloutBold")
     public static let subhead = VitaminTextStyle(size: 15,
                                                  lineHeight: 20,
                                                  fontType: VitaminFontFamily.Roboto.regular,
@@ -67,6 +77,11 @@ public struct VitaminTextStyle {
                                                   fontType: VitaminFontFamily.Roboto.regular,
                                                   textStyle: .footnote,
                                                   rawValue: "footnote")
+    public static let footnoteBold = VitaminTextStyle(size: 14,
+                                                      lineHeight: 20,
+                                                      fontType: VitaminFontFamily.Roboto.bold,
+                                                      textStyle: .footnote,
+                                                      rawValue: "footnoteBold")
     public static let caption1 = VitaminTextStyle(size: 12,
                                                   lineHeight: 16,
                                                   fontType: VitaminFontFamily.Roboto.regular,
