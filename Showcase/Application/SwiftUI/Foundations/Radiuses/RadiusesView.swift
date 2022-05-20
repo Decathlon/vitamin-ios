@@ -29,6 +29,7 @@ extension RadiusesView {
             Text("Test with \(radius.name)")
                 .foregroundColor(VitaminColor.Core.Content.primaryReversed.swiftUIColor)
                 .padding(20)
+                .frame(height: 100)
                 .background(
                     Rectangle()
                         .foregroundColor(VitaminColor.Core.Background.brandPrimary.swiftUIColor)
@@ -44,6 +45,7 @@ extension RadiusesView {
             Text("Test with \(radius.name)")
                 .foregroundColor(VitaminColor.Core.Content.active.swiftUIColor)
                 .padding(20)
+                .frame(height: 100)
                 .vitaminAddBorderRadius(radius.value,
                                         content: VitaminColor.Core.Border.active.swiftUIColor,
                                         lineWidth: 1)
@@ -57,6 +59,7 @@ extension RadiusesView {
             Text("Test with \(radius.name)")
                 .foregroundColor(VitaminColor.Core.Content.active.swiftUIColor)
                 .padding(20)
+                .frame(height: 100)
                 .vitaminAddBorderRadius(radius.value,
                                         content: VitaminColor.Core.Border.active.swiftUIColor,
                                         style: StrokeStyle(lineWidth: 1, dash: [10]))
