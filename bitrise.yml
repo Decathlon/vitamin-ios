@@ -51,4 +51,5 @@ app:
     BITRISE_EXPORT_METHOD: development
 meta:
   bitrise.io:
-    stack: osx-xcode-13.2.x
+    stack: osx-xcode-13.3.x
+    machine_type_id: g2.4core

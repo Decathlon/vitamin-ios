@@ -7,7 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A07433927D94BB0005BD446 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07433827D94BB0005BD446 /* MainView.swift */; };
+		4A07433E27D9541F005BD446 /* NavigationTitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07433D27D9541F005BD446 /* NavigationTitleModifier.swift */; };
+		4A35E4602811EE2E001526D8 /* Vitamin in Frameworks */ = {isa = PBXBuildFile; productRef = 4A35E45F2811EE2E001526D8 /* Vitamin */; };
+		4A35E4642811EE2E001526D8 /* VitaminSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4A35E4632811EE2E001526D8 /* VitaminSwiftUI */; };
+		4A35E4752812B34E001526D8 /* ColorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E4742812B34E001526D8 /* ColorsModel.swift */; };
+		4A35E4772812B357001526D8 /* ColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E4762812B357001526D8 /* ColorsView.swift */; };
+		4A35E47C2812FE77001526D8 /* ColorsModel+Semantic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E47B2812FE77001526D8 /* ColorsModel+Semantic.swift */; };
+		4A35E47E2812FEDE001526D8 /* ColorsModel+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E47D2812FEDE001526D8 /* ColorsModel+Base.swift */; };
+		4A35E48128130495001526D8 /* RadiusesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E48028130495001526D8 /* RadiusesModel.swift */; };
+		4A35E483281304A1001526D8 /* RadiusesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E482281304A1001526D8 /* RadiusesView.swift */; };
+		4A35E4872816C1F4001526D8 /* ShadowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E4862816C1F4001526D8 /* ShadowsView.swift */; };
+		4A35E4892816C20A001526D8 /* ShadowsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E4882816C20A001526D8 /* ShadowsModel.swift */; };
+		4A35E48E2816D124001526D8 /* TypographyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E48D2816D124001526D8 /* TypographyModel.swift */; };
+		4A35E4902816D1B5001526D8 /* TypographyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E48F2816D1B5001526D8 /* TypographyView.swift */; };
+		4A4643902806C91700942AD7 /* AssetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A46438F2806C91700942AD7 /* AssetsModel.swift */; };
+		4A4643932806D60B00942AD7 /* IconsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4643922806D60B00942AD7 /* IconsView.swift */; };
+		4A4643952806D61C00942AD7 /* IconsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4643942806D61C00942AD7 /* IconsModel.swift */; };
 		4AAD2B67276772D200727D8E /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD2B66276772D200727D8E /* MainTableViewController.swift */; };
+		4AB763AE2825725300092033 /* VitaminCore in Frameworks */ = {isa = PBXBuildFile; productRef = 4AB763AD2825725300092033 /* VitaminCore */; };
+		4ACCCBCE2805E28600FD184B /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07433A27D94C90005BD446 /* MainTabController.swift */; };
+		4ACCCBD52805E71400FD184B /* AssetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCCBD42805E71400FD184B /* AssetsView.swift */; };
+		4ACCCBD72805E7AE00FD184B /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCCBD62805E7AE00FD184B /* ViewExtension.swift */; };
+		4ACCCBD92805FF7100FD184B /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCCBD82805FF7100FD184B /* ArrayExtension.swift */; };
 		651EF24D272BE8D500121F7A /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EF24C272BE8D500121F7A /* TextFieldTableViewCell.swift */; };
 		651EF252272C0AD500121F7A /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651EF251272C0AD500121F7A /* TextFieldTableViewCell.xib */; };
 		6521D85F27DA100A00A15A06 /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6521D85E27DA100A00A15A06 /* TagCollectionViewCell.xib */; };
@@ -15,7 +37,6 @@
 		6531B78227A9A23600808E1E /* RadiusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6531B77F27A9A23600808E1E /* RadiusTableViewCell.swift */; };
 		6531B78327A9A23600808E1E /* RadiusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6531B78027A9A23600808E1E /* RadiusTableViewCell.xib */; };
 		6531B78427A9A23600808E1E /* RadiusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6531B78127A9A23600808E1E /* RadiusViewController.swift */; };
-		654642B8276A9F5700213415 /* Vitamin in Frameworks */ = {isa = PBXBuildFile; productRef = 654642B7276A9F5700213415 /* Vitamin */; };
 		6551745B27EDBDFA0043700F /* BadgeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6551745827EDBDFA0043700F /* BadgeCollectionViewCell.xib */; };
 		6551745C27EDBDFA0043700F /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551745927EDBDFA0043700F /* BadgeCollectionViewCell.swift */; };
 		6551745D27EDBDFA0043700F /* BadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551745A27EDBDFA0043700F /* BadgesViewController.swift */; };
@@ -57,7 +78,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A07433827D94BB0005BD446 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4A07433A27D94C90005BD446 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		4A07433D27D9541F005BD446 /* NavigationTitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleModifier.swift; sourceTree = "<group>"; };
+		4A35E4742812B34E001526D8 /* ColorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsModel.swift; sourceTree = "<group>"; };
+		4A35E4762812B357001526D8 /* ColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsView.swift; sourceTree = "<group>"; };
+		4A35E47B2812FE77001526D8 /* ColorsModel+Semantic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorsModel+Semantic.swift"; sourceTree = "<group>"; };
+		4A35E47D2812FEDE001526D8 /* ColorsModel+Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorsModel+Base.swift"; sourceTree = "<group>"; };
+		4A35E48028130495001526D8 /* RadiusesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusesModel.swift; sourceTree = "<group>"; };
+		4A35E482281304A1001526D8 /* RadiusesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusesView.swift; sourceTree = "<group>"; };
+		4A35E4862816C1F4001526D8 /* ShadowsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowsView.swift; sourceTree = "<group>"; };
+		4A35E4882816C20A001526D8 /* ShadowsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowsModel.swift; sourceTree = "<group>"; };
+		4A35E48D2816D124001526D8 /* TypographyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyModel.swift; sourceTree = "<group>"; };
+		4A35E48F2816D1B5001526D8 /* TypographyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyView.swift; sourceTree = "<group>"; };
+		4A46438F2806C91700942AD7 /* AssetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsModel.swift; sourceTree = "<group>"; };
+		4A4643922806D60B00942AD7 /* IconsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsView.swift; sourceTree = "<group>"; };
+		4A4643942806D61C00942AD7 /* IconsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsModel.swift; sourceTree = "<group>"; };
 		4AAD2B66276772D200727D8E /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		4ACCCBD42805E71400FD184B /* AssetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsView.swift; sourceTree = "<group>"; };
+		4ACCCBD62805E7AE00FD184B /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		4ACCCBD82805FF7100FD184B /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		651EF24C272BE8D500121F7A /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		651EF251272C0AD500121F7A /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
 		6521D85E27DA100A00A15A06 /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -114,13 +154,172 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				654642B8276A9F5700213415 /* Vitamin in Frameworks */,
+				4AB763AE2825725300092033 /* VitaminCore in Frameworks */,
+				4A35E4642811EE2E001526D8 /* VitaminSwiftUI in Frameworks */,
+				4A35E4602811EE2E001526D8 /* Vitamin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A07433027D949F2005BD446 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				4AAD2B692767730300727D8E /* Components */,
+				4AAD2B6B2767733500727D8E /* Foundations */,
+				4A07433227D94A1C005BD446 /* Main */,
+				6551745E27EDBFAE0043700F /* Utils */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		4A07433127D94A10005BD446 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				4ACCCBD02805E4A300FD184B /* Foundations */,
+				4A07433727D94B9B005BD446 /* Main */,
+				4A07433C27D953D0005BD446 /* Utils */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		4A07433227D94A1C005BD446 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4AAD2B66276772D200727D8E /* MainTableViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4A07433727D94B9B005BD446 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4A07433827D94BB0005BD446 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4A07433C27D953D0005BD446 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4A4643A52806ED7000942AD7 /* Extensions */,
+				4A4643A42806ED6100942AD7 /* Modifiers */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4A35E4732812B31D001526D8 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				4A35E4762812B357001526D8 /* ColorsView.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		4A35E4782812E432001526D8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4A35E4792812E443001526D8 /* Foundations */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4A35E4792812E443001526D8 /* Foundations */ = {
+			isa = PBXGroup;
+			children = (
+				4A35E47A2812E44B001526D8 /* Colors */,
+				4A35E484281305D0001526D8 /* Radiuses */,
+				4A35E48A2816C20E001526D8 /* Shadows */,
+				4A35E48C2816D066001526D8 /* Typography */,
+			);
+			path = Foundations;
+			sourceTree = "<group>";
+		};
+		4A35E47A2812E44B001526D8 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				4A35E4742812B34E001526D8 /* ColorsModel.swift */,
+				4A35E47D2812FEDE001526D8 /* ColorsModel+Base.swift */,
+				4A35E47B2812FE77001526D8 /* ColorsModel+Semantic.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		4A35E47F28130476001526D8 /* Radiuses */ = {
+			isa = PBXGroup;
+			children = (
+				4A35E482281304A1001526D8 /* RadiusesView.swift */,
+			);
+			path = Radiuses;
+			sourceTree = "<group>";
+		};
+		4A35E484281305D0001526D8 /* Radiuses */ = {
+			isa = PBXGroup;
+			children = (
+				4A35E48028130495001526D8 /* RadiusesModel.swift */,
+			);
+			path = Radiuses;
+			sourceTree = "<group>";
+		};
+		4A35E4852816C1D2001526D8 /* Shadows */ = {
+			isa = PBXGroup;
+			children = (
+				4A35E4862816C1F4001526D8 /* ShadowsView.swift */,
+			);
+			path = Shadows;
+			sourceTree = "<group>";
+		};
+		4A35E48A2816C20E001526D8 /* Shadows */ = {
+			isa = PBXGroup;
+			children = (
+				4A35E4882816C20A001526D8 /* ShadowsModel.swift */,
+			);
+			path = Shadows;
+			sourceTree = "<group>";
+		};
+		4A35E48B2816D03E001526D8 /* Typography */ = {
+			isa = PBXGroup;
+			children = (
+				4A35E48F2816D1B5001526D8 /* TypographyView.swift */,
+			);
+			path = Typography;
+			sourceTree = "<group>";
+		};
+		4A35E48C2816D066001526D8 /* Typography */ = {
+			isa = PBXGroup;
+			children = (
+				4A35E48D2816D124001526D8 /* TypographyModel.swift */,
+			);
+			path = Typography;
+			sourceTree = "<group>";
+		};
+		4A4643912806D5F100942AD7 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				4A4643942806D61C00942AD7 /* IconsModel.swift */,
+				4A4643922806D60B00942AD7 /* IconsView.swift */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		4A4643A42806ED6100942AD7 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				4A07433D27D9541F005BD446 /* NavigationTitleModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		4A4643A52806ED7000942AD7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4ACCCBD82805FF7100FD184B /* ArrayExtension.swift */,
+				4ACCCBD62805E7AE00FD184B /* ViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4A8962EF276366EB00D9B8E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,10 +334,10 @@
 			isa = PBXGroup;
 			children = (
 				AAC5D4402567FE710070667D /* AppDelegate.swift */,
-				4AAD2B692767730300727D8E /* Components */,
-				4AAD2B6B2767733500727D8E /* Foundations */,
+				4A35E4782812E432001526D8 /* Core */,
 				4AAD2B6C2767734700727D8E /* Main */,
-				6551745E27EDBFAE0043700F /* Utils */,
+				4A07433127D94A10005BD446 /* SwiftUI */,
+				4A07433027D949F2005BD446 /* UIKit */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -205,10 +404,10 @@
 			isa = PBXGroup;
 			children = (
 				65F1BC0C27CE2101002D08D8 /* Assets */,
+				AAB029E725680D7500F08C74 /* Colors */,
+				65BD9F382768D06900EEDC0D /* Icons */,
 				6531B77D27A9A23600808E1E /* Radiuses */,
 				65D1B6642787422000C1560B /* Shadows */,
-				65BD9F382768D06900EEDC0D /* Icons */,
-				AAB029E725680D7500F08C74 /* Colors */,
 				AA68B4DB25683AF300F1A4D7 /* Typography */,
 			);
 			path = Foundations;
@@ -218,7 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				AAC5D4462567FE710070667D /* Main.storyboard */,
-				4AAD2B66276772D200727D8E /* MainTableViewController.swift */,
+				4A07433A27D94C90005BD446 /* MainTabController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -230,6 +429,28 @@
 				65B52A1827392EDD008D9B5E /* SwitchViewController.swift */,
 			);
 			path = Switch;
+			sourceTree = "<group>";
+		};
+		4ACCCBD02805E4A300FD184B /* Foundations */ = {
+			isa = PBXGroup;
+			children = (
+				4ACCCBD12805E6D800FD184B /* Assets */,
+				4A35E4732812B31D001526D8 /* Colors */,
+				4A4643912806D5F100942AD7 /* Icons */,
+				4A35E47F28130476001526D8 /* Radiuses */,
+				4A35E4852816C1D2001526D8 /* Shadows */,
+				4A35E48B2816D03E001526D8 /* Typography */,
+			);
+			path = Foundations;
+			sourceTree = "<group>";
+		};
+		4ACCCBD12805E6D800FD184B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4A46438F2806C91700942AD7 /* AssetsModel.swift */,
+				4ACCCBD42805E71400FD184B /* AssetsView.swift */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		6531B77D27A9A23600808E1E /* Radiuses */ = {
@@ -451,7 +672,9 @@
 			);
 			name = Showcase;
 			packageProductDependencies = (
-				654642B7276A9F5700213415 /* Vitamin */,
+				4A35E45F2811EE2E001526D8 /* Vitamin */,
+				4A35E4632811EE2E001526D8 /* VitaminSwiftUI */,
+				4AB763AD2825725300092033 /* VitaminCore */,
 			);
 			productName = VitaminDemo;
 			productReference = AAC5D43D2567FE710070667D /* Showcase.app */;
@@ -496,24 +719,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65D1B66B2787422100C1560B /* ShadowTableViewCell.xib in Resources */,
-				AAC5D44D2567FE720070667D /* LaunchScreen.storyboard in Resources */,
-				65F1BC1227CE2101002D08D8 /* LargeAssetCollectionViewCell.xib in Resources */,
-				65F1BC2127CE8836002D08D8 /* CircularProgressbarTableViewCell.xib in Resources */,
-				65F1BC1327CE2101002D08D8 /* AssetCollectionViewCell.xib in Resources */,
-				65C518C927D673FF00B87FF0 /* MonoTagTableViewCell.xib in Resources */,
-				65B52A1F273944DC008D9B5E /* SwitchTableViewCell.xib in Resources */,
-				651EF252272C0AD500121F7A /* TextFieldTableViewCell.xib in Resources */,
-				65BD9F3D2768D06900EEDC0D /* IconCollectionViewCell.xib in Resources */,
-				65F1BC2027CE8836002D08D8 /* LinearProgressbarTableViewCell.xib in Resources */,
-				AAB029ED25680DEE00F08C74 /* ColorTableViewCell.xib in Resources */,
-				AA68B4CE25681A6700F1A4D7 /* ButtonTableViewCell.xib in Resources */,
-				AAC5D44A2567FE720070667D /* Assets.xcassets in Resources */,
-				AAC5D4482567FE710070667D /* Main.storyboard in Resources */,
 				6551745B27EDBDFA0043700F /* BadgeCollectionViewCell.xib in Resources */,
+				AA68B4CE25681A6700F1A4D7 /* ButtonTableViewCell.xib in Resources */,
+				65F1BC2027CE8836002D08D8 /* LinearProgressbarTableViewCell.xib in Resources */,
+				65F1BC2127CE8836002D08D8 /* CircularProgressbarTableViewCell.xib in Resources */,
+				65B52A1F273944DC008D9B5E /* SwitchTableViewCell.xib in Resources */,
 				6521D85F27DA100A00A15A06 /* TagCollectionViewCell.xib in Resources */,
 				65C518CC27D6B64800B87FF0 /* MultipleTagTableViewCell.xib in Resources */,
+				65C518C927D673FF00B87FF0 /* MonoTagTableViewCell.xib in Resources */,
+				651EF252272C0AD500121F7A /* TextFieldTableViewCell.xib in Resources */,
+				65F1BC1227CE2101002D08D8 /* LargeAssetCollectionViewCell.xib in Resources */,
+				65F1BC1327CE2101002D08D8 /* AssetCollectionViewCell.xib in Resources */,
 				6531B78327A9A23600808E1E /* RadiusTableViewCell.xib in Resources */,
+				65D1B66B2787422100C1560B /* ShadowTableViewCell.xib in Resources */,
+				65BD9F3D2768D06900EEDC0D /* IconCollectionViewCell.xib in Resources */,
+				AAB029ED25680DEE00F08C74 /* ColorTableViewCell.xib in Resources */,
+				AAC5D4482567FE710070667D /* Main.storyboard in Resources */,
+				AAC5D44D2567FE720070667D /* LaunchScreen.storyboard in Resources */,
+				AAC5D44A2567FE720070667D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,34 +768,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A35E4892816C20A001526D8 /* ShadowsModel.swift in Sources */,
 				6531B78427A9A23600808E1E /* RadiusViewController.swift in Sources */,
 				6551745D27EDBDFA0043700F /* BadgesViewController.swift in Sources */,
+				4ACCCBD72805E7AE00FD184B /* ViewExtension.swift in Sources */,
 				65BD9F3F2768D06900EEDC0D /* IconsViewController.swift in Sources */,
+				4A35E4902816D1B5001526D8 /* TypographyView.swift in Sources */,
 				AAB029D1256805CC00F08C74 /* TypographyViewController.swift in Sources */,
+				4A35E48E2816D124001526D8 /* TypographyModel.swift in Sources */,
 				65F1BC1427CE2101002D08D8 /* AssetCollectionViewCell.swift in Sources */,
+				4A35E47E2812FEDE001526D8 /* ColorsModel+Base.swift in Sources */,
 				65F1BC1527CE2101002D08D8 /* AssetsViewController.swift in Sources */,
 				65D1B6692787422100C1560B /* ShadowsViewController.swift in Sources */,
 				6521D86127DA4B3400A15A06 /* TagCollectionViewCell.swift in Sources */,
+				4A4643932806D60B00942AD7 /* IconsView.swift in Sources */,
+				4A35E48128130495001526D8 /* RadiusesModel.swift in Sources */,
+				4A35E4872816C1F4001526D8 /* ShadowsView.swift in Sources */,
 				65C518CA27D673FF00B87FF0 /* TagTableViewCell.swift in Sources */,
 				65C518C827D673FF00B87FF0 /* TagViewController.swift in Sources */,
+				4A4643952806D61C00942AD7 /* IconsModel.swift in Sources */,
 				65F1BC2227CE8836002D08D8 /* ProgressbarTableViewCells.swift in Sources */,
+				4A35E483281304A1001526D8 /* RadiusesView.swift in Sources */,
 				AAC5D4412567FE710070667D /* AppDelegate.swift in Sources */,
 				65B52A1D27394136008D9B5E /* SwitchTableViewCell.swift in Sources */,
 				4AAD2B67276772D200727D8E /* MainTableViewController.swift in Sources */,
+				4A35E4752812B34E001526D8 /* ColorsModel.swift in Sources */,
 				65D1B66A2787422100C1560B /* ShadowTableViewCell.swift in Sources */,
 				6551746227EDBFAE0043700F /* BaseImageCollectionViewController.swift in Sources */,
 				6551745C27EDBDFA0043700F /* BadgeCollectionViewCell.swift in Sources */,
 				AAB029CE256805A900F08C74 /* ColorsViewController.swift in Sources */,
 				AAB029D4256805E200F08C74 /* ButtonsViewController.swift in Sources */,
+				4A35E47C2812FE77001526D8 /* ColorsModel+Semantic.swift in Sources */,
+				4A4643902806C91700942AD7 /* AssetsModel.swift in Sources */,
+				4A35E4772812B357001526D8 /* ColorsView.swift in Sources */,
 				65B52A1927392EDD008D9B5E /* SwitchViewController.swift in Sources */,
+				4ACCCBCE2805E28600FD184B /* MainTabController.swift in Sources */,
 				65F1BC1F27CE8836002D08D8 /* ProgressbarViewController.swift in Sources */,
+				4A07433927D94BB0005BD446 /* MainView.swift in Sources */,
+				4A07433E27D9541F005BD446 /* NavigationTitleModifier.swift in Sources */,
 				65B52A232739553A008D9B5E /* TextFieldViewController.swift in Sources */,
+				4ACCCBD52805E71400FD184B /* AssetsView.swift in Sources */,
 				AA68B4CB25681A5A00F1A4D7 /* ButtonTableViewCell.swift in Sources */,
 				651EF24D272BE8D500121F7A /* TextFieldTableViewCell.swift in Sources */,
 				AAB029E925680D8D00F08C74 /* ColorTableViewCell.swift in Sources */,
 				65BD9F3E2768D06900EEDC0D /* IconCollectionViewCell.swift in Sources */,
 				6531B78227A9A23600808E1E /* RadiusTableViewCell.swift in Sources */,
 				6551746127EDBFAE0043700F /* BaseHeaderedCollectionViewController.swift in Sources */,
+				4ACCCBD92805FF7100FD184B /* ArrayExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,9 +1020,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		654642B7276A9F5700213415 /* Vitamin */ = {
+		4A35E45F2811EE2E001526D8 /* Vitamin */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Vitamin;
+		};
+		4A35E4632811EE2E001526D8 /* VitaminSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VitaminSwiftUI;
+		};
+		4AB763AD2825725300092033 /* VitaminCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VitaminCore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Vitamin"
-  s.version      = "0.5.3"
+  s.version      = "0.6.0"
   s.summary      = "The iOS implement of Decathlon's design system"
 
   s.homepage     = "https://github.com/Decathlon/vitamin-ios"
@@ -14,8 +14,10 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
 
   s.source           = { :git => 'https://github.com/Decathlon/vitamin-ios.git', :tag => s.version.to_s }
-  s.source_files     = 'Sources/**/*.swift'
-  s.resources        = 'Sources/**/*.{xcassets,ttf,xib}'
   s.swift_version    = '5.3'
+  
+  s.source_files     = 'Sources/VitaminUIKit/**/*.swift'
+  s.resources        = 'Sources/VitaminUIKit/**/*.xib'
+  s.dependency       'VitaminCore', s.version.to_s
 
 end
