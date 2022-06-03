@@ -122,9 +122,12 @@ extension VitaminTextStyle: RawRepresentable {
         case "title3": self = .title3
         case "headline": self = .headline
         case "body": self = .body
+        case "bodyBold": self = .bodyBold
         case "callout": self = .callout
+        case "calloutBold": self = .calloutBold
         case "subhead": self = .subhead
         case "footnote": self = .footnote
+        case "footnoteBold": self = .footnoteBold
         case "caption1": self = .caption1
         case "caption2": self = .caption2
         case "button": self = .button
