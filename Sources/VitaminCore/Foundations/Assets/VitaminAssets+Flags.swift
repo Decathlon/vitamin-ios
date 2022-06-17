@@ -13,3 +13,12 @@ extension VitaminAssets {
         VitaminAsset(name: countryCode.uppercased())
     }
 }
+
+extension VitaminAssets.Flag {
+    @available(*, deprecated, renamed: "do")
+    public static let dom = VitaminAssets.Flag.do
+    @available(*, deprecated, renamed: "in")
+    public static let ind = VitaminAssets.Flag.in
+    @available(*, deprecated, renamed: "is")
+    public static let isl = VitaminAssets.Flag.is
+}
