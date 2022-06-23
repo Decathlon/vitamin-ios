@@ -16,13 +16,18 @@ public enum Vitamix {
     }
     public enum Business {
       public static let award = VitaminImageAsset(name: "fill/business/award")
+      public static let barChart = VitaminImageAsset(name: "fill/business/bar_chart")
       public static let calendar = VitaminImageAsset(name: "fill/business/calendar")
       public static let calendar2 = VitaminImageAsset(name: "fill/business/calendar_2")
       public static let calendarCheck = VitaminImageAsset(name: "fill/business/calendar_check")
       public static let calendarDate = VitaminImageAsset(name: "fill/business/calendar_date")
+      public static let lineChart = VitaminImageAsset(name: "fill/business/line_chart")
       public static let mail = VitaminImageAsset(name: "fill/business/mail")
       public static let mailSend = VitaminImageAsset(name: "fill/business/mail_send")
+      public static let pieChart = VitaminImageAsset(name: "fill/business/pie_chart")
       public static let printer = VitaminImageAsset(name: "fill/business/printer")
+      public static let sendPlane2 = VitaminImageAsset(name: "fill/business/send-plane-2")
+      public static let sendPlane = VitaminImageAsset(name: "fill/business/send-plane")
     }
     public enum Communication {
       public static let feedback = VitaminImageAsset(name: "fill/communication/feedback")
@@ -31,6 +36,7 @@ public enum Vitamix {
     public enum Design {
       public static let edit = VitaminImageAsset(name: "fill/design/edit")
       public static let focus = VitaminImageAsset(name: "fill/design/focus")
+      public static let grid = VitaminImageAsset(name: "fill/design/grid")
       public static let ruler = VitaminImageAsset(name: "fill/design/ruler")
     }
     public enum Device {
@@ -38,6 +44,7 @@ public enum Vitamix {
       public static let mac = VitaminImageAsset(name: "fill/device/mac")
       public static let macbook = VitaminImageAsset(name: "fill/device/macbook")
       public static let phone = VitaminImageAsset(name: "fill/device/phone")
+      public static let rss = VitaminImageAsset(name: "fill/device/rss")
       public static let shutdown = VitaminImageAsset(name: "fill/device/shutdown")
       public static let smartphone = VitaminImageAsset(name: "fill/device/smartphone")
     }
@@ -48,7 +55,7 @@ public enum Vitamix {
     public enum Editor {
       public static let attachment = VitaminImageAsset(name: "fill/editor/attachment")
       public static let link = VitaminImageAsset(name: "fill/editor/link")
-      public static let listCheck = VitaminImageAsset(name: "fill/editor/list-check")
+      public static let listCheck = VitaminImageAsset(name: "fill/editor/list_check")
       public static let unlink = VitaminImageAsset(name: "fill/editor/unlink")
     }
     public enum Finance {
@@ -60,11 +67,14 @@ public enum Vitamix {
       public static let moneyDollarBox = VitaminImageAsset(name: "fill/finance/money_dollar_box")
       public static let moneyEuroBox = VitaminImageAsset(name: "fill/finance/money_euro_box")
       public static let moneyPoundBox = VitaminImageAsset(name: "fill/finance/money_pound_box")
-      public static let productReturn = VitaminImageAsset(name: "fill/finance/productReturn")
+      public static let priceTag = VitaminImageAsset(name: "fill/finance/price_tag")
       public static let refund = VitaminImageAsset(name: "fill/finance/refund")
+      public static let `return` = VitaminImageAsset(name: "fill/finance/return")
       public static let securePayment = VitaminImageAsset(name: "fill/finance/secure_payment")
       public static let shoppingCart = VitaminImageAsset(name: "fill/finance/shopping_cart")
+      public static let trophy = VitaminImageAsset(name: "fill/finance/trophy")
       public static let visa = VitaminImageAsset(name: "fill/finance/visa")
+      public static let wallet = VitaminImageAsset(name: "fill/finance/wallet")
     }
     public enum Health {
       public static let heart = VitaminImageAsset(name: "fill/health/heart")
@@ -87,6 +97,7 @@ public enum Vitamix {
       public static let slack = VitaminImageAsset(name: "fill/logos/slack")
       public static let snapchat = VitaminImageAsset(name: "fill/logos/snapchat")
       public static let telegram = VitaminImageAsset(name: "fill/logos/telegram")
+      public static let tiktok = VitaminImageAsset(name: "fill/logos/tiktok")
       public static let twitter = VitaminImageAsset(name: "fill/logos/twitter")
       public static let viber = VitaminImageAsset(name: "fill/logos/viber")
       public static let whatsapp = VitaminImageAsset(name: "fill/logos/whatsapp")
@@ -99,6 +110,7 @@ public enum Vitamix {
       public static let earth = VitaminImageAsset(name: "fill/map/earth")
       public static let mapPin = VitaminImageAsset(name: "fill/map/map_pin")
       public static let navigation = VitaminImageAsset(name: "fill/map/navigation")
+      public static let riding = VitaminImageAsset(name: "fill/map/riding")
       public static let suitcase = VitaminImageAsset(name: "fill/map/suitcase")
       public static let train = VitaminImageAsset(name: "fill/map/train")
       public static let truck = VitaminImageAsset(name: "fill/map/truck")
@@ -118,7 +130,7 @@ public enum Vitamix {
       public static let pauseCircle = VitaminImageAsset(name: "fill/media/pause_circle")
       public static let play = VitaminImageAsset(name: "fill/media/play")
       public static let playCircle = VitaminImageAsset(name: "fill/media/play_circle")
-      public static let repeatMedia = VitaminImageAsset(name: "fill/media/repeatMedia")
+      public static let `repeat` = VitaminImageAsset(name: "fill/media/repeat")
       public static let stop = VitaminImageAsset(name: "fill/media/stop")
       public static let stopCircle = VitaminImageAsset(name: "fill/media/stop_circle")
       public static let volumeDown = VitaminImageAsset(name: "fill/media/volume_down")
@@ -126,6 +138,10 @@ public enum Vitamix {
       public static let volumeUp = VitaminImageAsset(name: "fill/media/volume_up")
     }
     public enum Others {
+      public static let football = VitaminImageAsset(name: "fill/others/football")
+      public static let leaf = VitaminImageAsset(name: "fill/others/leaf")
+      public static let lightbulb = VitaminImageAsset(name: "fill/others/lightbulb")
+      public static let recycle = VitaminImageAsset(name: "fill/others/recycle")
       public static let scales = VitaminImageAsset(name: "fill/others/scales")
       public static let tShirt = VitaminImageAsset(name: "fill/others/t_shirt")
     }
@@ -165,6 +181,10 @@ public enum Vitamix {
       public static let checkboxBlankCircle = VitaminImageAsset(name: "fill/system/checkbox_blank_circle")
       public static let checkboxCircle = VitaminImageAsset(name: "fill/system/checkbox_circle")
       public static let checkboxMultiple = VitaminImageAsset(name: "fill/system/checkbox_multiple")
+      public static let chevronDown = VitaminImageAsset(name: "fill/system/chevron_down")
+      public static let chevronLeft = VitaminImageAsset(name: "fill/system/chevron_left")
+      public static let chevronRight = VitaminImageAsset(name: "fill/system/chevron_right")
+      public static let chevronUp = VitaminImageAsset(name: "fill/system/chevron_up")
       public static let close = VitaminImageAsset(name: "fill/system/close")
       public static let closeCircle = VitaminImageAsset(name: "fill/system/close_circle")
       public static let counter = VitaminImageAsset(name: "fill/system/counter")
@@ -176,6 +196,7 @@ public enum Vitamix {
       public static let eyeOff = VitaminImageAsset(name: "fill/system/eye_off")
       public static let filter = VitaminImageAsset(name: "fill/system/filter")
       public static let filterOff = VitaminImageAsset(name: "fill/system/filter_off")
+      public static let forbid = VitaminImageAsset(name: "fill/system/forbid")
       public static let function = VitaminImageAsset(name: "fill/system/function")
       public static let history = VitaminImageAsset(name: "fill/system/history")
       public static let information = VitaminImageAsset(name: "fill/system/information")
@@ -200,11 +221,14 @@ public enum Vitamix {
       public static let time = VitaminImageAsset(name: "fill/system/time")
       public static let timer = VitaminImageAsset(name: "fill/system/timer")
       public static let upload = VitaminImageAsset(name: "fill/system/upload")
+      public static let zoomIn = VitaminImageAsset(name: "fill/system/zoom-in")
+      public static let zoomOut = VitaminImageAsset(name: "fill/system/zoom-out")
     }
     public enum Tasks {
       public static let task = VitaminImageAsset(name: "fill/tasks/task")
     }
     public enum User {
+      public static let bodyScan = VitaminImageAsset(name: "fill/user/body_scan")
       public static let emotion = VitaminImageAsset(name: "fill/user/emotion")
       public static let emotionLaugh = VitaminImageAsset(name: "fill/user/emotion_laugh")
       public static let emotionNormal = VitaminImageAsset(name: "fill/user/emotion_normal")
@@ -222,8 +246,8 @@ public enum Vitamix {
       public static let foggy = VitaminImageAsset(name: "fill/weather/foggy")
       public static let hail = VitaminImageAsset(name: "fill/weather/hail")
       public static let mist = VitaminImageAsset(name: "fill/weather/mist")
-      public static let moonCloudy = VitaminImageAsset(name: "fill/weather/moon cloudy")
       public static let moon = VitaminImageAsset(name: "fill/weather/moon")
+      public static let moonCloudy = VitaminImageAsset(name: "fill/weather/moon_cloudy")
       public static let rainy = VitaminImageAsset(name: "fill/weather/rainy")
       public static let showers = VitaminImageAsset(name: "fill/weather/showers")
       public static let snowy = VitaminImageAsset(name: "fill/weather/snowy")
@@ -242,13 +266,18 @@ public enum Vitamix {
     }
     public enum Business {
       public static let award = VitaminImageAsset(name: "line/business/award")
+      public static let barChart = VitaminImageAsset(name: "line/business/bar_chart")
       public static let calendar = VitaminImageAsset(name: "line/business/calendar")
       public static let calendar2 = VitaminImageAsset(name: "line/business/calendar_2")
       public static let calendarCheck = VitaminImageAsset(name: "line/business/calendar_check")
       public static let calendarDate = VitaminImageAsset(name: "line/business/calendar_date")
+      public static let lineChart = VitaminImageAsset(name: "line/business/line_chart")
       public static let mail = VitaminImageAsset(name: "line/business/mail")
       public static let mailSend = VitaminImageAsset(name: "line/business/mail_send")
+      public static let pieChart = VitaminImageAsset(name: "line/business/pie_chart")
       public static let printer = VitaminImageAsset(name: "line/business/printer")
+      public static let sendPlane2 = VitaminImageAsset(name: "line/business/send-plane-2")
+      public static let sendPlane = VitaminImageAsset(name: "line/business/send-plane")
     }
     public enum Communication {
       public static let feedback = VitaminImageAsset(name: "line/communication/feedback")
@@ -257,6 +286,7 @@ public enum Vitamix {
     public enum Design {
       public static let edit = VitaminImageAsset(name: "line/design/edit")
       public static let focus = VitaminImageAsset(name: "line/design/focus")
+      public static let grid = VitaminImageAsset(name: "line/design/grid")
       public static let ruler = VitaminImageAsset(name: "line/design/ruler")
     }
     public enum Device {
@@ -264,6 +294,7 @@ public enum Vitamix {
       public static let mac = VitaminImageAsset(name: "line/device/mac")
       public static let macbook = VitaminImageAsset(name: "line/device/macbook")
       public static let phone = VitaminImageAsset(name: "line/device/phone")
+      public static let rss = VitaminImageAsset(name: "line/device/rss")
       public static let shutdown = VitaminImageAsset(name: "line/device/shutdown")
       public static let smartphone = VitaminImageAsset(name: "line/device/smartphone")
     }
@@ -286,11 +317,14 @@ public enum Vitamix {
       public static let moneyDollarBox = VitaminImageAsset(name: "line/finance/money_dollar_box")
       public static let moneyEuroBox = VitaminImageAsset(name: "line/finance/money_euro_box")
       public static let moneyPoundBox = VitaminImageAsset(name: "line/finance/money_pound_box")
-      public static let productReturn = VitaminImageAsset(name: "line/finance/productReturn")
+      public static let priceTag = VitaminImageAsset(name: "line/finance/price_tag")
       public static let refund = VitaminImageAsset(name: "line/finance/refund")
+      public static let `return` = VitaminImageAsset(name: "line/finance/return")
       public static let securePayment = VitaminImageAsset(name: "line/finance/secure_payment")
       public static let shoppingCart = VitaminImageAsset(name: "line/finance/shopping_cart")
+      public static let trophy = VitaminImageAsset(name: "line/finance/trophy")
       public static let visa = VitaminImageAsset(name: "line/finance/visa")
+      public static let wallet = VitaminImageAsset(name: "line/finance/wallet")
     }
     public enum Health {
       public static let heart = VitaminImageAsset(name: "line/health/heart")
@@ -313,6 +347,7 @@ public enum Vitamix {
       public static let slack = VitaminImageAsset(name: "line/logos/slack")
       public static let snapchat = VitaminImageAsset(name: "line/logos/snapchat")
       public static let telegram = VitaminImageAsset(name: "line/logos/telegram")
+      public static let tiktok = VitaminImageAsset(name: "line/logos/tiktok")
       public static let twitter = VitaminImageAsset(name: "line/logos/twitter")
       public static let viber = VitaminImageAsset(name: "line/logos/viber")
       public static let whatsapp = VitaminImageAsset(name: "line/logos/whatsapp")
@@ -325,6 +360,7 @@ public enum Vitamix {
       public static let earth = VitaminImageAsset(name: "line/map/earth")
       public static let mapPin = VitaminImageAsset(name: "line/map/map_pin")
       public static let navigation = VitaminImageAsset(name: "line/map/navigation")
+      public static let riding = VitaminImageAsset(name: "line/map/riding")
       public static let suitcase = VitaminImageAsset(name: "line/map/suitcase")
       public static let train = VitaminImageAsset(name: "line/map/train")
       public static let truck = VitaminImageAsset(name: "line/map/truck")
@@ -344,7 +380,7 @@ public enum Vitamix {
       public static let pauseCircle = VitaminImageAsset(name: "line/media/pause_circle")
       public static let play = VitaminImageAsset(name: "line/media/play")
       public static let playCircle = VitaminImageAsset(name: "line/media/play_circle")
-      public static let repeatMedia = VitaminImageAsset(name: "line/media/repeatMedia")
+      public static let `repeat` = VitaminImageAsset(name: "line/media/repeat")
       public static let stop = VitaminImageAsset(name: "line/media/stop")
       public static let stopCircle = VitaminImageAsset(name: "line/media/stop_circle")
       public static let volumeDown = VitaminImageAsset(name: "line/media/volume_down")
@@ -352,6 +388,10 @@ public enum Vitamix {
       public static let volumeUp = VitaminImageAsset(name: "line/media/volume_up")
     }
     public enum Others {
+      public static let football = VitaminImageAsset(name: "line/others/football")
+      public static let leaf = VitaminImageAsset(name: "line/others/leaf")
+      public static let lightbulb = VitaminImageAsset(name: "line/others/lightbulb")
+      public static let recycle = VitaminImageAsset(name: "line/others/recycle")
       public static let scales = VitaminImageAsset(name: "line/others/scales")
       public static let tShirt = VitaminImageAsset(name: "line/others/t_shirt")
     }
@@ -391,6 +431,10 @@ public enum Vitamix {
       public static let checkboxBlankCircle = VitaminImageAsset(name: "line/system/checkbox_blank_circle")
       public static let checkboxCircle = VitaminImageAsset(name: "line/system/checkbox_circle")
       public static let checkboxMultiple = VitaminImageAsset(name: "line/system/checkbox_multiple")
+      public static let chevronDown = VitaminImageAsset(name: "line/system/chevron_down")
+      public static let chevronLeft = VitaminImageAsset(name: "line/system/chevron_left")
+      public static let chevronRight = VitaminImageAsset(name: "line/system/chevron_right")
+      public static let chevronUp = VitaminImageAsset(name: "line/system/chevron_up")
       public static let close = VitaminImageAsset(name: "line/system/close")
       public static let closeCircle = VitaminImageAsset(name: "line/system/close_circle")
       public static let counter = VitaminImageAsset(name: "line/system/counter")
@@ -402,6 +446,7 @@ public enum Vitamix {
       public static let eyeOff = VitaminImageAsset(name: "line/system/eye_off")
       public static let filter = VitaminImageAsset(name: "line/system/filter")
       public static let filterOff = VitaminImageAsset(name: "line/system/filter_off")
+      public static let forbid = VitaminImageAsset(name: "line/system/forbid")
       public static let function = VitaminImageAsset(name: "line/system/function")
       public static let history = VitaminImageAsset(name: "line/system/history")
       public static let information = VitaminImageAsset(name: "line/system/information")
@@ -426,11 +471,14 @@ public enum Vitamix {
       public static let time = VitaminImageAsset(name: "line/system/time")
       public static let timer = VitaminImageAsset(name: "line/system/timer")
       public static let upload = VitaminImageAsset(name: "line/system/upload")
+      public static let zoomIn = VitaminImageAsset(name: "line/system/zoom-in")
+      public static let zoomOut = VitaminImageAsset(name: "line/system/zoom-out")
     }
     public enum Tasks {
       public static let task = VitaminImageAsset(name: "line/tasks/task")
     }
     public enum User {
+      public static let bodyScan = VitaminImageAsset(name: "line/user/body_scan")
       public static let emotion = VitaminImageAsset(name: "line/user/emotion")
       public static let emotionLaugh = VitaminImageAsset(name: "line/user/emotion_laugh")
       public static let emotionNormal = VitaminImageAsset(name: "line/user/emotion_normal")
