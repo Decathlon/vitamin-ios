@@ -3,7 +3,6 @@
 //  Apache License 2.0
 //
 
-#if arch(x86_64) || arch(arm64)
 import Foundation
 import VitaminCore
 
@@ -29,23 +28,33 @@ enum IconsModel {
         ]),
         IconsModel.Section(name: "Business - Line", items: [
             Vitamix.Line.Business.award,
+            Vitamix.Line.Business.barChart,
             Vitamix.Line.Business.calendar,
             Vitamix.Line.Business.calendar2,
             Vitamix.Line.Business.calendarCheck,
             Vitamix.Line.Business.calendarDate,
+            Vitamix.Line.Business.lineChart,
             Vitamix.Line.Business.mail,
             Vitamix.Line.Business.mailSend,
-            Vitamix.Line.Business.printer
+            Vitamix.Line.Business.pieChart,
+            Vitamix.Line.Business.printer,
+            Vitamix.Line.Business.sendPlane,
+            Vitamix.Line.Business.sendPlane2
         ]),
         IconsModel.Section(name: "Business - Fill", items: [
             Vitamix.Fill.Business.award,
+            Vitamix.Fill.Business.barChart,
             Vitamix.Fill.Business.calendar,
             Vitamix.Fill.Business.calendar2,
             Vitamix.Fill.Business.calendarCheck,
             Vitamix.Fill.Business.calendarDate,
+            Vitamix.Fill.Business.lineChart,
             Vitamix.Fill.Business.mail,
             Vitamix.Fill.Business.mailSend,
-            Vitamix.Fill.Business.printer
+            Vitamix.Fill.Business.pieChart,
+            Vitamix.Fill.Business.printer,
+            Vitamix.Fill.Business.sendPlane,
+            Vitamix.Fill.Business.sendPlane2
         ]),
         IconsModel.Section(name: "Communication - Line", items: [
             Vitamix.Line.Communication.feedback,
@@ -58,11 +67,13 @@ enum IconsModel {
         IconsModel.Section(name: "Design - Line", items: [
             Vitamix.Line.Design.edit,
             Vitamix.Line.Design.focus,
+            Vitamix.Line.Design.grid,
             Vitamix.Line.Design.ruler
         ]),
         IconsModel.Section(name: "Design - Fill", items: [
             Vitamix.Fill.Design.edit,
             Vitamix.Fill.Design.focus,
+            Vitamix.Fill.Design.grid,
             Vitamix.Fill.Design.ruler
         ]),
         IconsModel.Section(name: "Device - Line", items: [
@@ -70,6 +81,7 @@ enum IconsModel {
             Vitamix.Line.Device.mac,
             Vitamix.Line.Device.macbook,
             Vitamix.Line.Device.phone,
+            Vitamix.Line.Device.rss,
             Vitamix.Line.Device.shutdown,
             Vitamix.Line.Device.smartphone
         ]),
@@ -78,6 +90,7 @@ enum IconsModel {
             Vitamix.Fill.Device.mac,
             Vitamix.Fill.Device.macbook,
             Vitamix.Fill.Device.phone,
+            Vitamix.Fill.Device.rss,
             Vitamix.Fill.Device.shutdown,
             Vitamix.Fill.Device.smartphone
         ]),
@@ -110,11 +123,14 @@ enum IconsModel {
             Vitamix.Line.Finance.moneyDollarBox,
             Vitamix.Line.Finance.moneyEuroBox,
             Vitamix.Line.Finance.moneyPoundBox,
-            Vitamix.Line.Finance.productReturn,
+            Vitamix.Line.Finance.priceTag,
+            Vitamix.Line.Finance.return,
             Vitamix.Line.Finance.refund,
             Vitamix.Line.Finance.securePayment,
             Vitamix.Line.Finance.shoppingCart,
-            Vitamix.Line.Finance.visa
+            Vitamix.Line.Finance.trophy,
+            Vitamix.Line.Finance.visa,
+            Vitamix.Line.Finance.wallet
         ]),
         IconsModel.Section(name: "Finance - Fill", items: [
             Vitamix.Fill.Finance.bankCard,
@@ -125,11 +141,14 @@ enum IconsModel {
             Vitamix.Fill.Finance.moneyDollarBox,
             Vitamix.Fill.Finance.moneyEuroBox,
             Vitamix.Fill.Finance.moneyPoundBox,
-            Vitamix.Fill.Finance.productReturn,
+            Vitamix.Fill.Finance.priceTag,
+            Vitamix.Fill.Finance.return,
             Vitamix.Fill.Finance.refund,
             Vitamix.Fill.Finance.securePayment,
             Vitamix.Fill.Finance.shoppingCart,
-            Vitamix.Fill.Finance.visa
+            Vitamix.Fill.Finance.trophy,
+            Vitamix.Fill.Finance.visa,
+            Vitamix.Fill.Finance.wallet
         ]),
         IconsModel.Section(name: "Health and Medical - Line", items: [
             Vitamix.Line.Health.heart,
@@ -156,6 +175,7 @@ enum IconsModel {
             Vitamix.Line.Logos.slack,
             Vitamix.Line.Logos.snapchat,
             Vitamix.Line.Logos.telegram,
+            Vitamix.Line.Logos.tiktok,
             Vitamix.Line.Logos.twitter,
             Vitamix.Line.Logos.viber,
             Vitamix.Line.Logos.whatsapp,
@@ -178,6 +198,7 @@ enum IconsModel {
             Vitamix.Fill.Logos.slack,
             Vitamix.Fill.Logos.snapchat,
             Vitamix.Fill.Logos.telegram,
+            Vitamix.Fill.Logos.tiktok,
             Vitamix.Fill.Logos.twitter,
             Vitamix.Fill.Logos.viber,
             Vitamix.Fill.Logos.whatsapp,
@@ -190,6 +211,7 @@ enum IconsModel {
             Vitamix.Line.Map.earth,
             Vitamix.Line.Map.mapPin,
             Vitamix.Line.Map.navigation,
+            Vitamix.Line.Map.riding,
             Vitamix.Line.Map.suitcase,
             Vitamix.Line.Map.train,
             Vitamix.Line.Map.truck,
@@ -202,6 +224,7 @@ enum IconsModel {
             Vitamix.Fill.Map.earth,
             Vitamix.Fill.Map.mapPin,
             Vitamix.Fill.Map.navigation,
+            Vitamix.Fill.Map.riding,
             Vitamix.Fill.Map.suitcase,
             Vitamix.Fill.Map.train,
             Vitamix.Fill.Map.truck,
@@ -221,7 +244,7 @@ enum IconsModel {
             Vitamix.Line.Media.pauseCircle,
             Vitamix.Line.Media.play,
             Vitamix.Line.Media.playCircle,
-            Vitamix.Line.Media.repeatMedia,
+            Vitamix.Line.Media.repeat,
             Vitamix.Line.Media.stop,
             Vitamix.Line.Media.stopCircle,
             Vitamix.Line.Media.volumeDown,
@@ -242,7 +265,7 @@ enum IconsModel {
             Vitamix.Fill.Media.pauseCircle,
             Vitamix.Fill.Media.play,
             Vitamix.Fill.Media.playCircle,
-            Vitamix.Fill.Media.repeatMedia,
+            Vitamix.Fill.Media.repeat,
             Vitamix.Fill.Media.stop,
             Vitamix.Fill.Media.stopCircle,
             Vitamix.Fill.Media.volumeDown,
@@ -250,10 +273,18 @@ enum IconsModel {
             Vitamix.Fill.Media.volumeUp
         ]),
         IconsModel.Section(name: "Others - Line", items: [
+            Vitamix.Line.Others.football,
+            Vitamix.Line.Others.leaf,
+            Vitamix.Line.Others.lightbulb,
+            Vitamix.Line.Others.recycle,
             Vitamix.Line.Others.scales,
             Vitamix.Line.Others.tShirt
         ]),
         IconsModel.Section(name: "Others - Fill", items: [
+            Vitamix.Fill.Others.football,
+            Vitamix.Fill.Others.leaf,
+            Vitamix.Fill.Others.lightbulb,
+            Vitamix.Fill.Others.recycle,
             Vitamix.Fill.Others.scales,
             Vitamix.Fill.Others.tShirt
         ]),
@@ -296,6 +327,10 @@ enum IconsModel {
             Vitamix.Line.System.checkboxBlankCircle,
             Vitamix.Line.System.checkboxCircle,
             Vitamix.Line.System.checkboxMultiple,
+            Vitamix.Line.System.chevronDown,
+            Vitamix.Line.System.chevronLeft,
+            Vitamix.Line.System.chevronRight,
+            Vitamix.Line.System.chevronUp,
             Vitamix.Line.System.close,
             Vitamix.Line.System.closeCircle,
             Vitamix.Line.System.counter,
@@ -307,6 +342,7 @@ enum IconsModel {
             Vitamix.Line.System.eyeOff,
             Vitamix.Line.System.filter,
             Vitamix.Line.System.filterOff,
+            Vitamix.Line.System.forbid,
             Vitamix.Line.System.function,
             Vitamix.Line.System.history,
             Vitamix.Line.System.information,
@@ -330,7 +366,9 @@ enum IconsModel {
             Vitamix.Line.System.thumbUp,
             Vitamix.Line.System.time,
             Vitamix.Line.System.timer,
-            Vitamix.Line.System.upload
+            Vitamix.Line.System.upload,
+            Vitamix.Line.System.zoomIn,
+            Vitamix.Line.System.zoomOut
         ]),
         IconsModel.Section(name: "System - Line", items: [
             Vitamix.Fill.System.add,
@@ -365,6 +403,10 @@ enum IconsModel {
             Vitamix.Fill.System.checkboxBlankCircle,
             Vitamix.Fill.System.checkboxCircle,
             Vitamix.Fill.System.checkboxMultiple,
+            Vitamix.Fill.System.chevronDown,
+            Vitamix.Fill.System.chevronLeft,
+            Vitamix.Fill.System.chevronRight,
+            Vitamix.Fill.System.chevronUp,
             Vitamix.Fill.System.close,
             Vitamix.Fill.System.closeCircle,
             Vitamix.Fill.System.counter,
@@ -376,6 +418,7 @@ enum IconsModel {
             Vitamix.Fill.System.eyeOff,
             Vitamix.Fill.System.filter,
             Vitamix.Fill.System.filterOff,
+            Vitamix.Fill.System.forbid,
             Vitamix.Fill.System.function,
             Vitamix.Fill.System.history,
             Vitamix.Fill.System.information,
@@ -399,7 +442,9 @@ enum IconsModel {
             Vitamix.Fill.System.thumbUp,
             Vitamix.Fill.System.time,
             Vitamix.Fill.System.timer,
-            Vitamix.Fill.System.upload
+            Vitamix.Fill.System.upload,
+            Vitamix.Fill.System.zoomIn,
+            Vitamix.Fill.System.zoomOut
         ]),
         IconsModel.Section(name: "Task - Line", items: [
             Vitamix.Line.Tasks.task
@@ -408,6 +453,7 @@ enum IconsModel {
             Vitamix.Fill.Tasks.task
         ]),
         IconsModel.Section(name: "User - Line", items: [
+            Vitamix.Line.User.bodyScan,
             Vitamix.Line.User.emotion,
             Vitamix.Line.User.emotionLaugh,
             Vitamix.Line.User.emotionNormal,
@@ -417,6 +463,7 @@ enum IconsModel {
             Vitamix.Line.User.user
         ]),
         IconsModel.Section(name: "User - Fill", items: [
+            Vitamix.Fill.User.bodyScan,
             Vitamix.Fill.User.emotion,
             Vitamix.Fill.User.emotionLaugh,
             Vitamix.Fill.User.emotionNormal,
@@ -467,11 +514,3 @@ enum IconsModel {
         ])
     ]
 }
-
-@available(iOS 13, *)
-extension VitaminImageAsset: AssetProtocol {
-    var label: String {
-        name.components(separatedBy: "/").last ?? name
-    }
-}
-#endif

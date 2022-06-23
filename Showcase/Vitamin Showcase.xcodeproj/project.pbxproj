@@ -23,7 +23,7 @@
 		4A35E4902816D1B5001526D8 /* TypographyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E48F2816D1B5001526D8 /* TypographyView.swift */; };
 		4A4643902806C91700942AD7 /* AssetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A46438F2806C91700942AD7 /* AssetsModel.swift */; };
 		4A4643932806D60B00942AD7 /* IconsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4643922806D60B00942AD7 /* IconsView.swift */; };
-		4A4643952806D61C00942AD7 /* IconsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4643942806D61C00942AD7 /* IconsModel.swift */; };
+		4A91BAAE2864CC5C0032B31E /* IconsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A91BAAD2864CC5C0032B31E /* IconsModel.swift */; };
 		4AAD2B67276772D200727D8E /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD2B66276772D200727D8E /* MainTableViewController.swift */; };
 		4AB763AE2825725300092033 /* VitaminCore in Frameworks */ = {isa = PBXBuildFile; productRef = 4AB763AD2825725300092033 /* VitaminCore */; };
 		4ACCCBCE2805E28600FD184B /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07433A27D94C90005BD446 /* MainTabController.swift */; };
@@ -93,7 +93,7 @@
 		4A35E48F2816D1B5001526D8 /* TypographyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyView.swift; sourceTree = "<group>"; };
 		4A46438F2806C91700942AD7 /* AssetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsModel.swift; sourceTree = "<group>"; };
 		4A4643922806D60B00942AD7 /* IconsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsView.swift; sourceTree = "<group>"; };
-		4A4643942806D61C00942AD7 /* IconsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsModel.swift; sourceTree = "<group>"; };
+		4A91BAAD2864CC5C0032B31E /* IconsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconsModel.swift; sourceTree = "<group>"; };
 		4AAD2B66276772D200727D8E /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		4ACCCBD42805E71400FD184B /* AssetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsView.swift; sourceTree = "<group>"; };
 		4ACCCBD62805E7AE00FD184B /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
@@ -228,7 +228,9 @@
 		4A35E4792812E443001526D8 /* Foundations */ = {
 			isa = PBXGroup;
 			children = (
+				4A91BAAF2864CF5D0032B31E /* Assets */,
 				4A35E47A2812E44B001526D8 /* Colors */,
+				4A91BAAC2864CC5C0032B31E /* Icons */,
 				4A35E484281305D0001526D8 /* Radiuses */,
 				4A35E48A2816C20E001526D8 /* Shadows */,
 				4A35E48C2816D066001526D8 /* Typography */,
@@ -297,7 +299,6 @@
 		4A4643912806D5F100942AD7 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				4A4643942806D61C00942AD7 /* IconsModel.swift */,
 				4A4643922806D60B00942AD7 /* IconsView.swift */,
 			);
 			path = Icons;
@@ -328,6 +329,22 @@
 				AAC5D44E2567FE720070667D /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4A91BAAC2864CC5C0032B31E /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				4A91BAAD2864CC5C0032B31E /* IconsModel.swift */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		4A91BAAF2864CF5D0032B31E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4A46438F2806C91700942AD7 /* AssetsModel.swift */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		4AAD2B5C2767714B00727D8E /* Application */ = {
@@ -447,7 +464,6 @@
 		4ACCCBD12805E6D800FD184B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				4A46438F2806C91700942AD7 /* AssetsModel.swift */,
 				4ACCCBD42805E71400FD184B /* AssetsView.swift */,
 			);
 			path = Assets;
@@ -786,7 +802,6 @@
 				4A35E4872816C1F4001526D8 /* ShadowsView.swift in Sources */,
 				65C518CA27D673FF00B87FF0 /* TagTableViewCell.swift in Sources */,
 				65C518C827D673FF00B87FF0 /* TagViewController.swift in Sources */,
-				4A4643952806D61C00942AD7 /* IconsModel.swift in Sources */,
 				65F1BC2227CE8836002D08D8 /* ProgressbarTableViewCells.swift in Sources */,
 				4A35E483281304A1001526D8 /* RadiusesView.swift in Sources */,
 				AAC5D4412567FE710070667D /* AppDelegate.swift in Sources */,
@@ -808,6 +823,7 @@
 				4A07433E27D9541F005BD446 /* NavigationTitleModifier.swift in Sources */,
 				65B52A232739553A008D9B5E /* TextFieldViewController.swift in Sources */,
 				4ACCCBD52805E71400FD184B /* AssetsView.swift in Sources */,
+				4A91BAAE2864CC5C0032B31E /* IconsModel.swift in Sources */,
 				AA68B4CB25681A5A00F1A4D7 /* ButtonTableViewCell.swift in Sources */,
 				651EF24D272BE8D500121F7A /* TextFieldTableViewCell.swift in Sources */,
 				AAB029E925680D8D00F08C74 /* ColorTableViewCell.swift in Sources */,

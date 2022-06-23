@@ -3,7 +3,6 @@
 //  Apache License 2.0
 //
 
-#if arch(x86_64) || arch(arm64)
 import Foundation
 import VitaminCore
 
@@ -305,11 +304,3 @@ enum AssetsModel {
         ])
     ]
 }
-
-@available(iOS 13, *)
-extension VitaminAsset: AssetProtocol {
-    var label: String {
-        name
-    }
-}
-#endif
