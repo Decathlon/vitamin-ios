@@ -35,9 +35,12 @@ enum TypographyModel {
         TypographyModel.Item(name: "Title 3", value: .title3),
         TypographyModel.Item(name: "Headline", value: .headline),
         TypographyModel.Item(name: "Body", value: .body),
+        TypographyModel.Item(name: "Body Bold", value: .bodyBold),
         TypographyModel.Item(name: "Callout", value: .callout),
+        TypographyModel.Item(name: "Callout Bold", value: .calloutBold),
         TypographyModel.Item(name: "Subhead", value: .subhead),
         TypographyModel.Item(name: "Footnote", value: .footnote),
+        TypographyModel.Item(name: "Footnote Bold", value: .footnoteBold),
         TypographyModel.Item(name: "Caption 1", value: .caption1),
         TypographyModel.Item(name: "Caption 2", value: .caption2),
         TypographyModel.Item(name: "Button", value: .button)
