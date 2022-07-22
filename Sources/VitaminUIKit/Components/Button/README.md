@@ -29,15 +29,15 @@ You can put an icon from Vitamin icons library in your button, or also have a sq
 To achieve this, `VitaminButton` provides you with a `setIconType(:for:)` method.
 You can have different icons, or even different icon types per state.
 
-`IconType` has four cases :
-- `.leading` : icon will be put before your button label
-- `.trailing` : icon will be put after your button label
-- `.alone` : button will be squared, an icon will be centered, and no button label will be displayed
-- `.none` : no icon will be displayed in your button
+`IconType` has four cases:
+- `.leading`: icon will be put before your button label
+- `.trailing`: icon will be put after your button label
+- `.alone`: button will be squared, an icon will be centered, and no button label will be displayed
+- `.none`: no icon will be displayed in your button
 
-For `.leading`, `.trailing` and `.alone`, you must provide :
+For `.leading`, `.trailing` and `.alone`, you must provide:
 - an `UIImage` from Vitamin icons library (but will work with any UIImage)
-- an optional `UIImage.RenderingMode` : if you provide one, image will be resized using this rendering mode, if not, image will be used as is (with unexpected behaviour if your image has a wrong size)
+- an optional `UIImage.RenderingMode`: if you provide one, image will be resized using this rendering mode, if not, image will be used as is (with unexpected behaviour if your image has a wrong size)
 
 If you do not specify specific icon type for a specific state, the one for .normal state will be chosen.
 And by default, the icon type for .normal state is .none
