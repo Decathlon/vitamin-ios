@@ -39,11 +39,27 @@ final class ButtonTableViewCell: UITableViewCell {
 
         mediumButton.setTitle("\(style)", for: .normal)
         largeButton.setTitle("\(style)", for: .normal)
-        
-        mediumButton.setIconType(.trailing(image: Vitamix.Line.Logos.apple.image, renderingMode: .alwaysTemplate), for: .normal)
-        largeButton.setIconType(.leading(image: Vitamix.Line.System.arrowRightS.image, renderingMode: .alwaysTemplate), for: .normal)
-        mediumIconAloneButton.setIconType(.alone(image: Vitamix.Line.Logos.apple.image, renderingMode: .alwaysTemplate), for: .normal)
-        largeIconAloneButton.setIconType(.alone(image: Vitamix.Line.System.arrowRightS.image, renderingMode: .alwaysTemplate), for: .normal)
+
+        mediumButton.setIconType(
+            .trailing(
+                image: Vitamix.Line.Logos.apple.image,
+                renderingMode: .alwaysTemplate),
+            for: .normal)
+        largeButton.setIconType(
+            .leading(
+                image: Vitamix.Line.System.arrowRightS.image,
+                renderingMode: .alwaysTemplate),
+            for: .normal)
+        mediumIconAloneButton.setIconType(
+            .alone(
+                image: Vitamix.Line.Logos.apple.image,
+                renderingMode: .alwaysTemplate),
+            for: .normal)
+        largeIconAloneButton.setIconType(
+            .alone(
+                image: Vitamix.Line.System.arrowRightS.image,
+                renderingMode: .alwaysTemplate),
+            for: .normal)
 
         mediumButton.isEnabled = isEnabled
         largeButton.isEnabled = isEnabled
