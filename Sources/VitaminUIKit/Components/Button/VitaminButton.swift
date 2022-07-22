@@ -33,16 +33,29 @@ public class VitaminButton: UIButton {
             applyNewTextStyle()
         }
     }
+    
+    public enum IconType {
+        case trailing(image: UIImage, renderingMode: UIImage.RenderingMode?)
+        case leading(image: UIImage, renderingMode: UIImage.RenderingMode?)
+        case alone(image: UIImage, renderingMode: UIImage.RenderingMode?)
+        case none
+    }
+    
+    private var iconTypes: [UIControl.State:IconType] = [.normal: .none]
 
     public override var isEnabled: Bool {
         didSet {
             updateOpacity()
+            updateSemantic()
+            updateImageInsets()
         }
     }
 
     public override var isHighlighted: Bool {
         didSet {
             updateBorder()
+            updateSemantic()
+            updateImageInsets()
         }
     }
 
@@ -51,6 +64,7 @@ public class VitaminButton: UIButton {
         super.init(frame: .zero)
         applyNewStyle()
         applyNewTextStyle()
+        
     }
 
     public required init?(coder: NSCoder) {
@@ -67,44 +81,14 @@ public class VitaminButton: UIButton {
     public override var intrinsicContentSize: CGSize {
         let baseSize = super.intrinsicContentSize
         return CGSize(
-            width: 2 * size.horizontalInset + baseSize.width,
-            height: 2 * size.verticalInset + baseSize.height
+            width: 2 * size.horizontalInset(iconType: getIconType(for: self.state)) + baseSize.width,
+            height: 2 * size.verticalInset(iconType: getIconType(for: self.state)) + baseSize.height
         )
     }
-
+    
     public override func setTitle(_ title: String?, for state: UIControl.State) {
         super.setTitle(title, for: state)
         applyNewTextStyle()
-    }
-
-    public func setLeadingImage(_ image: UIImage, for state: UIControl.State) {
-        self.setImage(image, for: state)
-        self.imageView?.tintColor = titleLabel?.textColor
-        self.tintColor = titleLabel?.textColor
-        self.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
-        self.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        self.contentVerticalAlignment = .fill
-        self.contentMode = .center
-        self.imageView?.contentMode = .scaleAspectFit
-    }
-
-    public func setTrailingImage(_ image: UIImage, for state: UIControl.State) {
-        self.setLeadingImage(image, for: state)
-        self.semanticContentAttribute = .forceRightToLeft
-        self.imageEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-    }
-
-    public func setLeadingImage(_ image: UIImage, for state: UIControl.State, renderingMode: UIImage.RenderingMode) {
-        guard let resizedImage = image
-                .resizedImage(size: CGSize(width: 16, height: 16))?
-                .withRenderingMode(renderingMode) else { return }
-        self.setLeadingImage(resizedImage, for: state)
-    }
-
-    public func setTrailingImage(_ image: UIImage, for state: UIControl.State, renderingMode: UIImage.RenderingMode) {
-        self.setLeadingImage(image, for: state, renderingMode: renderingMode)
-        self.semanticContentAttribute = .forceRightToLeft
-        self.imageEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
     }
 }
 
@@ -275,17 +259,134 @@ extension VitaminButton.Size {
         .button
     }
 
-    var horizontalInset: CGFloat {
+    func horizontalInset(iconType: VitaminButton.IconType) -> CGFloat {
+        if case .alone(_, _) = iconType {
+            return 12
+        }
+        
         switch self {
         case .medium: return 20
         case .large: return 40
         }
+        
+        
     }
 
-    var verticalInset: CGFloat {
+    func verticalInset(iconType: VitaminButton.IconType) -> CGFloat {
+        if case .alone(_, _) = iconType {
+            return 12
+        }
+    
         switch self {
         case .medium: return 16
         case .large: return 20
         }
+    }
+    
+    func defaultIconSize(iconType: VitaminButton.IconType) -> CGFloat {
+        if case .alone(_, _) = iconType {
+            switch self {
+            case .medium : return 24
+            case .large: return 32
+            }
+        } else {
+            switch self {
+            case .medium : return 20
+            case .large: return 24
+            }
+        }
+    }
+}
+
+// - MARK: Icon managemant
+
+extension VitaminButton {
+    public func setIconType(_ iconType: IconType, for state: UIControl.State){
+        iconTypes[state] = iconType
+        applyIcon(for: state)
+    }
+    
+    public func getIconType(for state: UIControl.State) -> IconType {
+        guard let iconType = iconTypes[state] else {
+            return iconTypes[.normal] ?? .none
+        }
+        return iconType
+    }
+    
+    private func applyIcon(for state: UIControl.State) {
+        self.invalidateIntrinsicContentSize()
+        let iconTypeForState = getIconType(for: state)
+        switch iconTypeForState {
+        case .none:
+            break
+        case .trailing(let image, let renderingMode):
+            self.commonApplyIcon(
+                image: image,
+                iconType: iconTypeForState,
+                state: state,
+                renderingMode: renderingMode)
+        case .leading(let image, let renderingMode):
+            self.commonApplyIcon(
+                image: image,
+                iconType: iconTypeForState,
+                state: state,
+                renderingMode: renderingMode)
+        case .alone(let image, let renderingMode):
+            self.setTitle("", for: state)
+            self.commonApplyIcon(
+                image: image,
+                iconType: iconTypeForState,
+                state: state,
+                renderingMode: renderingMode)
+        }
+    }
+    
+    private func commonApplyIcon(image: UIImage, iconType: IconType, state: UIControl.State, renderingMode: UIImage.RenderingMode?) {
+        var imageUpdated = image
+        if let renderingMode = renderingMode {
+            guard let resizedImage = image
+                .resizedImage(size: CGSize(width: self.size.defaultIconSize(iconType: getIconType(for: state)), height: self.size.defaultIconSize(iconType: getIconType(for: state))))?
+                    .withRenderingMode(renderingMode) else { return }
+            imageUpdated = resizedImage
+        }
+        self.setImage(imageUpdated, for: state)
+        self.imageView?.tintColor = style.foregroundColor
+        self.tintColor = style.foregroundColor
+        self.imageEdgeInsets = iconType.imageEdgeInsets
+        self.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        self.contentVerticalAlignment = .fill
+        self.contentMode = .center
+        self.imageView?.contentMode = .scaleAspectFit
+    }
+    
+    private func updateSemantic() {
+        if case .trailing(_, _) = getIconType(for: self.state){
+            self.semanticContentAttribute = .forceRightToLeft
+        } else {
+            self.semanticContentAttribute = .forceLeftToRight
+        }
+    }
+    
+    private func updateImageInsets(){
+        self.imageEdgeInsets = self.getIconType(for: self.state).imageEdgeInsets
+    }
+}
+
+extension VitaminButton.IconType {
+    var imageEdgeInsets: UIEdgeInsets {
+        switch self {
+        case .alone(_, _), .none:
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        case .trailing(_, _):
+            return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        case .leading(_, _):
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
+        }
+    }
+}
+
+extension UIControl.State: Hashable {
+    public var hashValue: Int {
+        self.rawValue.hashValue
     }
 }
