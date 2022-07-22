@@ -42,4 +42,11 @@ extension AssetsView {
         }
     }
 }
+
+@available(iOS 13, *)
+extension VitaminAsset: AssetProtocol {
+    var label: String {
+        name
+    }
+}
 #endif
