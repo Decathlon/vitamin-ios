@@ -32,7 +32,7 @@ struct MainView: View {
 
     private func makeComponentsSection() -> some View {
         makeSection("🧩 Components") {
-            EmptyView()
+            NavigationLink("🎇 Buttons", destination: ButtonsView())
         }
     }
 }
