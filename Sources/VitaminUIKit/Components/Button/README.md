@@ -36,7 +36,7 @@ You can have different icons, or even different icon types per state.
 - `.none`: no icon will be displayed in your button
 
 For `.leading`, `.trailing` and `.alone`, you must provide:
-- an `UIImage` from Vitamin icons library (but will work with any UIImage)
+- an `UIImage` from Vitamin icons library (but will work with any `UIImage`)
 - an optional `UIImage.RenderingMode`: if you provide one, image will be resized using this rendering mode, if not, image will be used as is (with unexpected behaviour if your image has a wrong size)
 
 If you do not specify specific icon type for a specific state, the one for `.normal` state will be chosen.
