@@ -39,8 +39,8 @@ For `.leading`, `.trailing` and `.alone`, you must provide:
 - an `UIImage` from Vitamin icons library (but will work with any UIImage)
 - an optional `UIImage.RenderingMode`: if you provide one, image will be resized using this rendering mode, if not, image will be used as is (with unexpected behaviour if your image has a wrong size)
 
-If you do not specify specific icon type for a specific state, the one for .normal state will be chosen.
-And by default, the icon type for .normal state is .none
+If you do not specify specific icon type for a specific state, the one for `.normal` state will be chosen.
+And by default, the icon type for `.normal` state is `.none`.
 
 Note: squareness of VitaminButton with `.alone` is handled through intrisicSize, it is not guaranteed if you apply constants that could impact width and height of button.
 
