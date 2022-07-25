@@ -22,11 +22,11 @@ struct ButtonsView: View {
 extension ButtonsView {
     func makeButtonRow(_ style: ButtonModel.Item) -> some View {
         VStack(alignment: .center) {
-            Button(style.style.rawValue) {}.buttonStyle(VitaminButtonUIStyle(style: style.style, size: .medium))
-            Button(style.style.rawValue) {}.buttonStyle(VitaminButtonUIStyle(style: style.style, size: .large))
+            VitaminButton(text: style.style.rawValue, style: style.style, size: .medium)
+            VitaminButton(text: style.style.rawValue, style: style.style, size: .large)
             HStack {
-                Button(style.style.rawValue) {}.buttonStyle(VitaminButtonUIStyle(style: style.style, size: .medium))
-                Button(style.style.rawValue) {}.buttonStyle(VitaminButtonUIStyle(style: style.style, size: .large))
+                VitaminButton(text: style.style.rawValue, style: style.style, size: .medium)
+                VitaminButton(text: style.style.rawValue, style: style.style, size: .large)
             }
         }
         .frame(maxWidth: .infinity)

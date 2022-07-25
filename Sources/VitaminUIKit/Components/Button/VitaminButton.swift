@@ -9,31 +9,20 @@ import VitaminCore
 public extension VitaminButton {
     typealias Style = VitaminButtonStyle
     typealias Size = VitaminButtonSize
+    typealias IconType = VitaminButtonIconType
 }
 
 public class VitaminButton: UIButton {
-    /// - Note: The Style enumeration is of type String in order to be able to initialize a Style from a String. For example to use an IBInspectable on a VitaminButton to automatically style it from storyboard.
-    
-
     public var style: Style = .primary {
         didSet {
             applyNewStyle()
         }
     }
 
-    
-
     public var size: Size = .medium {
         didSet {
             applyNewTextStyle()
         }
-    }
-
-    public enum IconType {
-        case trailing(image: UIImage, renderingMode: UIImage.RenderingMode?)
-        case leading(image: UIImage, renderingMode: UIImage.RenderingMode?)
-        case alone(image: UIImage, renderingMode: UIImage.RenderingMode?)
-        case none
     }
 
     private var iconTypes: [UIControl.State: IconType] = [.normal: .none]
@@ -117,8 +106,6 @@ extension VitaminButton {
     }
 }
 
-
-
 // MARK: - Sizing
 
 extension VitaminButton {
@@ -130,3 +117,82 @@ extension VitaminButton {
     }
 }
 
+// - MARK: Icon managemant
+
+extension VitaminButton {
+    public func setIconType(_ iconType: IconType, for state: UIControl.State) {
+        iconTypes[state] = iconType
+        applyIcon(for: state)
+    }
+
+    public func getIconType(for state: UIControl.State) -> IconType {
+        guard let iconType = iconTypes[state] else {
+            return iconTypes[.normal] ?? .none
+        }
+        return iconType
+    }
+
+    private func applyIcon(for state: UIControl.State) {
+        self.invalidateIntrinsicContentSize()
+        let iconTypeForState = getIconType(for: state)
+        switch iconTypeForState {
+        case .none:
+            break
+        case let .trailing(image, renderingMode):
+            self.commonApplyIcon(
+                image: image,
+                iconType: iconTypeForState,
+                state: state,
+                renderingMode: renderingMode)
+        case let .leading(image, renderingMode):
+            self.commonApplyIcon(
+                image: image,
+                iconType: iconTypeForState,
+                state: state,
+                renderingMode: renderingMode)
+        case let .alone(image, renderingMode):
+            self.setTitle("", for: state)
+            self.commonApplyIcon(
+                image: image,
+                iconType: iconTypeForState,
+                state: state,
+                renderingMode: renderingMode)
+        }
+    }
+
+    private func commonApplyIcon(image: UIImage, iconType: IconType, state: UIControl.State, renderingMode: UIImage.RenderingMode?) {
+        var imageUpdated = image
+        if let renderingMode = renderingMode {
+            guard let resizedImage = image
+                .resizedImage(size: CGSize(width: self.size.defaultIconSize(iconType: getIconType(for: state)), height: self.size.defaultIconSize(iconType: getIconType(for: state))))?
+                    .withRenderingMode(renderingMode) else { return }
+            imageUpdated = resizedImage
+        }
+        self.setImage(imageUpdated, for: state)
+        self.imageView?.tintColor = style.foregroundColor
+        self.tintColor = style.foregroundColor
+        self.imageEdgeInsets = iconType.imageEdgeInsets
+        self.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        self.contentVerticalAlignment = .fill
+        self.contentMode = .center
+        self.imageView?.contentMode = .scaleAspectFit
+    }
+
+    private func updateSemantic() {
+        if case .trailing = getIconType(for: self.state){
+            self.semanticContentAttribute = .forceRightToLeft
+        } else {
+            self.semanticContentAttribute = .forceLeftToRight
+        }
+    }
+
+    private func updateImageInsets() {
+        self.imageEdgeInsets = self.getIconType(for: self.state).imageEdgeInsets
+    }
+}
+
+extension UIControl.State: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(self.rawValue.hashValue)
+    }
+}

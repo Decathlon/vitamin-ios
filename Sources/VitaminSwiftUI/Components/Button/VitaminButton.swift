@@ -7,6 +7,24 @@ import SwiftUI
 import VitaminCore
 
 @available(iOS 13, *)
+public struct VitaminButton: View {
+    var text: String = ""
+    var style: VitaminButtonStyle
+    var size: VitaminButtonSize
+
+    public init(text: String = "", style: VitaminButtonStyle = .primary, size: VitaminButtonSize = .medium) {
+        self.text = text
+        self.style = style
+        self.size = size
+    }
+
+    public var body: some View {
+        Button(text) {}
+            .buttonStyle(VitaminButtonUIStyle(style: style, size: size))
+    }
+}
+
+@available(iOS 13, *)
 public struct VitaminButtonUIStyle: ButtonStyle {
     let style: VitaminButtonStyle
     let size: VitaminButtonSize
@@ -23,10 +41,10 @@ public struct VitaminButtonUIStyle: ButtonStyle {
         configuration
             .label
             .padding(EdgeInsets(
-                top: size.verticalInset,
-                leading: size.horizontalInset,
-                bottom: size.verticalInset,
-                trailing: size.horizontalInset))
+                top: size.verticalInset(iconType: .none),
+                leading: size.horizontalInset(iconType: .none),
+                bottom: size.verticalInset(iconType: .none),
+                trailing: size.horizontalInset(iconType: .none)))
             .foregroundColor(style.foregroundColor.swiftUIColor)
             .background(RoundedRectangle(
                 cornerRadius: VitaminRadius.radius100.rawValue,
@@ -39,7 +57,7 @@ public struct VitaminButtonUIStyle: ButtonStyle {
     private func convertToUIControlState(configuration: Configuration) -> UIControl.State {
         if !isEnabled {
             return .disabled
-        } else if configuration.isPressed{
+        } else if configuration.isPressed {
             return .highlighted
         }
         return .normal
