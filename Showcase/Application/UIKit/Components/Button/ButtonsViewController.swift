@@ -8,7 +8,7 @@ import Vitamin
 
 final class ButtonsViewController: UITableViewController {
     private var showEnabledState = true
-    private lazy var styles: [ButtonModel.Item] = ButtonModel.items
+    private lazy var styles: [ButtonModel.ButtonStyle] = ButtonModel.buttonStyles
 
     convenience init() {
         self.init(style: .plain)

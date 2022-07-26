@@ -114,11 +114,11 @@ public struct VitaminButtonUIStyle: ButtonStyle {
                 bottom: size.verticalInset(iconType: self.iconType),
                 trailing: size.horizontalInset(iconType: self.iconType)))
             .background(RoundedRectangle(
-                cornerRadius: 5,
+                cornerRadius: size.cornerRadius,
                 style: .continuous)
-                .strokeBorder(style.borderColor(for: state).swiftUIColor, lineWidth: 2)
+                .strokeBorder(style.borderColor(for: state).swiftUIColor, lineWidth: size.bordeWith)
                 .background(RoundedRectangle(
-                    cornerRadius: 5,
+                    cornerRadius: size.cornerRadius,
                     style: .continuous)
                     .fill(style.backgroundColor(for: state).swiftUIColor))
                 )

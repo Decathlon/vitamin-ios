@@ -6,12 +6,6 @@
 import UIKit
 import VitaminCore
 
-public extension VitaminButton {
-    typealias Style = VitaminButtonStyle
-    typealias Size = VitaminButtonSize
-    typealias IconType = VitaminButtonIconType
-}
-
 public class VitaminButton: UIButton {
     public var style: Style = .primary {
         didSet {
@@ -90,8 +84,8 @@ extension VitaminButton {
         updateOpacity()
         updateBorder()
 
-        layer.borderWidth = 2
-        layer.cornerRadius = 5
+        layer.borderWidth = size.bordeWith
+        layer.cornerRadius = size.cornerRadius
         clipsToBounds = true
 
         adjustsImageWhenHighlighted = false
@@ -198,4 +192,11 @@ extension UIControl.State: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(self.rawValue.hashValue)
     }
+}
+
+// MARK: - for retrocompatibility with old UIKit version
+public extension VitaminButton {
+    typealias Style = VitaminButtonStyle
+    typealias Size = VitaminButtonSize
+    typealias IconType = VitaminButtonIconType
 }

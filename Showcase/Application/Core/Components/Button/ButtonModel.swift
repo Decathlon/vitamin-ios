@@ -6,21 +6,21 @@
 import VitaminCore
 
 enum ButtonModel {
-    struct Item: Identifiable {
+    struct ButtonStyle: Identifiable {
         var id: String {
             style.rawValue
         }
         let style: VitaminButtonStyle
     }
 
-    static let items = [
-        ButtonModel.Item(style: .primary),
-        ButtonModel.Item(style: .primaryReversed),
-        ButtonModel.Item(style: .secondary),
-        ButtonModel.Item(style: .tertiary),
-        ButtonModel.Item(style: .conversion),
-        ButtonModel.Item(style: .ghost),
-        ButtonModel.Item(style: .ghostReversed)
+    static let buttonStyles = [
+        ButtonModel.ButtonStyle(style: .primary),
+        ButtonModel.ButtonStyle(style: .primaryReversed),
+        ButtonModel.ButtonStyle(style: .secondary),
+        ButtonModel.ButtonStyle(style: .tertiary),
+        ButtonModel.ButtonStyle(style: .conversion),
+        ButtonModel.ButtonStyle(style: .ghost),
+        ButtonModel.ButtonStyle(style: .ghostReversed)
     ]
 }
 

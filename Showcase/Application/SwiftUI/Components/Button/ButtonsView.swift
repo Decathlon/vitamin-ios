@@ -16,30 +16,32 @@ struct ButtonsView: View {
             Toggle("Show enabled state", isOn: $enabled)
                 .padding()
             List {
-                let styles = ButtonModel.items
-                ForEach(styles) { style in
-                    self.makeButtonRow(style)
+                let buttonStyles = ButtonModel.buttonStyles
+                ForEach(buttonStyles) { buttonStyle in
+                    self.makeButtonRow(buttonStyle)
                 }
             }
-        }.frame(maxWidth: .infinity)
+        }
+        .frame(maxWidth: .infinity)
+        .customNavigationTitle("Button", displayMode: .inline)
     }
 }
 
 @available(iOS 13, *)
 extension ButtonsView {
-    func makeButtonRow(_ style: ButtonModel.Item) -> some View {
+    func makeButtonRow(_ buttonStyle: ButtonModel.ButtonStyle) -> some View {
         VStack(alignment: .center) {
             VitaminButton(
-                text: style.style.rawValue,
-                style: style.style,
+                text: buttonStyle.style.rawValue,
+                style: buttonStyle.style,
                 size: .medium,
                 iconType: .trailing(
                     image: Vitamix.Line.Logos.apple.image,
                     renderingMode: .alwaysTemplate)) {}
                 .disabled(enabled == false)
             VitaminButton(
-                text: style.style.rawValue,
-                style: style.style,
+                text: buttonStyle.style.rawValue,
+                style: buttonStyle.style,
                 size: .large,
                 iconType: .leading(
                     image: Vitamix.Line.System.arrowRightS.image,
@@ -47,16 +49,16 @@ extension ButtonsView {
                 .disabled(enabled == false)
             HStack {
                 VitaminButton(
-                    text: style.style.rawValue,
-                    style: style.style,
+                    text: buttonStyle.style.rawValue,
+                    style: buttonStyle.style,
                     size: .medium,
                     iconType: .alone(
                         image: Vitamix.Line.Logos.apple.image,
                         renderingMode: .alwaysTemplate)) {}
                     .disabled(enabled == false)
                 VitaminButton(
-                    text: style.style.rawValue,
-                    style: style.style,
+                    text: buttonStyle.style.rawValue,
+                    style: buttonStyle.style,
                     size: .large,
                     iconType: .alone(
                         image: Vitamix.Line.System.arrowRightS.image,
@@ -67,7 +69,7 @@ extension ButtonsView {
         .frame(maxWidth: .infinity)
         .padding()
         .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-        .background(style.style.needsReversedBackground ?
+        .background(buttonStyle.style.needsReversedBackground ?
                     VitaminColor.Core.Background.brandPrimary.swiftUIColor :
                         VitaminColor.Core.Background.primary.swiftUIColor)
     }

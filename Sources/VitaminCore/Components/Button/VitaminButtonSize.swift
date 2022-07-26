@@ -14,6 +14,14 @@ public extension VitaminButtonSize {
         .button
     }
 
+    var bordeWith: CGFloat {
+        2
+    }
+
+    var cornerRadius: CGFloat {
+        5
+    }
+
     func horizontalInset(iconType: VitaminButtonIconType) -> CGFloat {
         if case .alone = iconType {
             return 12
