@@ -15,7 +15,7 @@ public extension VitaminButtonSize {
     }
 
     func horizontalInset(iconType: VitaminButtonIconType) -> CGFloat {
-        if case .alone(_, _) = iconType {
+        if case .alone = iconType {
             return 12
         }
 
@@ -24,9 +24,9 @@ public extension VitaminButtonSize {
          case .large: return 40
          }
     }
-     
+
     func verticalInset(iconType: VitaminButtonIconType) -> CGFloat {
-        if case .alone(_, _) = iconType {
+        if case .alone = iconType {
             return 12
         }
 
@@ -35,10 +35,9 @@ public extension VitaminButtonSize {
         case .large: return 20
         }
     }
-    
-    
+
     func defaultIconSize(iconType: VitaminButtonIconType) -> CGFloat {
-        if case .alone(_, _) = iconType {
+        if case .alone = iconType {
             switch self {
             case .medium : return 24
             case .large: return 32
@@ -50,5 +49,4 @@ public extension VitaminButtonSize {
             }
         }
     }
-
 }

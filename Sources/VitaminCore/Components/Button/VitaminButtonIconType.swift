@@ -6,20 +6,20 @@
 import UIKit
 
 public enum VitaminButtonIconType {
-    case trailing(image: UIImage, renderingMode: UIImage.RenderingMode?)
-    case leading(image: UIImage, renderingMode: UIImage.RenderingMode?)
-    case alone(image: UIImage, renderingMode: UIImage.RenderingMode?)
+    case trailing(image: UIImage, renderingMode: UIImage.RenderingMode? = .alwaysTemplate)
+    case leading(image: UIImage, renderingMode: UIImage.RenderingMode? = .alwaysTemplate)
+    case alone(image: UIImage, renderingMode: UIImage.RenderingMode? = .alwaysTemplate)
     case none
 }
 
 public extension VitaminButtonIconType {
     var imageEdgeInsets: UIEdgeInsets {
         switch self {
-        case .alone(_, _), .none:
+        case .alone, .none:
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        case .trailing(_, _):
+        case .trailing:
             return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-        case .leading(_, _):
+        case .leading:
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
         }
     }

@@ -20,6 +20,12 @@ enum ButtonModel {
         ButtonModel.Item(style: .tertiary),
         ButtonModel.Item(style: .conversion),
         ButtonModel.Item(style: .ghost),
-        ButtonModel.Item(style: .ghost)
+        ButtonModel.Item(style: .ghostReversed)
     ]
+}
+
+extension VitaminButtonStyle {
+    var needsReversedBackground: Bool {
+        self == .primaryReversed || self == .ghostReversed
+    }
 }

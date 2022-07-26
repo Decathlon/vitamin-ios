@@ -71,10 +71,4 @@ final class ButtonTableViewCell: UITableViewCell {
         VitaminColor.Core.Background.primary
     }
 }
-
-private extension VitaminButton.Style {
-    var needsReversedBackground: Bool {
-        self == .primaryReversed || self == .ghostReversed
-    }
-}
 #endif

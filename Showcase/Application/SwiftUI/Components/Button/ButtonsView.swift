@@ -5,16 +5,23 @@
 
 import SwiftUI
 import VitaminSwiftUI
+import VitaminCore
 
 @available(iOS 13, *)
 struct ButtonsView: View {
+    @State var enabled = true
+
     var body: some View {
-        List {
-            let styles = ButtonModel.items
-            ForEach(styles) { style in
-                makeButtonRow(style)
+        VStack {
+            Toggle("Show enabled state", isOn: $enabled)
+                .padding()
+            List {
+                let styles = ButtonModel.items
+                ForEach(styles) { style in
+                    self.makeButtonRow(style)
+                }
             }
-        }
+        }.frame(maxWidth: .infinity)
     }
 }
 
@@ -22,15 +29,47 @@ struct ButtonsView: View {
 extension ButtonsView {
     func makeButtonRow(_ style: ButtonModel.Item) -> some View {
         VStack(alignment: .center) {
-            VitaminButton(text: style.style.rawValue, style: style.style, size: .medium)
-            VitaminButton(text: style.style.rawValue, style: style.style, size: .large)
+            VitaminButton(
+                text: style.style.rawValue,
+                style: style.style,
+                size: .medium,
+                iconType: .trailing(
+                    image: Vitamix.Line.Logos.apple.image,
+                    renderingMode: .alwaysTemplate)) {}
+                .disabled(enabled == false)
+            VitaminButton(
+                text: style.style.rawValue,
+                style: style.style,
+                size: .large,
+                iconType: .leading(
+                    image: Vitamix.Line.System.arrowRightS.image,
+                    renderingMode: .alwaysTemplate)) {}
+                .disabled(enabled == false)
             HStack {
-                VitaminButton(text: style.style.rawValue, style: style.style, size: .medium)
-                VitaminButton(text: style.style.rawValue, style: style.style, size: .large)
+                VitaminButton(
+                    text: style.style.rawValue,
+                    style: style.style,
+                    size: .medium,
+                    iconType: .alone(
+                        image: Vitamix.Line.Logos.apple.image,
+                        renderingMode: .alwaysTemplate)) {}
+                    .disabled(enabled == false)
+                VitaminButton(
+                    text: style.style.rawValue,
+                    style: style.style,
+                    size: .large,
+                    iconType: .alone(
+                        image: Vitamix.Line.System.arrowRightS.image,
+                        renderingMode: .alwaysTemplate)) {}
+                    .disabled(enabled == false)
             }
         }
         .frame(maxWidth: .infinity)
         .padding()
+        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+        .background(style.style.needsReversedBackground ?
+                    VitaminColor.Core.Background.brandPrimary.swiftUIColor :
+                        VitaminColor.Core.Background.primary.swiftUIColor)
     }
 }
 

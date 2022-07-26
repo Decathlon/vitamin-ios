@@ -164,8 +164,11 @@ extension VitaminButton {
         var imageUpdated = image
         if let renderingMode = renderingMode {
             guard let resizedImage = image
-                .resizedImage(size: CGSize(width: self.size.defaultIconSize(iconType: getIconType(for: state)), height: self.size.defaultIconSize(iconType: getIconType(for: state))))?
-                    .withRenderingMode(renderingMode) else { return }
+                .resizedImage(
+                    size: CGSize(
+                        width: self.size.defaultIconSize(iconType: getIconType(for: state)),
+                        height: self.size.defaultIconSize(iconType: getIconType(for: state))))?
+                .withRenderingMode(renderingMode) else { return }
             imageUpdated = resizedImage
         }
         self.setImage(imageUpdated, for: state)
@@ -179,7 +182,7 @@ extension VitaminButton {
     }
 
     private func updateSemantic() {
-        if case .trailing = getIconType(for: self.state){
+        if case .trailing = getIconType(for: self.state ) {
             self.semanticContentAttribute = .forceRightToLeft
         } else {
             self.semanticContentAttribute = .forceLeftToRight
