@@ -36,47 +36,31 @@ extension ButtonsView {
 
     func makeButtonRow(_ buttonStyle: ButtonModel.ButtonStyle) -> some View {
         VStack(alignment: .center) {
-            VitaminButton(
-                text: buttonStyle.style.rawValue,
+            makeButton(
                 style: buttonStyle.style,
                 size: .medium,
                 iconType: .trailing(
                     image: Vitamix.Line.Logos.apple.image,
-                    renderingMode: .alwaysTemplate)) {
-                        // no action defined
-            }
-                .disabled(!enabled)
-            VitaminButton(
-                text: buttonStyle.style.rawValue,
+                    renderingMode: .alwaysTemplate))
+            makeButton(
                 style: buttonStyle.style,
                 size: .large,
                 iconType: .leading(
                     image: Vitamix.Line.System.arrowRightS.image,
-                    renderingMode: .alwaysTemplate)) {
-                        // no action defined
-            }
-                .disabled(!enabled)
+                    renderingMode: .alwaysTemplate))
             HStack {
-                VitaminButton(
-                    text: buttonStyle.style.rawValue,
+                makeButton(
                     style: buttonStyle.style,
                     size: .medium,
                     iconType: .alone(
                         image: Vitamix.Line.Logos.apple.image,
-                        renderingMode: .alwaysTemplate)) {
-                            // no action defined
-                }
-                    .disabled(!enabled)
-                VitaminButton(
-                    text: buttonStyle.style.rawValue,
+                        renderingMode: .alwaysTemplate))
+                makeButton(
                     style: buttonStyle.style,
                     size: .large,
                     iconType: .alone(
                         image: Vitamix.Line.System.arrowRightS.image,
-                        renderingMode: .alwaysTemplate)) {
-                            // no action defined
-                }
-                    .disabled(!enabled)
+                        renderingMode: .alwaysTemplate))
             }
         }
         .frame(maxWidth: .infinity)
@@ -85,6 +69,20 @@ extension ButtonsView {
         .background(buttonStyle.style.needsReversedBackground ?
                     VitaminColor.Core.Background.brandPrimary.swiftUIColor :
                         VitaminColor.Core.Background.primary.swiftUIColor)
+    }
+
+    func makeButton(
+        style: VitaminButtonStyle,
+        size: VitaminButtonSize,
+        iconType: VitaminButtonIconType
+    ) -> some View {
+        return VitaminButton(
+            text: style.rawValue,
+            style: style,
+            size: size,
+            iconType: iconType) {
+                    // no action defined
+        }.disabled(!enabled)
     }
 }
 
