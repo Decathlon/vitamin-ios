@@ -41,26 +41,26 @@ extension ButtonsView {
                 size: .medium,
                 iconType: .trailing(
                     image: Vitamix.Line.Logos.apple.image,
-                    renderingMode: .alwaysTemplate))
+                    renderingMode: .template))
             makeButton(
                 style: buttonStyle.style,
                 size: .large,
                 iconType: .leading(
                     image: Vitamix.Line.System.arrowRightS.image,
-                    renderingMode: .alwaysTemplate))
+                    renderingMode: .template))
             HStack {
                 makeButton(
                     style: buttonStyle.style,
                     size: .medium,
                     iconType: .alone(
                         image: Vitamix.Line.Logos.apple.image,
-                        renderingMode: .alwaysTemplate))
+                        renderingMode: .template))
                 makeButton(
                     style: buttonStyle.style,
                     size: .large,
                     iconType: .alone(
                         image: Vitamix.Line.System.arrowRightS.image,
-                        renderingMode: .alwaysTemplate))
+                        renderingMode: .template))
             }
         }
         .frame(maxWidth: .infinity)
@@ -74,7 +74,7 @@ extension ButtonsView {
     func makeButton(
         style: VitaminButtonStyle,
         size: VitaminButtonSize,
-        iconType: VitaminButtonIconType
+        iconType: VitaminButton.IconType
     ) -> some View {
         return VitaminButton(
             text: style.rawValue,

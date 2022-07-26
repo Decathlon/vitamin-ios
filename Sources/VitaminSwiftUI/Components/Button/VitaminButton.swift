@@ -12,14 +12,14 @@ public struct VitaminButton: View {
     var text: String = ""
     let style: VitaminButtonStyle
     let size: VitaminButtonSize
-    let iconType: VitaminButtonIconType
+    let iconType: IconType
     let action: () -> Void
 
     public init(
         text: String = "",
         style: VitaminButtonStyle = .primary,
         size: VitaminButtonSize = .medium,
-        iconType: VitaminButtonIconType = .none,
+        iconType: IconType = .none,
         action: @escaping () -> Void
     ) {
             self.text = text
@@ -35,18 +35,18 @@ public struct VitaminButton: View {
         } label: {
                 makeLabel(text: text, iconType: iconType)
         }
-        .buttonStyle(VitaminButtonUIStyle(style: style, size: size, iconType: iconType))
+        .buttonStyle(VitaminButtonUIStyle(style: style, size: size, iconType: iconType.underlyingUIKitIconType))
     }
 
-    private func makeLabel(text: String, iconType: VitaminButtonIconType) -> some View {
-        let defaultIconSize = size.defaultIconSize(iconType: iconType)
+    private func makeLabel(text: String, iconType: VitaminButton.IconType) -> some View {
+        let defaultIconSize = size.defaultIconSize(iconType: iconType.underlyingUIKitIconType)
 
         switch iconType {
         case let .trailing(image, renderingMode):
             return AnyView(HStack {
                 Text(text).vitaminTextStyle(size.textStyle)
                 image.swiftUIImage
-                    .renderingMode(renderingMode?.swiftUIRenderingMode)
+                    .renderingMode(renderingMode)
                     .resizable()
                     .foregroundColor(style.foregroundColor.swiftUIColor)
                     .frame(
@@ -58,7 +58,7 @@ public struct VitaminButton: View {
         case let .leading(image, renderingMode):
             return AnyView(HStack {
                 image.swiftUIImage
-                    .renderingMode(renderingMode?.swiftUIRenderingMode)
+                    .renderingMode(renderingMode)
                     .resizable()
                     .foregroundColor(style.foregroundColor.swiftUIColor)
                     .frame(
@@ -71,7 +71,7 @@ public struct VitaminButton: View {
         case let .alone(image, renderingMode):
             return AnyView(
                 image.swiftUIImage
-                    .renderingMode(renderingMode?.swiftUIRenderingMode)
+                    .renderingMode(renderingMode)
                     .resizable()
                     .foregroundColor(style.foregroundColor.swiftUIColor)
                     .frame(
@@ -134,6 +134,32 @@ public struct VitaminButtonUIStyle: ButtonStyle {
             return .highlighted
         }
         return .normal
+    }
+}
+
+@available(iOS 13, *)
+extension VitaminButton {
+    public enum IconType {
+        case leading(image: UIImage, renderingMode: Image.TemplateRenderingMode)
+        case trailing(image: UIImage, renderingMode: Image.TemplateRenderingMode)
+        case alone(image: UIImage, renderingMode: Image.TemplateRenderingMode)
+        case none
+    }
+}
+
+@available(iOS 13, *)
+extension VitaminButton.IconType {
+    var underlyingUIKitIconType: VitaminButtonIconType {
+        switch self {
+        case let .trailing(image, renderingmode):
+            return VitaminButtonIconType.trailing(image: image, renderingMode: renderingmode.uiRenderingMode)
+        case let .leading(image, renderingmode):
+            return VitaminButtonIconType.leading(image: image, renderingMode: renderingmode.uiRenderingMode)
+        case let .alone(image, renderingmode):
+            return VitaminButtonIconType.alone(image: image, renderingMode: renderingmode.uiRenderingMode)
+        case .none:
+            return VitaminButtonIconType.none
+        }
     }
 }
 #endif

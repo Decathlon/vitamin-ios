@@ -26,4 +26,18 @@ extension UIImage.RenderingMode {
         }
     }
 }
+
+@available(iOS 13, *)
+extension Image.TemplateRenderingMode {
+    public var uiRenderingMode: UIImage.RenderingMode? {
+        switch self {
+        case .template:
+            return .alwaysTemplate
+        case .original:
+            return .alwaysOriginal
+        @unknown default:
+            return nil
+        }
+    }
+}
 #endif

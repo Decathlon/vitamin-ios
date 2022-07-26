@@ -12,4 +12,11 @@ extension UIEdgeInsets {
         EdgeInsets(top: self.top, leading: self.left, bottom: self.bottom, trailing: self.right)
     }
 }
+
+@available(iOS 13, *)
+extension EdgeInsets {
+    public var uiEdgeInsets: UIEdgeInsets {
+        UIEdgeInsets(top: self.top, left: self.leading, bottom: self.bottom, right: self.trailing)
+    }
+}
 #endif
