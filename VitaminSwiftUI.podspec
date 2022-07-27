@@ -10,8 +10,8 @@ Pod::Spec.new do |s|
 
   s.author       = { "Decathlon" => "designsystem@decathlon.net" }
 
-  s.platform     = :ios, "10.0"
-  s.ios.deployment_target = '10.0'
+  s.platform     = :ios, "13.0"
+  s.ios.deployment_target = '13.0'
 
   s.source           = { :git => 'https://github.com/Decathlon/vitamin-ios.git', :tag => s.version.to_s }
   s.swift_version    = '5.3'
