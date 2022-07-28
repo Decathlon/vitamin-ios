@@ -33,55 +33,59 @@ public struct VitaminButton: View {
         Button {
             self.action()
         } label: {
-                makeLabel(text: text, iconType: iconType)
+                makeLabel()
         }
         .buttonStyle(VitaminButtonUIStyle(style: style, size: size, iconType: iconType.underlyingUIKitIconType))
     }
 
-    private func makeLabel(text: String, iconType: VitaminButton.IconType) -> some View {
-        let defaultIconSize = size.defaultIconSize(iconType: iconType.underlyingUIKitIconType)
-
+    @ViewBuilder
+    private func makeLabel() -> some View {
         switch iconType {
         case let .trailing(image, renderingMode):
-            return AnyView(HStack {
-                Text(text).vitaminTextStyle(size.textStyle)
-                image.swiftUIImage
-                    .renderingMode(renderingMode)
-                    .resizable()
-                    .foregroundColor(style.foregroundColor.swiftUIColor)
-                    .frame(
-                        width: defaultIconSize,
-                        height: defaultIconSize,
-                        alignment: .center
-                    )
-            })
+            makeTrailingIconButtonLabel(image: image, renderingMode: renderingMode)
         case let .leading(image, renderingMode):
-            return AnyView(HStack {
-                image.swiftUIImage
-                    .renderingMode(renderingMode)
-                    .resizable()
-                    .foregroundColor(style.foregroundColor.swiftUIColor)
-                    .frame(
-                        width: defaultIconSize,
-                        height: defaultIconSize,
-                        alignment: .center
-                    )
-                Text(text).vitaminTextStyle(size.textStyle)
-            })
+            makeLeadingIconButtonLabel(image: image, renderingMode: renderingMode)
         case let .alone(image, renderingMode):
-            return AnyView(
-                image.swiftUIImage
-                    .renderingMode(renderingMode)
-                    .resizable()
-                    .foregroundColor(style.foregroundColor.swiftUIColor)
-                    .frame(
-                        width: defaultIconSize,
-                        height: defaultIconSize,
-                        alignment: .center
-                    )
-            )
+            makeIcon(image: image, renderingMode: renderingMode)
         case .none:
-            return AnyView(Text(text).vitaminTextStyle(size.textStyle))
+            makeButtonText(text: text)
+        }
+    }
+
+    @ViewBuilder
+    private func makeIcon(image: UIImage, renderingMode: Image.TemplateRenderingMode) -> some View {
+        let defaultIconSize = size.defaultIconSize(iconType: iconType.underlyingUIKitIconType)
+
+        image.swiftUIImage
+                .renderingMode(renderingMode)
+                .resizable()
+                .foregroundColor(style.foregroundColor.swiftUIColor)
+                .frame(
+                    width: defaultIconSize,
+                    height: defaultIconSize,
+                    alignment: .center
+                )
+                .padding(iconType.underlyingUIKitIconType.imageEdgeInsets.swiftUIEdgeInsets)
+    }
+
+    @ViewBuilder
+    private func makeButtonText(text: String) -> some View {
+        Text(text).vitaminTextStyle(size.textStyle)
+    }
+
+    @ViewBuilder
+    private func makeTrailingIconButtonLabel(image: UIImage, renderingMode: Image.TemplateRenderingMode) -> some View {
+        HStack(alignment: .center, spacing: 0) {
+            makeButtonText(text: text)
+            makeIcon(image: image, renderingMode: renderingMode)
+        }
+    }
+
+    @ViewBuilder
+    private func makeLeadingIconButtonLabel(image: UIImage, renderingMode: Image.TemplateRenderingMode) -> some View {
+        HStack(alignment: .center, spacing: 0) {
+            makeIcon(image: image, renderingMode: renderingMode)
+            makeButtonText(text: text)
         }
     }
 }
