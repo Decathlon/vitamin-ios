@@ -145,7 +145,7 @@ extension VitaminButton {
                 state: state,
                 renderingMode: renderingMode)
         case let .alone(image, renderingMode):
-            self.setTitle("", for: state)
+            self.setTitle(nil, for: state)
             self.commonApplyIcon(
                 image: image,
                 iconType: iconTypeForState,
