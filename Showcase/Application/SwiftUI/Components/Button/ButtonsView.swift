@@ -27,15 +27,16 @@ struct ButtonsView: View {
 
 @available(iOS 13, *)
 extension ButtonsView {
+    @ViewBuilder
     func makeButtonRows() -> some View {
         let buttonStyles = ButtonModel.buttonStyles
-        return ForEach(buttonStyles) { buttonStyle in
+        ForEach(buttonStyles) { buttonStyle in
             self.makeButtonRow(buttonStyle)
         }
     }
 
     func makeButtonRow(_ buttonStyle: ButtonModel.ButtonStyle) -> some View {
-        VStack(alignment: .center) {
+        VStack {
             makeButton(
                 style: buttonStyle.style,
                 size: .medium,
@@ -76,13 +77,14 @@ extension ButtonsView {
         size: VitaminButtonSize,
         iconType: VitaminButton.IconType
     ) -> some View {
-        return VitaminButton(
+        VitaminButton(
             text: style.rawValue,
             style: style,
             size: size,
             iconType: iconType) {
                     // no action defined
-        }.disabled(!enabled)
+        }
+        .disabled(!enabled)
     }
 }
 

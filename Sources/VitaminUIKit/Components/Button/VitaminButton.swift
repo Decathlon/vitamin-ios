@@ -176,7 +176,7 @@ extension VitaminButton {
     }
 
     private func updateSemantic() {
-        if case .trailing = getIconType(for: self.state ) {
+        if case .trailing = getIconType(for: self.state) {
             self.semanticContentAttribute = .forceRightToLeft
         } else {
             self.semanticContentAttribute = .forceLeftToRight

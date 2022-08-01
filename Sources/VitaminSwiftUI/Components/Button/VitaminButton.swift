@@ -33,7 +33,7 @@ public struct VitaminButton: View {
         Button {
             self.action()
         } label: {
-                makeLabel()
+            makeLabel()
         }
         .buttonStyle(VitaminButtonUIStyle(style: style, size: size, iconType: iconType.underlyingUIKitIconType))
     }
@@ -62,28 +62,24 @@ public struct VitaminButton: View {
                 .foregroundColor(style.foregroundColor.swiftUIColor)
                 .frame(
                     width: defaultIconSize,
-                    height: defaultIconSize,
-                    alignment: .center
+                    height: defaultIconSize
                 )
                 .padding(iconType.underlyingUIKitIconType.imageEdgeInsets.swiftUIEdgeInsets)
     }
 
-    @ViewBuilder
     private func makeButtonText(text: String) -> some View {
         Text(text).vitaminTextStyle(size.textStyle)
     }
 
-    @ViewBuilder
     private func makeTrailingIconButtonLabel(image: UIImage, renderingMode: Image.TemplateRenderingMode) -> some View {
-        HStack(alignment: .center, spacing: 0) {
+        HStack(spacing: 0) {
             makeButtonText(text: text)
             makeIcon(image: image, renderingMode: renderingMode)
         }
     }
 
-    @ViewBuilder
     private func makeLeadingIconButtonLabel(image: UIImage, renderingMode: Image.TemplateRenderingMode) -> some View {
-        HStack(alignment: .center, spacing: 0) {
+        HStack(spacing: 0) {
             makeIcon(image: image, renderingMode: renderingMode)
             makeButtonText(text: text)
         }
