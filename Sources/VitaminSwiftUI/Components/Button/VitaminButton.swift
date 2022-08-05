@@ -9,14 +9,14 @@ import VitaminCore
 
 @available(iOS 13, *)
 public struct VitaminButton: View {
-    var text: String = ""
+    var text: String?
     let style: VitaminButtonStyle
     let size: VitaminButtonSize
     let iconType: IconType
     let action: () -> Void
 
     public init(
-        text: String = "",
+        text: String? = nil,
         style: VitaminButtonStyle = .primary,
         size: VitaminButtonSize = .medium,
         iconType: IconType = .none,
@@ -48,7 +48,9 @@ public struct VitaminButton: View {
         case let .alone(image, renderingMode):
             makeIcon(image: image, renderingMode: renderingMode)
         case .none:
-            makeButtonText(text: text)
+            if let text = text {
+                makeButtonText(text: text)
+            }
         }
     }
 
@@ -71,17 +73,27 @@ public struct VitaminButton: View {
         Text(text).vitaminTextStyle(size.textStyle)
     }
 
+    @ViewBuilder
     private func makeTrailingIconButtonLabel(image: UIImage, renderingMode: Image.TemplateRenderingMode) -> some View {
-        HStack(spacing: 0) {
-            makeButtonText(text: text)
+        if let text = text {
+            HStack(spacing: 0) {
+                makeButtonText(text: text)
+                makeIcon(image: image, renderingMode: renderingMode)
+            }
+        } else {
             makeIcon(image: image, renderingMode: renderingMode)
         }
     }
 
+    @ViewBuilder
     private func makeLeadingIconButtonLabel(image: UIImage, renderingMode: Image.TemplateRenderingMode) -> some View {
-        HStack(spacing: 0) {
+        if let text = text {
+            HStack(spacing: 0) {
+                makeIcon(image: image, renderingMode: renderingMode)
+                makeButtonText(text: text)
+            }
+        } else {
             makeIcon(image: image, renderingMode: renderingMode)
-            makeButtonText(text: text)
         }
     }
 }
