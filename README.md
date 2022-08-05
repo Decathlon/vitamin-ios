@@ -79,7 +79,7 @@ The following components are available :
 | Component | Description | Documentation |
 |-----------|-------------|---------------|
 |Badge | Badges from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Badge#readme)|
-|Button | Different button styles from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Button#readme)|
+|Button | Different button styles from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Button#readme) [SwiftUI](./Sources/VitaminSwiftUI/Components/Button#readme)|
 |Progressbar | Different progressbar styles from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Progressbar#readme)|
 |Switch | Swicth from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Switch#readme)|
 |Tag | Tag from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Tag#readme)|
