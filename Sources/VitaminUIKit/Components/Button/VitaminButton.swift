@@ -196,7 +196,10 @@ extension UIControl.State: Hashable {
 
 // MARK: - for retrocompatibility with old UIKit version
 public extension VitaminButton {
+    @available(*, deprecated, renamed: "VitaminButtonStyle")
     typealias Style = VitaminButtonStyle
+    @available(*, deprecated, renamed: "VitaminButtonSize")
     typealias Size = VitaminButtonSize
+    @available(*, deprecated, renamed: "VitaminButtonIconType")
     typealias IconType = VitaminButtonIconType
 }

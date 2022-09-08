@@ -8,7 +8,6 @@ import SwiftUI
 import VitaminSwiftUI
 import VitaminCore
 
-@available(iOS 13, *)
 struct ExampleView: View {
     @State var enabled = true
 
@@ -63,7 +62,6 @@ import SwiftUI
 import VitaminSwiftUI
 import VitaminCore
 
-@available(iOS 13, *)
 struct ExampleView: View {
     @State var enabled = true
 
@@ -84,14 +82,13 @@ struct ExampleView: View {
 ### Action
 As a regular SwiftUI Button, you can provide a closure as last parameter. 
 
-NB : The parameter name is `action`, but to follow Decathlon code style recommandations, you should pass it as trailing closure.
+NB: The parameter name is `action`, but to follow Decathlon code style recommendations, you should pass it as trailing closure.
 
 ```swift
 import SwiftUI
 import VitaminSwiftUI
 import VitaminCore
 
-@available(iOS 13, *)
 struct ExampleView: View {
     @State var enabled = true
 
