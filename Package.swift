@@ -34,9 +34,7 @@ let package = Package(
             resources: [
                 .process("Foundations/Assets/VitaminAssets.xcassets"),
                 .process("Foundations/Icons/Vitamix.xcassets"),
-                .process("Foundations/Typography/Fonts/Roboto-Bold.ttf"),
-                .process("Foundations/Typography/Fonts/Roboto-Regular.ttf"),
-                .process("Foundations/Typography/Fonts/RobotoCondensed-BoldItalic.ttf")
+                .process("Foundations/Typography/Fonts")
             ]),
         .target(
             name: "Vitamin",
