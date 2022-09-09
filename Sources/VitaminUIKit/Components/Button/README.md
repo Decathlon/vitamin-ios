@@ -13,7 +13,7 @@ let button = VitaminButton(style: .secondary)
 let button = VitaminButton(style: .ghost)
 ```
 
-`VitaminButton` handle 3 states: `.normal`, `.highlighted` and `.disabled`.
+`VitaminButton` handles 3 states: `.normal`, `.highlighted` and `.disabled`.
  
 `VitaminButton` also has a `size` property where you can change the button's intrinsic size. Changing this property changes the various internal spaces and the title's font size.
 As the default button size is handled with the intrinsicSize, you can still resize your button with constraints to better suit your needs. 
@@ -29,7 +29,7 @@ You can put an icon from Vitamin icons library in your button, or also have a sq
 To achieve this, `VitaminButton` provides you with a `setIconType(:for:)` method.
 You can have different icons, or even different icon types per state.
 
-`IconType` has four cases:
+`VitaminButtonIconType` has four cases:
 - `.leading`: icon will be put before your button label
 - `.trailing`: icon will be put after your button label
 - `.alone`: button will be squared, an icon will be centered, and no button label will be displayed

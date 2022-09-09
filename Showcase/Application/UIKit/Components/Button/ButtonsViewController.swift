@@ -8,6 +8,7 @@ import Vitamin
 
 final class ButtonsViewController: UITableViewController {
     private var showEnabledState = true
+    private lazy var styles: [ButtonModel.ButtonStyle] = ButtonModel.buttonStyles
 
     convenience init() {
         self.init(style: .plain)
@@ -19,16 +20,6 @@ final class ButtonsViewController: UITableViewController {
         navigationItem.title = "Button"
         tableView.register(UINib(nibName: "ButtonTableViewCell", bundle: nil), forCellReuseIdentifier: "button")
     }
-
-    var styles: [VitaminButton.Style] = [
-        .primary,
-        .primaryReversed,
-        .secondary,
-        .tertiary,
-        .conversion,
-        .ghost,
-        .ghostReversed
-    ]
 }
 
 extension ButtonsViewController {
@@ -42,7 +33,7 @@ extension ButtonsViewController {
                     return cell
                 }
         cell.selectionStyle = .none
-        cell.update(for: styles[indexPath.row], isEnabled: showEnabledState)
+        cell.update(for: styles[indexPath.row].style, isEnabled: showEnabledState)
         return cell
     }
 

@@ -12,4 +12,32 @@ extension UIImage {
         Image(uiImage: self)
     }
 }
+
+@available(iOS 13, *)
+extension UIImage.RenderingMode {
+    public var swiftUIRenderingMode: Image.TemplateRenderingMode {
+        switch self {
+        case .alwaysTemplate:
+            return .template
+        case .alwaysOriginal:
+            return .original
+        default:
+            return .original
+        }
+    }
+}
+
+@available(iOS 13, *)
+extension Image.TemplateRenderingMode {
+    public var uiRenderingMode: UIImage.RenderingMode? {
+        switch self {
+        case .template:
+            return .alwaysTemplate
+        case .original:
+            return .alwaysOriginal
+        @unknown default:
+            return nil
+        }
+    }
+}
 #endif

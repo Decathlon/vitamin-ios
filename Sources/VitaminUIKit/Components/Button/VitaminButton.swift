@@ -7,38 +7,16 @@ import UIKit
 import VitaminCore
 
 public class VitaminButton: UIButton {
-    /// - Note: The Style enumeration is of type String in order to be able to initialize a Style from a String. For example to use an IBInspectable on a VitaminButton to automatically style it from storyboard.
-    public enum Style: String {
-        case primary
-        case primaryReversed
-        case secondary
-        case tertiary
-        case conversion
-        case ghost
-        case ghostReversed
-    }
-
     public var style: Style = .primary {
         didSet {
             applyNewStyle()
         }
     }
 
-    public enum Size {
-        case medium, large
-    }
-
     public var size: Size = .medium {
         didSet {
             applyNewTextStyle()
         }
-    }
-
-    public enum IconType {
-        case trailing(image: UIImage, renderingMode: UIImage.RenderingMode?)
-        case leading(image: UIImage, renderingMode: UIImage.RenderingMode?)
-        case alone(image: UIImage, renderingMode: UIImage.RenderingMode?)
-        case none
     }
 
     private var iconTypes: [UIControl.State: IconType] = [.normal: .none]
@@ -106,8 +84,8 @@ extension VitaminButton {
         updateOpacity()
         updateBorder()
 
-        layer.borderWidth = 2
-        layer.cornerRadius = 5
+        layer.borderWidth = size.bordeWith
+        layer.cornerRadius = size.cornerRadius
         clipsToBounds = true
 
         adjustsImageWhenHighlighted = false
@@ -122,126 +100,6 @@ extension VitaminButton {
     }
 }
 
-// MARK: - Background
-
-extension VitaminButton.Style {
-    func backgroundColor(for state: UIControl.State) -> UIColor {
-        if state == .highlighted {
-            return highlightedBackgroundColor
-        } else {
-            return defaultBackgroundColor
-        }
-    }
-
-    var defaultBackgroundColor: UIColor {
-        switch self {
-        case .primary:
-            return VitaminColor.Core.Background.brandPrimary
-        case .primaryReversed:
-            return VitaminColor.Core.Background.brandPrimaryReversed
-        case .secondary:
-            return VitaminColor.Core.Background.primary
-        case .tertiary:
-            return VitaminColor.Core.Background.brandSecondary
-        case .conversion:
-            return VitaminColor.Core.Background.accent
-        case .ghost, .ghostReversed:
-            return UIColor.clear
-        }
-    }
-
-    var highlightedBackgroundColor: UIColor {
-        switch self {
-        case .primary:
-            return VitaminColor.Core.Active.brand
-        case .primaryReversed:
-            return VitaminColor.Core.Active.brandReversedTransparent
-        case .secondary, .ghost:
-            return VitaminColor.Core.Active.primary
-        case .tertiary:
-            return VitaminColor.Core.Active.tertiary
-        case .conversion:
-            return VitaminColor.Core.Active.accent
-        case .ghostReversed:
-            return VitaminColor.Core.Active.primaryReversedTransparent
-        }
-    }
-}
-
-// MARK: - Foreground
-
-extension VitaminButton.Style {
-    var foregroundColor: UIColor {
-        switch self {
-        case .primary:
-            return VitaminColor.Core.Content.primaryReversed
-        case .primaryReversed:
-            return VitaminColor.Core.Content.primary
-        case .secondary, .tertiary:
-            return VitaminColor.Core.Content.action
-        case .conversion:
-            return VitaminColor.Core.Content.accent
-        case .ghost:
-            return VitaminColor.Core.Content.active
-        case .ghostReversed:
-            return VitaminColor.Core.Content.actionReversed
-        }
-    }
-}
-
-// MARK: - Border
-
-extension VitaminButton.Style {
-    func borderColor(for state: UIControl.State) -> UIColor {
-        if state == .highlighted {
-            return highlightedBorderColor
-        } else {
-            return defaultBorderColor
-        }
-    }
-
-    var defaultBorderColor: UIColor {
-        switch self {
-        case .primary,
-                .primaryReversed,
-                .tertiary,
-                .conversion,
-                .ghost,
-                .ghostReversed:
-            return UIColor.clear
-        case .secondary:
-            return VitaminColor.Core.Border.primary
-        }
-    }
-
-    var highlightedBorderColor: UIColor {
-        switch self {
-        case .primary,
-                .tertiary,
-                .conversion,
-                .ghost,
-                .ghostReversed:
-            return UIColor.clear
-        case .primaryReversed:
-            return VitaminColor.Core.Border.primaryReversed
-        case .secondary:
-            return VitaminColor.Core.Border.primary
-        }
-    }
-}
-
-// MARK: - Opacity
-
-extension VitaminButton.Style {
-    func opacity(for state: UIControl.State) -> CGFloat {
-        if state == .disabled {
-            return VitaminOpacity.disabled
-        } else {
-            return VitaminOpacity.enabled
-        }
-    }
-}
-
 // MARK: - Sizing
 
 extension VitaminButton {
@@ -250,48 +108,6 @@ extension VitaminButton {
             return
         }
         titleLabel?.attributedText = text.styled(as: size.textStyle)
-    }
-}
-
-extension VitaminButton.Size {
-    var textStyle: VitaminTextStyle {
-        .button
-    }
-
-    func horizontalInset(iconType: VitaminButton.IconType) -> CGFloat {
-        if case .alone = iconType {
-            return 12
-        }
-
-        switch self {
-        case .medium: return 20
-        case .large: return 40
-        }
-    }
-
-    func verticalInset(iconType: VitaminButton.IconType) -> CGFloat {
-        if case .alone = iconType {
-            return 12
-        }
-
-        switch self {
-        case .medium: return 16
-        case .large: return 20
-        }
-    }
-
-    func defaultIconSize(iconType: VitaminButton.IconType) -> CGFloat {
-        if case .alone = iconType {
-            switch self {
-            case .medium : return 24
-            case .large: return 32
-            }
-        } else {
-            switch self {
-            case .medium : return 20
-            case .large: return 24
-            }
-        }
     }
 }
 
@@ -372,21 +188,18 @@ extension VitaminButton {
     }
 }
 
-extension VitaminButton.IconType {
-    var imageEdgeInsets: UIEdgeInsets {
-        switch self {
-        case .alone, .none:
-            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        case .trailing:
-            return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-        case .leading:
-            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
-        }
-    }
-}
-
 extension UIControl.State: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(self.rawValue.hashValue)
     }
+}
+
+// MARK: - for retrocompatibility with old UIKit version
+public extension VitaminButton {
+    @available(*, deprecated, renamed: "VitaminButtonStyle")
+    typealias Style = VitaminButtonStyle
+    @available(*, deprecated, renamed: "VitaminButtonSize")
+    typealias Size = VitaminButtonSize
+    @available(*, deprecated, renamed: "VitaminButtonIconType")
+    typealias IconType = VitaminButtonIconType
 }
