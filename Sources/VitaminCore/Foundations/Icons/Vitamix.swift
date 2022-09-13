@@ -518,16 +518,20 @@ public struct VitaminImageAsset {
   public fileprivate(set) var name: String
 
   public var image: UIImage {
+    guard let resultImage = optionalImage else {
+      fatalError("Unable to load image asset named \(name).")
+    }
+    return resultImage
+  }
+
+  public var optionalImage: UIImage? {
     let bundle = BundleToken.bundle
     #if os(iOS) || os(tvOS)
     let resultImage = UIImage(named: name, in: bundle, compatibleWith: nil)
     #elseif os(watchOS)
     let resultImage = UIImage(named: name)
     #endif
-    guard let result = resultImage else {
-      fatalError("Unable to load image asset named \(name).")
-    }
-    return result
+    return resultImage
   }
 }
 

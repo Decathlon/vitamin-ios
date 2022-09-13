@@ -79,16 +79,20 @@ import UIKit
   {{accessModifier}} fileprivate(set) var name: String
 
   {{accessModifier}} var image: UIImage {
+    guard let resultImage = optionalImage else {
+      fatalError("Unable to load image asset named \(name).")
+    }
+    return resultImage
+  }
+
+  {{accessModifier}} var optionalImage: UIImage? {
     let bundle = {{param.bundle|default:"BundleToken.bundle"}}
     #if os(iOS) || os(tvOS)
     let resultImage = UIImage(named: name, in: bundle, compatibleWith: nil)
     #elseif os(watchOS)
     let resultImage = UIImage(named: name)
     #endif
-    guard let result = resultImage else {
-      fatalError("Unable to load image asset named \(name).")
-    }
-    return result
+    return resultImage
   }
 }
 
