@@ -44,17 +44,17 @@ For its [Digital section](https://www.decathlon.design/726f8c765/p/6145b2-overvi
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/Decathlon/vitamin-ios.git", .exact("0.6.0"))
+    .package(url: "https://github.com/Decathlon/vitamin-ios.git", .exact("0.7.0"))
 ]
 ```
 
 ### Cocoapods
 ```ruby
 # for UIKitVersion
-pod 'Vitamin', '= 0.6.0'
+pod 'Vitamin', '= 0.7.0'
 
 # for SwiftUI version
-pod 'VitaminSwiftUI', = '0.6.0'
+pod 'VitaminSwiftUI', = '0.7.0'
 ```
 
 ## Available elements
