@@ -47,12 +47,12 @@ public extension VitaminButtonSize {
     func defaultIconSize(iconType: VitaminButtonIconType) -> CGFloat {
         if case .alone = iconType {
             switch self {
-            case .medium : return 24
+            case .medium: return 24
             case .large: return 32
             }
         } else {
             switch self {
-            case .medium : return 20
+            case .medium: return 20
             case .large: return 24
             }
         }

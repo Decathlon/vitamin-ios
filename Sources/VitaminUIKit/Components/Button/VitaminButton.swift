@@ -7,19 +7,19 @@ import UIKit
 import VitaminCore
 
 public class VitaminButton: UIButton {
-    public var style: Style = .primary {
+    public var style: VitaminButtonStyle = .primary {
         didSet {
             applyNewStyle()
         }
     }
 
-    public var size: Size = .medium {
+    public var size: VitaminButtonSize = .medium {
         didSet {
             applyNewTextStyle()
         }
     }
 
-    private var iconTypes: [UIControl.State: IconType] = [.normal: .none]
+    private var iconTypes: [UIControl.State: VitaminButtonIconType] = [.normal: .none]
 
     public override var isEnabled: Bool {
         didSet {
@@ -37,7 +37,7 @@ public class VitaminButton: UIButton {
         }
     }
 
-    public required init(style: Style) {
+    public required init(style: VitaminButtonStyle) {
         self.style = style
         super.init(frame: .zero)
         applyNewStyle()
@@ -120,12 +120,12 @@ extension VitaminButton {
 // - MARK: Icon managemant
 
 extension VitaminButton {
-    public func setIconType(_ iconType: IconType, for state: UIControl.State) {
+    public func setIconType(_ iconType: VitaminButtonIconType, for state: UIControl.State) {
         iconTypes[state] = iconType
         applyIcon(for: state)
     }
 
-    public func getIconType(for state: UIControl.State) -> IconType {
+    public func getIconType(for state: UIControl.State) -> VitaminButtonIconType {
         guard let iconType = iconTypes[state] else {
             return iconTypes[.normal] ?? .none
         }
@@ -160,7 +160,12 @@ extension VitaminButton {
         }
     }
 
-    private func commonApplyIcon(image: UIImage, iconType: IconType, state: UIControl.State, renderingMode: UIImage.RenderingMode?) {
+    private func commonApplyIcon(
+        image: UIImage,
+        iconType: VitaminButtonIconType,
+        state: UIControl.State,
+        renderingMode: UIImage.RenderingMode?
+    ) {
         var imageUpdated = image
         if let renderingMode = renderingMode {
             guard let resizedImage = image
