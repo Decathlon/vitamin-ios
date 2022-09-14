@@ -50,6 +50,12 @@ public class VitaminButton: UIButton {
         applyNewTextStyle()
     }
 
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        applyNewStyle()
+        applyNewTextStyle()
+    }
+
     public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         applyNewStyle()
