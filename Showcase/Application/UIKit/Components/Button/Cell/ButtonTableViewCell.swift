@@ -31,7 +31,7 @@ final class ButtonTableViewCell: UITableViewCell {
         }
     }
 
-    func update(for style: VitaminButton.Style, isEnabled: Bool) {
+    func update(for style: VitaminButtonStyle, isEnabled: Bool) {
         mediumButton.style = style
         largeButton.style = style
         mediumIconAloneButton.style = style

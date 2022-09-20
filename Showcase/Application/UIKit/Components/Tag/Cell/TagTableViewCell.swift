@@ -19,7 +19,7 @@ class MonoTagTableViewCell: UITableViewCell {
         delegate: VitaminTagInteractiveDelegate? = nil
     ) {
         fakeView.backgroundColor = VitaminColor.Core.Background.brandSecondary
-        fakeLabel.attributedText = "This is a \(text) tag \(icon != nil ? "with an": "without") icon"
+        fakeLabel.attributedText = "This is a \(text) tag \(icon != nil ? "with an" : "without") icon"
             .styled(as: .callout)
         vitaminTag.label = text
         vitaminTag.variant = variant

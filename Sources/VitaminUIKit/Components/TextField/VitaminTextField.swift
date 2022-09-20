@@ -342,7 +342,7 @@ extension VitaminTextField {
             return
         }
         let bodyRestrictedAttributes: [NSAttributedString.Key: Any] = [
-            .font: font ,
+            .font: font,
             .foregroundColor: self.state.placeholderColor
         ]
         self.textField.attributedPlaceholder = NSAttributedString(
