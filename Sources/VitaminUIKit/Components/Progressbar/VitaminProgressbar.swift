@@ -370,7 +370,7 @@ extension VitaminProgressbar {
                 self.centerImage.isHidden = true
             case .percentage:
                 // Specific case : in indeterminate progress type, nothing will be displayable, thus displayed
-                self.percentageLabel.isHidden = true
+                self.percentageLabel.isHidden = (progressType == .indeterminate)
                 self.centerImage.isHidden = true
             case .image:
                 self.percentageLabel.isHidden = true
@@ -387,6 +387,7 @@ extension VitaminProgressbar {
                 self.percentageLabel.isHidden = true
                 self.leftLabel.isHidden = true
             case .percentage:
+                // Specific case : in indeterminate progress type, nothing will be displayable, thus displayed
                 self.percentageLabel.isHidden = (progressType == .indeterminate)
                 self.leftLabel.isHidden = false
             case .labelOnly:
