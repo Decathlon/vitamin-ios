@@ -73,7 +73,20 @@ public final class VitaminProgressbar: UIView {
 
     /// The type of progress of the progress abr
     /// Can be .determinate or .indeterminate
-    public var progressType: VitaminProgressbarProgressType = .determinate
+    public var progressType: VitaminProgressbarProgressType = .determinate {
+        willSet {
+            if progressType != newValue {
+                progress = 0
+            }
+        }
+        didSet {
+            if oldValue == .indeterminate && progressType == .determinate {
+                stopAnimationForIndeterminate()
+            }
+            applyStyle()
+            setupView()
+        }
+    }
 
     /// A boolean indicating if the track should be displayed or not
     public var showTrack = true {
@@ -153,7 +166,7 @@ public final class VitaminProgressbar: UIView {
         if case .linear(let size, let style) = self.variant {
             // base vertical position if no labels
             var verticalPosition = self.frame.height / 2
-            if style == .percentage {
+            if style == .percentage || style == .labelOnly {
                 // compute height : base position + lineHeight/2 + spacer/2
                 verticalPosition += size.labelLineHeight / 2 + size.verticalSpacer / 2
             }
@@ -165,7 +178,7 @@ public final class VitaminProgressbar: UIView {
     // Vertical posiytion of the progress layers for linear variant
     private var labelVerticalPosition: CGFloat {
         self.superview?.layoutSubviews()
-        if case .linear(let size, let style) = self.variant, style == .percentage {
+        if case .linear(let size, let style) = self.variant, style == .percentage || style == .labelOnly {
             return (self.frame.height - size.labelLineHeight - size.verticalSpacer - size.lineWidth) / 2
         }
         return 0
@@ -191,8 +204,8 @@ public final class VitaminProgressbar: UIView {
                 clockwise: true)
             lineWidth = size.lineWidth
         } else if case .linear(let size, _) = self.variant {
-            path.move(to: CGPoint(x: 0, y: progressbarLayersVerticalPosition))
-            path.addLine(to: CGPoint(x: self.frame.width, y: progressbarLayersVerticalPosition))
+            path.move(to: CGPoint(x: 0 + size.lineWidth / 2, y: progressbarLayersVerticalPosition))
+            path.addLine(to: CGPoint(x: self.frame.width - size.lineWidth / 2, y: progressbarLayersVerticalPosition))
             lineWidth = size.lineWidth
         }
         trackLayer.removeFromSuperlayer()
@@ -229,8 +242,8 @@ public final class VitaminProgressbar: UIView {
                 clockwise: true)
             lineWidth = size.lineWidth
         } else if case .linear(let size, _) = self.variant {
-            path.move(to: CGPoint(x: 0, y: progressbarLayersVerticalPosition))
-            path.addLine(to: CGPoint(x: self.frame.width, y: progressbarLayersVerticalPosition))
+            path.move(to: CGPoint(x: 0 + size.lineWidth / 2, y: progressbarLayersVerticalPosition))
+            path.addLine(to: CGPoint(x: self.frame.width - size.lineWidth / 2, y: progressbarLayersVerticalPosition))
             lineWidth = size.lineWidth
         }
 
@@ -357,7 +370,7 @@ extension VitaminProgressbar {
                 self.centerImage.isHidden = true
             case .percentage:
                 // Specific case : in indeterminate progress type, nothing will be displayable, thus displayed
-                self.percentageLabel.isHidden = (progressType == .indeterminate)
+                self.percentageLabel.isHidden = true
                 self.centerImage.isHidden = true
             case .image:
                 self.percentageLabel.isHidden = true
@@ -374,7 +387,10 @@ extension VitaminProgressbar {
                 self.percentageLabel.isHidden = true
                 self.leftLabel.isHidden = true
             case .percentage:
-                self.percentageLabel.isHidden = false
+                self.percentageLabel.isHidden = (progressType == .indeterminate)
+                self.leftLabel.isHidden = false
+            case .labelOnly:
+                self.percentageLabel.isHidden = true
                 self.leftLabel.isHidden = false
             }
 
