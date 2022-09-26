@@ -25,7 +25,8 @@ workflows:
 
             # Bump version
             if [ $DEPLOY_VERSION_NUMBER != "" ]; then
-              sed -i '' "s/[0-9]*\.[0-9]*\.[0-9]*/$DEPLOY_VERSION_NUMBER/g" README.md *.podspec
+              sed -i '' "s/[0-9]*\.[0-9]*\.[0-9]*/$DEPLOY_VERSION_NUMBER/g" README.md
+              sed -i '' "s/\(s.version *= \)\"[0-9]*\.[0-9]*\.[0-9]*\"/\1\"$DEPLOY_VERSION_NUMBER\"/g" *.podspec
             fi
 
             # Commit
