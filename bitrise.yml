@@ -7,8 +7,6 @@ trigger_map:
   workflow: primary
 - pull_request_source_branch: '*'
   workflow: primary
-- tag: '*'
-  workflow: deploy
 workflows:
   deploy:
     steps:
@@ -43,6 +41,9 @@ workflows:
             #!/usr/bin/env bash
             # fail if any commands fails
             set -e
+
+            # register to trunk
+            pod trunk register
 
             # push to CocoaPods specs
             pod trunk push VitaminCore --allow-warnings
