@@ -22,11 +22,16 @@
     <img src="https://img.shields.io/github/contributors/Decathlon/vitamin-ios.svg">
   </a>
   <a aria-label="last commit" href="https://github.com/Decathlon/vitamin-ios/commits">
-    <img alt="" src=
-  "https://img.shields.io/github/last-commit/Decathlon/vitamin-ios.svg">
+    <img alt="" src="https://img.shields.io/github/last-commit/Decathlon/vitamin-ios.svg">
   </a>
   <a aria-label="license" href="https://github.com/Decathlon/vitamin-ios/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/Decathlon/vitamin-ios.svg" alt="">
+  </a>
+  <a aria-label="Quality Gate Status" href="https://sonarcloud.io/dashboard?id=Decathlon_vitamin-ios">
+    <img src="https://sonarcloud.io/api/project_badges/measure?project=Decathlon_vitamin-ios&metric=alert_status" alt="" />
+  </a>
+  <a aria-label="Bitrise Build Status" href="https://app.bitrise.io/app/c0b012b2a9e1cb6e">
+    <img src="https://app.bitrise.io/app/c0b012b2a9e1cb6e/status.svg?token=y1VZkNa676yImmtWrEHVLw&branch=main" alt="" />
   </a>
   <a aria-label="slack" href="https://join.slack.com/t/decathlon-design/shared_invite/zt-13kxb50ar-iHzqV~Olsu4~NCkEPj5c4g">
     <img src="https://img.shields.io/badge/slack-Decathlon%20Design%20System-purple.svg?logo=slack" alt="">
