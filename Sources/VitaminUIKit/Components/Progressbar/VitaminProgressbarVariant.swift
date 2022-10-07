@@ -123,7 +123,7 @@ extension VitaminProgressbarLinearSize {
 
     var labelLineHeight: CGFloat {
         // extract lineHeight from text style
-        let paragraphStyle = self.textStyle.attributes[.paragraphStyle] as? NSParagraphStyle
+        let paragraphStyle = self.textStyle.customAttributes()[.paragraphStyle] as? NSParagraphStyle
         let lineHeight = paragraphStyle?.maximumLineHeight
         if let lineHeight = lineHeight {
             return lineHeight
