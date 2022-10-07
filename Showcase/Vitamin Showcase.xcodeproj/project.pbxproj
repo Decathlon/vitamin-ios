@@ -30,6 +30,7 @@
 		4ACCCBD52805E71400FD184B /* AssetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCCBD42805E71400FD184B /* AssetsView.swift */; };
 		4ACCCBD72805E7AE00FD184B /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCCBD62805E7AE00FD184B /* ViewExtension.swift */; };
 		4ACCCBD92805FF7100FD184B /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCCBD82805FF7100FD184B /* ArrayExtension.swift */; };
+		651D7DBD28E1E23D00A4A8DD /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D7DBC28E1E23D00A4A8DD /* StackViewController.swift */; };
 		651EF24D272BE8D500121F7A /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EF24C272BE8D500121F7A /* TextFieldTableViewCell.swift */; };
 		651EF252272C0AD500121F7A /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651EF251272C0AD500121F7A /* TextFieldTableViewCell.xib */; };
 		6521D85F27DA100A00A15A06 /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6521D85E27DA100A00A15A06 /* TagCollectionViewCell.xib */; };
@@ -100,6 +101,7 @@
 		4ACCCBD42805E71400FD184B /* AssetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsView.swift; sourceTree = "<group>"; };
 		4ACCCBD62805E7AE00FD184B /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		4ACCCBD82805FF7100FD184B /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		651D7DBC28E1E23D00A4A8DD /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
 		651EF24C272BE8D500121F7A /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		651EF251272C0AD500121F7A /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
 		6521D85E27DA100A00A15A06 /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 			children = (
 				4AAD2B632767725200727D8E /* Cell */,
 				65B52A222739553A008D9B5E /* TextFieldViewController.swift */,
+				651D7DBC28E1E23D00A4A8DD /* StackViewController.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -821,6 +824,7 @@
 				4ACCCBD72805E7AE00FD184B /* ViewExtension.swift in Sources */,
 				65BD9F3F2768D06900EEDC0D /* IconsViewController.swift in Sources */,
 				4A35E4902816D1B5001526D8 /* TypographyView.swift in Sources */,
+				651D7DBD28E1E23D00A4A8DD /* StackViewController.swift in Sources */,
 				659BBA7B288BEA2B00574333 /* ButtonsView.swift in Sources */,
 				AAB029D1256805CC00F08C74 /* TypographyViewController.swift in Sources */,
 				4A35E48E2816D124001526D8 /* TypographyModel.swift in Sources */,

@@ -6,18 +6,74 @@
 import UIKit
 import Vitamin
 
-final class TextFieldViewController: UITableViewController {
+final class StackViewController: UIViewController {
+    private lazy var stackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 20.0
+        stack.alignment = .fill
+        stack.distribution = .fill
+        stack.backgroundColor = .white
+        return stack
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.title = "TextField"
 
-        tableView.register(UINib(nibName: "TextFieldTableViewCell", bundle: nil), forCellReuseIdentifier: "textField")
+        /*tableView.register(UINib(nibName: "TextFieldTableViewCell", bundle: nil), forCellReuseIdentifier: "textField")
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 80
 
-        addObservers()
+        addObservers()*/
+
+        var i = 1000
+
+        dynamicTextFields.forEach({
+            i += 1
+            stackView.addArrangedSubview(
+                VitaminTextField(
+                    style: $0.style,
+                    state: $0.stateConfiguration,
+                    texts: $0.textsConfiguration,
+                    validation: $0.validationConfiguration,
+                    maxLength: $0.maxLength,
+                    icon: $0.icon,
+                    textFieldTag: i
+                )
+            )
+        })
+
+        view.addSubview(stackView)
+
+
+
+
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        let horizontalConstraint = NSLayoutConstraint(
+            item: stackView,
+            attribute: NSLayoutConstraint.Attribute.top,
+            relatedBy: NSLayoutConstraint.Relation.equal,
+            toItem: view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant: 0
+        )
+        let verticalConstraint = NSLayoutConstraint(
+            item: stackView,
+            attribute: NSLayoutConstraint.Attribute.leading,
+            relatedBy: NSLayoutConstraint.Relation.equal,
+            toItem: view, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: 0)
+        let widthConstraint = NSLayoutConstraint(
+            item: stackView, attribute: NSLayoutConstraint.Attribute.trailing,
+            relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.trailing,
+            multiplier: 1, constant: 0)
+        let heightConstraint = NSLayoutConstraint(
+            item: stackView, attribute: NSLayoutConstraint.Attribute.bottom,
+            relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.bottom,
+            multiplier: 1, constant: -100)
+        view.addConstraints([horizontalConstraint, verticalConstraint, widthConstraint])// , heightConstraint])
     }
+
+
 
     static let placeholderOutline: String = "placeholder outline"
     static let placeholderFilled: String = "placeholder filled"
@@ -25,8 +81,8 @@ final class TextFieldViewController: UITableViewController {
     static let helperTextFilled: String = "Helper Text Filled"
     private static let sectionTitles = ["Static VitaminTextFields", "Dynamic VitaminTextFields"]
     private lazy var datasource: [String: [TextFieldDemoConfig]] = [
-        TextFieldViewController.sectionTitles[0]: staticTextFields,
-        TextFieldViewController.sectionTitles[1]: dynamicTextFields
+        StackViewController.sectionTitles[0]: staticTextFields,
+        StackViewController.sectionTitles[1]: dynamicTextFields
     ]
 
     private let staticTextFields: [TextFieldDemoConfig] = [
@@ -261,7 +317,7 @@ final class TextFieldViewController: UITableViewController {
             textsConfiguration: VitaminTextField.TextConfiguration(
                 labelText: "End editing validation Outline",
                 placeholderText: TextFieldViewController.placeholderOutline,
-                helperText: TextFieldViewController.helperTextOutline + "\n" + TextFieldViewController.helperTextOutline),
+                helperText: TextFieldViewController.helperTextOutline),
             validationConfiguration: VitaminTextField.ValidationConfiguration(
                 liveValidation: nil,
                 liveValidationTimeInterval: 0.5,
@@ -271,12 +327,12 @@ final class TextFieldViewController: UITableViewController {
             style: VitaminTextField.Style.outline,
             maxLength: nil,
             icon: VitaminTextField.IconConfiguration(initialIcon: Vitamix.Line.Health.heart.image)
-        ),
+        )/*,
         TextFieldDemoConfig(
             textsConfiguration: VitaminTextField.TextConfiguration(
                 labelText: "Active on Edit Outline",
                 placeholderText: TextFieldViewController.placeholderOutline,
-                helperText: TextFieldViewController.helperTextOutline + "\n" + TextFieldViewController.helperTextOutline  + "\n" + TextFieldViewController.helperTextOutline),
+                helperText: TextFieldViewController.helperTextOutline),
             validationConfiguration: VitaminTextField.ValidationConfiguration(
                 liveValidation: nil,
                 liveValidationTimeInterval: 0.5,
@@ -409,7 +465,7 @@ final class TextFieldViewController: UITableViewController {
                 initialIcon: Vitamix.Line.Health.heart.image,
                 iconActionDelegate: self
             )
-        )
+        )*/
     ]
 
     let atLeastThreeCharValidationExample: VitaminTextFieldValidation = { fieldValue, completion in
@@ -429,56 +485,10 @@ final class TextFieldViewController: UITableViewController {
     }
 }
 
-extension TextFieldViewController {
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        datasource.count
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let datasource = datasource[TextFieldViewController.sectionTitles[section]] else {
-            return 0
-        }
-        return datasource.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "textField") as? TextFieldTableViewCell else {
-            let cell = TextFieldTableViewCell(style: .default, reuseIdentifier: "textField")
-            return cell
-        }
-        cell.vitaminTextField.delegate = self
-        cell.selectionStyle = .none
-
-        if indexPath.section == 0 {
-            cell.updateVitaminTextField(
-                style: staticTextFields[indexPath.row].style,
-                stateConfiguration: staticTextFields[indexPath.row].stateConfiguration,
-                texts: staticTextFields[indexPath.row].textsConfiguration,
-                maxLength: staticTextFields[indexPath.row].maxLength,
-                icon: staticTextFields[indexPath.row].icon
-            )
-        } else if indexPath.section == 1 {
-            cell.updateVitaminTextField(
-                style: dynamicTextFields[indexPath.row].style,
-                stateConfiguration: dynamicTextFields[indexPath.row].stateConfiguration,
-                texts: dynamicTextFields[indexPath.row].textsConfiguration,
-                validation: dynamicTextFields[indexPath.row].validationConfiguration,
-                maxLength: dynamicTextFields[indexPath.row].maxLength,
-                icon: dynamicTextFields[indexPath.row].icon
-            )
-        }
-
-        return cell
-    }
-
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        TextFieldViewController.sectionTitles[section]
-    }
-}
 
 // MARK: - VitaminTextField Delegate
 
-extension TextFieldViewController: UITextFieldDelegate {
+extension StackViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -487,7 +497,7 @@ extension TextFieldViewController: UITextFieldDelegate {
 
 // MARK: - Keybord handling
 
-extension TextFieldViewController {
+/*extension TextFieldViewController {
     func addObservers() {
         NotificationCenter.default.addObserver(
             self,
@@ -520,8 +530,8 @@ extension TextFieldViewController {
         tableView.contentInset = contentInset
     }
 }
-
-extension TextFieldViewController: VitaminTextFieldIconActionDelegate {
+*/
+extension StackViewController: VitaminTextFieldIconActionDelegate {
     func vitaminTextFieldDidClickOnIcon(_ vitaminTextField: VitaminTextField) {
         let alert = UIAlertController(
             title: "Icon Action triggered",
