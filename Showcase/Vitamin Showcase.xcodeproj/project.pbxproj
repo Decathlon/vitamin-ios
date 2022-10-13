@@ -23,6 +23,8 @@
 		4A35E4902816D1B5001526D8 /* TypographyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E48F2816D1B5001526D8 /* TypographyView.swift */; };
 		4A4643902806C91700942AD7 /* AssetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A46438F2806C91700942AD7 /* AssetsModel.swift */; };
 		4A4643932806D60B00942AD7 /* IconsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4643922806D60B00942AD7 /* IconsView.swift */; };
+		4A67EDBD28F729F20049555F /* BadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A67EDBC28F729F20049555F /* BadgesView.swift */; };
+		4A67EDC028F72AD30049555F /* BadgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A67EDBF28F72AD30049555F /* BadgeModel.swift */; };
 		4A91BAAE2864CC5C0032B31E /* IconsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A91BAAD2864CC5C0032B31E /* IconsModel.swift */; };
 		4AAD2B67276772D200727D8E /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD2B66276772D200727D8E /* MainTableViewController.swift */; };
 		4AB763AE2825725300092033 /* VitaminCore in Frameworks */ = {isa = PBXBuildFile; productRef = 4AB763AD2825725300092033 /* VitaminCore */; };
@@ -95,6 +97,8 @@
 		4A35E48F2816D1B5001526D8 /* TypographyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyView.swift; sourceTree = "<group>"; };
 		4A46438F2806C91700942AD7 /* AssetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsModel.swift; sourceTree = "<group>"; };
 		4A4643922806D60B00942AD7 /* IconsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsView.swift; sourceTree = "<group>"; };
+		4A67EDBC28F729F20049555F /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
+		4A67EDBF28F72AD30049555F /* BadgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModel.swift; sourceTree = "<group>"; };
 		4A91BAAD2864CC5C0032B31E /* IconsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconsModel.swift; sourceTree = "<group>"; };
 		4AAD2B66276772D200727D8E /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		4ACCCBD42805E71400FD184B /* AssetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsView.swift; sourceTree = "<group>"; };
@@ -114,7 +118,7 @@
 		6551745A27EDBDFA0043700F /* BadgesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgesViewController.swift; sourceTree = "<group>"; };
 		6551745F27EDBFAE0043700F /* BaseHeaderedCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHeaderedCollectionViewController.swift; sourceTree = "<group>"; };
 		6551746027EDBFAE0043700F /* BaseImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseImageCollectionViewController.swift; sourceTree = "<group>"; };
-		659BBA7A288BEA2B00574333 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonsView.swift; path = Button/ButtonsView.swift; sourceTree = "<group>"; };
+		659BBA7A288BEA2B00574333 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 		659BBA7E288BFC7C00574333 /* ButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModel.swift; sourceTree = "<group>"; };
 		65B52A1827392EDD008D9B5E /* SwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
 		65B52A1C27394136008D9B5E /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
@@ -327,6 +331,30 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		4A67EDBA28F729BC0049555F /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				659BBA7A288BEA2B00574333 /* ButtonsView.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		4A67EDBB28F729DB0049555F /* Badge */ = {
+			isa = PBXGroup;
+			children = (
+				4A67EDBC28F729F20049555F /* BadgesView.swift */,
+			);
+			path = Badge;
+			sourceTree = "<group>";
+		};
+		4A67EDBE28F72AC80049555F /* Badge */ = {
+			isa = PBXGroup;
+			children = (
+				4A67EDBF28F72AD30049555F /* BadgeModel.swift */,
+			);
+			path = Badge;
+			sourceTree = "<group>";
+		};
 		4A8962EF276366EB00D9B8E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,7 +560,8 @@
 		659BBA79288BE9F700574333 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				659BBA7A288BEA2B00574333 /* ButtonsView.swift */,
+				4A67EDBB28F729DB0049555F /* Badge */,
+				4A67EDBA28F729BC0049555F /* Button */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -540,6 +569,7 @@
 		659BBA7C288BFC5900574333 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4A67EDBE28F72AC80049555F /* Badge */,
 				659BBA7D288BFC6100574333 /* Button */,
 			);
 			path = Components;
@@ -842,6 +872,7 @@
 				4A35E4752812B34E001526D8 /* ColorsModel.swift in Sources */,
 				65D1B66A2787422100C1560B /* ShadowTableViewCell.swift in Sources */,
 				6551746227EDBFAE0043700F /* BaseImageCollectionViewController.swift in Sources */,
+				4A67EDBD28F729F20049555F /* BadgesView.swift in Sources */,
 				6551745C27EDBDFA0043700F /* BadgeCollectionViewCell.swift in Sources */,
 				AAB029CE256805A900F08C74 /* ColorsViewController.swift in Sources */,
 				AAB029D4256805E200F08C74 /* ButtonsViewController.swift in Sources */,
@@ -855,6 +886,7 @@
 				4A07433E27D9541F005BD446 /* NavigationTitleModifier.swift in Sources */,
 				65B52A232739553A008D9B5E /* TextFieldViewController.swift in Sources */,
 				4ACCCBD52805E71400FD184B /* AssetsView.swift in Sources */,
+				4A67EDC028F72AD30049555F /* BadgeModel.swift in Sources */,
 				4A91BAAE2864CC5C0032B31E /* IconsModel.swift in Sources */,
 				AA68B4CB25681A5A00F1A4D7 /* ButtonTableViewCell.swift in Sources */,
 				651EF24D272BE8D500121F7A /* TextFieldTableViewCell.swift in Sources */,
