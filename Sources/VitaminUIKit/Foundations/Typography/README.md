@@ -10,9 +10,12 @@ Vitamin provides a `TextStyle` enum:
 - `title3`
 - `headline`
 - `body`
+- `bodyBold`
 - `callout`
+- `calloutBold`
 - `subhead`
 - `footnote`
+- `footnoteBold`
 - `caption1`
 - `caption2`
 
@@ -26,5 +29,8 @@ let vitaminStyledTitle = "This is a title".styled(as: .title1)
 let vitaminStyledBody = "This is a body text".styled(as: .body)
 
 let text = "This a is a body text with positive semantic color"
-var vitaminStyleBodySuccess: NSAttributedString = text.styled(as: .body, with:  VitaminColor.Core.Content.positive)
+var vitaminStyleBodySuccess: NSAttributedString = text.styled(as: .body, with: VitaminColor.Core.Content.positive)
+
+let text = "This a is a caption text with custom line break mode"
+var vitaminStyleCaption: NSAttributedString = text.styled(as: .caption1, lineBreakMode: .byWordWrapping)
 ```
