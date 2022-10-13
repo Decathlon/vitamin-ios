@@ -30,7 +30,7 @@ final class TextFieldViewController: UITableViewController {
     ]
 
     private let staticTextFields: [TextFieldDemoConfig] = [
-        /*TextFieldDemoConfig(
+        TextFieldDemoConfig(
             textsConfiguration: VitaminTextField.TextConfiguration(
                 labelText: "Example 1 Outline",
                 placeholderText: placeholderOutline,
@@ -239,7 +239,7 @@ final class TextFieldViewController: UITableViewController {
             style: VitaminTextField.Style.filled,
             maxLength: nil,
             icon: nil
-        )*/
+        )
     ]
     private lazy var dynamicTextFields: [TextFieldDemoConfig] = [
         TextFieldDemoConfig(
@@ -261,7 +261,7 @@ final class TextFieldViewController: UITableViewController {
             textsConfiguration: VitaminTextField.TextConfiguration(
                 labelText: "End editing validation Outline",
                 placeholderText: TextFieldViewController.placeholderOutline,
-                helperText: TextFieldViewController.helperTextOutline + "\n" + TextFieldViewController.helperTextOutline),
+                helperText: TextFieldViewController.helperTextOutline),
             validationConfiguration: VitaminTextField.ValidationConfiguration(
                 liveValidation: nil,
                 liveValidationTimeInterval: 0.5,
@@ -276,7 +276,7 @@ final class TextFieldViewController: UITableViewController {
             textsConfiguration: VitaminTextField.TextConfiguration(
                 labelText: "Active on Edit Outline",
                 placeholderText: TextFieldViewController.placeholderOutline,
-                helperText: TextFieldViewController.helperTextOutline + "\n" + TextFieldViewController.helperTextOutline  + "\n" + TextFieldViewController.helperTextOutline),
+                helperText: TextFieldViewController.helperTextOutline),
             validationConfiguration: VitaminTextField.ValidationConfiguration(
                 liveValidation: nil,
                 liveValidationTimeInterval: 0.5,
@@ -416,7 +416,10 @@ final class TextFieldViewController: UITableViewController {
         guard let fieldValue = fieldValue else { return }
 
         if fieldValue.count < 3 {
-            completion(.failure(.errorWithMessage("Value must be at least 3 characters because it would be too short instead so please type more caharacters")))
+            completion(
+                .failure(
+                    .errorWithMessage("Value must be at least 3 characters"))
+            )
         } else {
             completion(.success(()))
         }

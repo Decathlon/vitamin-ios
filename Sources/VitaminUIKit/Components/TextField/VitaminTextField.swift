@@ -233,7 +233,6 @@ public class VitaminTextField: UIView {
         commonInit()
         self.textFieldTag = textFieldTag
         self.fieldValue = texts.fieldValue
-        //commonInit()
     }
 
     /// An initializer that restores a `VitaminTextField` from a serialized version (used in storyboard)
@@ -280,10 +279,13 @@ public class VitaminTextField: UIView {
 
     // Calculate the
     override public var intrinsicContentSize: CGSize {
-        var height = 0.0
+        var height = 16.0
         height += label.intrinsicContentSize.height
         height += textField.intrinsicContentSize.height
-        height += helper.intrinsicContentSize.height > 0 ? helper.intrinsicContentSize.height : counter.intrinsicContentSize.height
+        height +=
+            helper.intrinsicContentSize.height > 0 ?
+                helper.intrinsicContentSize.height :
+                counter.intrinsicContentSize.height
 
         return CGSize(width: super.intrinsicContentSize.width, height: height)
     }
@@ -371,17 +373,12 @@ extension VitaminTextField {
     private func applyNewHelperText() {
         guard let helperText = self.helperText else {
             self.helper.text = ""
-            //helper?.invalidateIntrinsicContentSize()
-            setNeedsLayout()
-            layoutIfNeeded()
+            helper?.invalidateIntrinsicContentSize()
             return
         }
         self.helper.isHidden = false
         self.helper.attributedText = helperText.styled(as: .caption1, with: self.state.helperAndCounterColor)
-        //helper?.invalidateIntrinsicContentSize()
-        setNeedsLayout()
-        layoutIfNeeded()
-
+        helper?.invalidateIntrinsicContentSize()
     }
 
     // handling of new label text
