@@ -22,10 +22,12 @@ public enum VitaminProgressbarLinearSize {
 
 /// Style of a progress bar
 public enum VitaminProgressbarLinearStyle {
-    /// Only the cicular progress bar will be displayed
+    /// Only the linear progress bar will be displayed
     case empty
     /// The progress percentage will be displayed in the center of the progress bar
     case percentage
+    /// The left label will be displayed above the progress bar
+    case labelOnly
 }
 
 /// Size of the progress bar, that can be `.small`(64pt of diameter) or `.medium` (128pt of diameter)
@@ -123,7 +125,7 @@ extension VitaminProgressbarLinearSize {
 
     var labelLineHeight: CGFloat {
         // extract lineHeight from text style
-        let paragraphStyle = self.textStyle.attributes[.paragraphStyle] as? NSParagraphStyle
+        let paragraphStyle = self.textStyle.customAttributes()[.paragraphStyle] as? NSParagraphStyle
         let lineHeight = paragraphStyle?.maximumLineHeight
         if let lineHeight = lineHeight {
             return lineHeight

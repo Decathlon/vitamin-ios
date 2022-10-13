@@ -336,7 +336,7 @@ extension VitaminTextField {
         // and color it.
         // By doing this, we let iOS center the text in the TextField, which is
         // what we want in the end
-        guard let font = VitaminTextStyle.body.attributes[.font] else {
+        guard let font = VitaminTextStyle.body.customAttributes()[.font] else {
             // should never happen, .body will always have a .font
             // only used to avoid force unwrap
             return
@@ -374,7 +374,7 @@ extension VitaminTextField {
         // using `typingAttributes` in delegate causes a memory leak
         // and the app does not respond after some time
         // to avoid that, we just pick the font from the .body style, and just apply it
-        guard let font = VitaminTextStyle.body.attributes[.font] as? UIFont else {
+        guard let font = VitaminTextStyle.body.customAttributes()[.font] as? UIFont else {
             return
         }
         textField.font = font

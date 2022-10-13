@@ -7,33 +7,51 @@ trigger_map:
   workflow: primary
 - pull_request_source_branch: '*'
   workflow: primary
-- tag: '*'
-  workflow: deploy
 workflows:
   deploy:
     steps:
-    - activate-ssh-key@4:
-        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
     - git-clone@6: {}
     - cache-pull@2: {}
-    - xcode-build-for-simulator@0: {}
     - script@1:
-        title: Do anything with Script step
+        run_if: '{{getenv "DEPLOY_VERSION_NUMBER" | ne ""}}'
+        title: Update version number
         inputs:
         - content: |-
             #!/usr/bin/env bash
             # fail if any commands fails
             set -e
-            # debug log
-            set -x
+
+            # Bump version
+            if [ $DEPLOY_VERSION_NUMBER != "" ]; then
+              sed -i '' "s/[0-9]*\.[0-9]*\.[0-9]*/$DEPLOY_VERSION_NUMBER/g" README.md
+              sed -i '' "s/\(s.version *= \)\"[0-9]*\.[0-9]*\.[0-9]*\"/\1\"$DEPLOY_VERSION_NUMBER\"/g" *.podspec
+            fi
+
+            # Commit
+            git commit -a -m "chore: bump version to $DEPLOY_VERSION_NUMBER"
+            # Create tag
+            git tag -a $DEPLOY_VERSION_NUMBER -m "Vitamin $DEPLOY_VERSION_NUMBER"
+            # Push modifications
+            git push origin
+    - xcode-build-for-simulator@0: {}
+    - script@1:
+        title: Send version to CocoaPods
+        inputs:
+        - content: |-
+            #!/usr/bin/env bash
+            # fail if any commands fails
+            set -e
+
+            # register to trunk
+            pod trunk register
 
             # push to CocoaPods specs
-            # TODO
+            pod trunk push VitaminCore --allow-warnings
+            pod trunk push Vitamin --allow-warnings
+            pod trunk push VitaminSwiftUI --allow-warnings
     - cache-push@2: {}
   primary:
     steps:
-    - activate-ssh-key@4:
-        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
     - git-clone@6: {}
     - cache-pull@2: {}
     - xcode-build-for-simulator@0: {}

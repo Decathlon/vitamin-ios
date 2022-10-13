@@ -140,10 +140,14 @@ extension VitaminTextStyle: RawRepresentable {
 
 extension VitaminTextStyle {
     /// The paragraph style for the current style.
-    private func paragraphStyle(lineHeight: CGFloat) -> NSParagraphStyle {
+    private func paragraphStyle(
+        lineHeight: CGFloat,
+        lineBreakMode: NSLineBreakMode
+    ) -> NSParagraphStyle {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.minimumLineHeight = lineHeight
         paragraphStyle.maximumLineHeight = lineHeight
+        paragraphStyle.lineBreakMode = lineBreakMode
         return paragraphStyle
     }
 
@@ -199,14 +203,32 @@ extension VitaminTextStyle {
     /// `.font`: The font for the current style.
     /// `.paragraphStyle`: The paragraph style for the current style.
     /// `.baselineOffset`: The baselineOffset for the current style.
+    @available(*, deprecated, renamed: "customAttributes()")
     public var attributes: [NSAttributedString.Key: Any] {
+        customAttributes()
+    }
+
+    /// Customize and get all attributes for the current style.
+    /// - Parameters:
+    ///   - textColor: The color for the text. Optional. Default: `VitaminColor.Core.Content.primary`.
+    ///   - lineBreakMode: The line break mode. Optional. Default: `NSLineBreakMode.byTruncatingTail`.
+    /// - Returns: A dictionary of `NSAttributedString` attributes.
+    ///     `.foregroundColor`: The text color.
+    ///     `.font`: The font for the current style.
+    ///     `.paragraphStyle`: The paragraph style for the current style.
+    ///     `.baselineOffset`: The baselineOffset for the current style.
+    public func customAttributes(
+        textColor: UIColor? = nil,
+        lineBreakMode: NSLineBreakMode? = nil
+    ) -> [NSAttributedString.Key: Any] {
         let adjustedFont = scaledFont
         let adjustedSize = adjustedFont.pointSize
         let adjustedLineHeight = scaledLineHeight(for: adjustedFont)
-        let paragraphStyle = paragraphStyle(lineHeight: adjustedLineHeight)
+        let paragraphStyle = paragraphStyle(lineHeight: adjustedLineHeight,
+                                            lineBreakMode: lineBreakMode ?? .byTruncatingTail)
         let baselineOffset = baselineOffset(lineHeight: adjustedLineHeight, size: adjustedSize)
         return [
-            .foregroundColor: VitaminColor.Core.Content.primary,
+            .foregroundColor: textColor ?? VitaminColor.Core.Content.primary,
             .font: adjustedFont,
             .paragraphStyle: paragraphStyle,
             .baselineOffset: baselineOffset
@@ -221,12 +243,14 @@ extension String {
     /// - Parameters:
     ///   - textStyle: The style that we want to apply.
     ///   - textColor: The color for the text. Optional. Default: `VitaminColor.Core.Content.primary`.
+    ///   - lineBreakMode: The line break mode. Optional. Default: `NSLineBreakMode.byTruncatingTail`.
     /// - Returns: A `NSAttributedString` with all attributes.
-    public func styled(as textStyle: VitaminTextStyle, with textColor: UIColor? = nil) -> NSAttributedString {
-        var attributes = textStyle.attributes
-        if let color = textColor {
-            attributes[.foregroundColor] = color
-        }
+    public func styled(
+        as textStyle: VitaminTextStyle,
+        with textColor: UIColor? = nil,
+        lineBreakMode: NSLineBreakMode? = nil
+    ) -> NSAttributedString {
+        let attributes = textStyle.customAttributes(textColor: textColor, lineBreakMode: lineBreakMode)
         return NSAttributedString(string: self, attributes: attributes)
     }
 }
