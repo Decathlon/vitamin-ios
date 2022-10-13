@@ -13,7 +13,7 @@ struct TextStylesModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         let font = textStyle.scaledFont
-        let lineSpacing = textStyle.lineHeight - textStyle.scaledLineHeight(for: font)
+        let lineSpacing = textStyle.scaledLineHeight(for: font) - font.pointSize
         content
             .font(font.swiftUIFont)
             .lineSpacing(lineSpacing)
