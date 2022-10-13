@@ -5,7 +5,7 @@
 
 import UIKit
 
-/// enum containing the different variants of VitaminTag
+/// enum containing the different variants of VitaminBadge
 public enum VitaminBadgeVariant {
     case standard
     case brand
@@ -51,5 +51,23 @@ public enum VitaminBadgeVariant {
             return 1
         }
         return 0
+    }
+}
+
+/// enum containing the different variants of VitaminBadge
+public enum VitaminBadgeSize {
+    case small
+    case medium
+    case large
+
+    public var textStyle: VitaminTextStyle {
+        switch self {
+        case .small:
+            return VitaminTextStyle.badgeSmall
+        case .medium:
+            return VitaminTextStyle.badgeMedium
+        case .large:
+            return VitaminTextStyle.badgeLarge
+        }
     }
 }

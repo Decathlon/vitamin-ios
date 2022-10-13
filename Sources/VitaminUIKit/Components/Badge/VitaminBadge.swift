@@ -113,7 +113,7 @@ extension VitaminBadge {
 extension VitaminBadge {
     // apply text and icon when they change
     private func applyTextAndColor() {
-        attributedText = displayableValue.styled(as: .badge, with: variant.foregroundColor)
+        attributedText = displayableValue.styled(as: .badgeSmall, with: variant.foregroundColor)
         layer.backgroundColor = variant.backgroundColor.cgColor
         layer.borderColor = variant.borderColor.cgColor
         layer.borderWidth = variant.borderWidth
