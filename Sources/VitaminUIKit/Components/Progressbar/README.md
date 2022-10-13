@@ -82,12 +82,13 @@ If the frame is too small, it will be cropped
 The  `VitaminProgressbar` exists in different styles, depending on the `variant`.
 
 For variant `.linear`, it exists in 3 styles, settable through the `style` associated value of the `variant` property :
-- `.percentage` : the progress percentage will be displayed on the top right of the progress bar, and an optional label can be displayed on the top left of the progress bar. This label can be set with the `leftLabelText` property
-- `.empty` : nothing will be displayed except the progress bar
+- `.percentage`: the progress percentage will be displayed on the top right of the progress bar, and an optional label can be displayed on the top left of the progress bar. This label can be set with the `leftLabelText` property
+- `.labelOnly`: an optional label can be displayed on the top left of the progress bar. This label can be set with the `leftLabelText` property
+- `.empty`: nothing will be displayed except the progress bar
 
 For variant `.circular`, it exists in 4 styles, settable through the `style` associated value of the `variant` property :
-- `.percentage` : the progress percentage will be displayed in the center of the progress bar
-- `.image(UIImage)` : a rounded configurable image will be displayed in the center of the progress bar. You must provide an imagge, that will be fitted (i.e. resized, but not stretched) and rounded in the available space in the center of the progressbar. 
+- `.percentage`: the progress percentage will be displayed in the center of the progress bar
+- `.image(UIImage)`: a rounded configurable image will be displayed in the center of the progress bar. You must provide an imagge, that will be fitted (i.e. resized, but not stretched) and rounded in the available space in the center of the progressbar. 
 - `.empty` : nothing will be displayed in the center of the progress bar
 
 You can also decide to display or not the track (i.e. the grey circle behind the progress in `.circular` variant, or the grey line behind the progress in `.linear` variant) by setting the `showTrack` boolean property 
@@ -98,6 +99,8 @@ The progress of a progressbar can have two types : `.determinate` and `.indeterm
 `.indeterminate` means that you do not know the progress of the task represented by the progressbar. So the progressbar keeps animating, until you stop it.
 
 **NOTE**: In `.indeterminate` progress type, no percentage will be displayed, even if `.percentage` style has been set (this configuration is still allowed by the library)
+
+You can easily swicth between `.determinate` and `.indeterminate` on the same progress bar. When you switch, progress of progress bar will automatically be reset to 0. And if you switch from `.indeterminate` to `.determinate`, animation will be automatically stopped.
 
 ### Making a determinate progress bar progress
 Whenever you want to update the progress of a progress bar with `.determinate` progress type, you can change the value of the `progress` property.

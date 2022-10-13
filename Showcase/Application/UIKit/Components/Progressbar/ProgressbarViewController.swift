@@ -131,9 +131,10 @@ final class ProgressbarViewController: UITableViewController {
         ProgressbarDemoConfig(variant: .linear(size: .small, style: .empty), withTrack: true, progress: 0.50),
         ProgressbarDemoConfig(variant: .linear(size: .small, style: .empty), withTrack: false, progress: 0.60),
         ProgressbarDemoConfig(
-            variant: .linear(size: .small, style: .empty),
+            variant: .linear(size: .small, style: .labelOnly),
             progressType: .indeterminate,
-            withTrack: true),
+            withTrack: true,
+            leftLabelText: "Example 3S"),
         ProgressbarDemoConfig(
             variant: .linear(size: .small, style: .empty),
             progressType: .indeterminate,
@@ -155,9 +156,10 @@ final class ProgressbarViewController: UITableViewController {
         ProgressbarDemoConfig(variant: .linear(size: .medium, style: .empty), withTrack: true, progress: 0.90),
         ProgressbarDemoConfig(variant: .linear(size: .medium, style: .empty), withTrack: false, progress: 0.80),
         ProgressbarDemoConfig(
-            variant: .linear(size: .medium, style: .empty),
+            variant: .linear(size: .medium, style: .labelOnly),
             progressType: .indeterminate,
-            withTrack: true),
+            withTrack: true,
+            leftLabelText: "Example 3M"),
         ProgressbarDemoConfig(
             variant: .linear(size: .medium, style: .empty),
             progressType: .indeterminate,
@@ -179,9 +181,10 @@ final class ProgressbarViewController: UITableViewController {
         ProgressbarDemoConfig(variant: .linear(size: .large, style: .empty), withTrack: true, progress: 0.50),
         ProgressbarDemoConfig(variant: .linear(size: .large, style: .empty), withTrack: false, progress: 0.60),
         ProgressbarDemoConfig(
-            variant: .linear(size: .large, style: .empty),
+            variant: .linear(size: .large, style: .labelOnly),
             progressType: .indeterminate,
-            withTrack: true),
+            withTrack: true,
+            leftLabelText: "Example 3L"),
         ProgressbarDemoConfig(
             variant: .linear(size: .large, style: .empty),
             progressType: .indeterminate,
