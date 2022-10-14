@@ -6,7 +6,7 @@
 import UIKit
 
 /// enum containing the different variants of VitaminBadge
-public enum VitaminBadgeVariant {
+public enum VitaminBadgeVariant: CaseIterable {
     case standard
     case brand
     case reversed
@@ -55,7 +55,7 @@ public enum VitaminBadgeVariant {
 }
 
 /// enum containing the different variants of VitaminBadge
-public enum VitaminBadgeSize {
+public enum VitaminBadgeSize: CaseIterable {
     case small
     case medium
     case large

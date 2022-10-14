@@ -8,7 +8,13 @@ import SwiftUI
 
 @available(iOS 13, *)
 extension Shape {
-    func fill<Fill: ShapeStyle, Stroke: ShapeStyle>(
+    /// Fill and add a border.
+    /// - Parameters:
+    ///   - fillStyle: Fill color.
+    ///   - strokeStyle: Stroke color.
+    ///   - lineWidth: Border line width.
+    /// - Returns: The modified view
+    public func fill<Fill: ShapeStyle, Stroke: ShapeStyle>(
         _ fillStyle: Fill,
         strokeBorder strokeStyle: Stroke,
         lineWidth: CGFloat = 1
