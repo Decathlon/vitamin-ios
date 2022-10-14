@@ -6,6 +6,14 @@
 import VitaminCore
 
 enum BadgeModel {
+    struct Section: Identifiable {
+        var id: String {
+            name
+        }
+        let name: String
+        let items: [Item]
+    }
+
     struct Item: Identifiable {
         var id: String {
             "\(value ?? 0)-\(variant.name)"
@@ -14,26 +22,17 @@ enum BadgeModel {
         var variant: VitaminBadgeVariant = .standard
     }
 
-    static let items = [
-        BadgeModel.Item(value: nil, variant: .standard),
-        BadgeModel.Item(value: 2, variant: .standard),
-        BadgeModel.Item(value: 50, variant: .standard),
-        BadgeModel.Item(value: 100, variant: .standard),
-        BadgeModel.Item(value: nil, variant: .brand),
-        BadgeModel.Item(value: 2, variant: .brand),
-        BadgeModel.Item(value: 50, variant: .brand),
-        BadgeModel.Item(value: 100, variant: .brand),
-        BadgeModel.Item(value: nil, variant: .reversed),
-        BadgeModel.Item(value: 2, variant: .reversed),
-        BadgeModel.Item(value: 50, variant: .reversed),
-        BadgeModel.Item(value: 100, variant: .reversed),
-        BadgeModel.Item(value: nil, variant: .accent),
-        BadgeModel.Item(value: 2, variant: .accent),
-        BadgeModel.Item(value: 50, variant: .accent),
-        BadgeModel.Item(value: 100, variant: .accent),
-        BadgeModel.Item(value: nil, variant: .alert),
-        BadgeModel.Item(value: 2, variant: .alert),
-        BadgeModel.Item(value: 50, variant: .alert),
-        BadgeModel.Item(value: 100, variant: .alert)
-    ]
+    static let sections: [BadgeModel.Section] = {
+        var varientSection: [BadgeModel.Section] = []
+        for variant in VitaminBadgeVariant.allCases {
+            let section = BadgeModel.Section(name: variant.name, items: [
+                BadgeModel.Item(value: nil, variant: variant),
+                BadgeModel.Item(value: 2, variant: variant),
+                BadgeModel.Item(value: 50, variant: variant),
+                BadgeModel.Item(value: 100, variant: variant)
+            ])
+            varientSection.append(section)
+        }
+        return varientSection
+    }()
 }
