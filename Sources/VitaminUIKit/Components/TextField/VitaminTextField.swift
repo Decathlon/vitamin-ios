@@ -217,6 +217,7 @@ public class VitaminTextField: UIView {
         icon: VitaminTextField.IconConfiguration? = nil,
         textFieldTag: Int = 0
     ) {
+        super.init(frame: .zero)
         self.style = style
         self.labelText = texts.labelText
         self.state = state.initialState
@@ -229,10 +230,9 @@ public class VitaminTextField: UIView {
         self.liveValidationTimeInterval = validation?.liveValidationTimeInterval ?? 0.5
         self.endEditingValidation = validation?.endEditingValidation
         self.activeOnEditing = state.activeOnEditing
-        super.init(frame: .zero)
+        commonInit()
         self.textFieldTag = textFieldTag
         self.fieldValue = texts.fieldValue
-        commonInit()
     }
 
     /// An initializer that restores a `VitaminTextField` from a serialized version (used in storyboard)
@@ -275,6 +275,24 @@ public class VitaminTextField: UIView {
     func loadViewFromNib() -> UIView? {
         let nib = UINib(nibName: nibName, bundle: BundleToken.bundle)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
+    }
+
+    // Calculate the
+    override public var intrinsicContentSize: CGSize {
+        var height = 16.0
+        height += label.intrinsicContentSize.height
+        height += textField.intrinsicContentSize.height
+        height +=
+            helper.intrinsicContentSize.height > 0 ?
+                helper.intrinsicContentSize.height :
+                counter.intrinsicContentSize.height
+
+        return CGSize(width: super.intrinsicContentSize.width, height: height)
+    }
+
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        invalidateIntrinsicContentSize()
     }
 }
 
@@ -355,10 +373,12 @@ extension VitaminTextField {
     private func applyNewHelperText() {
         guard let helperText = self.helperText else {
             self.helper.text = ""
+            helper?.invalidateIntrinsicContentSize()
             return
         }
         self.helper.isHidden = false
         self.helper.attributedText = helperText.styled(as: .caption1, with: self.state.helperAndCounterColor)
+        helper?.invalidateIntrinsicContentSize()
     }
 
     // handling of new label text
