@@ -77,7 +77,9 @@ The default style is `.outline`.
 
 You can manually change the `state` property, or you can set the `activeOnEditing` boolean property to `true` to automatically switch the state to `.active` when the field gets the focus (onmy if its state is not `.error`or `.success`).
 
-If you instantiate your `VitaminTextField` programmatically, the `initialState` and `activeOnEditing` properties must be provided through a `VitaminTextField.StateConfiguration` struct.
+You can also decide if your `VitamintextField` should or not have leading and trailing padding, by modifying the boolean `horizontalPadding` property. Its default value is set to `true`, meaning leading and trailing padding are present.
+
+If you instantiate your `VitaminTextField` programmatically, the `initialState`, `activeOnEditing` and `horizontalPadding` properties must be provided through a `VitaminTextField.StateConfiguration` struct.
 
 
 ### Validation

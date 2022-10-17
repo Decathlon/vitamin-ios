@@ -237,8 +237,7 @@ public class VitaminTextField: UIView {
         validation: VitaminTextField.ValidationConfiguration? = nil,
         maxLength: Int? = nil,
         icon: VitaminTextField.IconConfiguration? = nil,
-        textFieldTag: Int = 0,
-        horizontalPadding: Bool = true
+        textFieldTag: Int = 0
     ) {
         super.init(frame: .zero)
         self.style = style
@@ -253,7 +252,7 @@ public class VitaminTextField: UIView {
         self.liveValidationTimeInterval = validation?.liveValidationTimeInterval ?? 0.5
         self.endEditingValidation = validation?.endEditingValidation
         self.activeOnEditing = state.activeOnEditing
-        self.horizontalPadding = horizontalPadding
+        self.horizontalPadding = state.horizontalPadding
         commonInit()
         self.textFieldTag = textFieldTag
         self.fieldValue = texts.fieldValue
