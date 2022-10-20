@@ -32,7 +32,7 @@ public struct VitaminBadge: View {
     }
 
     private var badgeText: String {
-        value.map(String.init) ?? ""
+        VitaminBadgeLogic.badgeText(for: value)
     }
 
     private func makeEmptyBadgeView() -> some View {

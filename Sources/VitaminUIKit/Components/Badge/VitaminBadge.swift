@@ -78,20 +78,9 @@ public class VitaminBadge: UILabel {
         return UIEdgeInsets(top: 3, left: 4, bottom: 1, right: 4)
     }
 
-    // max displayable value
-    private static let maxValue = 99
-
-    // overflow displayable value
-    private static var maxDisplayableValue: String {
-        "\(maxValue)+"
-    }
-
     // instance displayable value
     private var displayableValue: String {
-        guard let value = value else {
-            return ""
-        }
-        return value > Self.maxValue ? Self.maxDisplayableValue : "\(value)"
+        VitaminBadgeLogic.badgeText(for: value)
     }
 }
 

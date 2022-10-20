@@ -53,21 +53,3 @@ public enum VitaminBadgeVariant: CaseIterable {
         return 0
     }
 }
-
-/// enum containing the different variants of VitaminBadge
-public enum VitaminBadgeSize: CaseIterable {
-    case small
-    case medium
-    case large
-
-    public var textStyle: VitaminTextStyle {
-        switch self {
-        case .small:
-            return VitaminTextStyle.badgeSmall
-        case .medium:
-            return VitaminTextStyle.badgeMedium
-        case .large:
-            return VitaminTextStyle.badgeLarge
-        }
-    }
-}

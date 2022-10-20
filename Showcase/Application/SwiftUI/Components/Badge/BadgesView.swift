@@ -10,29 +10,13 @@ import VitaminCore
 
 @available(iOS 13, *)
 struct BadgesView: View {
-    @Environment(\.sizeCategory) var sizeCategory: ContentSizeCategory
-
-    let largeSizeCategories: [ContentSizeCategory] = [
-        .extraExtraLarge,
-        .extraExtraExtraLarge,
-        .accessibilityMedium,
-        .accessibilityLarge,
-        .accessibilityExtraLarge,
-        .accessibilityExtraExtraLarge,
-        .accessibilityExtraExtraExtraLarge
-    ]
-
     var body: some View {
-//        ScrollView {
-//            VStack(spacing: 0) {
-            List {
-                let sections = BadgeModel.sections
-                ForEach(sections) { section in
-                    makeBadgeSection(section)
-                }
+        List {
+            let sections = BadgeModel.sections
+            ForEach(sections) { section in
+                makeBadgeSection(section)
             }
-//            .frame(maxWidth: .infinity)
-//        }
+        }
         .customNavigationTitle("Badges", displayMode: .inline)
     }
 
@@ -46,34 +30,19 @@ struct BadgesView: View {
 
     @ViewBuilder
     private func makeBadgeRow(value: Int?, variant: VitaminBadgeVariant) -> some View {
-        if largeSizeCategories.contains(sizeCategory) {
-            VStack(spacing: 20) {
-                ForEach(VitaminBadgeSize.allCases, id: \.self) { size in
-                    Spacer()
-                    makeNotificationIcon(variant: variant, size: size)
-                        .vitaminBadge(value, variant: variant, size: size)
-                }
+        AdaptiveStack(spacing: 20) {
+            ForEach(VitaminBadgeSize.allCases, id: \.self) { size in
                 Spacer()
+                makeNotificationIcon(variant: variant, size: size)
+                    .vitaminBadge(value, variant: variant, size: size)
             }
-            .padding(.top, 20)
-            .padding(.bottom, 10)
-            .frame(maxWidth: .infinity)
-            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-            .background(backgroundColor(for: variant))
-        } else {
-            HStack(spacing: 20) {
-                ForEach(VitaminBadgeSize.allCases, id: \.self) { size in
-                    Spacer()
-                    makeNotificationIcon(variant: variant, size: size)
-                        .vitaminBadge(value, variant: variant, size: size)
-                }
-                Spacer()
-            }
-            .padding(.top, 20)
-            .padding(.bottom, 10)
-            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-            .background(backgroundColor(for: variant))
+            Spacer()
         }
+        .padding(.top, 20)
+        .padding(.bottom, 10)
+        .frame(maxWidth: .infinity)
+        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+        .background(backgroundColor(for: variant))
     }
 
     private func makeNotificationIcon(
@@ -84,21 +53,18 @@ struct BadgesView: View {
             .resizable()
             .aspectRatio(contentMode: .fill)
             .foregroundColor(iconColor(for: variant))
-//            .imageScale(.small)
-            .frame(width: iconSize(for: size), height: iconSize(for: size))
+            .dynamicFrame(width: iconSize(for: size), height: iconSize(for: size))
     }
 
     private func iconSize(for size: VitaminBadgeSize) -> CGFloat {
-        var sizeValue: CGFloat = 0
         switch size {
         case .small:
-            sizeValue = 20
+            return 20
         case .medium:
-            sizeValue = 25
+            return 25
         case .large:
-            sizeValue = 30
+            return 30
         }
-        return UIFontMetrics.default.scaledValue(for: sizeValue)
     }
 
     private func iconImage(for variant: VitaminBadgeVariant) -> Image {
