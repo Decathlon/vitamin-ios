@@ -68,12 +68,10 @@ struct BadgesView: View {
     }
 
     private func iconImage(for variant: VitaminBadgeVariant) -> Image {
-        switch variant {
-        case .accent:
+        if case .accent = variant {
             return Vitamix.Fill.Finance.shoppingCart.swiftUIImage
-        default:
-            return Vitamix.Fill.Media.notification.swiftUIImage
         }
+        return Vitamix.Fill.Media.notification.swiftUIImage
     }
 
     private func iconColor(for variant: VitaminBadgeVariant) -> Color {
