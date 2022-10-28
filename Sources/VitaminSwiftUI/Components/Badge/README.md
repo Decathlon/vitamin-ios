@@ -1,23 +1,23 @@
 ## Badge
 [Reference](https://www.decathlon.design/726f8c765/p/465f7c-badge/b/84df92)
 
-Vitamin provides a `VitaminBadge`.
-
-# ⚠️ To update
+Vitamin provides a `VitaminBadge` for SwiftUI.
 
 ```swift
-import Vitamin
+import SwiftUI
+import VitaminCore
+import VitaminSwiftUI
 
-// This badge will be red with a value of 2
-let badge = VitaminBadge(value: 2, variant: .alert)
+// This badge will be red with a value of 2 in the medium size
+let badgeView = VitaminBadge(value: 2, variant: .alert, size: .medium)
 
-// This button will be yellow without any value
-let badge = VitaminBadge(value: 2, variant: .accent)
+// This button will be yellow without any value in the small size
+let badge = VitaminBadge(variant: .accent)
 ```
 
-###Styling
+### Styling
 
-`VitaminBadge` handles 5 variants:
+`VitaminBadge` handles 5 variants (the default is `.standard`):
 - `.standard`
 - `.alert`
 - `.accent`
@@ -25,44 +25,34 @@ let badge = VitaminBadge(value: 2, variant: .accent)
 - `.reversed`
 
 You can pass an optional value as integer.
-- if the value is nil, the badge will be empty and smaller
-- if the value exceeds 100, the text displayed will be 99+
-- every other value will be displayed as is
+- If the value is `nil`, the badge will be empty and smaller.
+- If the value exceeds `100`, the text displayed will be 99+.
+- Every other value will be displayed as is.
+
+`VitaminBadge` handles 3 sizes (the default is `.small`):
+- `.small`
+- `.medium`
+- `.large`
 
 ### Adding to a view
-You have two choices to add a badge to a View :
-- instantiate yourself the VitaminBadge, and place it upon your view
-- use the convenience `UIView` extension method `addBadge(with:variant)`
-
-#### Manual method
-You will have to handle everything on your own, Vitamin only provides the badge component, but you have to keep a reference on it to be able to modify it, hide it, or remove it
-
-
-#### Automatic method
-if you choose to use the method `addBadge(with:variant)`, it will instantiate the Badge, add it as a subview, and place it at the upper right corner of the view.
+You have two choices to add a badge to a View:
+- Instantiate yourself the `VitaminBadge`, and place it in your view.
+- Use the `.vitaminBadge(:variant:size:)` modifier. This modifier will add the badge on the top trailing of the view.
 
 ```swift
-import Vitamin
+import SwiftUI
+import VitaminCore
+import VitaminSwiftUI
 
-myView.addBadge(with: 2, variant: .alert)
+struct BadgesView: View {
+    var body: some View {
+        VStack {
+            // Badge only
+            VitaminBadge(10, variant: .alert, size: .small)
+            // Badge on the top trailing of the view
+            Vitamix.Fill.Media.notification.swiftUIImage
+                .vitaminBadge(10, variant: .alert, size: .small)
+        }
+    }
+}
 ```
-
-You also can modify it by calling it with the convenience UIView extension method `modifyBadge(with:variant:)`
-
-```swift
-import Vitamin
-
-// won't do anything if no badge is added by the above method
-myView.modifyBadge(with: nil, variant: .brand)
-```
-
-You finally can remove it by calling the convenience UIView extension method `removeBadge()`
-```swift
-import Vitamin
-
-// won't do anything if no badge is added by the above method
-myView.removeBadge()
-```
-
-
-Note: `VitaminBadge` inherits from UILabel, but you should not try to modify standard properties such as `numberOfLines`, or `text`, because that could lead to unexpected behaviors.
