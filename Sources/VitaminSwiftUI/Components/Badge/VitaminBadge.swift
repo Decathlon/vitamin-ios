@@ -15,7 +15,7 @@ public struct VitaminBadge: View {
 
     public init(
         value: Int? = nil,
-        variant: VitaminBadgeVariant = .accent,
+        variant: VitaminBadgeVariant = .standard,
         size: VitaminBadgeSize = .small
     ) {
         self.value = value
