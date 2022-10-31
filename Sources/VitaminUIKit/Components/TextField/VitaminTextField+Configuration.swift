@@ -61,13 +61,16 @@ public extension VitaminTextField {
     struct StateConfiguration {
         public var initialState: VitaminTextField.State
         public var activeOnEditing = false
+        public var horizontalPadding = true
 
         public init(
             initialState: VitaminTextField.State,
-            activeOnEditing: Bool = false
+            activeOnEditing: Bool = false,
+            horizontalPadding: Bool = true
         ) {
             self.initialState = initialState
             self.activeOnEditing = activeOnEditing
+            self.horizontalPadding = horizontalPadding
         }
     }
 

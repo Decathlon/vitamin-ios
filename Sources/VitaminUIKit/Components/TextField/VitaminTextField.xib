@@ -13,8 +13,14 @@
             <connections>
                 <outlet property="counter" destination="Vkg-ne-YMS" id="3xT-JE-rdU"/>
                 <outlet property="helper" destination="uKP-x2-F5I" id="v55-T1-Lcs"/>
+                <outlet property="helperTextStackViewLeadingConstraint" destination="kC2-mh-hEN" id="aJR-9E-bPR"/>
+                <outlet property="helperTextStackViewTrailingConstraint" destination="u8x-dp-Alp" id="zYU-WJ-G3K"/>
                 <outlet property="label" destination="fnF-Hc-8xq" id="S3G-db-daJ"/>
+                <outlet property="labelLeadingConstraint" destination="lDQ-Wy-1Cj" id="PE2-7w-8L6"/>
+                <outlet property="labelTrailingConstraint" destination="Zii-eP-tV4" id="6yi-8b-Zgb"/>
                 <outlet property="textField" destination="W96-KI-6uq" id="EoL-Tb-R3w"/>
+                <outlet property="textFieldLeadingConstraint" destination="fyU-bY-AHW" id="bAM-5w-gAK"/>
+                <outlet property="textFieldTrailingConstraint" destination="hrz-8d-muk" id="Mpz-Gp-flk"/>
                 <outlet property="underline" destination="hLu-Ss-P9n" id="hZF-Bd-uqf"/>
             </connections>
         </placeholder>
