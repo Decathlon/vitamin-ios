@@ -83,7 +83,9 @@ enum IconsModel {
             Vitamix.Line.Device.phone,
             Vitamix.Line.Device.rss,
             Vitamix.Line.Device.shutdown,
-            Vitamix.Line.Device.smartphone
+            Vitamix.Line.Device.smartphone,
+            Vitamix.Line.Device.barcode,
+            Vitamix.Line.Device.qrScan
         ]),
         IconsModel.Section(name: "Device - Fill", items: [
             Vitamix.Fill.Device.database,
@@ -92,7 +94,9 @@ enum IconsModel {
             Vitamix.Fill.Device.phone,
             Vitamix.Fill.Device.rss,
             Vitamix.Fill.Device.shutdown,
-            Vitamix.Fill.Device.smartphone
+            Vitamix.Fill.Device.smartphone,
+            Vitamix.Fill.Device.barcode,
+            Vitamix.Fill.Device.qrScan
         ]),
         IconsModel.Section(name: "Documents - Line", items: [
             Vitamix.Line.Documents.bill,
@@ -179,7 +183,11 @@ enum IconsModel {
             Vitamix.Line.Logos.twitter,
             Vitamix.Line.Logos.viber,
             Vitamix.Line.Logos.whatsapp,
-            Vitamix.Line.Logos.youtube
+            Vitamix.Line.Logos.youtube,
+            Vitamix.Line.Logos.github,
+            Vitamix.Line.Logos.line,
+            Vitamix.Line.Logos.kakaoTalk,
+            Vitamix.Line.Logos.naver
         ]),
         IconsModel.Section(name: "Logos - Fill", items: [
             Vitamix.Fill.Logos.amazon,
@@ -202,7 +210,11 @@ enum IconsModel {
             Vitamix.Fill.Logos.twitter,
             Vitamix.Fill.Logos.viber,
             Vitamix.Fill.Logos.whatsapp,
-            Vitamix.Fill.Logos.youtube
+            Vitamix.Fill.Logos.youtube,
+            Vitamix.Fill.Logos.github,
+            Vitamix.Fill.Logos.line,
+            Vitamix.Fill.Logos.kakaoTalk,
+            Vitamix.Fill.Logos.naver
         ]),
         IconsModel.Section(name: "Map - Line", items: [
             Vitamix.Line.Map.car,
@@ -215,7 +227,8 @@ enum IconsModel {
             Vitamix.Line.Map.suitcase,
             Vitamix.Line.Map.train,
             Vitamix.Line.Map.truck,
-            Vitamix.Line.Map.walk
+            Vitamix.Line.Map.walk,
+            Vitamix.Line.Map.rocket
         ]),
         IconsModel.Section(name: "Map - Fill", items: [
             Vitamix.Fill.Map.car,
@@ -228,7 +241,8 @@ enum IconsModel {
             Vitamix.Fill.Map.suitcase,
             Vitamix.Fill.Map.train,
             Vitamix.Fill.Map.truck,
-            Vitamix.Fill.Map.walk
+            Vitamix.Fill.Map.walk,
+            Vitamix.Fill.Map.rocket
         ]),
         IconsModel.Section(name: "Media - Line", items: [
             Vitamix.Line.Media.camera,
@@ -289,10 +303,12 @@ enum IconsModel {
             Vitamix.Fill.Others.tShirt
         ]),
         IconsModel.Section(name: "Services - Line", items: [
-            Vitamix.Line.Services.selectedByDecathlon
+            Vitamix.Line.Services.selectedByDecathlon,
+            Vitamix.Line.Services.customerService
         ]),
         IconsModel.Section(name: "Services - Fill", items: [
-            Vitamix.Fill.Services.selectedByDecathlon
+            Vitamix.Fill.Services.selectedByDecathlon,
+            Vitamix.Fill.Services.customerService
         ]),
         IconsModel.Section(name: "System - Line", items: [
             Vitamix.Line.System.add,
@@ -358,6 +374,7 @@ enum IconsModel {
             Vitamix.Line.System.search,
             Vitamix.Line.System.settings,
             Vitamix.Line.System.share,
+            Vitamix.Line.System.shareAndroid,
             Vitamix.Line.System.shieldCheck,
             Vitamix.Line.System.star,
             Vitamix.Line.System.starHalf,
@@ -368,7 +385,10 @@ enum IconsModel {
             Vitamix.Line.System.timer,
             Vitamix.Line.System.upload,
             Vitamix.Line.System.zoomIn,
-            Vitamix.Line.System.zoomOut
+            Vitamix.Line.System.zoomOut,
+            Vitamix.Line.System.fileCopy,
+            Vitamix.Line.System.addCircle,
+            Vitamix.Line.System.shareIos
         ]),
         IconsModel.Section(name: "System - Line", items: [
             Vitamix.Fill.System.add,
@@ -434,6 +454,7 @@ enum IconsModel {
             Vitamix.Fill.System.search,
             Vitamix.Fill.System.settings,
             Vitamix.Fill.System.share,
+            Vitamix.Fill.System.shareAndroid,
             Vitamix.Fill.System.shieldCheck,
             Vitamix.Fill.System.star,
             Vitamix.Fill.System.starHalf,
@@ -444,7 +465,10 @@ enum IconsModel {
             Vitamix.Fill.System.timer,
             Vitamix.Fill.System.upload,
             Vitamix.Fill.System.zoomIn,
-            Vitamix.Fill.System.zoomOut
+            Vitamix.Fill.System.zoomOut,
+            Vitamix.Fill.System.fileCopy,
+            Vitamix.Fill.System.addCircle,
+            Vitamix.Fill.System.shareIos
         ]),
         IconsModel.Section(name: "Task - Line", items: [
             Vitamix.Line.Tasks.task
