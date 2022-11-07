@@ -416,7 +416,10 @@ final class TextFieldViewController: UITableViewController {
         guard let fieldValue = fieldValue else { return }
 
         if fieldValue.count < 3 {
-            completion(.failure(.errorWithMessage("Value must be at least 3 chatracters")))
+            completion(
+                .failure(
+                    .errorWithMessage("Value must be at least 3 characters"))
+            )
         } else {
             completion(.success(()))
         }
@@ -469,10 +472,6 @@ extension TextFieldViewController {
         }
 
         return cell
-    }
-
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

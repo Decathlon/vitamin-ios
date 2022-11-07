@@ -13,6 +13,8 @@ public typealias VitaminTextFieldIconAction = (VitaminTextField) -> Void
 public class VitaminTextField: UIView {
     // Constants
     private static let textFieldHeight: CGFloat = 44.0
+    private static let leadingTrailingConstraintConstant: CGFloat = 10.0
+    private static let noLeadingTrailingConstraintConstant: CGFloat = 0.0
 
     /// Enum representing an error during text field validation
     /// It can be of two types
@@ -117,6 +119,13 @@ public class VitaminTextField: UIView {
         }
     }
 
+    /// The presence of leading ad Traling padding beytween elements of VitalinTextField and safearea of the view
+    @IBInspectable public var horizontalPadding: Bool = true {
+        didSet {
+            applyNewHorizontalPadding()
+        }
+    }
+
     /// A closure that allows to validate the `VitaminTextField` every time its value changes
     /// Parameters:
     /// - an optional String containing the new text field value
@@ -204,6 +213,19 @@ public class VitaminTextField: UIView {
     /// Line displayed below `VitaminTextField`in `.filled` state
     @IBOutlet weak var underline: UIView!
 
+    /// Textfiled leading constraint
+    @IBOutlet weak var textFieldLeadingConstraint: NSLayoutConstraint!
+    /// TextField trailing constraint
+    @IBOutlet weak var textFieldTrailingConstraint: NSLayoutConstraint!
+    /// Label leading constraint
+    @IBOutlet weak var labelLeadingConstraint: NSLayoutConstraint!
+    /// Label trailing Consraint
+    @IBOutlet weak var labelTrailingConstraint: NSLayoutConstraint!
+    /// Helper text StackView leading constraint
+    @IBOutlet weak var helperTextStackViewLeadingConstraint: NSLayoutConstraint!
+    /// Helper text StackView trailing constraint
+    @IBOutlet weak var helperTextStackViewTrailingConstraint: NSLayoutConstraint!
+
     // Filename of the nib taht contains the layout of the `VitamineTextField`
     private let nibName = "VitaminTextField"
 
@@ -217,6 +239,7 @@ public class VitaminTextField: UIView {
         icon: VitaminTextField.IconConfiguration? = nil,
         textFieldTag: Int = 0
     ) {
+        super.init(frame: .zero)
         self.style = style
         self.labelText = texts.labelText
         self.state = state.initialState
@@ -229,10 +252,10 @@ public class VitaminTextField: UIView {
         self.liveValidationTimeInterval = validation?.liveValidationTimeInterval ?? 0.5
         self.endEditingValidation = validation?.endEditingValidation
         self.activeOnEditing = state.activeOnEditing
-        super.init(frame: .zero)
+        self.horizontalPadding = state.horizontalPadding
+        commonInit()
         self.textFieldTag = textFieldTag
         self.fieldValue = texts.fieldValue
-        commonInit()
     }
 
     /// An initializer that restores a `VitaminTextField` from a serialized version (used in storyboard)
@@ -260,6 +283,7 @@ public class VitaminTextField: UIView {
         applyNewHelperText()
         applyNewPlaceHolder()
         applyNewIcon()
+        applyNewHorizontalPadding()
         textField.delegate = self
         textField.enclosingVitaminTextField = self
         NotificationCenter.default.addObserver(
@@ -275,6 +299,24 @@ public class VitaminTextField: UIView {
     func loadViewFromNib() -> UIView? {
         let nib = UINib(nibName: nibName, bundle: BundleToken.bundle)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
+    }
+
+    // Calculate the
+    override public var intrinsicContentSize: CGSize {
+        var height = 16.0
+        height += label.intrinsicContentSize.height
+        height += textField.intrinsicContentSize.height
+        height +=
+            helper.intrinsicContentSize.height > 0 ?
+                helper.intrinsicContentSize.height :
+                counter.intrinsicContentSize.height
+
+        return CGSize(width: super.intrinsicContentSize.width, height: height)
+    }
+
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        invalidateIntrinsicContentSize()
     }
 }
 
@@ -355,10 +397,12 @@ extension VitaminTextField {
     private func applyNewHelperText() {
         guard let helperText = self.helperText else {
             self.helper.text = ""
+            helper?.invalidateIntrinsicContentSize()
             return
         }
         self.helper.isHidden = false
         self.helper.attributedText = helperText.styled(as: .caption1, with: self.state.helperAndCounterColor)
+        helper?.invalidateIntrinsicContentSize()
     }
 
     // handling of new label text
@@ -415,6 +459,24 @@ extension VitaminTextField {
     // handling of secure text field
     private func applySecureTextField() {
         self.textField.isSecureTextEntry = self.isSecureTextEntry
+    }
+
+    private func applyNewHorizontalPadding() {
+        if self.horizontalPadding {
+            labelLeadingConstraint.constant = Self.leadingTrailingConstraintConstant
+            labelTrailingConstraint.constant = Self.leadingTrailingConstraintConstant
+            textFieldLeadingConstraint.constant = Self.leadingTrailingConstraintConstant
+            textFieldTrailingConstraint.constant = Self.leadingTrailingConstraintConstant
+            helperTextStackViewLeadingConstraint.constant = Self.leadingTrailingConstraintConstant
+            helperTextStackViewTrailingConstraint.constant = Self.leadingTrailingConstraintConstant
+        } else {
+            labelLeadingConstraint.constant = Self.noLeadingTrailingConstraintConstant
+            labelTrailingConstraint.constant = Self.noLeadingTrailingConstraintConstant
+            textFieldLeadingConstraint.constant = Self.noLeadingTrailingConstraintConstant
+            textFieldTrailingConstraint.constant = Self.noLeadingTrailingConstraintConstant
+            helperTextStackViewLeadingConstraint.constant = Self.noLeadingTrailingConstraintConstant
+            helperTextStackViewTrailingConstraint.constant = Self.noLeadingTrailingConstraintConstant
+        }
     }
 
     /// method that will be called when the user clicks on the iconn

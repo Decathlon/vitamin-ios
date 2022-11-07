@@ -158,6 +158,7 @@ extension VitaminButton {
                 state: state,
                 renderingMode: renderingMode)
         }
+        updateSemantic(for: state)
     }
 
     private func commonApplyIcon(
@@ -186,8 +187,8 @@ extension VitaminButton {
         self.imageView?.contentMode = .scaleAspectFit
     }
 
-    private func updateSemantic() {
-        if case .trailing = getIconType(for: self.state) {
+    private func updateSemantic(for state: UIControl.State? = nil) {
+        if case .trailing = getIconType(for: state ?? self.state) {
             self.semanticContentAttribute = .forceRightToLeft
         } else {
             self.semanticContentAttribute = .forceLeftToRight
