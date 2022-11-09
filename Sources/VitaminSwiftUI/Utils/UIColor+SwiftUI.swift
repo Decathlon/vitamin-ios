@@ -12,10 +12,13 @@ extension UIColor {
         if #available(iOS 15.0, *) {
             return Color(uiColor: self)
         } else {
-            let components = self.cgColor.components
-            return Color(red: Double(components?[0] ?? 0),
-                         green: Double(components?[1] ?? 0),
-                         blue: Double(components?[2] ?? 0))
+            guard let components = self.cgColor.components,
+                    components.count > 2 else {
+                return Color.clear
+            }
+            return Color(red: Double(components[0]),
+                         green: Double(components[1]),
+                         blue: Double(components[2]))
         }
     }
 }
