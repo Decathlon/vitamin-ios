@@ -23,6 +23,7 @@ trigger_map:
   workflow: primary
 workflows:
   deploy:
+    description: This workflow will bump podspecs to the new version and set a new tag. Use `DEPLOY_VERSION_NUMBER` environment variable to setup the wanted version number.
     steps:
     - git-clone@6: {}
     - cache-pull@2: {}
