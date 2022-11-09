@@ -66,6 +66,7 @@ workflows:
             pod trunk push VitaminSwiftUI --allow-warnings
     - cache-push@2: {}
   primary:
+    description: This workflow will build the project.
     steps:
     - git-clone@6: {}
     - cache-pull@2: {}
