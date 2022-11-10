@@ -648,6 +648,8 @@ public class DesignableUITextField: UITextField {
                 imageView.isUserInteractionEnabled = true
             }
             rightView = imageView
+            // Due to a keyboard animation issue, we need to fix the frame of the right icon
+            rightView?.frame = rightViewRect(forBounds: bounds)
         } else {
             rightViewMode = UITextField.ViewMode.never
             rightView = nil
