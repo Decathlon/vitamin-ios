@@ -30,6 +30,7 @@
 		4A90D1542938EC7D00E15A44 /* AdaptiveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A90D1522938EC7D00E15A44 /* AdaptiveStack.swift */; };
 		4A4C0B1D292EB187002653E1 /* TextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C0B1C292EB187002653E1 /* TextFieldModel.swift */; };
 		4A91BAAE2864CC5C0032B31E /* IconsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A91BAAD2864CC5C0032B31E /* IconsModel.swift */; };
+		4A9BE58C29352B5600445337 /* OnChangeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9BE58B29352B5600445337 /* OnChangeModifier.swift */; };
 		4AAD2B67276772D200727D8E /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD2B66276772D200727D8E /* MainTableViewController.swift */; };
 		4AB763AE2825725300092033 /* VitaminCore in Frameworks */ = {isa = PBXBuildFile; productRef = 4AB763AD2825725300092033 /* VitaminCore */; };
 		4ACCCBCE2805E28600FD184B /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07433A27D94C90005BD446 /* MainTabController.swift */; };
@@ -108,6 +109,7 @@
 		4A90D1522938EC7D00E15A44 /* AdaptiveStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveStack.swift; sourceTree = "<group>"; };
 		4A4C0B1C292EB187002653E1 /* TextFieldModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldModel.swift; sourceTree = "<group>"; };
 		4A91BAAD2864CC5C0032B31E /* IconsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconsModel.swift; sourceTree = "<group>"; };
+		4A9BE58B29352B5600445337 /* OnChangeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnChangeModifier.swift; sourceTree = "<group>"; };
 		4AAD2B66276772D200727D8E /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		4ACCCBD42805E71400FD184B /* AssetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsView.swift; sourceTree = "<group>"; };
 		4ACCCBD62805E7AE00FD184B /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				4A07433D27D9541F005BD446 /* NavigationTitleModifier.swift */,
+				4A9BE58B29352B5600445337 /* OnChangeModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -883,6 +886,7 @@
 				AAB029D1256805CC00F08C74 /* TypographyViewController.swift in Sources */,
 				4A35E48E2816D124001526D8 /* TypographyModel.swift in Sources */,
 				65F1BC1427CE2101002D08D8 /* AssetCollectionViewCell.swift in Sources */,
+				4A9BE58C29352B5600445337 /* OnChangeModifier.swift in Sources */,
 				30F95E44292FBA0500D6CEB7 /* TextFieldsView.swift in Sources */,
 				4A35E47E2812FEDE001526D8 /* ColorsModel+Base.swift in Sources */,
 				65F1BC1527CE2101002D08D8 /* AssetsViewController.swift in Sources */,

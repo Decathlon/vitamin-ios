@@ -18,13 +18,15 @@ public struct VitaminTextField: View {
     @Binding var state: VitaminTextFieldState
     @Binding var value: String
 
-    public init(label: String,
-                placeholder: String,
-                icon: UIImage? = nil,
-                helperText: String,
-                characterLimit: Int?,
-                text: Binding<String>,
-                state: Binding<VitaminTextFieldState>) {
+    public init(
+        label: String,
+        placeholder: String,
+        icon: UIImage? = nil,
+        helperText: String,
+        characterLimit: Int?,
+        text: Binding<String>,
+        state: Binding<VitaminTextFieldState>
+    ) {
         self.label = label
         self.placeholder = placeholder
         self.icon = icon
@@ -33,7 +35,7 @@ public struct VitaminTextField: View {
         self._state = state
         self._value = text
     }
-    
+
     public var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             makeLabel()
@@ -46,9 +48,11 @@ public struct VitaminTextField: View {
         .padding()
     }
 
-    private func makeImage(image: UIImage,
-                           foregroundColor: Color?) -> some View {
-        HStack() {
+    private func makeImage(
+        image: UIImage,
+        foregroundColor: Color?
+    ) -> some View {
+        HStack {
             Spacer()
             Image(uiImage: image)
                 .renderingMode(.template)
@@ -68,7 +72,6 @@ public struct VitaminTextField: View {
 
 @available(iOS 13, *)
 struct VitaminTextField_Previews: PreviewProvider {
-
     static var previews: some View {
         VitaminTextField(label: "Montant",
                          placeholder: "Insérer un montant",

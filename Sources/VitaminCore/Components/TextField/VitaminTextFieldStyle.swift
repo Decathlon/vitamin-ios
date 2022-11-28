@@ -8,4 +8,3 @@ public enum VitaminTextFieldStyle: String {
     case outline
     case filled
 }
-

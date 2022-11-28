@@ -53,9 +53,8 @@ extension TextFieldsView {
                          helperText: "Helper",
                          characterLimit: 10,
                          text: $text,
-                         state: state)
-        .onReceive(Just(text)) { newValue in
                          state: $state)
+        .compatibilityOnChange(of: text) { newValue in
             if !newValue.isEmpty {
                 let isEmail = isEmailValid(value: newValue)
                 if isEmail {
@@ -65,7 +64,6 @@ extension TextFieldsView {
                 }
             }
         }
-
     }
 }
 
@@ -78,7 +76,6 @@ struct TextFieldsView_Previews: PreviewProvider {
 
 @available(iOS 13, *)
 extension TextFieldsView {
-
     func isEmailValid(value: String) -> Bool {
         let emailValidationRegex = "^[\\p{L}0-9!#$%&'*+\\/=?^_`{|}~-][\\p{L}0-9.!#$%&'*+\\/=?^_`{|}~-]{0,63}@[\\p{L}0-9-]+(?:\\.[\\p{L}0-9-]{2,7})*$"  // 1
         let emailValidationPredicate = NSPredicate(format: "SELF MATCHES %@", emailValidationRegex)  // 2
@@ -88,5 +85,3 @@ extension TextFieldsView {
 }
 
 #endif
-
-

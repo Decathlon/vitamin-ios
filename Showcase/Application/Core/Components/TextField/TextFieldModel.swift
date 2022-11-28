@@ -6,7 +6,6 @@
 import VitaminCore
 
 enum TextFieldModel {
-
     struct TextFieldState: Identifiable {
         var id: String {
             state.rawValue
@@ -21,5 +20,4 @@ enum TextFieldModel {
         TextFieldModel.TextFieldState(state: .active),
         TextFieldModel.TextFieldState(state: .disabled)
     ]
-
 }

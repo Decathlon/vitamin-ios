@@ -17,7 +17,7 @@ struct VitaminTextFieldView: View {
 
     @Binding var state: VitaminTextFieldState
     @Binding var text: String
-    @State var counter: String?
+    @State var counterText: String?
 
     var body: some View {
         ZStack {
@@ -38,9 +38,11 @@ struct VitaminTextFieldView: View {
         }
     }
 
-    private func makeImage(image: UIImage,
-                           foregroundColor: Color?) -> some View {
-        HStack() {
+    private func makeImage(
+        image: UIImage,
+        foregroundColor: Color?
+    ) -> some View {
+        HStack {
             Spacer()
             Image(uiImage: image)
                 .renderingMode(.template)
@@ -56,7 +58,7 @@ struct VitaminTextFieldView: View {
             .vitaminTextStyle(.body)
             .onReceive(Just(text)) { newValue in
                 text = truncateIfLimit(text: newValue)
-                counter = countCharacters(text: newValue)
+                counterText = makeCharactersCounterText(newValue)
             }
             .contentShape(Rectangle())
             .padding(EdgeInsets(top: 8,
@@ -75,7 +77,7 @@ struct VitaminTextFieldView: View {
             Text(helperText)
                 .vitaminTextStyle(.caption1)
             Spacer()
-            if let characterCounter = counter {
+            if let characterCounter = counterText {
                 Text(characterCounter)
                     .vitaminTextStyle(.caption1)
             }
@@ -83,7 +85,7 @@ struct VitaminTextFieldView: View {
         .foregroundColor(state.helperAndCounterColor.swiftUIColor)
     }
 
-    private func countCharacters(text: String) -> String? {
+    private func makeCharactersCounterText(_ text: String) -> String? {
         guard let characterLimit = characterLimit else {
             return nil
         }
@@ -95,8 +97,9 @@ struct VitaminTextFieldView: View {
         guard let characterLimit = characterLimit else {
             return text
         }
+
         if text.count >= characterLimit {
-            return "\(text.prefix(characterLimit))"
+            return String(text.prefix(characterLimit))
         } else {
             return text
         }
