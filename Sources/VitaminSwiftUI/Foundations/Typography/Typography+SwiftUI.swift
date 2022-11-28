@@ -27,4 +27,11 @@ extension Text {
         modifier(TextStylesModifier(textStyle: textStyle))
     }
 }
+
+@available(iOS 13, *)
+extension TextField where Label == Text {
+    public func vitaminTextStyle(_ textStyle: VitaminTextStyle) -> some View {
+        modifier(TextStylesModifier(textStyle: textStyle))
+    }
+}
 #endif

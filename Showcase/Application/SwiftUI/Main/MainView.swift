@@ -34,6 +34,7 @@ struct MainView: View {
         makeSection("🧩 Components") {
             NavigationLink("🥇 Badge", destination: BadgesView())
             NavigationLink("🕹 Button", destination: ButtonsView())
+            NavigationLink("🔏 TextField", destination: TextFieldsView())
         }
     }
 }
