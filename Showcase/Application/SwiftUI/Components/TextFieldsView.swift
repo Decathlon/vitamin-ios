@@ -55,6 +55,7 @@ extension TextFieldsView {
                          text: $text,
                          state: state)
         .onReceive(Just(text)) { newValue in
+                         state: $state)
             if !newValue.isEmpty {
                 let isEmail = isEmailValid(value: newValue)
                 if isEmail {

@@ -15,7 +15,7 @@ public struct VitaminTextField: View {
     var helperText: String
     var characterLimit: Int?
 
-    @State public var state: VitaminTextFieldState
+    @Binding var state: VitaminTextFieldState
     @Binding var value: String
 
     public init(label: String,
@@ -24,13 +24,13 @@ public struct VitaminTextField: View {
                 helperText: String,
                 characterLimit: Int?,
                 text: Binding<String>,
-                state: VitaminTextFieldState = .standard) {
+                state: Binding<VitaminTextFieldState>) {
         self.label = label
         self.placeholder = placeholder
         self.icon = icon
         self.helperText = helperText
         self.characterLimit = characterLimit
-        self.state = state
+        self._state = state
         self._value = text
     }
     
@@ -76,7 +76,7 @@ struct VitaminTextField_Previews: PreviewProvider {
                          helperText: "Veuillez insérer un montant exact",
                          characterLimit: 10,
                          text: Binding.constant(""),
-                         state: .error)
+                         state: Binding.constant(.error))
     }
 }
 
