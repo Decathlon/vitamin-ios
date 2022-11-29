@@ -18,35 +18,16 @@ struct TextFieldsView: View {
     var body: some View {
         VStack {
             Form {
-//                makeTextFieldsRows()
-
                 makeTextField()
             }
         }
         .frame(maxWidth: .infinity)
-        .customNavigationTitle("Button", displayMode: .inline)
+        .customNavigationTitle("TextField", displayMode: .inline)
     }
 }
 
 @available(iOS 13, *)
 extension TextFieldsView {
-//    @ViewBuilder
-//    func makeTextFieldsRows() -> some View {
-//        makeTextFieldRow(.standard)
-//        let textFieldStates = TextFieldModel.textFieldStates
-//        ForEach(textFieldStates) { textFieldState in
-//            self.makeTextFieldRow(textFieldState.state)
-//        }
-//    }
-//
-//    func makeTextFieldRow(_ state: VitaminTextFieldState) -> some View {
-//        VStack {
-//            makeTextField(state: state)
-//        }
-//        .frame(maxWidth: .infinity)
-//        .padding()
-//    }
-
     func makeTextField() -> some View {
         VitaminTextField(label: state.rawValue,
                          placeholder: "Placeholder",
