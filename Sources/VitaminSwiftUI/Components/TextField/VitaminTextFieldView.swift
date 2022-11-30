@@ -61,10 +61,7 @@ struct VitaminTextFieldView: View {
                 counterText = makeCharactersCounterText(newValue)
             }
             .contentShape(Rectangle())
-            .padding(EdgeInsets(top: 8,
-                                leading: 12,
-                                bottom: 8,
-                                trailing: 44))
+            .padding(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 44))
             .overlay(
                 RoundedRectangle(cornerRadius: 4)
                     .strokeBorder(state.borderColor.swiftUIColor,

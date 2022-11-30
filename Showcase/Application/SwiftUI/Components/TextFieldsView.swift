@@ -14,6 +14,7 @@ struct TextFieldsView: View {
     @State var enabled = true
     @State var text = ""
     @State var state: VitaminTextFieldState = .standard
+    @State var helperText: String = ""
 
     var body: some View {
         VStack {
@@ -31,7 +32,7 @@ extension TextFieldsView {
     func makeTextField() -> some View {
         VitaminTextField(label: state.rawValue,
                          placeholder: "Placeholder",
-                         helperText: "Helper",
+                         helperText: helperText,
                          characterLimit: 10,
                          text: $text,
                          state: $state)
@@ -40,9 +41,14 @@ extension TextFieldsView {
                 let isEmail = isEmailValid(value: newValue)
                 if isEmail {
                     state = .success
+                    helperText = "Perfect ✅"
                 } else {
                     state = .error
+                    helperText = "You need to enter an email address"
                 }
+            } else {
+                state = .standard
+                helperText = ""
             }
         }
     }
