@@ -55,7 +55,7 @@ struct VitaminTextFieldView: View {
 
     private func makeTextField() -> some View {
         TextField(placeholder, text: $text)
-            .vitaminTextStyle(.body)
+            .font(VitaminTextStyle.body.font.swiftUIFont)
             .onReceive(Just(text)) { newValue in
                 text = truncateIfLimit(text: newValue)
                 counterText = makeCharactersCounterText(newValue)
