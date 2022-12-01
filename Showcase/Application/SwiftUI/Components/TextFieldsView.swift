@@ -20,6 +20,7 @@ struct TextFieldsView: View {
         VStack {
             Form {
                 makeTextField()
+                makeTextFieldModifier()
             }
         }
         .frame(maxWidth: .infinity)
@@ -30,26 +31,50 @@ struct TextFieldsView: View {
 @available(iOS 13, *)
 extension TextFieldsView {
     func makeTextField() -> some View {
-        VitaminTextField(label: state.rawValue,
+        VitaminTextField(label: state.rawValue.capitalized,
                          placeholder: "Placeholder",
                          helperText: helperText,
-                         characterLimit: 10,
                          text: $text,
-                         state: $state)
-        .compatibilityOnChange(of: text) { newValue in
-            if !newValue.isEmpty {
-                let isEmail = isEmailValid(value: newValue)
-                if isEmail {
-                    state = .success
-                    helperText = "Perfect ✅"
-                } else {
-                    state = .error
-                    helperText = "You need to enter an email address"
-                }
-            } else {
-                state = .standard
-                helperText = ""
+                         state: $state,
+                         icon: nil,
+                         characterLimit: .init(text: $text, limit: 10))
+        .compatibilityOnChange(of: text, perform: handleChanges(newValue:))
+    }
+
+    func makeTextFieldModifier() -> some View {
+        TextField("Placeholder", text: $text) { editing in
+            state = VitaminTextField.updateEditingState(state: state, editing: editing)
+        }
+        .vitaminTextFieldStyle(label: state.rawValue.capitalized,
+                               helperText: helperText,
+                               state: $state,
+                               characterLimit: .init(text: $text, limit: 10))
+        .compatibilityOnChange(of: text, perform: handleChanges(newValue:))
+    }
+
+    private func updateEditingState(editing: Bool) {
+        if editing {
+            if state == .standard {
+                state = .active
             }
+        } else if state == .active {
+            state = .standard
+        }
+    }
+
+    private func handleChanges(newValue: String) {
+        if !newValue.isEmpty {
+            let isEmail = isEmailValid(value: newValue)
+            if isEmail {
+                state = .success
+                helperText = "Perfect ✅"
+            } else {
+                state = .error
+                helperText = "You need to enter an email address"
+            }
+        } else {
+            state = .active
+            helperText = ""
         }
     }
 }

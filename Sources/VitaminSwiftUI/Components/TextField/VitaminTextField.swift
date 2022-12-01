@@ -9,64 +9,55 @@ import VitaminCore
 
 @available(iOS 13, *)
 public struct VitaminTextField: View {
-    var label: String
-    var placeholder: String
-    var icon: UIImage?
-    var helperText: String
-    var characterLimit: Int?
-
-    @Binding var state: VitaminTextFieldState
-    @Binding var value: String
+    private var label: String
+    private var placeholder: String
+    private var helperText: String
+    private var iconConfiguration: VitaminTextField.IconConfiguration?
+    private var characterLimitConfiguration: VitaminTextField.CharacterLimitConfiguration?
+    @Binding private var state: VitaminTextFieldState
+    @Binding private var text: String
 
     public init(
         label: String,
         placeholder: String,
-        icon: UIImage? = nil,
         helperText: String,
-        characterLimit: Int?,
         text: Binding<String>,
-        state: Binding<VitaminTextFieldState>
+        state: Binding<VitaminTextFieldState>,
+        icon: VitaminTextField.IconConfiguration? = nil,
+        characterLimit: VitaminTextField.CharacterLimitConfiguration? = nil
     ) {
         self.label = label
         self.placeholder = placeholder
-        self.icon = icon
         self.helperText = helperText
-        self.characterLimit = characterLimit
+        self.iconConfiguration = icon
+        self.characterLimitConfiguration = characterLimit
         self._state = state
-        self._value = text
+        self._text = text
     }
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            makeLabel()
-            VitaminTextFieldView(placeholder: placeholder,
-                                 helperText: helperText,
-                                 characterLimit: characterLimit,
-                                 state: $state,
-                                 text: $value)
+        TextField(placeholder, text: $text) { editing in
+            state = VitaminTextField.updateEditingState(state: state, editing: editing)
         }
-        .padding()
+        .vitaminTextFieldStyle(label: state.rawValue.capitalized,
+                               helperText: helperText,
+                               state: $state,
+                               characterLimit: .init(text: $text, limit: 10))
     }
 
-    private func makeImage(
-        image: UIImage,
-        foregroundColor: Color?
-    ) -> some View {
-        HStack {
-            Spacer()
-            Image(uiImage: image)
-                .renderingMode(.template)
-                .resizable()
-                .foregroundColor(foregroundColor)
-                .frame(width: 20, height: 20)
-                .padding(12)
+    // TODO: Documentation
+    public static func updateEditingState(
+        state: VitaminTextFieldState,
+        editing: Bool
+    ) -> VitaminTextFieldState {
+        if editing {
+            if state == .standard {
+                return .active
+            }
+        } else if state == .active {
+            return .standard
         }
-    }
-
-    private func makeLabel() -> some View {
-        Text(label)
-            .vitaminTextStyle(.callout)
-            .foregroundColor(state.textColor.swiftUIColor)
+        return state
     }
 }
 
@@ -75,11 +66,11 @@ struct VitaminTextField_Previews: PreviewProvider {
     static var previews: some View {
         VitaminTextField(label: "Montant",
                          placeholder: "Insérer un montant",
-                         icon: UIImage(systemName: "calendar"),
                          helperText: "Veuillez insérer un montant exact",
-                         characterLimit: 10,
                          text: Binding.constant(""),
-                         state: Binding.constant(.error))
+                         state: Binding.constant(.error),
+                         icon: .init(icon: Image(systemName: "calendar")),
+                         characterLimit: .init(text: Binding.constant(""), limit: 10))
     }
 }
 
