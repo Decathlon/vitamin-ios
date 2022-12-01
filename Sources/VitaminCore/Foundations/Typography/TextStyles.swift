@@ -208,9 +208,8 @@ extension VitaminTextStyle {
         (lineHeight * font.pointSize) / size
     }
 
-    /// The scaled line height with the provided font for the current style.
-    /// - Parameter font: The font for which we want the line height.
-    /// - Returns: The adjusted line height value.
+    /// Returns the ratio between the base font size and the scaled font size.
+    /// - Returns: The ratio value.
     public func scaledRatio() -> CGFloat {
         scaledFont.pointSize / size
     }
