@@ -25,6 +25,8 @@
 		4A4643932806D60B00942AD7 /* IconsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4643922806D60B00942AD7 /* IconsView.swift */; };
 		4A67EDBD28F729F20049555F /* BadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A67EDBC28F729F20049555F /* BadgesView.swift */; };
 		4A67EDC028F72AD30049555F /* BadgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A67EDBF28F72AD30049555F /* BadgeModel.swift */; };
+		4A90D1532938EC7D00E15A44 /* DynamicFrameModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A90D1512938EC7D00E15A44 /* DynamicFrameModifier.swift */; };
+		4A90D1542938EC7D00E15A44 /* AdaptiveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A90D1522938EC7D00E15A44 /* AdaptiveStack.swift */; };
 		4A91BAAE2864CC5C0032B31E /* IconsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A91BAAD2864CC5C0032B31E /* IconsModel.swift */; };
 		4AAD2B67276772D200727D8E /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD2B66276772D200727D8E /* MainTableViewController.swift */; };
 		4AB763AE2825725300092033 /* VitaminCore in Frameworks */ = {isa = PBXBuildFile; productRef = 4AB763AD2825725300092033 /* VitaminCore */; };
@@ -99,6 +101,8 @@
 		4A4643922806D60B00942AD7 /* IconsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsView.swift; sourceTree = "<group>"; };
 		4A67EDBC28F729F20049555F /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
 		4A67EDBF28F72AD30049555F /* BadgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModel.swift; sourceTree = "<group>"; };
+		4A90D1512938EC7D00E15A44 /* DynamicFrameModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicFrameModifier.swift; sourceTree = "<group>"; };
+		4A90D1522938EC7D00E15A44 /* AdaptiveStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveStack.swift; sourceTree = "<group>"; };
 		4A91BAAD2864CC5C0032B31E /* IconsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconsModel.swift; sourceTree = "<group>"; };
 		4AAD2B66276772D200727D8E /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		4ACCCBD42805E71400FD184B /* AssetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsView.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 		4A07433C27D953D0005BD446 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4A90D1502938EC7D00E15A44 /* Accessibility */,
 				4A4643A52806ED7000942AD7 /* Extensions */,
 				4A4643A42806ED6100942AD7 /* Modifiers */,
 			);
@@ -363,6 +368,15 @@
 				AAC5D44E2567FE720070667D /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4A90D1502938EC7D00E15A44 /* Accessibility */ = {
+			isa = PBXGroup;
+			children = (
+				4A90D1512938EC7D00E15A44 /* DynamicFrameModifier.swift */,
+				4A90D1522938EC7D00E15A44 /* AdaptiveStack.swift */,
+			);
+			path = Accessibility;
 			sourceTree = "<group>";
 		};
 		4A91BAAC2864CC5C0032B31E /* Icons */ = {
@@ -861,6 +875,7 @@
 				6521D86127DA4B3400A15A06 /* TagCollectionViewCell.swift in Sources */,
 				4A4643932806D60B00942AD7 /* IconsView.swift in Sources */,
 				4A35E48128130495001526D8 /* RadiusesModel.swift in Sources */,
+				4A90D1542938EC7D00E15A44 /* AdaptiveStack.swift in Sources */,
 				4A35E4872816C1F4001526D8 /* ShadowsView.swift in Sources */,
 				65C518CA27D673FF00B87FF0 /* TagTableViewCell.swift in Sources */,
 				65C518C827D673FF00B87FF0 /* TagViewController.swift in Sources */,
@@ -872,6 +887,7 @@
 				4A35E4752812B34E001526D8 /* ColorsModel.swift in Sources */,
 				65D1B66A2787422100C1560B /* ShadowTableViewCell.swift in Sources */,
 				6551746227EDBFAE0043700F /* BaseImageCollectionViewController.swift in Sources */,
+				4A90D1532938EC7D00E15A44 /* DynamicFrameModifier.swift in Sources */,
 				4A67EDBD28F729F20049555F /* BadgesView.swift in Sources */,
 				6551745C27EDBDFA0043700F /* BadgeCollectionViewCell.swift in Sources */,
 				AAB029CE256805A900F08C74 /* ColorsViewController.swift in Sources */,
