@@ -98,11 +98,21 @@ public struct VitaminTextStyle {
                                                 textStyle: .body,
                                                 rawValue: "button")
     // internal text style used for badges
-    public static let badge = VitaminTextStyle(size: 8,
-                                               lineHeight: 8,
-                                               fontType: VitaminFontFamily.Roboto.bold,
-                                               textStyle: .body,
-                                               rawValue: "badge")
+    public static let badgeSmall = VitaminTextStyle(size: 8,
+                                                    lineHeight: 10,
+                                                    fontType: VitaminFontFamily.Roboto.bold,
+                                                    textStyle: .caption2,
+                                                    rawValue: "badgeSmall")
+    public static let badgeMedium = VitaminTextStyle(size: 12,
+                                                     lineHeight: 16,
+                                                     fontType: VitaminFontFamily.Roboto.bold,
+                                                     textStyle: .caption2,
+                                                     rawValue: "badgeMedium")
+    public static let badgeLarge = VitaminTextStyle(size: 14,
+                                                    lineHeight: 20,
+                                                    fontType: VitaminFontFamily.Roboto.bold,
+                                                    textStyle: .caption2,
+                                                    rawValue: "badgeLarge")
 }
 
 // MARK: - RawRepresentable
@@ -196,6 +206,12 @@ extension VitaminTextStyle {
     /// - Returns: The adjusted line height value.
     public func scaledLineHeight(for font: UIFont) -> CGFloat {
         (lineHeight * font.pointSize) / size
+    }
+
+    /// Returns the ratio between the base font size and the scaled font size.
+    /// - Returns: The ratio value.
+    public func scaledRatio() -> CGFloat {
+        scaledFont.pointSize / size
     }
 
     /// All attributes for the current style.

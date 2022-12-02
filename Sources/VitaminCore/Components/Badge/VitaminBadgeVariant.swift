@@ -5,8 +5,8 @@
 
 import UIKit
 
-/// enum containing the different variants of VitaminTag
-public enum VitaminBadgeVariant {
+/// enum containing the different variants of VitaminBadge
+public enum VitaminBadgeVariant: CaseIterable {
     case standard
     case brand
     case reversed
