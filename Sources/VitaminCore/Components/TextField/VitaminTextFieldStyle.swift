@@ -5,6 +5,6 @@
 
 /// Enum representing the style of `VitaminTextField`.
 public enum VitaminTextFieldStyle: String {
-    case outline
+    case outlined
     case filled
 }

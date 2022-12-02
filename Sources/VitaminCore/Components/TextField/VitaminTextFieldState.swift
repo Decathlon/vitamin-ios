@@ -14,8 +14,9 @@ public enum VitaminTextFieldState: String {
     case standard
 }
 
+// TODO: Common code with UIKit
 extension VitaminTextFieldState {
-    /// the border color of a `VitaminTextField` for a specific state
+    /// The border color of a `VitaminTextField` for a specific state.
     public var borderColor: UIColor {
         switch self {
         case .error:
@@ -31,40 +32,45 @@ extension VitaminTextFieldState {
         }
     }
 
-    /// The text color of a `VitaminTextField` for a specific state
+    /// The text color of a `VitaminTextField` for a specific state.
     public var textColor: UIColor {
         if self == .disabled {
             return VitaminColor.Core.Content.primary.disabledColor()
         } else {
-            return VitaminColor.Core.Content.primary
+            return VitaminColor.Core.Content.tertiary
         }
     }
 
-    /// the icon color of a `VitaminTextField` for a specific state
-    /// It is only applied for default icon, i.e. success and failure icons
-    ///  For custom icons, cutomIconColor will be used
-    public var standardIconColor: UIColor {
+    /// The label color of a `VitaminTextField` for a specific state and style.
+    /// - Parameter style: The current used style.
+    /// - Returns: The color value with the current state and current style.
+    public func labelColor(style: VitaminTextFieldStyle) -> UIColor {
+        var color = VitaminColor.Core.Content.primary
+        if style == .outlined {
+            color = VitaminColor.Core.Content.tertiary
+        }
+        if self == .disabled {
+            return color.disabledColor()
+        } else {
+            return color
+        }
+    }
+
+    /// The icon color of a `VitaminTextField` for a specific state.
+    public var iconColor: UIColor {
         switch self {
         case .error:
             return VitaminColor.Core.Content.negative
         case .success:
             return VitaminColor.Core.Content.positive
+        case .disabled:
+            return VitaminColor.Core.Content.primary.disabledColor()
         default:
             return VitaminColor.Core.Content.primary
         }
     }
 
-    /// the icon color of a `VitaminTextField` for a specific state
-    /// It is only applied for custom icon, i.e. ison provided by the caller
-    public var customIconColor: UIColor {
-        if self == .disabled {
-            return VitaminColor.Core.Content.primary.disabledColor()
-        } else {
-            return VitaminColor.Core.Content.primary
-        }
-    }
-
-    /// the color of the optionals helper text and counter of a `VitaminTextField` for a specific state
+    /// The color of the optionals helper text and counter of a `VitaminTextField` for a specific state.
     public var helperAndCounterColor: UIColor {
         switch self {
         case .error:
@@ -72,11 +78,11 @@ extension VitaminTextFieldState {
         case .disabled:
             return VitaminColor.Core.Content.secondary.disabledColor()
         default:
-            return VitaminColor.Core.Content.secondary
+            return VitaminColor.Core.Content.tertiary
         }
     }
 
-    /// the placeholder color of a `VitaminTextField`for a specific state
+    /// The placeholder color of a `VitaminTextField`for a specific state.
     public var placeholderColor: UIColor {
         if self == .disabled {
             return VitaminColor.Core.Content.tertiary.disabledColor()
@@ -85,7 +91,7 @@ extension VitaminTextFieldState {
         }
     }
 
-    /// the default icon diaplyed in a `VitaminTextField` for a specific state
+    /// The default icon diaplyed in a `VitaminTextField` for a specific state.
     public var icon: UIImage? {
         switch self {
         case .error:
@@ -97,7 +103,7 @@ extension VitaminTextFieldState {
         }
     }
 
-    /// the border width of a `VitaminTextField` for a specific state
+    /// The border width of a `VitaminTextField` for a specific state.
     public var borderWidth: CGFloat {
         if self == .error || self == .active || self == .success {
             return 2.0

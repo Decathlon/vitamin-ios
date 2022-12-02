@@ -11,6 +11,7 @@ import Combine
 @available(iOS 13, *)
 /// Modifier to apply the Vitamin TextField UI to a TextField.
 public struct VitaminTextFieldModifier: ViewModifier {
+    private var style: VitaminTextFieldStyle
     private var label: String
     private var helperText: String?
     private var iconConfiguration: VitaminTextField.IconConfiguration?
@@ -22,25 +23,34 @@ public struct VitaminTextFieldModifier: ViewModifier {
     @State private var counterText: String?
     @ScaledValue private var iconSize: CGFloat = 20
     private var commonPadding: CGFloat = 8
-    private var textLeadingPadding: CGFloat = 12
+    private var textLeadingPadding: CGFloat {
+        if style == .filled {
+            return 12
+        } else {
+            return 0
+        }
+    }
     private var textTrailingPadding: CGFloat {
         commonPadding * 2 + iconSize
     }
 
     /// Modifier to apply the Vitamin TextField style to a `TextField`.
     /// - Parameters:
+    ///   - style: The `VitaminTextFieldStyle` that we want to use for the text field.
     ///   - label: Text to display above the `TextField`.
     ///   - helperText: Text to display below the `TextField`.
     ///   - state: State to apply.
     ///   - icon: Icon configuration to display a custom icon and to handle an action on the icon.
     ///   - characterLimit: Character limit configuration to add a maximum number of characters.
     public init(
+        style: VitaminTextFieldStyle,
         label: String,
         helperText: String?,
         state: Binding<VitaminTextFieldState>,
         icon: VitaminTextField.IconConfiguration?,
         characterLimit: VitaminTextField.CharacterLimitConfiguration?
     ) {
+        self.style = style
         self.label = label
         self.helperText = helperText
         self._state = state
@@ -64,17 +74,14 @@ public struct VitaminTextFieldModifier: ViewModifier {
     private func makeLabelView() -> some View {
         Text(label)
             .vitaminTextStyle(.callout)
-            .foregroundColor(state.textColor.swiftUIColor)
+            .foregroundColor(state.labelColor(style: style).swiftUIColor)
     }
 
     @ViewBuilder
     private func makeIconView() -> some View {
-        if let stateIcon = state.icon?.swiftUIImage {
-            makeImageView(image: stateIcon,
-                          foregroundColor: state.standardIconColor.swiftUIColor)
-        } else if let icon = iconConfiguration?.icon {
+        if let icon = state.icon?.swiftUIImage ?? iconConfiguration?.icon {
             makeImageView(image: icon,
-                          foregroundColor: state.customIconColor.swiftUIColor)
+                          foregroundColor: state.iconColor.swiftUIColor)
         }
     }
 
@@ -114,11 +121,32 @@ public struct VitaminTextFieldModifier: ViewModifier {
                                 leading: textLeadingPadding,
                                 bottom: commonPadding,
                                 trailing: textTrailingPadding))
-            .overlay(
-                RoundedRectangle(cornerRadius: 4)
-                    .strokeBorder(state.borderColor.swiftUIColor,
-                                  lineWidth: state.borderWidth)
-            )
+            .overlay(makeStyleOverlay())
+    }
+
+    @ViewBuilder
+    private func makeStyleOverlay() -> some View {
+        switch style {
+        case .filled:
+            makeFilledStyleOverlay()
+        case .outlined:
+            makeOutlineStyleOverlay()
+        }
+    }
+
+    private func makeFilledStyleOverlay() -> some View {
+        RoundedRectangle(cornerRadius: 4)
+            .strokeBorder(state.borderColor.swiftUIColor,
+                          lineWidth: state.borderWidth)
+    }
+
+    private func makeOutlineStyleOverlay() -> some View {
+        VStack {
+            Spacer()
+            Rectangle()
+                .foregroundColor(state.borderColor.swiftUIColor)
+                .frame(height: state.borderWidth)
+        }
     }
 
     private func makeUnderTextView() -> some View {
@@ -163,6 +191,7 @@ public struct VitaminTextFieldModifier: ViewModifier {
 extension TextField {
     /// Apply the Vitamin TextField style to a `TextField`.
     /// - Parameters:
+    ///   - style: The `VitaminTextFieldStyle` that we want to use for the text field. Default: .filled.
     ///   - label: Text to display above the `TextField`.
     ///   - helperText: Text to display below the `TextField`.
     ///   - state: State to apply.
@@ -170,13 +199,15 @@ extension TextField {
     ///   - characterLimit: Character limit configuration to add a maximum number of characters.
     /// - Returns: A `View` with the Vitamin style applied.
     public func vitaminTextFieldStyle(
+        style: VitaminTextFieldStyle = .filled,
         label: String,
         helperText: String,
         state: Binding<VitaminTextFieldState>,
         icon: VitaminTextField.IconConfiguration? = nil,
         characterLimit: VitaminTextField.CharacterLimitConfiguration? = nil
     ) -> some View {
-        modifier(VitaminTextFieldModifier(label: label,
+        modifier(VitaminTextFieldModifier(style: style,
+                                          label: label,
                                           helperText: helperText,
                                           state: state,
                                           icon: icon,
@@ -188,6 +219,7 @@ extension TextField {
 extension SecureField {
     /// Apply the Vitamin TextField style to a `SecureField`.
     /// - Parameters:
+    ///   - style: The `VitaminTextFieldStyle` that we want to use for the text field. Default: .filled.
     ///   - label: Text to display above the `TextField`.
     ///   - helperText: Text to display below the `TextField`.
     ///   - state: State to apply.
@@ -195,13 +227,15 @@ extension SecureField {
     ///   - characterLimit: Character limit configuration to add a maximum number of characters.
     /// - Returns: A `View` with the Vitamin style applied.
     public func vitaminTextFieldStyle(
+        style: VitaminTextFieldStyle = .filled,
         label: String,
         helperText: String,
         state: Binding<VitaminTextFieldState>,
         icon: VitaminTextField.IconConfiguration? = nil,
         characterLimit: VitaminTextField.CharacterLimitConfiguration? = nil
     ) -> some View {
-        modifier(VitaminTextFieldModifier(label: label,
+        modifier(VitaminTextFieldModifier(style: style,
+                                          label: label,
                                           helperText: helperText,
                                           state: state,
                                           icon: icon,

@@ -20,10 +20,8 @@ struct TextFieldsView: View {
         VStack {
             Form {
                 makeTextField()
-//                makeTextFieldWithModifier()
-                Button("Toggle") {
-                    isSecure.toggle()
-                }
+                makeTextFieldWithModifier()
+                makeTextFieldIcon()
             }
         }
         .frame(maxWidth: .infinity)
@@ -34,12 +32,13 @@ struct TextFieldsView: View {
 @available(iOS 13, *)
 extension TextFieldsView {
     func makeTextField() -> some View {
-        VitaminTextField(label: state.rawValue.capitalized,
-                         placeholder: "Placeholder",
-                         helperText: helperText,
-                         text: $text,
+        VitaminTextField(style: .filled,
+                         text: .init(label: state.rawValue.capitalized,
+                                     placeholder: "Placeholder",
+                                     helperText: helperText,
+                                     text: $text,
+                                     isSecure: $isSecure),
                          state: $state,
-                         isSecure: $isSecure,
                          icon: nil,
                          characterLimit: .init(text: $text, limit: 100))
         .compatibilityOnChange(of: text, perform: handleChanges(newValue:))
@@ -49,12 +48,24 @@ extension TextFieldsView {
         TextField("Placeholder", text: $text) { editing in
             state = VitaminTextField.updateActiveState(state: state, editing: editing)
         }
-        .vitaminTextFieldStyle(label: state.rawValue.capitalized,
+        .vitaminTextFieldStyle(style: .outlined,
+                               label: state.rawValue.capitalized,
                                helperText: helperText,
                                state: $state,
                                icon: nil,
                                characterLimit: .init(text: $text, limit: 100))
         .compatibilityOnChange(of: text, perform: handleChanges(newValue:))
+    }
+
+    func makeTextFieldIcon() -> some View {
+        VitaminTextField(style: .filled,
+                         text: .init(label: state.rawValue.capitalized,
+                                     placeholder: "Placeholder",
+                                     helperText: helperText,
+                                     text: $text,
+                                     isSecure: $isSecure),
+                         state: $state,
+                         icon: makeIconConfiguration())
     }
 
     private func updateEditingState(editing: Bool) {
@@ -80,6 +91,12 @@ extension TextFieldsView {
         } else {
             state = .active
             helperText = ""
+        }
+    }
+
+    private func makeIconConfiguration() -> VitaminTextField.IconConfiguration {
+        VitaminTextField.IconConfiguration(icon: Image(systemName: "eye")) {
+            isSecure.toggle()
         }
     }
 }
