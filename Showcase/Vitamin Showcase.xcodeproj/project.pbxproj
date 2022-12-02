@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		30F95E44292FBA0500D6CEB7 /* TextFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F95E43292FBA0500D6CEB7 /* TextFieldsView.swift */; };
+		4A038B54293A7CCD00ADFDE6 /* VitaminTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A038B53293A7CCD00ADFDE6 /* VitaminTextFieldView.swift */; };
+		4A038B57293A8EE400ADFDE6 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A038B56293A8EE400ADFDE6 /* UIApplicationExtension.swift */; };
 		4A07433927D94BB0005BD446 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07433827D94BB0005BD446 /* MainView.swift */; };
 		4A07433E27D9541F005BD446 /* NavigationTitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07433D27D9541F005BD446 /* NavigationTitleModifier.swift */; };
 		4A35E4602811EE2E001526D8 /* Vitamin in Frameworks */ = {isa = PBXBuildFile; productRef = 4A35E45F2811EE2E001526D8 /* Vitamin */; };
@@ -88,6 +90,8 @@
 
 /* Begin PBXFileReference section */
 		30F95E43292FBA0500D6CEB7 /* TextFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsView.swift; sourceTree = "<group>"; };
+		4A038B53293A7CCD00ADFDE6 /* VitaminTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminTextFieldView.swift; sourceTree = "<group>"; };
+		4A038B56293A8EE400ADFDE6 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		4A07433827D94BB0005BD446 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4A07433A27D94C90005BD446 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		4A07433D27D9541F005BD446 /* NavigationTitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleModifier.swift; sourceTree = "<group>"; };
@@ -184,9 +188,18 @@
 		4A038B402939F7D200ADFDE6 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
+				4A038B55293A7CE700ADFDE6 /* Views */,
 				30F95E43292FBA0500D6CEB7 /* TextFieldsView.swift */,
 			);
 			path = TextField;
+			sourceTree = "<group>";
+		};
+		4A038B55293A7CE700ADFDE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A038B53293A7CCD00ADFDE6 /* VitaminTextFieldView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		4A07433027D949F2005BD446 /* UIKit */ = {
@@ -346,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				4ACCCBD82805FF7100FD184B /* ArrayExtension.swift */,
+				4A038B56293A8EE400ADFDE6 /* UIApplicationExtension.swift */,
 				4ACCCBD62805E7AE00FD184B /* ViewExtension.swift */,
 			);
 			path = Extensions;
@@ -903,6 +917,7 @@
 				4A4643932806D60B00942AD7 /* IconsView.swift in Sources */,
 				4A35E48128130495001526D8 /* RadiusesModel.swift in Sources */,
 				4A90D1542938EC7D00E15A44 /* AdaptiveStack.swift in Sources */,
+				4A038B54293A7CCD00ADFDE6 /* VitaminTextFieldView.swift in Sources */,
 				4A35E4872816C1F4001526D8 /* ShadowsView.swift in Sources */,
 				65C518CA27D673FF00B87FF0 /* TagTableViewCell.swift in Sources */,
 				65C518C827D673FF00B87FF0 /* TagViewController.swift in Sources */,
@@ -926,6 +941,7 @@
 				4ACCCBCE2805E28600FD184B /* MainTabController.swift in Sources */,
 				65F1BC1F27CE8836002D08D8 /* ProgressbarViewController.swift in Sources */,
 				4A07433927D94BB0005BD446 /* MainView.swift in Sources */,
+				4A038B57293A8EE400ADFDE6 /* UIApplicationExtension.swift in Sources */,
 				4A07433E27D9541F005BD446 /* NavigationTitleModifier.swift in Sources */,
 				65B52A232739553A008D9B5E /* TextFieldViewController.swift in Sources */,
 				4ACCCBD52805E71400FD184B /* AssetsView.swift in Sources */,

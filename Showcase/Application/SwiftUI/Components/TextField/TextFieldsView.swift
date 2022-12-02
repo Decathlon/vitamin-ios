@@ -11,17 +11,27 @@ import Combine
 
 @available(iOS 13, *)
 struct TextFieldsView: View {
-    @State var text = ""
-    @State var state: VitaminTextFieldState = .standard
-    @State var helperText: String = ""
-    @State var isSecure = true
+    @State private var style: VitaminTextFieldStyle = .outlined
+    // TODO: Fix crash
+    @State private var secureMode = false
+    @State private var showIcon = false
+    @State private var characterLimit: Int = 0
+    @State private var characterLimitText: String = ""
+    @State private var icon = Image(systemName: "eye.fill")
 
     var body: some View {
         VStack {
+            makeConfigurationView()
             Form {
-                makeTextField()
-                makeTextFieldWithModifier()
-                makeTextFieldIcon()
+                makeSection("Dynamic") {
+                    makeVitaminTextField(state: .standard, isDynamic: true)
+                }
+                makeSection("States") {
+                    ForEach(TextFieldModel.textFieldStates) { state in
+                        makeVitaminTextField(state: state.state)
+                    }
+                }
+                .disabled(true)
             }
         }
         .frame(maxWidth: .infinity)
@@ -31,73 +41,46 @@ struct TextFieldsView: View {
 
 @available(iOS 13, *)
 extension TextFieldsView {
-    func makeTextField() -> some View {
-        VitaminTextField(style: .filled,
-                         text: .init(label: state.rawValue.capitalized,
-                                     placeholder: "Placeholder",
-                                     helperText: helperText,
-                                     text: $text,
-                                     isSecure: $isSecure),
-                         state: $state,
-                         icon: nil,
-                         characterLimit: .init(text: $text, limit: 100))
-        .compatibilityOnChange(of: text, perform: handleChanges(newValue:))
-    }
-
-    func makeTextFieldWithModifier() -> some View {
-        TextField("Placeholder", text: $text) { editing in
-            state = VitaminTextField.updateActiveState(state: state, editing: editing)
-        }
-        .vitaminTextFieldStyle(style: .outlined,
-                               label: state.rawValue.capitalized,
-                               helperText: helperText,
-                               state: $state,
-                               icon: nil,
-                               characterLimit: .init(text: $text, limit: 100))
-        .compatibilityOnChange(of: text, perform: handleChanges(newValue:))
-    }
-
-    func makeTextFieldIcon() -> some View {
-        VitaminTextField(style: .filled,
-                         text: .init(label: state.rawValue.capitalized,
-                                     placeholder: "Placeholder",
-                                     helperText: helperText,
-                                     text: $text,
-                                     isSecure: $isSecure),
-                         state: $state,
-                         icon: makeIconConfiguration())
-    }
-
-    private func updateEditingState(editing: Bool) {
-        if editing {
-            if state == .standard {
-                state = .active
+    private func makeConfigurationView() -> some View {
+        VStack {
+            Picker("Style", selection: $style) {
+                Text("Outlined").tag(VitaminTextFieldStyle.outlined)
+                Text("Filled").tag(VitaminTextFieldStyle.filled)
             }
-        } else if state == .active {
-            state = .standard
+            .pickerStyle(.segmented)
+            Toggle("Secure mode", isOn: $secureMode)
+            Toggle("Show icon", isOn: $showIcon)
+            Stepper(makeCharacterLimitText(),
+                    value: $characterLimit,
+                    in: 0...30)
         }
+        .padding(.horizontal, 10)
     }
 
-    private func handleChanges(newValue: String) {
-        if !newValue.isEmpty {
-            let isEmail = isEmailValid(value: newValue)
-            if isEmail {
-                state = .success
-                helperText = "Perfect ✅"
-            } else {
-                state = .error
-                helperText = "You need to enter an email address"
-            }
-        } else {
-            state = .active
-            helperText = ""
+    private func makeCharacterLimitText() -> String {
+        guard characterLimit > 0 else {
+            return "No character limit"
         }
+
+        guard characterLimit > 1 else {
+            return "One character maximum"
+        }
+
+        return "\(characterLimit) characters maximum"
     }
 
-    private func makeIconConfiguration() -> VitaminTextField.IconConfiguration {
-        VitaminTextField.IconConfiguration(icon: Image(systemName: "eye")) {
-            isSecure.toggle()
-        }
+    private func makeVitaminTextField(
+        state: VitaminTextFieldState,
+        isDynamic: Bool = false
+    ) -> some View {
+        VitaminTextFieldView(style: style,
+                             state: state,
+                             isSecure: $secureMode,
+                             showIcon: showIcon,
+                             characterLimit: characterLimit,
+                             // TODO: Fix icon update
+                             icon: Image(systemName: "eye.\(secureMode ? "" : "slash.")fill"),
+                             isDynamic: isDynamic)
     }
 }
 
@@ -105,16 +88,6 @@ extension TextFieldsView {
 struct TextFieldsView_Previews: PreviewProvider {
     static var previews: some View {
         TextFieldsView()
-    }
-}
-
-@available(iOS 13, *)
-extension TextFieldsView {
-    func isEmailValid(value: String) -> Bool {
-        let emailValidationRegex = "^[\\p{L}0-9!#$%&'*+\\/=?^_`{|}~-][\\p{L}0-9.!#$%&'*+\\/=?^_`{|}~-]{0,63}@[\\p{L}0-9-]+(?:\\.[\\p{L}0-9-]{2,7})*$"  // 1
-        let emailValidationPredicate = NSPredicate(format: "SELF MATCHES %@", emailValidationRegex)  // 2
-
-        return emailValidationPredicate.evaluate(with: value)  // 3
     }
 }
 

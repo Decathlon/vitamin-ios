@@ -14,10 +14,10 @@ enum TextFieldModel {
     }
 
     static let textFieldStates = [
-        TextFieldModel.TextFieldState(state: .error),
-        TextFieldModel.TextFieldState(state: .success),
         TextFieldModel.TextFieldState(state: .standard),
         TextFieldModel.TextFieldState(state: .active),
+        TextFieldModel.TextFieldState(state: .error),
+        TextFieldModel.TextFieldState(state: .success),
         TextFieldModel.TextFieldState(state: .disabled)
     ]
 }
