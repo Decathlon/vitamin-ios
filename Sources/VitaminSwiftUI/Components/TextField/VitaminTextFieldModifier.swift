@@ -69,7 +69,6 @@ public struct VitaminTextFieldModifier: ViewModifier {
             makeUnderTextView()
         }
         .disabled(state == .disabled)
-        .padding()
     }
 
     private func makeLabelView() -> some View {
