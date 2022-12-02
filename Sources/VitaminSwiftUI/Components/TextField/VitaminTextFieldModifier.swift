@@ -84,13 +84,21 @@ public struct VitaminTextFieldModifier: ViewModifier {
     ) -> some View {
         HStack {
             Spacer()
-            image
-                .renderingMode(.template)
-                .resizable()
-                .foregroundColor(foregroundColor)
-                .frame(width: iconSize, height: iconSize)
-                .padding(commonPadding)
-                .padding(.trailing, state.borderWidth)
+            Button {
+                // If the icon action do update the text field UI, we could have a crash.
+                // To prevent this crash we force resign first responder.
+                UIApplication.shared.forceResignFirstResponder()
+                iconConfiguration?.action?()
+            } label: {
+                image
+                    .renderingMode(.template)
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(foregroundColor)
+                    .frame(width: iconSize, height: iconSize)
+                    .padding(commonPadding)
+                    .padding(.trailing, state.borderWidth)
+            }
         }
     }
 
