@@ -38,7 +38,7 @@ public struct VitaminTextFieldModifier: ViewModifier {
     /// - Parameters:
     ///   - style: The `VitaminTextFieldStyle` that we want to use for the text field.
     ///   - label: Text to display above the `TextField`.
-    ///   - helperText: Text to display below the `TextField`.
+    ///   - helperText: Text to display below the `TextField`. Optional.
     ///   - state: State to apply.
     ///   - icon: Icon configuration to display a custom icon and to handle an action on the icon.
     ///   - characterLimit: Character limit configuration to add a maximum number of characters.
@@ -193,7 +193,7 @@ extension TextField {
     /// - Parameters:
     ///   - style: The `VitaminTextFieldStyle` that we want to use for the text field. Default: .filled.
     ///   - label: Text to display above the `TextField`.
-    ///   - helperText: Text to display below the `TextField`.
+    ///   - helperText: Text to display below the `TextField`. Optional.
     ///   - state: State to apply.
     ///   - icon: Icon configuration to display a custom icon and to handle an action on the icon.
     ///   - characterLimit: Character limit configuration to add a maximum number of characters.
@@ -201,7 +201,7 @@ extension TextField {
     public func vitaminTextFieldStyle(
         style: VitaminTextFieldStyle = .filled,
         label: String,
-        helperText: String,
+        helperText: String?,
         state: Binding<VitaminTextFieldState>,
         icon: VitaminTextField.IconConfiguration? = nil,
         characterLimit: VitaminTextField.CharacterLimitConfiguration? = nil
@@ -221,7 +221,7 @@ extension SecureField {
     /// - Parameters:
     ///   - style: The `VitaminTextFieldStyle` that we want to use for the text field. Default: .filled.
     ///   - label: Text to display above the `TextField`.
-    ///   - helperText: Text to display below the `TextField`.
+    ///   - helperText: Text to display below the `TextField`. Optional.
     ///   - state: State to apply.
     ///   - icon: Icon configuration to display a custom icon and to handle an action on the icon.
     ///   - characterLimit: Character limit configuration to add a maximum number of characters.
@@ -229,7 +229,7 @@ extension SecureField {
     public func vitaminTextFieldStyle(
         style: VitaminTextFieldStyle = .filled,
         label: String,
-        helperText: String,
+        helperText: String?,
         state: Binding<VitaminTextFieldState>,
         icon: VitaminTextField.IconConfiguration? = nil,
         characterLimit: VitaminTextField.CharacterLimitConfiguration? = nil

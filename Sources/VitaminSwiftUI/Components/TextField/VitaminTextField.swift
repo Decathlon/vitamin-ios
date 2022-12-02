@@ -12,7 +12,7 @@ public struct VitaminTextField: View {
     private var style: VitaminTextFieldStyle
     private var label: String
     private var placeholder: String
-    private var helperText: String
+    private var helperText: String?
     private var iconConfiguration: VitaminTextField.IconConfiguration?
     private var characterLimitConfiguration: VitaminTextField.CharacterLimitConfiguration?
     @Binding private var state: VitaminTextFieldState
