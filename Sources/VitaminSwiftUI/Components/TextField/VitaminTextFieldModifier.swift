@@ -24,7 +24,7 @@ public struct VitaminTextFieldModifier: ViewModifier {
     @ScaledValue private var iconSize: CGFloat = 20
     private var commonPadding: CGFloat = 8
     private var textLeadingPadding: CGFloat {
-        if style == .filled {
+        if style == .outlined {
             return 12
         } else {
             return 0
@@ -135,18 +135,18 @@ public struct VitaminTextFieldModifier: ViewModifier {
     }
 
     private func makeFilledStyleOverlay() -> some View {
-        RoundedRectangle(cornerRadius: 4)
-            .strokeBorder(state.borderColor.swiftUIColor,
-                          lineWidth: state.borderWidth)
-    }
-
-    private func makeOutlineStyleOverlay() -> some View {
         VStack {
             Spacer()
             Rectangle()
                 .foregroundColor(state.borderColor.swiftUIColor)
                 .frame(height: state.borderWidth)
         }
+    }
+
+    private func makeOutlineStyleOverlay() -> some View {
+        RoundedRectangle(cornerRadius: 4)
+            .strokeBorder(state.borderColor.swiftUIColor,
+                          lineWidth: state.borderWidth)
     }
 
     private func makeUnderTextView() -> some View {

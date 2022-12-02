@@ -45,7 +45,7 @@ extension VitaminTextFieldState {
     /// - Returns: The color value with the current state and current style.
     public func labelColor(style: VitaminTextFieldStyle) -> UIColor {
         var color = VitaminColor.Core.Content.primary
-        if style == .outlined {
+        if style == .filled {
             color = VitaminColor.Core.Content.tertiary
         }
         if self == .disabled {
