@@ -24,11 +24,11 @@
 		4A35E4902816D1B5001526D8 /* TypographyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A35E48F2816D1B5001526D8 /* TypographyView.swift */; };
 		4A4643902806C91700942AD7 /* AssetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A46438F2806C91700942AD7 /* AssetsModel.swift */; };
 		4A4643932806D60B00942AD7 /* IconsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4643922806D60B00942AD7 /* IconsView.swift */; };
+		4A4C0B1D292EB187002653E1 /* TextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C0B1C292EB187002653E1 /* TextFieldModel.swift */; };
 		4A67EDBD28F729F20049555F /* BadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A67EDBC28F729F20049555F /* BadgesView.swift */; };
 		4A67EDC028F72AD30049555F /* BadgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A67EDBF28F72AD30049555F /* BadgeModel.swift */; };
 		4A90D1532938EC7D00E15A44 /* DynamicFrameModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A90D1512938EC7D00E15A44 /* DynamicFrameModifier.swift */; };
 		4A90D1542938EC7D00E15A44 /* AdaptiveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A90D1522938EC7D00E15A44 /* AdaptiveStack.swift */; };
-		4A4C0B1D292EB187002653E1 /* TextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C0B1C292EB187002653E1 /* TextFieldModel.swift */; };
 		4A91BAAE2864CC5C0032B31E /* IconsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A91BAAD2864CC5C0032B31E /* IconsModel.swift */; };
 		4A9BE58C29352B5600445337 /* OnChangeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9BE58B29352B5600445337 /* OnChangeModifier.swift */; };
 		4AAD2B67276772D200727D8E /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD2B66276772D200727D8E /* MainTableViewController.swift */; };
@@ -103,11 +103,11 @@
 		4A35E48F2816D1B5001526D8 /* TypographyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyView.swift; sourceTree = "<group>"; };
 		4A46438F2806C91700942AD7 /* AssetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsModel.swift; sourceTree = "<group>"; };
 		4A4643922806D60B00942AD7 /* IconsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsView.swift; sourceTree = "<group>"; };
+		4A4C0B1C292EB187002653E1 /* TextFieldModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldModel.swift; sourceTree = "<group>"; };
 		4A67EDBC28F729F20049555F /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
 		4A67EDBF28F72AD30049555F /* BadgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModel.swift; sourceTree = "<group>"; };
 		4A90D1512938EC7D00E15A44 /* DynamicFrameModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicFrameModifier.swift; sourceTree = "<group>"; };
 		4A90D1522938EC7D00E15A44 /* AdaptiveStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveStack.swift; sourceTree = "<group>"; };
-		4A4C0B1C292EB187002653E1 /* TextFieldModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldModel.swift; sourceTree = "<group>"; };
 		4A91BAAD2864CC5C0032B31E /* IconsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconsModel.swift; sourceTree = "<group>"; };
 		4A9BE58B29352B5600445337 /* OnChangeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnChangeModifier.swift; sourceTree = "<group>"; };
 		4AAD2B66276772D200727D8E /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +181,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A038B402939F7D200ADFDE6 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				30F95E43292FBA0500D6CEB7 /* TextFieldsView.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
 		4A07433027D949F2005BD446 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +351,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		4A4C0B1B292EB187002653E1 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				4A4C0B1C292EB187002653E1 /* TextFieldModel.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
 		4A67EDBA28F729BC0049555F /* Button */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,14 +381,6 @@
 				4A67EDBF28F72AD30049555F /* BadgeModel.swift */,
 			);
 			path = Badge;
-			sourceTree = "<group>";
-		};
-		4A4C0B1B292EB187002653E1 /* TextField */ = {
-			isa = PBXGroup;
-			children = (
-				4A4C0B1C292EB187002653E1 /* TextFieldModel.swift */,
-			);
-			path = TextField;
 			sourceTree = "<group>";
 		};
 		4A8962EF276366EB00D9B8E9 /* Supporting Files */ = {
@@ -591,7 +599,7 @@
 			children = (
 				4A67EDBB28F729DB0049555F /* Badge */,
 				4A67EDBA28F729BC0049555F /* Button */,
-				30F95E43292FBA0500D6CEB7 /* TextFieldsView.swift */,
+				4A038B402939F7D200ADFDE6 /* TextField */,
 			);
 			path = Components;
 			sourceTree = "<group>";

@@ -17,9 +17,23 @@ public struct VitaminTextFieldModifier: ViewModifier {
     private var characterLimitConfiguration: VitaminTextField.CharacterLimitConfiguration?
     @Binding private var state: VitaminTextFieldState
     @Binding private var text: String
-    @State private var counterText: String?
 
-    // TODO: Documentation
+    // Internal states
+    @State private var counterText: String?
+    @ScaledValue private var iconSize: CGFloat = 20
+    private var commonPadding: CGFloat = 8
+    private var textLeadingPadding: CGFloat = 12
+    private var textTrailingPadding: CGFloat {
+        commonPadding * 2 + iconSize
+    }
+
+    /// Modifier to apply the Vitamin TextField style to a `TextField`.
+    /// - Parameters:
+    ///   - label: Text to display above the `TextField`.
+    ///   - helperText: Text to display below the `TextField`.
+    ///   - state: State to apply.
+    ///   - icon: Icon configuration to display a custom icon and to handle an action on the icon.
+    ///   - characterLimit: Character limit configuration to add a maximum number of characters.
     public init(
         label: String,
         helperText: String?,
@@ -74,20 +88,24 @@ public struct VitaminTextFieldModifier: ViewModifier {
                 .renderingMode(.template)
                 .resizable()
                 .foregroundColor(foregroundColor)
-                .frame(width: 20, height: 20)
-                .padding(8)
+                .frame(width: iconSize, height: iconSize)
+                .padding(commonPadding)
+                .padding(.trailing, state.borderWidth)
         }
     }
 
     private func makeTextFieldView(_ content: Content) -> some View {
         content
-            .font(VitaminTextStyle.body.font.swiftUIFont)
+            .font(VitaminTextStyle.body.scaledFont.swiftUIFont)
             .onReceive(Just(text)) { newValue in
                 text = truncateIfLimit(text: newValue)
                 counterText = makeCharactersCounterText(newValue)
             }
             .contentShape(Rectangle())
-            .padding(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 36))
+            .padding(EdgeInsets(top: commonPadding,
+                                leading: textLeadingPadding,
+                                bottom: commonPadding,
+                                trailing: textTrailingPadding))
             .overlay(
                 RoundedRectangle(cornerRadius: 4)
                     .strokeBorder(state.borderColor.swiftUIColor,
@@ -135,12 +153,39 @@ public struct VitaminTextFieldModifier: ViewModifier {
 
 @available(iOS 13, *)
 extension TextField {
-    // TODO: Docs
     /// Apply the Vitamin TextField style to a `TextField`.
     /// - Parameters:
-    ///   - todo: Wanted width.
-    ///   - height: Wanted height.
-    /// - Returns: A `View` with the frame setted.
+    ///   - label: Text to display above the `TextField`.
+    ///   - helperText: Text to display below the `TextField`.
+    ///   - state: State to apply.
+    ///   - icon: Icon configuration to display a custom icon and to handle an action on the icon.
+    ///   - characterLimit: Character limit configuration to add a maximum number of characters.
+    /// - Returns: A `View` with the Vitamin style applied.
+    public func vitaminTextFieldStyle(
+        label: String,
+        helperText: String,
+        state: Binding<VitaminTextFieldState>,
+        icon: VitaminTextField.IconConfiguration? = nil,
+        characterLimit: VitaminTextField.CharacterLimitConfiguration? = nil
+    ) -> some View {
+        modifier(VitaminTextFieldModifier(label: label,
+                                          helperText: helperText,
+                                          state: state,
+                                          icon: icon,
+                                          characterLimit: characterLimit))
+    }
+}
+
+@available(iOS 13, *)
+extension SecureField {
+    /// Apply the Vitamin TextField style to a `SecureField`.
+    /// - Parameters:
+    ///   - label: Text to display above the `TextField`.
+    ///   - helperText: Text to display below the `TextField`.
+    ///   - state: State to apply.
+    ///   - icon: Icon configuration to display a custom icon and to handle an action on the icon.
+    ///   - characterLimit: Character limit configuration to add a maximum number of characters.
+    /// - Returns: A `View` with the Vitamin style applied.
     public func vitaminTextFieldStyle(
         label: String,
         helperText: String,

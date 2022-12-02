@@ -12,7 +12,11 @@ extension VitaminTextField {
         let icon: Image
         let action: (() -> Void)?
 
-        // TODO: Documentation
+        /// Icon configuration to display a custom icon and to handle an action on the icon.
+        /// The icon must a square shape.
+        /// - Parameters:
+        ///   - icon: The icon to display.
+        ///   - action: A closure to handle an action on the icon.
         public init(icon: Image, action: (() -> Void)? = nil) {
             self.icon = icon
             self.action = action
@@ -23,7 +27,10 @@ extension VitaminTextField {
         let text: Binding<String>
         let limit: Int
 
-        // TODO: Documentation
+        /// Character limit configuration to add a maximum number of characters.
+        /// - Parameters:
+        ///   - text: The text value used with the `TextField` component.
+        ///   - limit: The maximum number of characters that you want to have.
         public init(text: Binding<String>, limit: Int) {
             self.text = text
             self.limit = limit

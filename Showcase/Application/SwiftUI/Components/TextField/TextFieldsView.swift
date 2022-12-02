@@ -11,16 +11,19 @@ import Combine
 
 @available(iOS 13, *)
 struct TextFieldsView: View {
-    @State var enabled = true
     @State var text = ""
     @State var state: VitaminTextFieldState = .standard
     @State var helperText: String = ""
+    @State var isSecure = true
 
     var body: some View {
         VStack {
             Form {
                 makeTextField()
-                makeTextFieldModifier()
+//                makeTextFieldWithModifier()
+                Button("Toggle") {
+                    isSecure.toggle()
+                }
             }
         }
         .frame(maxWidth: .infinity)
@@ -36,19 +39,21 @@ extension TextFieldsView {
                          helperText: helperText,
                          text: $text,
                          state: $state,
+                         isSecure: $isSecure,
                          icon: nil,
-                         characterLimit: .init(text: $text, limit: 10))
+                         characterLimit: .init(text: $text, limit: 100))
         .compatibilityOnChange(of: text, perform: handleChanges(newValue:))
     }
 
-    func makeTextFieldModifier() -> some View {
+    func makeTextFieldWithModifier() -> some View {
         TextField("Placeholder", text: $text) { editing in
-            state = VitaminTextField.updateEditingState(state: state, editing: editing)
+            state = VitaminTextField.updateActiveState(state: state, editing: editing)
         }
         .vitaminTextFieldStyle(label: state.rawValue.capitalized,
                                helperText: helperText,
                                state: $state,
-                               characterLimit: .init(text: $text, limit: 10))
+                               icon: nil,
+                               characterLimit: .init(text: $text, limit: 100))
         .compatibilityOnChange(of: text, perform: handleChanges(newValue:))
     }
 
