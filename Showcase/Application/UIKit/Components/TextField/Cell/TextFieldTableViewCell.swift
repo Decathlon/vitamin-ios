@@ -11,7 +11,7 @@ final class TextFieldTableViewCell: UITableViewCell {
 
     /// Method used to update the `VitamineTextField`object of the cell after it has been dequeued
     func updateVitaminTextField(
-        style: VitaminTextField.Style = .outline,
+        style: VitaminTextFieldStyle = .outlined,
         stateConfiguration: VitaminTextField.StateConfiguration,
         texts: VitaminTextField.TextConfiguration,
         validation: VitaminTextField.ValidationConfiguration? = nil,

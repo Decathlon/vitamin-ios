@@ -14,7 +14,6 @@ public enum VitaminTextFieldState: String {
     case standard
 }
 
-// TODO: Common code with UIKit
 extension VitaminTextFieldState {
     /// The border color of a `VitaminTextField` for a specific state.
     public var borderColor: UIColor {

@@ -8,3 +8,8 @@ public enum VitaminTextFieldStyle: String {
     case outlined
     case filled
 }
+
+extension VitaminTextFieldStyle {
+    @available(*, deprecated, renamed: "outlined")
+    public static var outline: VitaminTextFieldStyle { .outlined }
+}
