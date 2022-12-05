@@ -12,19 +12,18 @@ import Combine
 @available(iOS 13, *)
 struct VitaminTextFieldView: View {
     @State private var text = ""
+    @State private var selected = false
     var style: VitaminTextFieldStyle
     @State var state: VitaminTextFieldState = .standard
     @State var helperText = "Helper text"
-    @Binding var isSecure: Bool
     var showIcon = false
     var characterLimit: Int = 0
-    @State var icon: Image
+    @State var icon = Vitamix.Line.Health.heart.swiftUIImage
     var isDynamic = false
 
     init(
         style: VitaminTextFieldStyle,
         state: VitaminTextFieldState,
-        isSecure: Binding<Bool> = .constant(false),
         showIcon: Bool = false,
         characterLimit: Int,
         icon: Image,
@@ -34,7 +33,6 @@ struct VitaminTextFieldView: View {
         self.style = style
         self.state = state
         self.helperText = "Helper text"
-        self._isSecure = isSecure
         self.showIcon = showIcon
         self.characterLimit = characterLimit
         self.icon = icon
@@ -57,8 +55,7 @@ extension VitaminTextFieldView {
         VitaminTextField.TextConfiguration(label: state.rawValue.capitalized,
                                            placeholder: "Placeholder",
                                            helperText: helperText,
-                                           text: $text,
-                                           isSecure: $isSecure)
+                                           text: $text)
     }
 
     private func makeIconConfiguration() -> VitaminTextField.IconConfiguration? {
@@ -67,7 +64,8 @@ extension VitaminTextFieldView {
         }
 
         return VitaminTextField.IconConfiguration(icon: icon) {
-            isSecure.toggle()
+            selected.toggle()
+            icon = makeIcon().swiftUIImage
         }
     }
 
@@ -95,7 +93,15 @@ extension VitaminTextFieldView {
             }
         } else {
             state = .active
-            helperText = ""
+            helperText = "Helper text"
+        }
+    }
+
+    private func makeIcon() -> VitaminImageAsset {
+        if selected {
+            return Vitamix.Fill.Health.heart
+        } else {
+            return Vitamix.Line.Health.heart
         }
     }
 }

@@ -22,7 +22,13 @@ public struct VitaminTextFieldModifier: ViewModifier {
     // Internal states
     @State private var counterText: String?
     @ScaledValue private var iconSize: CGFloat = 20
-    private var commonPadding: CGFloat = 8
+    private var commonPadding: CGFloat {
+        if style == .outlined {
+            return 8
+        } else {
+            return 6
+        }
+    }
     private var textLeadingPadding: CGFloat {
         if style == .outlined {
             return 12
@@ -92,9 +98,6 @@ public struct VitaminTextFieldModifier: ViewModifier {
         HStack {
             Spacer()
             Button {
-                // If the icon action do update the text field UI, we could have a crash.
-                // To prevent this crash we force resign first responder.
-                UIApplication.shared.forceResignFirstResponder()
                 iconConfiguration?.action?()
             } label: {
                 image

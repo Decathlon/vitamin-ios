@@ -13,7 +13,6 @@ extension VitaminTextField {
         let placeholder: String
         let helperText: String?
         let text: Binding<String>
-        let isSecure: Binding<Bool>
 
         /// Text configuration for text related content.
         /// - Parameters:
@@ -21,19 +20,16 @@ extension VitaminTextField {
         ///   - placeholder: Text to display inside the `TextField`.
         ///   - helperText: Text to display below the `TextField`. Optional.
         ///   - text: Text binding to use for the `TextField`.
-        ///   - isSecure: If we should display a `SecureField` instead. Default: `false`.
         public init(
             label: String,
             placeholder: String,
             helperText: String?,
-            text: Binding<String>,
-            isSecure: Binding<Bool> = .constant(false)
+            text: Binding<String>
         ) {
             self.label = label
             self.placeholder = placeholder
             self.helperText = helperText
             self.text = text
-            self.isSecure = isSecure
         }
     }
 

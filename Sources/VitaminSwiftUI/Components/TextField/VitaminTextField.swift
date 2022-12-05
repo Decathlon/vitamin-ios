@@ -17,7 +17,6 @@ public struct VitaminTextField: View {
     private var characterLimitConfiguration: VitaminTextField.CharacterLimitConfiguration?
     @Binding private var state: VitaminTextFieldState
     @Binding private var text: String
-    @Binding private var isSecure: Bool
 
     /// Initialize a `VitaminTextField`.
     /// - Parameters:
@@ -27,7 +26,6 @@ public struct VitaminTextField: View {
     ///   - icon: Icon configuration to display a custom icon and to handle an action on the icon. Default: `nil`.
     ///   - characterLimit: Character limit configuration to add a maximum number of characters. Default: `nil`.
     /// - Returns: A `View` with the Vitamin style applied.
-    /// - Note: The active state is not working when the secure option is activated.
     public init(
         style: VitaminTextFieldStyle = .filled,
         text: TextConfiguration,
@@ -43,15 +41,10 @@ public struct VitaminTextField: View {
         self.characterLimitConfiguration = characterLimit
         self._state = state
         self._text = text.text
-        self._isSecure = text.isSecure
     }
 
     public var body: some View {
-        if isSecure {
-            makeSecureField()
-        } else {
-            makeTextField()
-        }
+        makeTextField()
     }
 
     private func makeTextField() -> some View {
@@ -64,16 +57,6 @@ public struct VitaminTextField: View {
                                state: $state,
                                icon: iconConfiguration,
                                characterLimit: characterLimitConfiguration)
-    }
-
-    private func makeSecureField() -> some View {
-        SecureField(placeholder, text: $text)
-            .vitaminTextFieldStyle(style: style,
-                                   label: state.rawValue.capitalized,
-                                   helperText: helperText,
-                                   state: $state,
-                                   icon: iconConfiguration,
-                                   characterLimit: characterLimitConfiguration)
     }
 }
 

@@ -12,12 +12,10 @@ import Combine
 @available(iOS 13, *)
 struct TextFieldsView: View {
     @State private var style: VitaminTextFieldStyle = .outlined
-    // TODO: Fix crash
-    @State private var secureMode = false
     @State private var showIcon = false
     @State private var characterLimit: Int = 0
     @State private var characterLimitText: String = ""
-    @State private var icon = Image(systemName: "eye.fill")
+    @State private var icon = Image(systemName: "heart")
 
     var body: some View {
         VStack {
@@ -48,7 +46,6 @@ extension TextFieldsView {
                 Text("Filled").tag(VitaminTextFieldStyle.filled)
             }
             .pickerStyle(.segmented)
-            Toggle("Secure mode", isOn: $secureMode)
             Toggle("Show icon", isOn: $showIcon)
             Stepper(makeCharacterLimitText(),
                     value: $characterLimit,
@@ -75,11 +72,9 @@ extension TextFieldsView {
     ) -> some View {
         VitaminTextFieldView(style: style,
                              state: state,
-                             isSecure: $secureMode,
                              showIcon: showIcon,
                              characterLimit: characterLimit,
-                             // TODO: Fix icon update
-                             icon: Image(systemName: "eye.\(secureMode ? "" : "slash.")fill"),
+                             icon: icon,
                              isDynamic: isDynamic)
     }
 }
