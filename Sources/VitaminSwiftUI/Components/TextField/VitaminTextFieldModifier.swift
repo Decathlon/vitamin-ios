@@ -11,17 +11,27 @@ import Combine
 @available(iOS 13, *)
 /// Modifier to apply the Vitamin TextField UI to a TextField.
 public struct VitaminTextFieldModifier: ViewModifier {
+    /// Style to use for the `VitaminTextField`.
     private var style: VitaminTextFieldStyle
+    /// Text to display above the text field.
     private var label: String
+    /// Text to display below the text field.
     private var helperText: String?
+    /// Configuration object to setup a custom icon with an action.
     private var iconConfiguration: VitaminTextField.IconConfiguration?
+    /// Configuration object to setup a character limit.
     private var characterLimitConfiguration: VitaminTextField.CharacterLimitConfiguration?
+    /// State to use for the `VitaminTextField`.
     @Binding private var state: VitaminTextFieldState
-    @Binding private var text: String
 
     // Internal states
+    /// Represent the text inside the text field if we want to have a charater limit.
+    @Binding private var text: String
+    /// Text to display the character count next to the helper text if we want to have a charater limit.
     @State private var counterText: String?
+    /// Value for the icon size. Thansk to `@ScaledValue` the value auto scale with Dynamic Type value.
     @ScaledValue private var iconSize: CGFloat = 20
+    /// Default padding to use.
     private var commonPadding: CGFloat {
         if style == .outlined {
             return 8
@@ -29,6 +39,7 @@ public struct VitaminTextFieldModifier: ViewModifier {
             return 6
         }
     }
+    /// Leading padding for the text field.
     private var textLeadingPadding: CGFloat {
         if style == .outlined {
             return 12
@@ -36,6 +47,7 @@ public struct VitaminTextFieldModifier: ViewModifier {
             return 0
         }
     }
+    /// Trailing padding for the text field.
     private var textTrailingPadding: CGFloat {
         commonPadding * 2 + iconSize
     }
@@ -65,6 +77,7 @@ public struct VitaminTextFieldModifier: ViewModifier {
         self._text = characterLimitConfiguration?.text ?? Binding.constant("")
     }
 
+    /// Main function for `SwiftUI` modifier.
     public func body(content: Content) -> some View {
         VStack(alignment: .leading, spacing: 0) {
             makeLabelView()
@@ -77,6 +90,8 @@ public struct VitaminTextFieldModifier: ViewModifier {
         .disabled(state == .disabled)
     }
 
+    /// Create the label view for the text on the top of the textfield.
+    /// - Returns: The label view.
     private func makeLabelView() -> some View {
         Text(label)
             .vitaminTextStyle(.callout)
@@ -84,6 +99,8 @@ public struct VitaminTextFieldModifier: ViewModifier {
     }
 
     @ViewBuilder
+    /// Create the icon view to display on the right of the text field if needed.
+    /// - Returns: The icon view.
     private func makeIconView() -> some View {
         if let icon = state.icon?.swiftUIImage ?? iconConfiguration?.icon {
             makeImageView(image: icon,
@@ -91,6 +108,11 @@ public struct VitaminTextFieldModifier: ViewModifier {
         }
     }
 
+    /// Create an image view with a button and aligned to the right.
+    /// - Parameters:
+    ///   - image: The image that we want to use.
+    ///   - foregroundColor: The color to apply to the image.
+    /// - Returns: The image view.
     private func makeImageView(
         image: Image,
         foregroundColor: Color
@@ -112,6 +134,9 @@ public struct VitaminTextFieldModifier: ViewModifier {
         }
     }
 
+    /// Add all the needed modifiers to the provided view.
+    /// - Parameter content: A `TextField` or `SecureField` that we want to display as `VitaminTextField`.
+    /// - Returns: The fian lview.
     private func makeTextFieldView(_ content: Content) -> some View {
         content
             .font(VitaminTextStyle.body.scaledFont.swiftUIFont)
@@ -128,6 +153,8 @@ public struct VitaminTextFieldModifier: ViewModifier {
     }
 
     @ViewBuilder
+    /// Returns the overlay to use depending of the current style.
+    /// - Returns: The view to use as overlay for the `VitaminTestFieldStyle`.
     private func makeStyleOverlay() -> some View {
         switch style {
         case .filled:
@@ -137,6 +164,8 @@ public struct VitaminTextFieldModifier: ViewModifier {
         }
     }
 
+    /// Create the overlay for the filled style.
+    /// - Returns: The view to use as overlay.
     private func makeFilledStyleOverlay() -> some View {
         VStack {
             Spacer()
@@ -146,12 +175,16 @@ public struct VitaminTextFieldModifier: ViewModifier {
         }
     }
 
+    /// Create the overlay for the outlined style.
+    /// - Returns: The view to use as overlay.
     private func makeOutlineStyleOverlay() -> some View {
         RoundedRectangle(cornerRadius: 4)
             .strokeBorder(state.borderColor.swiftUIColor,
                           lineWidth: state.borderWidth)
     }
 
+    /// Create the view below the text field, with the helper text and the characters counter.
+    /// - Returns: The view with the two texts.
     private func makeUnderTextView() -> some View {
         HStack {
             if let text = helperText {
@@ -167,6 +200,10 @@ public struct VitaminTextFieldModifier: ViewModifier {
         .foregroundColor(state.helperAndCounterColor.swiftUIColor)
     }
 
+    /// Returns the characters counter text string.
+    /// - Parameter text: The current text.
+    /// - Returns: A string with the current number of characters and the maximum number of characters.
+    /// - Note: Returns nil if there is not character limit.
     private func makeCharactersCounterText(_ text: String) -> String? {
         guard let characterLimit = characterLimitConfiguration?.limit else {
             return nil
@@ -175,6 +212,9 @@ public struct VitaminTextFieldModifier: ViewModifier {
         return "\(text.count)/\(characterLimit)"
     }
 
+    /// Truncate the text with the configured character limit configuration object.
+    /// - Parameter text: The current text inside the text field.
+    /// - Returns: The truncated string.
     private func truncateIfLimit(text: String) -> String {
         guard let characterLimit = characterLimitConfiguration?.limit else {
             return text

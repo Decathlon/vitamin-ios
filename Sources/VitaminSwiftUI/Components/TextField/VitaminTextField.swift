@@ -9,13 +9,21 @@ import VitaminCore
 
 @available(iOS 13, *)
 public struct VitaminTextField: View {
+    /// Style to use for the `VitaminTextField`.
     private var style: VitaminTextFieldStyle
+    /// Text to display above the text field.
     private var label: String
+    /// Text to display inside the text field.
     private var placeholder: String
+    /// Text to display below the text field.
     private var helperText: String?
+    /// Configuration object to setup a custom icon with an action.
     private var iconConfiguration: VitaminTextField.IconConfiguration?
+    /// Configuration object to setup a character limit.
     private var characterLimitConfiguration: VitaminTextField.CharacterLimitConfiguration?
+    /// State to use for the `VitaminTextField`.
     @Binding private var state: VitaminTextFieldState
+    /// Text inside the text field.
     @Binding private var text: String
 
     /// Initialize a `VitaminTextField`.
@@ -43,10 +51,13 @@ public struct VitaminTextField: View {
         self._text = text.text
     }
 
+    /// Main variable for `SwiftUI` view.
     public var body: some View {
         makeTextField()
     }
 
+    /// Create a `TextField` with the `VitaminTextFieldStyle`.
+    /// - Returns: The `TextField` with the `VitaminTextFieldStyle`.
     private func makeTextField() -> some View {
         TextField(placeholder, text: $text) { editing in
             state = VitaminTextField.updateActiveState(state: state, editing: editing)

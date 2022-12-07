@@ -16,10 +16,10 @@ extension VitaminTextField {
 
         /// Text configuration for text related content.
         /// - Parameters:
-        ///   - label: Text to display above the `TextField`.
-        ///   - placeholder: Text to display inside the `TextField`.
-        ///   - helperText: Text to display below the `TextField`. Optional.
-        ///   - text: Text binding to use for the `TextField`.
+        ///   - label: Text to display above the text field.
+        ///   - placeholder: Text to display inside the text field.
+        ///   - helperText: Text to display below the text field. Optional.
+        ///   - text: Text binding to use for the text field.
         public init(
             label: String,
             placeholder: String,
