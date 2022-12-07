@@ -12,7 +12,7 @@ import Vitamin
 // a blue rounded rectangular border and a heart shaped icon on the right, but no automatic
 // validation, and no tag
 let textField = VitaminTextField(
-	style: .outline,
+	style: .outlined,
 	state: VitaminTextField.StateConfiguration(initialState: .active),
 	texts: VitaminTextField.TextConfiguration(
 		labelText: "Example Field 1",
@@ -66,16 +66,23 @@ You can also provide the following properties:
 
 ### Styles and state
 
-`VitaminTextField` handles 2 styles: `.filled`, `.outline`
+`VitaminTextField` handles 2 styles: 
+- `.filled`
+- `.outlined`
 
 This style can be provided and changed directly on the `VitaminTextField`.
 
 If you instantiate your `VitaminTextField` programmatically, it can be provided in the `init` method.
-The default style is `.outline`.
+The default style is `.outlined`.
 
-`VitaminTextField` handles 5 states: `.standard`, `.disabled`, `.error`,`'.success`, `.active`
+`VitaminTextField` handles 5 states: 
+- `.standard`
+- `.active`
+- `.error`
+- `.success`
+- `.disabled`
 
-You can manually change the `state` property, or you can set the `activeOnEditing` boolean property to `true` to automatically switch the state to `.active` when the field gets the focus (onmy if its state is not `.error`or `.success`).
+You can manually change the `state` property, or you can set the `activeOnEditing` boolean property to `true` to automatically switch the state to `.active` when the field gets the focus (only if its state is not `.error` or `.success`).
 
 You can also decide if your `VitamintextField` should or not have leading and trailing padding, by modifying the boolean `horizontalPadding` property. Its default value is set to `true`, meaning leading and trailing padding are present.
 
