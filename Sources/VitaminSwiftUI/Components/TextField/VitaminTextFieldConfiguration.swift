@@ -23,7 +23,7 @@ extension VitaminTextField {
         public init(
             label: String,
             placeholder: String,
-            helperText: String?,
+            helperText: String? = nil,
             text: Binding<String>
         ) {
             self.label = label

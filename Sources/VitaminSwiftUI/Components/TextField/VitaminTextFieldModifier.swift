@@ -244,7 +244,7 @@ extension TextField {
     public func vitaminTextFieldStyle(
         style: VitaminTextFieldStyle = .filled,
         label: String,
-        helperText: String?,
+        helperText: String? = nil,
         state: Binding<VitaminTextFieldState>,
         icon: VitaminTextField.IconConfiguration? = nil,
         characterLimit: VitaminTextField.CharacterLimitConfiguration? = nil
@@ -272,7 +272,7 @@ extension SecureField {
     public func vitaminTextFieldStyle(
         style: VitaminTextFieldStyle = .filled,
         label: String,
-        helperText: String?,
+        helperText: String? = nil,
         state: Binding<VitaminTextFieldState>,
         icon: VitaminTextField.IconConfiguration? = nil,
         characterLimit: VitaminTextField.CharacterLimitConfiguration? = nil
