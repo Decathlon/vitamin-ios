@@ -13,12 +13,13 @@ import Combine
 struct VitaminTextFieldView: View {
     @State private var text = ""
     @State private var selected = false
-    var style: VitaminTextFieldStyle
     @State var state: VitaminTextFieldState = .standard
     @State var helperText = "Helper text"
+    @State var icon = Vitamix.Line.Health.heart.swiftUIImage
+    
+    var style: VitaminTextFieldStyle
     var showIcon = false
     var characterLimit: Int = 0
-    @State var icon = Vitamix.Line.Health.heart.swiftUIImage
     var isDynamic = false
 
     init(

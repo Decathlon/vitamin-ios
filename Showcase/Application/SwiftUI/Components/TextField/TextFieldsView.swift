@@ -14,7 +14,6 @@ struct TextFieldsView: View {
     @State private var style: VitaminTextFieldStyle = .outlined
     @State private var showIcon = false
     @State private var characterLimit: Int = 0
-    @State private var characterLimitText: String = ""
     @State private var icon = Image(systemName: "heart")
 
     var body: some View {

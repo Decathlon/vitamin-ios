@@ -58,15 +58,15 @@ public struct VitaminTextFieldModifier: ViewModifier {
     ///   - label: Text to display above the `TextField`.
     ///   - helperText: Text to display below the `TextField`. Optional.
     ///   - state: State to apply.
-    ///   - icon: Icon configuration to display a custom icon and to handle an action on the icon.
-    ///   - characterLimit: Character limit configuration to add a maximum number of characters.
+    ///   - icon: Icon configuration to display a custom icon and to handle an action on the icon. Optional.
+    ///   - characterLimit: Character limit configuration to add a maximum number of characters. Optional.
     public init(
-        style: VitaminTextFieldStyle,
+        style: VitaminTextFieldStyle = .filled,
         label: String,
-        helperText: String?,
+        helperText: String? = nil,
         state: Binding<VitaminTextFieldState>,
-        icon: VitaminTextField.IconConfiguration?,
-        characterLimit: VitaminTextField.CharacterLimitConfiguration?
+        icon: VitaminTextField.IconConfiguration? = nil,
+        characterLimit: VitaminTextField.CharacterLimitConfiguration? = nil
     ) {
         self.style = style
         self.label = label

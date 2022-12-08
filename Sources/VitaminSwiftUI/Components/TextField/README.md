@@ -3,7 +3,7 @@
 
 For SwiftUI, Vitamin provides two possibilities to have a `VitaminTextField`.
 - A `VitaminTextField` struct which provided an all-in-one component ready to use.
-- A `.vitaminTextFieldStyle([...])` modifier which has more customizable possibilities like applying the `VitaminTextField` to a `TextField` or a `SecureField`.
+- A `vitaminTextFieldStyle` modifier which has more customizable possibilities like applying the `VitaminTextField` to a `TextField` or a `SecureField`.
 
 ```swift
 import SwiftUI
@@ -16,7 +16,7 @@ struct ExampleView: View {
 
     var body: some View {
         // VitaminTextField all-in-one component
-        VitaminTextField(style: .outlined,
+        VitaminTextField(style: .filled,
                          text: VitaminTextField.TextConfiguration(label: "Firstname",
                                                                   placeholder: "Ex: John",
 -                                                                 text: $text),
@@ -24,7 +24,7 @@ struct ExampleView: View {
         
         // VitaminTextField modifier
         TextField("Ex: John", text: $text)
-            .vitaminTextFieldStyle(style: .outlined,
+            .vitaminTextFieldStyle(style: .filled,
                                    label: "Firstname",
                                    state: $state)
     }
@@ -35,9 +35,37 @@ struct ExampleView: View {
 
 #### VitaminTextField component
 
-// TODO
+The `VitaminTextField` component can be use with the following parameters:
+- `style` to represent the style to use. Optional. Default value: `.filled`.
+- `text` is a `TextConfiguration` object to setup all texts in the component. See `TextConfiguration` below. Mandatory.
+- `state` is a binding variable to represent the current state. Mandatory.
+- `icon` is a `IconConfiguration` object to setup the icon in the component. See `IconConfiguration` below. Optional. Default value: `nil`.
+- `characterLimit`:  is a `CharacterLimitConfiguration` object to setup the character limit in the component. See `CharacterLimitConfiguration` below. Optional. Default value: `nil`.
 
 #### VitaminTextFieldStyle modifier
+
+The `VitaminTextFieldStyle` modifier can be use on `TextField` and `SecureField` with the following parameters:
+- `style` to represent the style to use. Optional. Default value: `.filled`.
+- `label` to represent the text above the `TextField`. Mandatory.
+- `helperText` to represent the text below the `TextField`. Optional. Default value: `nil`.
+- `state` is a binding variable to represent the current state. Mandatory.
+- `icon` is a `IconConfiguration` object to setup the icon in the component. See `IconConfiguration` below. Optional. Default value: `nil`.
+- `characterLimit`:  is a `CharacterLimitConfiguration` object to setup the character limit in the component. See `CharacterLimitConfiguration` below. Optional. Default value: `nil`.
+
+#### TextConfiguration
+
+The `TextConfiguration` object is use for text related content on the `VitaminTextField` component.
+It can be use with the following parameters:
+- `label` to represent the text above the `TextField`. Mandatory.
+- `placeholder` to represent the text inside the `TextField`. Mandatory.
+- `helperText` to represent the text below the `TextField`. Optional. Default value: `nil`.
+- `text` is a binding variable to represent the text taped by the user inside the `TextField`.
+
+#### IconConfiguration
+
+// TODO
+
+#### CharacterLimitConfiguration
 
 // TODO
 
@@ -65,7 +93,7 @@ However, the VitaminTextFieldStyle modifier will not do this by default. If you 
 TextField("Ex: John", text: $text) { editing in
     state = VitaminTextField.updateActiveState(state: state, editing: editing)
 }
-.vitaminTextFieldStyle(style: .outlined,
+.vitaminTextFieldStyle(style: .filled,
                        label: "Firstname",
                        state: $state)
 ```
@@ -78,7 +106,7 @@ If you are on iOS 13, use `onReceive(_:perform:)` ([Apple Documentation](https:/
 
 ```swift
 // iOS 14 and above
-VitaminTextField(style: .outlined,
+VitaminTextField(style: .filled,
                  text: VitaminTextField.TextConfiguration(label: "Firstname",
                                                           placeholder: "Ex: John",
 -                                                         text: $text),
@@ -91,7 +119,7 @@ VitaminTextField(style: .outlined,
     
 
 // iOS 13
-VitaminTextField(style: .outlined,
+VitaminTextField(style: .filled,
                  text: VitaminTextField.TextConfiguration(label: "Firstname",
                                                           placeholder: "Ex: John",
 -                                                         text: $text),
@@ -103,4 +131,4 @@ VitaminTextField(style: .outlined,
     }
 ```
 
-Check the showcase if you want to see the full implementation.
+Check the showcase if you want to see a full implementation.
