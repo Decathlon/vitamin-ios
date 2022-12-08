@@ -13,19 +13,22 @@ import Combine
 struct VitaminTextFieldView: View {
     @State private var text = ""
     @State private var selected = false
-    @State var state: VitaminTextFieldState = .standard
-    @State var helperText = "Helper text"
+    @State var state: VitaminTextFieldState
+    @State var helperText: String
     @State var icon = Vitamix.Line.Health.heart.swiftUIImage
 
     var style: VitaminTextFieldStyle
     var showIcon = false
+    var addHelperText = false
     var characterLimit: Int = 0
     var isDynamic = false
+    var defaultHelperText = "Helper text"
 
     init(
         style: VitaminTextFieldStyle,
         state: VitaminTextFieldState,
         showIcon: Bool = false,
+        addHelperText: Bool = false,
         characterLimit: Int,
         icon: Image,
         isDynamic: Bool = false
@@ -33,8 +36,9 @@ struct VitaminTextFieldView: View {
         self.text = ""
         self.style = style
         self.state = state
-        self.helperText = "Helper text"
+        self.helperText = defaultHelperText
         self.showIcon = showIcon
+        self.addHelperText = addHelperText
         self.characterLimit = characterLimit
         self.icon = icon
         self.isDynamic = isDynamic
@@ -55,7 +59,7 @@ extension VitaminTextFieldView {
     private func makeTextConfiguration() -> VitaminTextField.TextConfiguration {
         VitaminTextField.TextConfiguration(label: state.rawValue.capitalized,
                                            placeholder: "Placeholder",
-                                           helperText: helperText,
+                                           helperText: addHelperText ? helperText : nil,
                                            text: $text)
     }
 
@@ -94,7 +98,7 @@ extension VitaminTextFieldView {
             }
         } else {
             state = .active
-            helperText = "Helper text"
+            helperText = defaultHelperText
         }
     }
 

@@ -13,6 +13,7 @@ import Combine
 struct TextFieldsView: View {
     @State private var style: VitaminTextFieldStyle = .outlined
     @State private var showIcon = false
+    @State private var addHelperText = false
     @State private var characterLimit: Int = 0
     @State private var icon = Image(systemName: "heart")
 
@@ -20,15 +21,8 @@ struct TextFieldsView: View {
         VStack {
             makeConfigurationView()
             Form {
-                makeSection("Dynamic") {
-                    makeVitaminTextField(state: .standard, isDynamic: true)
-                }
-                makeSection("States") {
-                    ForEach(TextFieldModel.textFieldStates) { state in
-                        makeVitaminTextField(state: state.state)
-                    }
-                }
-                .disabled(true)
+                makeDynamicSection()
+                makeStatesSection()
             }
         }
         .frame(maxWidth: .infinity)
@@ -40,17 +34,23 @@ struct TextFieldsView: View {
 extension TextFieldsView {
     private func makeConfigurationView() -> some View {
         VStack {
-            Picker("Style", selection: $style) {
-                Text("Outlined").tag(VitaminTextFieldStyle.outlined)
-                Text("Filled").tag(VitaminTextFieldStyle.filled)
-            }
-            .pickerStyle(.segmented)
+            makeStylePicker()
             Toggle("Show icon", isOn: $showIcon)
+            Toggle("Add helper text", isOn: $addHelperText)
             Stepper(makeCharacterLimitText(),
                     value: $characterLimit,
                     in: 0...30)
         }
         .padding(.horizontal, 10)
+    }
+
+    private func makeStylePicker() -> some View {
+        Picker("Style", selection: $style) {
+            ForEach(TextFieldModel.styles) { style in
+                Text(style.style.rawValue.capitalized).tag(style.style)
+            }
+        }
+        .pickerStyle(.segmented)
     }
 
     private func makeCharacterLimitText() -> String {
@@ -65,6 +65,21 @@ extension TextFieldsView {
         return "\(characterLimit) characters maximum"
     }
 
+    private func makeDynamicSection() -> some View {
+        makeSection("Dynamic") {
+            makeVitaminTextField(state: .standard, isDynamic: true)
+        }
+    }
+
+    private func makeStatesSection() -> some View {
+        makeSection("States") {
+            ForEach(TextFieldModel.states) { state in
+                makeVitaminTextField(state: state.state)
+            }
+        }
+        .disabled(true)
+    }
+
     private func makeVitaminTextField(
         state: VitaminTextFieldState,
         isDynamic: Bool = false
@@ -72,6 +87,7 @@ extension TextFieldsView {
         VitaminTextFieldView(style: style,
                              state: state,
                              showIcon: showIcon,
+                             addHelperText: addHelperText,
                              characterLimit: characterLimit,
                              icon: icon,
                              isDynamic: isDynamic)

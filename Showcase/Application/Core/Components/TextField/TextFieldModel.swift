@@ -13,11 +13,23 @@ enum TextFieldModel {
         let state: VitaminTextFieldState
     }
 
-    static let textFieldStates = [
+    struct TextFieldStyle: Identifiable {
+        var id: String {
+            style.rawValue
+        }
+        let style: VitaminTextFieldStyle
+    }
+
+    static let states = [
         TextFieldModel.TextFieldState(state: .standard),
         TextFieldModel.TextFieldState(state: .active),
         TextFieldModel.TextFieldState(state: .error),
         TextFieldModel.TextFieldState(state: .success),
         TextFieldModel.TextFieldState(state: .disabled)
+    ]
+
+    static let styles = [
+        TextFieldModel.TextFieldStyle(style: .outlined),
+        TextFieldModel.TextFieldStyle(style: .filled)
     ]
 }
