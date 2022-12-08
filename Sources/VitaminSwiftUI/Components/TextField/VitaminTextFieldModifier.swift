@@ -54,14 +54,14 @@ public struct VitaminTextFieldModifier: ViewModifier {
 
     /// Modifier to apply the Vitamin TextField style to a `TextField`.
     /// - Parameters:
-    ///   - style: The `VitaminTextFieldStyle` that we want to use for the text field.
+    ///   - style: The `VitaminTextFieldStyle` that we want to use for the text field. Default: `.outlined`.
     ///   - label: Text to display above the `TextField`.
-    ///   - helperText: Text to display below the `TextField`. Optional.
+    ///   - helperText: Text to display below the `TextField`. Optional. Default: `nil`.
     ///   - state: State to apply.
-    ///   - icon: Icon configuration to display a custom icon and to handle an action on the icon. Optional.
-    ///   - characterLimit: Character limit configuration to add a maximum number of characters. Optional.
+    ///   - icon: Icon configuration to display a custom icon and to handle an action on the icon. Optional. Default: `nil`.
+    ///   - characterLimit: Character limit configuration to add a maximum number of characters. Optional. Default: `nil`.
     public init(
-        style: VitaminTextFieldStyle = .filled,
+        style: VitaminTextFieldStyle = .outlined,
         label: String,
         helperText: String? = nil,
         state: Binding<VitaminTextFieldState>,
@@ -234,15 +234,15 @@ public struct VitaminTextFieldModifier: ViewModifier {
 extension TextField {
     /// Apply the Vitamin TextField style to a `TextField`.
     /// - Parameters:
-    ///   - style: The `VitaminTextFieldStyle` that we want to use for the text field. Default: .filled.
+    ///   - style: The `VitaminTextFieldStyle` that we want to use for the text field. Default: `.outlined`.
     ///   - label: Text to display above the `TextField`.
-    ///   - helperText: Text to display below the `TextField`. Optional.
+    ///   - helperText: Text to display below the `TextField`. Optional. Default: `nil`.
     ///   - state: State to apply.
-    ///   - icon: Icon configuration to display a custom icon and to handle an action on the icon.
-    ///   - characterLimit: Character limit configuration to add a maximum number of characters.
+    ///   - icon: Icon configuration to display a custom icon and to handle an action on the icon. Default: `nil`.
+    ///   - characterLimit: Character limit configuration to add a maximum number of characters. Default: `nil`.
     /// - Returns: A `View` with the Vitamin style applied.
     public func vitaminTextFieldStyle(
-        style: VitaminTextFieldStyle = .filled,
+        style: VitaminTextFieldStyle = .outlined,
         label: String,
         helperText: String? = nil,
         state: Binding<VitaminTextFieldState>,
@@ -262,15 +262,15 @@ extension TextField {
 extension SecureField {
     /// Apply the Vitamin TextField style to a `SecureField`.
     /// - Parameters:
-    ///   - style: The `VitaminTextFieldStyle` that we want to use for the text field. Default: .filled.
+    ///   - style: The `VitaminTextFieldStyle` that we want to use for the text field. Default: `.outlined`.
     ///   - label: Text to display above the `TextField`.
-    ///   - helperText: Text to display below the `TextField`. Optional.
+    ///   - helperText: Text to display below the `TextField`. Optional. Default: `nil`.
     ///   - state: State to apply.
-    ///   - icon: Icon configuration to display a custom icon and to handle an action on the icon.
-    ///   - characterLimit: Character limit configuration to add a maximum number of characters.
+    ///   - icon: Icon configuration to display a custom icon and to handle an action on the icon. Default: `nil`.
+    ///   - characterLimit: Character limit configuration to add a maximum number of characters. Default: `nil`.
     /// - Returns: A `View` with the Vitamin style applied.
     public func vitaminTextFieldStyle(
-        style: VitaminTextFieldStyle = .filled,
+        style: VitaminTextFieldStyle = .outlined,
         label: String,
         helperText: String? = nil,
         state: Binding<VitaminTextFieldState>,

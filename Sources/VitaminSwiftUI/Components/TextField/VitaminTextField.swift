@@ -28,14 +28,14 @@ public struct VitaminTextField: View {
 
     /// Initialize a `VitaminTextField`.
     /// - Parameters:
-    ///   - style: The `VitaminTextFieldStyle` that we want to use for the text field.
+    ///   - style: The `VitaminTextFieldStyle` that we want to use for the text field. Optional. Default: `.outlined`.
     ///   - text: Text configuration for text related content.
     ///   - state: State to apply.
-    ///   - icon: Icon configuration to display a custom icon and to handle an action on the icon. Default: `nil`.
-    ///   - characterLimit: Character limit configuration to add a maximum number of characters. Default: `nil`.
+    ///   - icon: Icon configuration to display a custom icon and to handle an action on the icon. Optional. Default: `nil`.
+    ///   - characterLimit: Character limit configuration to add a maximum number of characters. Optional. Default: `nil`.
     /// - Returns: A `View` with the Vitamin style applied.
     public init(
-        style: VitaminTextFieldStyle = .filled,
+        style: VitaminTextFieldStyle = .outlined,
         text: TextConfiguration,
         state: Binding<VitaminTextFieldState>,
         icon: VitaminTextField.IconConfiguration? = nil,
@@ -97,7 +97,7 @@ extension VitaminTextField {
 @available(iOS 13, *)
 struct VitaminTextField_Previews: PreviewProvider {
     static var previews: some View {
-        VitaminTextField(style: .filled,
+        VitaminTextField(style: .outlined,
                          text: .init(label: "Montant",
                                      placeholder: "Insérer un montant",
                                      helperText: "Veuillez insérer un montant exact",
