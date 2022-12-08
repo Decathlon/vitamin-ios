@@ -136,7 +136,7 @@ public struct VitaminTextFieldModifier: ViewModifier {
 
     /// Add all the needed modifiers to the provided view.
     /// - Parameter content: A `TextField` or `SecureField` that we want to display as `VitaminTextField`.
-    /// - Returns: The fian lview.
+    /// - Returns: The text field with the `VitaminTextFieldStyle`.
     private func makeTextFieldView(_ content: Content) -> some View {
         content
             .font(VitaminTextStyle.body.scaledFont.swiftUIFont)
