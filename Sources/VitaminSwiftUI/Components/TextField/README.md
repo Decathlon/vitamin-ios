@@ -50,7 +50,7 @@ The `VitaminTextFieldStyle` modifier can be use on `TextField` and `SecureField`
 - `helperText` to represent the text below the `TextField`. Optional. Default value: `nil`.  
 - `state` is a binding variable to represent the current state. Mandatory.  
 - `icon` is a `IconConfiguration` object to setup the icon in the component. See `IconConfiguration` below. Optional. Default value: `nil`.  
-- `characterLimit`:  is a `CharacterLimitConfiguration` object to setup the character limit in the component. See [`CharacterLimitConfiguration`][CharacterLimitConfiguration] below. Optional. Default value: `nil`.  
+- `characterLimit`:  is a `CharacterLimitConfiguration` object to setup the character limit in the component. See `CharacterLimitConfiguration` below. Optional. Default value: `nil`.  
 
 #### TextConfiguration
 
