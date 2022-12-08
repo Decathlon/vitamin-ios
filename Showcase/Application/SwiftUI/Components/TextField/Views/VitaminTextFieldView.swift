@@ -16,7 +16,7 @@ struct VitaminTextFieldView: View {
     @State var state: VitaminTextFieldState = .standard
     @State var helperText = "Helper text"
     @State var icon = Vitamix.Line.Health.heart.swiftUIImage
-    
+
     var style: VitaminTextFieldStyle
     var showIcon = false
     var characterLimit: Int = 0
