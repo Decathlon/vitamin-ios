@@ -5,6 +5,7 @@
 
 import UIKit
 
+@available(iOS 11, *)
 @propertyWrapper
 /// Update a value to fit the font scale.
 public struct ScaledValue {
