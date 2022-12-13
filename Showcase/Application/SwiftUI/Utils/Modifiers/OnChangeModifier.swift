@@ -20,7 +20,7 @@ extension View {
     func compatibilityOnChange<V: Equatable>(
         of value: V,
         perform action: @escaping (V) -> Void
-    ) -> some View where V: Equatable {
+    ) -> some View {
         if #available(iOS 14.0, *) {
             self.onChange(of: value, perform: action)
         } else {
