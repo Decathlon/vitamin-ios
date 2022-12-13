@@ -29,7 +29,7 @@ public struct VitaminTextFieldModifier: ViewModifier {
     @Binding private var text: String
     /// Text to display the character count next to the helper text if we want to have a charater limit.
     @State private var counterText: String?
-    /// Value for the icon size. Thansk to `@ScaledValue` the value auto scale with Dynamic Type value.
+    /// Value for the icon size. Thanks to `@ScaledValue` the value auto scale with Dynamic Type value.
     @ScaledValue private var iconSize: CGFloat = 20
     /// Default padding to use.
     private var commonPadding: CGFloat {
