@@ -47,7 +47,7 @@ let textField = VitaminTextField(
 You can provide different texts:  
 - a mandatory `labelText` displayed above the text field  
 - an optional `helperText` displayed below the text field  
-- an optional `placeholderText` displayed in the text field when no value si present  
+- an optional `placeholderText` displayed in the text field when no value is present  
 - an optional `fieldValue` that will be the default value of the text field  
 - a `isSecureTextEntry` boolean value to indicate if the text of the field should be replaced by dots or not (default value is false)  
 

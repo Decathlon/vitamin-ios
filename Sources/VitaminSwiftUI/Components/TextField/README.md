@@ -2,7 +2,7 @@
 [Reference](https://www.decathlon.design/726f8c765/p/31121d-text-input/b/68557b)
 
 For SwiftUI, Vitamin provides two possibilities to have a `VitaminTextField`.  
-- A `VitaminTextField` struct which provided an all-in-one component ready to use.  
+- A `VitaminTextField` struct which provides an all-in-one component ready to use.  
 - A `vitaminTextFieldStyle` modifier which has more customizable possibilities like applying the `VitaminTextField` to a `TextField` or a `SecureField`.  
 
 ```swift

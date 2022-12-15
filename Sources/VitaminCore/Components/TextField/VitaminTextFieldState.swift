@@ -90,7 +90,7 @@ extension VitaminTextFieldState {
         }
     }
 
-    /// The default icon diaplyed in a `VitaminTextField` for a specific state.
+    /// The default icon displayed in a `VitaminTextField` for a specific state.
     public var icon: UIImage? {
         switch self {
         case .error:
