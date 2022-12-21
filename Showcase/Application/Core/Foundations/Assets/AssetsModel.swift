@@ -297,7 +297,10 @@ enum AssetsModel {
             VitaminAssets.Payment.visaElectron,
             VitaminAssets.Payment.webMoney,
             VitaminAssets.Payment.westernUnion,
-            VitaminAssets.Payment.iDeal
+            VitaminAssets.Payment.iDeal,
+            VitaminAssets.Payment.wallet,
+            VitaminAssets.Payment.giftCardPayment,
+            VitaminAssets.Payment.chequePayment
         ]),
         AssetsModel.Section(name: "Placeholders", items: [
             VitaminAssets.Placeholder.landscape
