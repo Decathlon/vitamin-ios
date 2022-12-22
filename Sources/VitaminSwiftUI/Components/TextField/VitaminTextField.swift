@@ -63,7 +63,7 @@ public struct VitaminTextField: View {
             state = VitaminTextField.updateActiveState(state: state, editing: editing)
         }
         .vitaminTextFieldStyle(style: style,
-                               label: state.rawValue.capitalized,
+                               label: label,
                                helperText: helperText,
                                state: $state,
                                icon: iconConfiguration,
