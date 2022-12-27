@@ -72,6 +72,7 @@ public class VitaminButton: UIButton {
     public override func setTitle(_ title: String?, for state: UIControl.State) {
         super.setTitle(title, for: state)
         applyNewTextStyle()
+        setTitleColor(style.foregroundColor, for: state)
     }
 }
 
