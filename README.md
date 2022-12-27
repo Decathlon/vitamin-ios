@@ -88,7 +88,7 @@ The following components are available :
 |Progressbar | Different progressbar styles from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Progressbar#readme)|
 |Switch | Swicth from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Switch#readme)|
 |Tag | Tag from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Tag#readme)|
-|TextField | Different text fields styles from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/TextField#readme)|
+|TextField | Different text fields styles from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/TextField#readme)  [SwiftUI](./Sources/VitaminSwiftUI/Components/TextField#readme)||
 
 ## Special thanks
 

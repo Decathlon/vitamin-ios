@@ -40,7 +40,7 @@ final class TextFieldViewController: UITableViewController {
                 liveValidationTimeInterval: 0.5,
                 endEditingValidation: nil),
             stateConfiguration: VitaminTextField.StateConfiguration(initialState: .standard),
-            style: VitaminTextField.Style.outline,
+            style: VitaminTextFieldStyle.outlined,
             maxLength: nil,
             icon: nil
         ),
@@ -56,7 +56,7 @@ final class TextFieldViewController: UITableViewController {
                 endEditingValidation: nil),
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .standard),
-            style: VitaminTextField.Style.outline,
+            style: VitaminTextFieldStyle.outlined,
             maxLength: nil,
             icon: VitaminTextField.IconConfiguration(initialIcon: Vitamix.Line.Health.heart.image)
         ),
@@ -71,7 +71,7 @@ final class TextFieldViewController: UITableViewController {
                 endEditingValidation: nil),
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .disabled),
-            style: VitaminTextField.Style.outline,
+            style: VitaminTextFieldStyle.outlined,
             maxLength: 20,
             icon: nil
         ),
@@ -86,7 +86,7 @@ final class TextFieldViewController: UITableViewController {
                 endEditingValidation: nil),
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .disabled),
-            style: VitaminTextField.Style.outline,
+            style: VitaminTextFieldStyle.outlined,
             maxLength: 20,
             icon: VitaminTextField.IconConfiguration(initialIcon: Vitamix.Line.Health.heart.image)
         ),
@@ -101,7 +101,7 @@ final class TextFieldViewController: UITableViewController {
                 endEditingValidation: nil),
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .error),
-            style: VitaminTextField.Style.outline,
+            style: VitaminTextFieldStyle.outlined,
             maxLength: 20,
             icon: nil
         ),
@@ -116,7 +116,7 @@ final class TextFieldViewController: UITableViewController {
                 endEditingValidation: nil),
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .success),
-            style: VitaminTextField.Style.outline,
+            style: VitaminTextFieldStyle.outlined,
             maxLength: 20,
             icon: nil
         ),
@@ -131,7 +131,7 @@ final class TextFieldViewController: UITableViewController {
                 endEditingValidation: nil),
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .active),
-            style: VitaminTextField.Style.outline,
+            style: VitaminTextFieldStyle.outlined,
             maxLength: nil,
             icon: nil
         ),
@@ -146,7 +146,7 @@ final class TextFieldViewController: UITableViewController {
                 endEditingValidation: nil),
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .standard),
-            style: VitaminTextField.Style.filled,
+            style: VitaminTextFieldStyle.filled,
             maxLength: nil,
             icon: nil
         ),
@@ -161,7 +161,7 @@ final class TextFieldViewController: UITableViewController {
                 endEditingValidation: nil),
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .standard),
-            style: VitaminTextField.Style.filled,
+            style: VitaminTextFieldStyle.filled,
             maxLength: nil,
             icon: VitaminTextField.IconConfiguration(initialIcon: Vitamix.Line.Health.heart.image)
         ),
@@ -176,7 +176,7 @@ final class TextFieldViewController: UITableViewController {
                 endEditingValidation: nil),
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .disabled),
-            style: VitaminTextField.Style.filled,
+            style: VitaminTextFieldStyle.filled,
             maxLength: 20,
             icon: nil
         ),
@@ -191,7 +191,7 @@ final class TextFieldViewController: UITableViewController {
                 endEditingValidation: nil),
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .disabled),
-            style: VitaminTextField.Style.filled,
+            style: VitaminTextFieldStyle.filled,
             maxLength: 20,
             icon: VitaminTextField.IconConfiguration(initialIcon: Vitamix.Line.Health.heart.image)
         ),
@@ -206,7 +206,7 @@ final class TextFieldViewController: UITableViewController {
                 endEditingValidation: nil),
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .error),
-            style: VitaminTextField.Style.filled,
+            style: VitaminTextFieldStyle.filled,
             maxLength: 20,
             icon: nil
         ),
@@ -221,7 +221,7 @@ final class TextFieldViewController: UITableViewController {
                 endEditingValidation: nil),
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .success),
-            style: VitaminTextField.Style.filled,
+            style: VitaminTextFieldStyle.filled,
             maxLength: 20,
             icon: nil
         ),
@@ -236,7 +236,7 @@ final class TextFieldViewController: UITableViewController {
                 endEditingValidation: nil),
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .active),
-            style: VitaminTextField.Style.filled,
+            style: VitaminTextFieldStyle.filled,
             maxLength: nil,
             icon: nil
         )
@@ -253,7 +253,7 @@ final class TextFieldViewController: UITableViewController {
                 endEditingValidation: nil),
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .standard),
-            style: VitaminTextField.Style.outline,
+            style: VitaminTextFieldStyle.outlined,
             maxLength: nil,
             icon: nil
         ),
@@ -268,7 +268,7 @@ final class TextFieldViewController: UITableViewController {
                 endEditingValidation: atLeastThreeCharValidationExample),
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .standard),
-            style: VitaminTextField.Style.outline,
+            style: VitaminTextFieldStyle.outlined,
             maxLength: nil,
             icon: VitaminTextField.IconConfiguration(initialIcon: Vitamix.Line.Health.heart.image)
         ),
@@ -284,7 +284,7 @@ final class TextFieldViewController: UITableViewController {
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .standard,
                 activeOnEditing: true),
-            style: VitaminTextField.Style.outline,
+            style: VitaminTextFieldStyle.outlined,
             maxLength: 20,
             icon: VitaminTextField.IconConfiguration(initialIcon: Vitamix.Line.Health.heart.image)
         ),
@@ -301,7 +301,7 @@ final class TextFieldViewController: UITableViewController {
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .standard,
                 activeOnEditing: true),
-            style: VitaminTextField.Style.outline,
+            style: VitaminTextFieldStyle.outlined,
             maxLength: 20,
             icon: VitaminTextField.IconConfiguration(
                 initialIcon: Vitamix.Line.System.eye.image,
@@ -319,7 +319,7 @@ final class TextFieldViewController: UITableViewController {
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .standard,
                 activeOnEditing: true),
-            style: VitaminTextField.Style.outline,
+            style: VitaminTextFieldStyle.outlined,
             maxLength: 20,
             icon: VitaminTextField.IconConfiguration(
                 initialIcon: Vitamix.Line.Health.heart.image,
@@ -336,7 +336,7 @@ final class TextFieldViewController: UITableViewController {
                 endEditingValidation: nil),
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .standard),
-            style: VitaminTextField.Style.filled,
+            style: VitaminTextFieldStyle.filled,
             maxLength: nil,
             icon: nil
         ),
@@ -351,7 +351,7 @@ final class TextFieldViewController: UITableViewController {
                 endEditingValidation: atLeastThreeCharValidationExample),
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .standard),
-            style: VitaminTextField.Style.filled,
+            style: VitaminTextFieldStyle.filled,
             maxLength: nil,
             icon: VitaminTextField.IconConfiguration(initialIcon: Vitamix.Line.Health.heart.image)
         ),
@@ -367,7 +367,7 @@ final class TextFieldViewController: UITableViewController {
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .standard,
                 activeOnEditing: true),
-            style: VitaminTextField.Style.filled,
+            style: VitaminTextFieldStyle.filled,
             maxLength: 20,
             icon: nil
         ),
@@ -384,7 +384,7 @@ final class TextFieldViewController: UITableViewController {
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .standard,
                 activeOnEditing: true),
-            style: VitaminTextField.Style.filled,
+            style: VitaminTextFieldStyle.filled,
             maxLength: 20,
             icon: VitaminTextField.IconConfiguration(
                 initialIcon: Vitamix.Line.System.eye.image,
@@ -403,7 +403,7 @@ final class TextFieldViewController: UITableViewController {
             stateConfiguration: VitaminTextField.StateConfiguration(
                 initialState: .standard,
                 activeOnEditing: true),
-            style: VitaminTextField.Style.filled,
+            style: VitaminTextFieldStyle.filled,
             maxLength: 20,
             icon: VitaminTextField.IconConfiguration(
                 initialIcon: Vitamix.Line.Health.heart.image,
@@ -541,7 +541,7 @@ private struct TextFieldDemoConfig {
     let textsConfiguration: VitaminTextField.TextConfiguration
     let validationConfiguration: VitaminTextField.ValidationConfiguration
     let stateConfiguration: VitaminTextField.StateConfiguration
-    let style: VitaminTextField.Style
+    let style: VitaminTextFieldStyle
     let maxLength: Int?
     let icon: VitaminTextField.IconConfiguration?
 }
