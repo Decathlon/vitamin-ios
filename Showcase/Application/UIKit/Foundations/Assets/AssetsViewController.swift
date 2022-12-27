@@ -21,6 +21,7 @@ final class AssetsViewController: BaseImageCollectionViewController {
         sections = makeSections()
 
         view.backgroundColor = VitaminColor.Core.Background.primary
+        collectionView.backgroundColor = VitaminColor.Core.Background.primary
 
         navigationItem.title = "Assets"
         collectionView.register(
