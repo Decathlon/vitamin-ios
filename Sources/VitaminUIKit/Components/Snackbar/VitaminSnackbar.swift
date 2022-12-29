@@ -102,6 +102,13 @@ public class VitaminSnackbar: UIView {
         commonInit()
     }
 
+    // constants for constraints
+    private var topBottomMargin = 12.0
+    private var imageWidthAndHeight = 40.0
+    private var maxCornerRadius = 40.0
+    private var imageLeftAndRightMargin = 24.0
+    private var rightMargin = 24.0
+
     // UILabel containing the title
     lazy private var titleLabel: UILabel = {
         let titleLabel = UILabel()
@@ -139,16 +146,18 @@ public class VitaminSnackbar: UIView {
     private var withoutImageConstraints: [NSLayoutConstraint] = []
 
     public override func layoutSubviews() {
-        self.layer.cornerRadius = min(self.intrinsicContentSize.height / 2, 40)
+        self.layer.cornerRadius = min(self.intrinsicContentSize.height / 2, maxCornerRadius)
 
         // apply constraints that do not depend on the presence of an image
         NSLayoutConstraint.activate(commonConstraints)
     }
 
     public override var intrinsicContentSize: CGSize {
-        let width = min(titleLabel.intrinsicContentSize.width + messageLabel.intrinsicContentSize.width, maxWidth)
+        let width = min(titleLabel.intrinsicContentSize.width + 2 * rightMargin, maxWidth)
 
-        let height = titleLabel.intrinsicContentSize.height + messageLabel.intrinsicContentSize.height + 24
+        let height = titleLabel.intrinsicContentSize.height +
+            messageLabel.intrinsicContentSize.height +
+            2 * topBottomMargin
         return CGSize(width: width, height: height)
     }
 }
@@ -180,8 +189,7 @@ extension VitaminSnackbar {
         self.translatesAutoresizingMaskIntoConstraints = false
 
         // setup label
-        messageLabel.numberOfLines = 2
-        messageLabel.preferredMaxLayoutWidth = maxWidth - 20
+        messageLabel.numberOfLines = 0
         titleLabel.textAlignment = .center
         messageLabel.textAlignment = .center
         self.addSubview(titleLabel)
@@ -204,8 +212,10 @@ extension VitaminSnackbar {
 extension VitaminSnackbar {
     // set up common layout constraints without activating them
     private func setupCommonConstraints() {
-        commonConstraints.append(titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 12))
-        commonConstraints.append(messageLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -12))
+        commonConstraints.append(titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: topBottomMargin))
+        commonConstraints.append(
+            messageLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -topBottomMargin)
+        )
         commonConstraints.append(titleLabel.widthAnchor.constraint(equalTo: messageLabel.widthAnchor))
         commonConstraints.append(titleLabel.bottomAnchor.constraint(equalTo: messageLabel.topAnchor))
         commonConstraints.append(widthAnchor.constraint(lessThanOrEqualToConstant: maxWidth))
@@ -213,13 +223,19 @@ extension VitaminSnackbar {
 
     // set up layout constraints for image case without activating them
     private func setupWithImageConstraints() {
-        withImageConstraints.append(titleLabel.leftAnchor.constraint(equalTo: icon.rightAnchor, constant: 24))
+        withImageConstraints.append(
+            titleLabel.leftAnchor.constraint(equalTo: icon.rightAnchor, constant: imageLeftAndRightMargin)
+        )
         withImageConstraints.append(messageLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor))
-        withImageConstraints.append(icon.widthAnchor.constraint(equalToConstant: 40))
-        withImageConstraints.append(icon.heightAnchor.constraint(equalToConstant: 40))
-        withImageConstraints.append(icon.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 24))
+        withImageConstraints.append(icon.widthAnchor.constraint(equalToConstant: imageWidthAndHeight))
+        withImageConstraints.append(icon.heightAnchor.constraint(equalToConstant: imageWidthAndHeight))
+        withImageConstraints.append(
+            icon.leftAnchor.constraint(equalTo: self.leftAnchor, constant: imageLeftAndRightMargin)
+        )
         withImageConstraints.append(icon.centerYAnchor.constraint(equalTo: self.centerYAnchor))
-        withImageConstraints.append(messageLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20))
+        withImageConstraints.append(
+            messageLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -rightMargin)
+        )
     }
 
     // set up layout constraints for no image case without activating them
@@ -227,7 +243,7 @@ extension VitaminSnackbar {
         withoutImageConstraints.append(titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor))
         withoutImageConstraints.append(messageLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor))
         withoutImageConstraints.append(
-            messageLabel.widthAnchor.constraint(lessThanOrEqualTo: self.widthAnchor, constant: -20)
+            messageLabel.widthAnchor.constraint(lessThanOrEqualTo: self.widthAnchor, constant: -2 * rightMargin)
         )
     }
 
@@ -248,12 +264,15 @@ extension VitaminSnackbar {
             NSLayoutConstraint.activate(withImageConstraints)
             titleLabel.textAlignment = .left
             messageLabel.textAlignment = .left
+            let margins = rightMargin + imageWidthAndHeight + imageLeftAndRightMargin
+            messageLabel.preferredMaxLayoutWidth = maxWidth - margins
         } else {
             NSLayoutConstraint.activate(withoutImageConstraints)
             NSLayoutConstraint.deactivate(withImageConstraints)
             icon.removeFromSuperview()
             titleLabel.textAlignment = .center
             messageLabel.textAlignment = .center
+            messageLabel.preferredMaxLayoutWidth = maxWidth - 2 * rightMargin
         }
     }
 
