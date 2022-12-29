@@ -14,10 +14,17 @@ class BadgeCollectionViewCell: UICollectionViewCell {
 
     private var badgeValue: Int?
     private var badgeVariant: VitaminBadgeVariant = .standard
+    private var badgeSize: VitaminBadgeSize = .small
 
-    func update(with value: Int?, variant: VitaminBadgeVariant, automatic: Bool = false) {
+    func update(
+        with value: Int?,
+        variant: VitaminBadgeVariant,
+        size: VitaminBadgeSize = .small,
+        automatic: Bool = false
+    ) {
         badgeValue = value
         badgeVariant = variant
+        badgeSize = size
         contentView.backgroundColor = VitaminColor.Core.Background.primary
         fakeView.backgroundColor = VitaminColor.Core.Background.tertiary
         detailLabel.textColor = VitaminColor.Core.Content.primary
@@ -29,7 +36,7 @@ class BadgeCollectionViewCell: UICollectionViewCell {
             badge.isHidden = true
             button.isHidden = false
             if fakeView.hasBadge() {
-                fakeView.modifyBadge(with: badgeValue, variant: badgeVariant)
+                fakeView.modifyBadge(with: badgeValue, variant: badgeVariant, size: badgeSize)
                 button.setTitle("Remove badge", for: .normal)
             } else {
                 button.setTitle("Add badge", for: .normal)
@@ -40,6 +47,7 @@ class BadgeCollectionViewCell: UICollectionViewCell {
             button.isHidden = true
             badge.value = value
             badge.variant = variant
+            badge.size = size
         }
 
         var displayableNbDigits = "no digit"
@@ -89,7 +97,7 @@ class BadgeCollectionViewCell: UICollectionViewCell {
             fakeView.removeBadge()
             button.setTitle("Add badge", for: .normal)
         } else {
-            fakeView.addBadge(with: badgeValue, variant: badgeVariant)
+            fakeView.addBadge(with: badgeValue, variant: badgeVariant, size: badgeSize)
             button.setTitle("Remove badge", for: .normal)
         }
     }

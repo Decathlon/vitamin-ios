@@ -24,7 +24,7 @@ final class BadgesViewController: BaseHeaderedCollectionViewController {
     }
 
     private let datasource: [VitaminBadgeDemoConfig] = [
-        VitaminBadgeDemoConfig(),
+        /*VitaminBadgeDemoConfig(),
         VitaminBadgeDemoConfig(value: 2),
         VitaminBadgeDemoConfig(value: 50),
         VitaminBadgeDemoConfig(value: 100),
@@ -39,11 +39,11 @@ final class BadgesViewController: BaseHeaderedCollectionViewController {
         VitaminBadgeDemoConfig(variant: .accent),
         VitaminBadgeDemoConfig(value: 2, variant: .accent),
         VitaminBadgeDemoConfig(value: 50, variant: .accent),
-        VitaminBadgeDemoConfig(value: 100, variant: .accent),
-        VitaminBadgeDemoConfig(variant: .alert),
-        VitaminBadgeDemoConfig(value: 2, variant: .alert),
-        VitaminBadgeDemoConfig(value: 50, variant: .alert),
-        VitaminBadgeDemoConfig(value: 100, variant: .alert)
+        VitaminBadgeDemoConfig(value: 100, variant: .accent),*/
+        VitaminBadgeDemoConfig(variant: .alert, size: .large),
+        VitaminBadgeDemoConfig(value: 2, variant: .alert, size: .large),
+        VitaminBadgeDemoConfig(value: 50, variant: .alert, size: .large),
+        VitaminBadgeDemoConfig(value: 100, variant: .alert, size: .large)
     ]
 
     override func viewDidLoad() {
@@ -86,7 +86,7 @@ extension BadgesViewController {
                     fatalError("unable to dequeue cell")
                 }
 
-        cell.update(with: badgeItem.value, variant: badgeItem.variant, automatic: indexPath.section == 1)
+        cell.update(with: badgeItem.value, variant: badgeItem.variant, size: badgeItem.size, automatic: indexPath.section == 1)
         return cell
     }
 }
@@ -131,6 +131,7 @@ extension BadgesViewController {
 private struct VitaminBadgeDemoConfig {
     var value: Int?
     var variant: VitaminBadgeVariant = .standard
+    var size: VitaminBadgeSize = .small
 }
 
 private struct VitaminBadgeSection: BaseNamedSection {
