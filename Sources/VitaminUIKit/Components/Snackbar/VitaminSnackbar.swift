@@ -8,7 +8,7 @@ import VitaminCore
 
 /// Implementation of the Vitamin Snackbar
 public class VitaminSnackbar: UIView {
-    /// default dismissdelay
+    /// default dismiss delay
     public static var defaultDismissDelay = 5.0
     /// default max width
     public static var defaultMaxWidth = 320.0
@@ -16,7 +16,7 @@ public class VitaminSnackbar: UIView {
     public static var appearAndDisappearDuration = 0.25
 
     /// Max width of the snackbar.
-    /// Wiidth will automatically adjust to message, but will not be above this maxWidth
+    /// Width will automatically adjust to message, but will not be above this maxWidth
     /// Default value is 320
     public var maxWidth: CGFloat = defaultMaxWidth {
         didSet {
@@ -30,7 +30,7 @@ public class VitaminSnackbar: UIView {
         }
     }
     /// Message of the snackbar, that will be displayed beyond the title
-    public var message = ""{
+    public var message = "" {
         didSet {
             applyNewTexts()
         }
@@ -43,7 +43,7 @@ public class VitaminSnackbar: UIView {
             applyNewImage()
         }
     }
-    /// Indicates if the snackbar should automatically be dsimissed after a delay (see dismissDelay)
+    /// Indicates if the snackbar should automatically be dismissed after a delay (see dismissDelay)
     /// Default value is true
     public var autoDismiss = true {
         willSet {
@@ -51,7 +51,7 @@ public class VitaminSnackbar: UIView {
         }
     }
     /// indicates if the snackbar should be dismissed when user taps on it
-    /// /// Default value is true
+    /// Default value is true
     public var dismissOnTap = true {
         didSet {
             applyNewDismissOnTap()
@@ -123,14 +123,14 @@ public class VitaminSnackbar: UIView {
         return messageLabel
     }()
 
-    // UIimageView containing the image
+    // UIImageView containing the image
     lazy private var icon: UIImageView = {
         let icon = UIImageView()
         icon.translatesAutoresizingMaskIntoConstraints = false
         return icon
     }()
 
-    // GestureRecognizer used for dimiss on tap
+    // GestureRecognizer used for dismiss on tap
     private var gestureRecognizer: UITapGestureRecognizer?
 
     // common initialization method called in every public constructor
@@ -138,7 +138,7 @@ public class VitaminSnackbar: UIView {
         setUpViews()
     }
 
-    // container for common layout constraints whether ther is an image or not
+    // container for common layout constraints whether there is an image or not
     private var commonConstraints: [NSLayoutConstraint] = []
     // container for layout constraints when there is an image
     private var withImageConstraints: [NSLayoutConstraint] = []
@@ -338,8 +338,8 @@ extension VitaminSnackbar {
     }
 
     /// Make the snackbar appear by fading it in
-    /// This method should only be called before first display of the snackbar, becaise it will force opacity to 0.
-    /// If the `VitaminSnackbar`is already displayed when you call this method, it will first instantly disappear, then fade in
+    /// This method should only be called before first display of the snackbar, because it will force opacity to 0.
+    /// If the `VitaminSnackbar` is already displayed when you call this method, it will first instantly disappear, then fade in
     func fadeIn(duration: TimeInterval, completion: (() -> Void )? = nil ) {
         self.titleLabel.layer.opacity = 0
         self.messageLabel.layer.opacity = 0
