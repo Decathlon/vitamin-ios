@@ -70,21 +70,18 @@ public class VitaminSnackbar: UIView {
 
     /// Initializer that allows to specify all properties
     public required init(
-        title: String,
-        message: String,
-        image: UIImage? = nil,
-        autoDismiss: Bool = true,
-        dismissDelay: TimeInterval = defaultDismissDelay,
-        dismissOnTap: Bool = true,
+        basicConfiguration: VitaminSnackbar.BasicConfiguration,
+        dismissConfiguration: VitaminSnackbar.DismissConfiguration,
         maxWidth: CGFloat = defaultMaxWidth
     ) {
         super.init(frame: .zero)
-        self.title = title
-        self.message = message
-        self.image = image
+        self.title = basicConfiguration.title
+        self.message = basicConfiguration.message
+        self.image = basicConfiguration.image
         self.maxWidth = maxWidth
-        self.autoDismiss = autoDismiss
-        self.dismissDelay = dismissDelay
+        self.autoDismiss = dismissConfiguration.autoDismiss
+        self.dismissDelay = dismissConfiguration.dismissDelay
+        self.dismissOnTap = dismissConfiguration.dismissOnTap
         commonInit()
     }
 

@@ -24,23 +24,15 @@ public extension UIViewController {
     ///   default value id `nil`
     ///
     func pushVitaminSnackbar(
-        title: String,
-        message: String,
-        image: UIImage? = nil,
-        autoDismiss: Bool = true,
-        dismissDelay: TimeInterval = VitaminSnackbar.defaultDismissDelay,
-        dismissOnTap: Bool = true,
+        basicConfiguration: VitaminSnackbar.BasicConfiguration,
+        dismissConfiguration: VitaminSnackbar.DismissConfiguration,
         bottomMargin: CGFloat = snackbarVerticalPadding,
         maxWidth: CGFloat? = nil
     ) {
         dismissExistingSnackBar {
             let snackbar = VitaminSnackbar(
-                title: title,
-                message: message,
-                image: image,
-                autoDismiss: autoDismiss,
-                dismissDelay: dismissDelay,
-                dismissOnTap: dismissOnTap,
+                basicConfiguration: basicConfiguration,
+                dismissConfiguration: dismissConfiguration,
                 maxWidth: maxWidth ?? self.view.frame.width - 2 * Self.horizontalPadding
             )
 
