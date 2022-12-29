@@ -53,3 +53,20 @@ public enum VitaminBadgeVariant: CaseIterable {
         return 0
     }
 }
+
+public extension VitaminBadgeVariant {
+    var name: String {
+        switch self {
+        case .standard:
+            return "Standard"
+        case .brand:
+            return "Brand"
+        case .reversed:
+            return "Reversed"
+        case .accent:
+            return "Accent"
+        case .alert:
+            return "Alert"
+        }
+    }
+}

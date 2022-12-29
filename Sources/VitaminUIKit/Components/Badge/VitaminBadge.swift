@@ -62,28 +62,6 @@ public class VitaminBadge: UILabel {
         self.backgroundColor = .clear
     }
 
-    // padding constants of the `VitaminTag`
-    /* private var padding: UIEdgeInsets {
-        // Insets will depend on the length of the text displayed in the badge :
-        // - if no test, insets are all equals on four sides to create a circle
-        guard let intValue = value else {
-            return UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
-        }
-
-        // else if the value has one digit, we still want a cricle,
-        // but the size of the text should be taken into account
-        if "\(intValue)".count == 1 {
-            // the insets will be slightly different between the automatic added badge
-            // (which do not use autolayout) and the manually added (which does)
-            return automatic ? UIEdgeInsets(top: 3, left: 4, bottom: 1, right: 2) :
-                UIEdgeInsets(top: 1, left: 3, bottom: 0, right: 3)
-        }
-
-        // else if the value has two digits or more (if more, it will be "99+"),
-        // insets are defined to create a rounded rect around the text
-        return UIEdgeInsets(top: 3, left: 4, bottom: 1, right: 4)
-    }*/
-
     // instance displayable value
     private var displayableValue: String {
         VitaminBadgeLogic.badgeText(for: value)
@@ -111,9 +89,9 @@ extension VitaminBadgeSize {
         case .small:
             return (4, 6)
         case .medium:
-            return (6, 9)
+            return (4, 9)
         case .large:
-            return (8, 12)
+            return (4, 12)
         }
     }
 
@@ -194,14 +172,7 @@ extension VitaminBadge {
     // Width of the badge, used when added automatically
     var theoricWidth: CGFloat {
         guard let intValue = value else {
-            switch size {
-            case.small:
-                return 8
-            case .medium:
-                return 12
-            case .large:
-                return 16
-            }
+            return 8
         }
 
         switch ("\(intValue)".count, size) {
@@ -231,14 +202,7 @@ extension VitaminBadge {
     // Height of the badge, used when added automatically
     var theoricHeight: CGFloat {
         guard value != nil else {
-            switch size {
-            case.small:
-                return 8
-            case .medium:
-                return 12
-            case .large:
-                return 16
-            }
+            return 8
         }
 
         switch size {
@@ -254,14 +218,7 @@ extension VitaminBadge {
     // Horizontal and Vertical offset with the corner of the superview, used when added automatically
     var offset: CGFloat {
         guard value != nil else {
-            switch size {
-            case .small:
-                return 3
-            case .medium:
-                return 6
-            case .large:
-                return 10
-            }
+            return 3
         }
         return 8
     }
