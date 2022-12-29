@@ -16,13 +16,13 @@ A `VitaminSnackbar` has 3 basic properties
 If the image is set, the title and message will be placed on the right of the image, and aligned to left
 If not, title and content will be centered
 
-All these properties can be set in constructor, by passing them in a `VitaminSnackbar.BasicConfiguration` struct.
+All these properties can be set in constructor, by passing them in a `VitaminSnackbar.ContentConfiguration` struct.
 They can also be set separately afterwards
 
 ```swift
 // let's set properties in constructor
 let snackbar = VitaminSnackbar(
-    basicConfiguration: VitaminSnackbar.BasicConfiguration(
+    contentConfiguration: VitaminSnackbar.ContentConfiguration(
         title: "A short title is best",
         message: "A message should be short",
         image: VitaminAssets.Placeholder.landscape.image
@@ -30,10 +30,10 @@ let snackbar = VitaminSnackbar(
 )
 
 // or let's define an empty VitaminSnackbar and set its properties afterwards
-let snackbar2 = VitaminSnackbar()
-snackbar2.title = "Another short title is best",
-snackbar2.message = "A message should be shorter",
-snackbar2.image = VitaminAssets.Placeholder.landscape.image
+let anotherSnackbar = VitaminSnackbar()
+anotherSnackbar.title = "Another short title is best",
+anotherSnackbar.message = "A message should be shorter",
+anotherSnackbar.image = VitaminAssets.Placeholder.landscape.image
 ```
 
 ### Width of a snackbar
@@ -53,10 +53,10 @@ let snackbar = VitaminSnackbar(
 )
 
 // or let's define an empty VitaminSnackbar and set its properties afterwards
-let snackbar2 = VitaminSnackbar()
-snackbar2.title = "Another short title is best",
-snackbar2.message = "A message should be shorter",
-snackbar2.maxWidth = 200.0
+let anotherSnackbar = VitaminSnackbar()
+anotherSnackbar.title = "Another short title is best",
+anotherSnackbar.message = "A message should be shorter",
+anotherSnackbar.maxWidth = 200.0
 ```
 
 
@@ -117,11 +117,11 @@ let snackbar = VitaminSnackbar(
 
 // or let's define an empty VitaminSnackbar and set its properties afterwards
 // once displayed, snackbar2 will automatically be dismissed after 5 seconds (default value), but tap on it will have no effect
-let snackbar2 = VitaminSnackbar()
-snackbar2.title = "Another short title is best",
-snackbar2.message = "A message should be shorter",
-snackbar2.autoDismiss = true
-snackbar2.dismissOnTap = false
+let anotherSnackbar = VitaminSnackbar()
+anotherSnackbar.title = "Another short title is best",
+anotherSnackbar.message = "A message should be shorter",
+anotherSnackbar.autoDismiss = true
+anotherSnackbar.dismissOnTap = false
 ```
 
 If you want to handle programmatically the dismissal, the `VitaminSnackbar` provides a `dismiss()` function, that will fade out the snackbar, and finally remove it from its superview.
@@ -135,13 +135,11 @@ snackbar.dismiss()
 
 ### Displaying a SnackBar in a ViewController
 To ease the use of `VitaminSnackbar`, Vitamin provides a `UIViewController` extension, that adds the following method to any `UIViewController`:
-`pushVitaminSnackbar(title:message:image:autoDismiss:dismissDelay:dismissOnTap:bottomMargin:maxWidth:)`
+`present(_:bottomMargin:maxWidth:)`
 
-All parameters have the same meaning than on a regular VitaminSnackbar.
-They can be passed through `VitaminSnackbar.BasicConfiguration` and `VitaminSnackbar.DismissConfiguration` structs.
-They also have the same default values.
+The first parameter is a `VitaminSnackbar`.
 
-The only exceptions are:
+There are two others parameters:
 - `maxWidth`: it is optioanl, and default value is `nil`. If you do not set it, the max width of the snackbar will be the width of the View of the controller, with a margin of 10 on each side.
 - bottomMargin: snackbar will always be centered horizontally in view, but you can decide the space between the bottom of the view and the bottom of the snackbar. Default value is 10
 
@@ -155,18 +153,20 @@ If you call it while a snackbar is already displayed, it will first dismiss it, 
 // it will dismiss any other snackbar already displayed, then display a snackbar 
 // that will disappear after 3 seconds, or on tap, that will be placed 10px above bottom of view (default value),
 // and whose width won't exceed 200
-self.pushVitaminSnackbar(
-    basicConfiguration: VitaminSnackbar.BasicConfiguration(
-        title: "A title is Short",
-        message: "A short message is best",
-        image: VitaminAssets.Placeholder.landscape.image
-    ),
-    dismissConfiguration: VitaminSnackbar.DismissConfiguration(
-        autoDismiss: true,
-        dismissDelay: 3.0,
-        dismissOnTap: true
+self.present(
+    VitaminSnackbar(
+        contentConfiguration: VitaminSnackbar.ContentConfiguration(
+            title: "A title is Short",
+            message: "A short message is best",
+            image: VitaminAssets.Placeholder.landscape.image
+        ),
+        dismissConfiguration: VitaminSnackbar.DismissConfiguration(
+            autoDismiss: true,
+            dismissDelay: 3.0,
+            dismissOnTap: true
+        ),
+        maxWidth: 200.0
     )
-    maxWidth: 200.0
 )
 
 ...

@@ -7,8 +7,8 @@ import UIKit
 
 public extension VitaminSnackbar {
     /// Struct that can be provided to the initializer of `VitaminSnackBar` or `UIViewController.pushVitaminSncakbar()`
-    /// that groups all basic configuration
-    struct BasicConfiguration {
+    /// that groups all content configuration
+    struct ContentConfiguration {
         public var title: String
         public var message: String
         public var image: UIImage?

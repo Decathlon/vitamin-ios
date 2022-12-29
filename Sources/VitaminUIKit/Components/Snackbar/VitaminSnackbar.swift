@@ -70,14 +70,14 @@ public class VitaminSnackbar: UIView {
 
     /// Initializer that allows to specify all properties
     public required init(
-        basicConfiguration: VitaminSnackbar.BasicConfiguration,
+        contentConfiguration: VitaminSnackbar.ContentConfiguration,
         dismissConfiguration: VitaminSnackbar.DismissConfiguration,
         maxWidth: CGFloat = defaultMaxWidth
     ) {
         super.init(frame: .zero)
-        self.title = basicConfiguration.title
-        self.message = basicConfiguration.message
-        self.image = basicConfiguration.image
+        self.title = contentConfiguration.title
+        self.message = contentConfiguration.message
+        self.image = contentConfiguration.image
         self.maxWidth = maxWidth
         self.autoDismiss = dismissConfiguration.autoDismiss
         self.dismissDelay = dismissConfiguration.dismissDelay
@@ -195,9 +195,6 @@ extension VitaminSnackbar {
         self.addSubview(titleLabel)
         self.addSubview(messageLabel)
 
-        // init gesture recognizer to detect tap
-        gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismiss))
-
         // apply changes for every property
         applyNewDismissOnTap()
         applyNewTexts()
@@ -257,7 +254,7 @@ extension VitaminSnackbar {
     private func applyNewImage() {
         if let image = image {
             icon.image = image
-            if self.subviews.first(where: { $0 == icon }) == nil {
+            if icon.superview == nil {
                 self.addSubview(icon)
             }
             NSLayoutConstraint.deactivate(withoutImageConstraints)
@@ -300,6 +297,11 @@ extension VitaminSnackbar {
                 self.addGestureRecognizer(gestureRecognizer)
             } else {
                 self.removeGestureRecognizer(gestureRecognizer)
+            }
+        } else if dismissOnTap {
+            gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismiss))
+            if let gestureRecognizer = gestureRecognizer {
+                self.addGestureRecognizer(gestureRecognizer)
             }
         }
     }

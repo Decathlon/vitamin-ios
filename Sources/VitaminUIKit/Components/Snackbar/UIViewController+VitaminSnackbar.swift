@@ -13,28 +13,18 @@ public extension UIViewController {
     /// Method that will push a `VitaminSnackbar`at the bottom of the controller's view.
     /// Every property of the snackbar is settable
     /// - Parameters:
-    ///   - title: title of the `VitaminSnackbar`. Mandatory
-    ///   - content: content of the `VitaminSnackbar`. Mandatory
-    ///   - image: optional image of the `VitaminSnackbar`. `nil` by default
-    ///   - autoDismiss: indicates if the `VitaminSnackbar` should be automatically dismmissed after a delay. Default value is `true`
-    ///   - dismissDelay: delay after which the `VitaminSnackbar`is dimissed automatically. only used if autodimiss is `true`
-    ///   - dismissOnTap: indicates if the `VitaminSnackbar`should be dismissed when user taps on it. Default value id `true`
+    ///   - snackbar: `VitaminSnackbar` to display. Mandatory
     ///   - bottomMargin: space betwwen the bottom of the view and the bottom of the `VitaminSnackbar`. Default value is 10
     ///   - maxWidth: optional max width of the `VitaminSnackbar`. It set to `nil`, width of the view minus 10 on each side will e applied.
     ///   default value id `nil`
     ///
-    func pushVitaminSnackbar(
-        basicConfiguration: VitaminSnackbar.BasicConfiguration,
-        dismissConfiguration: VitaminSnackbar.DismissConfiguration,
+    func present(
+        _ snackbar: VitaminSnackbar,
         bottomMargin: CGFloat = snackbarVerticalPadding,
         maxWidth: CGFloat? = nil
     ) {
         dismissExistingSnackBar {
-            let snackbar = VitaminSnackbar(
-                basicConfiguration: basicConfiguration,
-                dismissConfiguration: dismissConfiguration,
-                maxWidth: maxWidth ?? self.view.frame.width - 2 * Self.horizontalPadding
-            )
+            snackbar.maxWidth = maxWidth ?? self.view.frame.width - 2 * Self.horizontalPadding
 
             self.view.addSubview(snackbar)
             snackbar.fadeIn(duration: VitaminSnackbar.appearAndDisappearDuration)

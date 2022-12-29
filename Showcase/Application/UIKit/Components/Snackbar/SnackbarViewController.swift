@@ -125,16 +125,18 @@ public class SnackbarViewController: UIViewController {
         }
 
 
-        self.pushVitaminSnackbar(
-            basicConfiguration: VitaminSnackbar.BasicConfiguration(
-                title: titleTF.fieldValue ?? "",
-                message: messageTF.fieldValue ?? "",
-                image: image
-            ),
-            dismissConfiguration: VitaminSnackbar.DismissConfiguration(
-                autoDismiss: autoDismissSwitch.isOn,
-                dismissDelay: dismissDelay,
-                dismissOnTap: dismissOnTapSwitch.isOn
+        self.present(
+            VitaminSnackbar(
+                contentConfiguration: VitaminSnackbar.ContentConfiguration(
+                    title: titleTF.fieldValue ?? "",
+                    message: messageTF.fieldValue ?? "",
+                    image: image
+                ),
+                dismissConfiguration: VitaminSnackbar.DismissConfiguration(
+                    autoDismiss: autoDismissSwitch.isOn,
+                    dismissDelay: dismissDelay,
+                    dismissOnTap: dismissOnTapSwitch.isOn
+                )
             )
         )
     }
