@@ -21,7 +21,6 @@ final class BadgesViewController: UIViewController, UICollectionViewDelegate, UI
         layout.minimumInteritemSpacing = 1
         layout.minimumLineSpacing = 10
         layout.estimatedItemSize = .zero
-        let frame = self.view.frame
         let collectionView = UICollectionView(
             frame: .zero,
             collectionViewLayout: layout

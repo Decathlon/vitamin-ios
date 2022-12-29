@@ -108,45 +108,57 @@ extension VitaminBadgeSize {
 
         switch self {
         case .small:
-            // else if the value has one digit, we still want a cricle,
-            // but the size of the text should be taken into account
-            if "\(intValue)".count == 1 {
-                // the insets will be slightly different between the automatic added badge
-                // (which do not use autolayout) and the manually added (which does)
-                return automatic ? UIEdgeInsets(top: 3, left: 4, bottom: 1, right: 2) :
-                    UIEdgeInsets(top: 1, left: 3, bottom: 0, right: 3)
-            }
-
-            // else if the value has two digits or more (if more, it will be "99+"),
-            // insets are defined to create a rounded rect around the text
-            return UIEdgeInsets(top: 3, left: 4, bottom: 1, right: 4)
+            return paddingSmall(value: intValue, automatic: automatic)
         case .medium:
-            // else if the value has one digit, we still want a cricle,
-            // but the size of the text should be taken into account
-            if "\(intValue)".count == 1 {
-                // the insets will be slightly different between the automatic added badge
-                // (which do not use autolayout) and the manually added (which does)
-                return automatic ? UIEdgeInsets(top: 3, left: 5, bottom: 1, right: 1) :
-                    UIEdgeInsets(top: 1, left: 5, bottom: 0, right: 5)
-            }
-
-            // else if the value has two digits or more (if more, it will be "99+"),
-            // insets are defined to create a rounded rect around the text
-            return UIEdgeInsets(top: 2, left: 6, bottom: 0, right: 6)
+            return paddingMedium(value: intValue, automatic: automatic)
         case .large:
-            // else if the value has one digit, we still want a cricle,
-            // but the size of the text should be taken into account
-            if "\(intValue)".count == 1 {
-                // the insets will be slightly different between the automatic added badge
-                // (which do not use autolayout) and the manually added (which does)
-                return automatic ? UIEdgeInsets(top: 4, left: 8, bottom: 2, right: 1) :
-                    UIEdgeInsets(top: 2, left: 7, bottom: 1, right: 7)
-            }
-
-            // else if the value has two digits or more (if more, it will be "99+"),
-            // insets are defined to create a rounded rect around the text
-            return UIEdgeInsets(top: 3, left: 7, bottom: 0, right: 7)
+            return paddingLarge(value: intValue, automatic: automatic)
         }
+    }
+
+    private func paddingSmall(value: Int, automatic: Bool) -> UIEdgeInsets {
+        // else if the value has one digit, we still want a cricle,
+        // but the size of the text should be taken into account
+        if "\(value)".count == 1 {
+            // the insets will be slightly different between the automatic added badge
+            // (which do not use autolayout) and the manually added (which does)
+            return automatic ? UIEdgeInsets(top: 3, left: 4, bottom: 1, right: 2) :
+                UIEdgeInsets(top: 1, left: 3, bottom: 0, right: 3)
+        }
+
+        // else if the value has two digits or more (if more, it will be "99+"),
+        // insets are defined to create a rounded rect around the text
+        return UIEdgeInsets(top: 3, left: 4, bottom: 1, right: 4)
+    }
+
+    private func paddingMedium(value: Int, automatic: Bool) -> UIEdgeInsets {
+        // else if the value has one digit, we still want a cricle,
+        // but the size of the text should be taken into account
+        if "\(value)".count == 1 {
+            // the insets will be slightly different between the automatic added badge
+            // (which do not use autolayout) and the manually added (which does)
+            return automatic ? UIEdgeInsets(top: 3, left: 5, bottom: 1, right: 1) :
+                UIEdgeInsets(top: 1, left: 5, bottom: 0, right: 5)
+        }
+
+        // else if the value has two digits or more (if more, it will be "99+"),
+        // insets are defined to create a rounded rect around the text
+        return UIEdgeInsets(top: 2, left: 6, bottom: 0, right: 6)
+    }
+
+    private func paddingLarge(value: Int, automatic: Bool) -> UIEdgeInsets {
+        // else if the value has one digit, we still want a cricle,
+        // but the size of the text should be taken into account
+        if "\(value)".count == 1 {
+            // the insets will be slightly different between the automatic added badge
+            // (which do not use autolayout) and the manually added (which does)
+            return automatic ? UIEdgeInsets(top: 4, left: 8, bottom: 2, right: 1) :
+                UIEdgeInsets(top: 2, left: 7, bottom: 1, right: 7)
+        }
+
+        // else if the value has two digits or more (if more, it will be "99+"),
+        // insets are defined to create a rounded rect around the text
+        return UIEdgeInsets(top: 3, left: 7, bottom: 0, right: 7)
     }
 }
 
