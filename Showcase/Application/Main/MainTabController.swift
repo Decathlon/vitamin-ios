@@ -18,6 +18,15 @@ final class MainTabController: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        if #available(iOS 15.0.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .systemGray6
+
+            self.tabBar.standardAppearance = appearance
+            self.tabBar.scrollEdgeAppearance = appearance
+        }
+
         setupUIKitTab()
         setupSwiftUITab()
     }
