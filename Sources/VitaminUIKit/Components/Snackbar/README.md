@@ -132,6 +132,58 @@ If you want to handle programmatically the dismissal, the `VitaminSnackbar` prov
 snackbar.dismiss()
 ```
 
+### Trigger an action when the snackbar is tapped
+You can also add an action, that will be executed whenever the user taps the snackbar (independently of dismissal, see above)
+This is done thanks to the following property :
+- `actionOnTap` which is an optional closure that takes no argument and returns `Void` (i.e. `(() -> Void)?` )
+
+It will be triggered just before dismissal if you set `dismissOnTap` to `true`.
+Be carefull, if you set `dismissOnTap` to `false` while setting a non-nil `actionOnTap`, the action will be triggered every time the user taps the snackbar, not just only once.
+
+The `actionOnTap` can be set in constructor, or afterwards. Default value is `nil`.
+
+```swift
+// For example, let's define the action as a lazy var in your ViewController
+// Here, the action is to display an alert view
+lazy private var action: () -> Void = { [unowned self] in
+    var alertView = UIAlertController(
+        title: "Snackbar tapped",
+        message: "This is just an example of action, you can define whatever action you want",
+        preferredStyle: .alert)
+
+    alertView.addAction(UIAlertAction(title: "OK", style: .default))
+
+    self.present(alertView, animated: true)
+}
+
+...
+
+// let's set action in constructor
+// once tapped, the alert view will be displayed, and the snackbar dismissed
+let snackbar = VitaminSnackbar(
+    contentConfiguration: VitaminSnackbar.ContentConfiguration(
+        title: "A short title is best",
+        message: "A message should be short",
+        image: VitaminAssets.Placeholder.landscape.image
+    ),
+    dismissConfiguration: VitaminSnackbar.DismissConfiguration(
+        autoDismiss: true,
+        dismissDelay: 10.0,
+        dismissOnTap: true
+    ),
+    actionOnTap: self.action
+)
+
+// or let's define an empty VitaminSnackbar and set its properties and actionOnTap afterwards
+// once tapped, the alert view will be displayed, and the snackbar dismissed
+let anotherSnackbar = VitaminSnackbar()
+anotherSnackbar.title = "Another short title is best",
+anotherSnackbar.message = "A message should be shorter",
+anotherSnackbar.autoDismiss = true
+anotherSnackbar.dismissOnTap = true
+anotherSnackbar.actionOnTap = self.action
+```
+
 
 ### Displaying a SnackBar in a ViewController
 To ease the use of `VitaminSnackbar`, Vitamin provides a `UIViewController` extension, that adds the following method to any `UIViewController`:

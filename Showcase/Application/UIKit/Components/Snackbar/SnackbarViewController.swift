@@ -25,6 +25,8 @@ public class SnackbarViewController: UIViewController {
 
     lazy var dismissOnTapSwitch: VitaminSwitch = buildSwitch()
 
+    lazy var actionOnTapSwitch: VitaminSwitch = buildSwitch(active: false)
+
     lazy var pushButton: VitaminButton = {
         let pushButton = VitaminButton(style: .primary)
         pushButton.setTitle("Push Snackbar", for: .normal)
@@ -51,6 +53,17 @@ public class SnackbarViewController: UIViewController {
 
     private var buttonEnabled: Bool {
         titleOk && messageOk && dismissDelayOk
+    }
+
+    lazy private var action: () -> Void = { [unowned self] in
+        var alertView = UIAlertController(
+            title: "Snackbar tapped",
+            message: "This is just an example of action, you can define whatever action you want",
+            preferredStyle: .alert)
+
+        alertView.addAction(UIAlertAction(title: "OK", style: .default))
+
+        self.present(alertView, animated: true)
     }
 
     public override func viewDidLoad() {
@@ -136,7 +149,8 @@ public class SnackbarViewController: UIViewController {
                     autoDismiss: autoDismissSwitch.isOn,
                     dismissDelay: dismissDelay,
                     dismissOnTap: dismissOnTapSwitch.isOn
-                )
+                ),
+                actionOnTap: actionOnTapSwitch.isOn ? self.action : nil
             )
         )
     }
@@ -160,16 +174,18 @@ extension SnackbarViewController {
         let switchDismissStackView = buildSwitchLine(label: "Auto Dismiss ?", vitaminSwitch: autoDismissSwitch)
         let switchImageStackView = buildSwitchLine(label: "With image ?", vitaminSwitch: withImageSwitch)
         let switchDismissOnTapStackView = buildSwitchLine(label: "Dismiss on tap ?", vitaminSwitch: dismissOnTapSwitch)
+        let switchActionOnTapStackView = buildSwitchLine(label: "Action on tap ?", vitaminSwitch: actionOnTapSwitch)
 
         autoDismissSwitch.addTarget(self, action: #selector(self.switchChanged), for: .valueChanged)
 
 
         formStackView.addArrangedSubview(titleTF)
         formStackView.addArrangedSubview(messageTF)
+        formStackView.addArrangedSubview(switchImageStackView)
         formStackView.addArrangedSubview(switchDismissStackView)
         formStackView.addArrangedSubview(dismissalTF)
         formStackView.addArrangedSubview(switchDismissOnTapStackView)
-        formStackView.addArrangedSubview(switchImageStackView)
+        formStackView.addArrangedSubview(switchActionOnTapStackView)
         formStackView.addArrangedSubview(pushButton)
     }
 

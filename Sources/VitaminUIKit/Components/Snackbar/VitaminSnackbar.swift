@@ -54,7 +54,7 @@ public class VitaminSnackbar: UIView {
     /// Default value is true
     public var dismissOnTap = true {
         didSet {
-            applyNewDismissOnTap()
+            applyNewTapBehavior()
         }
     }
     /// delay for auto dismissal
@@ -65,6 +65,14 @@ public class VitaminSnackbar: UIView {
         }
     }
 
+    /// action that will be triggered on tap
+    /// This will be executed just before the dismissal if dismissOnTap is true
+    public var actionOnTap: (() -> Void)? {
+        didSet {
+            applyNewTapBehavior()
+        }
+    }
+
     // Internal timer used for auto dimiss
     var timer: Timer?
 
@@ -72,7 +80,8 @@ public class VitaminSnackbar: UIView {
     public required init(
         contentConfiguration: VitaminSnackbar.ContentConfiguration,
         dismissConfiguration: VitaminSnackbar.DismissConfiguration,
-        maxWidth: CGFloat = defaultMaxWidth
+        maxWidth: CGFloat = defaultMaxWidth,
+        actionOnTap: (() -> Void)? = nil
     ) {
         super.init(frame: .zero)
         self.title = contentConfiguration.title
@@ -82,6 +91,7 @@ public class VitaminSnackbar: UIView {
         self.autoDismiss = dismissConfiguration.autoDismiss
         self.dismissDelay = dismissConfiguration.dismissDelay
         self.dismissOnTap = dismissConfiguration.dismissOnTap
+        self.actionOnTap = actionOnTap
         commonInit()
     }
 
@@ -166,7 +176,7 @@ public class VitaminSnackbar: UIView {
 extension VitaminSnackbar {
     /// Dismiss the `VitaminSnackbar` by fading it out
     /// It will ignore any auto dismissal delay, and dismiss the snackbar instantly`
-    @objc public func dismiss() {
+    public func dismiss() {
         timer?.invalidate()
         self.internalDismiss()
     }
@@ -196,7 +206,7 @@ extension VitaminSnackbar {
         self.addSubview(messageLabel)
 
         // apply changes for every property
-        applyNewDismissOnTap()
+        applyNewTapBehavior()
         applyNewTexts()
         applyNewImage()
         if autoDismiss {
@@ -291,15 +301,19 @@ extension VitaminSnackbar {
     }
 
     // apply changes when dismissOnTap property is set
-    private func applyNewDismissOnTap() {
+    private func applyNewTapBehavior() {
         if let gestureRecognizer = gestureRecognizer {
-            if dismissOnTap {
+            if actionOnTap != nil || dismissOnTap {
+                // test to prevent multiple adding of the same gesture recognizer
+                guard self.gestureRecognizers?.contains(gestureRecognizer) == false else {
+                    return
+                }
                 self.addGestureRecognizer(gestureRecognizer)
             } else {
                 self.removeGestureRecognizer(gestureRecognizer)
             }
-        } else if dismissOnTap {
-            gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismiss))
+        } else if actionOnTap != nil || dismissOnTap {
+            gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.snackbarTapped))
             if let gestureRecognizer = gestureRecognizer {
                 self.addGestureRecognizer(gestureRecognizer)
             }
@@ -312,6 +326,15 @@ extension VitaminSnackbar {
         commonConstraints = []
         setupCommonConstraints()
         NSLayoutConstraint.activate(commonConstraints)
+    }
+}
+
+extension VitaminSnackbar {
+    @objc private func snackbarTapped() {
+        actionOnTap?()
+        if dismissOnTap {
+            dismiss()
+        }
     }
 }
 
