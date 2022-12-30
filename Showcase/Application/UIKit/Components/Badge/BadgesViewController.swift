@@ -43,7 +43,9 @@ final class BadgesViewController: UIViewController, UICollectionViewDelegate, UI
     }()
 
     lazy var segmentedControl: UISegmentedControl = {
-        let segmentedControl = UISegmentedControl(items: ["small", "medium", "large"])
+        let segmentedControl = UISegmentedControl(
+            items: [VitaminBadgeSize.small.name, VitaminBadgeSize.medium.name, VitaminBadgeSize.large.name]
+        )
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: #selector(self.segmentedControlChanged), for: .valueChanged)
         return segmentedControl
@@ -281,4 +283,21 @@ struct VitaminBadgeDemoConfig {
 struct VitaminBadgeSection: BaseNamedSection {
     var name: String = ""
     var configs: [VitaminBadgeDemoConfig] = []
+}
+
+extension VitaminBadgeVariant {
+    var name: String {
+        switch self {
+        case .standard:
+            return "Standard"
+        case .brand:
+            return "Brand"
+        case .reversed:
+            return "Reversed"
+        case .accent:
+            return "Accent"
+        case .alert:
+            return "Alert"
+        }
+    }
 }
