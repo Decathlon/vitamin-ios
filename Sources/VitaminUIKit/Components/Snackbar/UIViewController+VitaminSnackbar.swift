@@ -15,16 +15,15 @@ public extension UIViewController {
     /// - Parameters:
     ///   - snackbar: `VitaminSnackbar` to display. Mandatory
     ///   - bottomMargin: space betwwen the bottom of the view and the bottom of the `VitaminSnackbar`. Default value is 10
-    ///   - maxWidth: optional max width of the `VitaminSnackbar`. It set to `nil`, width of the view minus 10 on each side will e applied.
-    ///   default value id `nil`
     ///
     func present(
         _ snackbar: VitaminSnackbar,
-        bottomMargin: CGFloat = snackbarVerticalPadding,
-        maxWidth: CGFloat? = nil
+        bottomMargin: CGFloat = snackbarVerticalPadding
     ) {
         dismissExistingSnackBar {
-            snackbar.maxWidth = maxWidth ?? self.view.frame.width - 2 * Self.horizontalPadding
+            if snackbar.maxWidth == nil {
+                snackbar.maxWidth = self.view.frame.width - 2 * Self.horizontalPadding
+            }
 
             self.view.addSubview(snackbar)
             snackbar.fadeIn(duration: VitaminSnackbar.appearAndDisappearDuration)

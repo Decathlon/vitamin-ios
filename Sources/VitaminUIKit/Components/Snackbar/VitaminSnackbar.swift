@@ -18,7 +18,7 @@ public class VitaminSnackbar: UIView {
     /// Max width of the snackbar.
     /// Width will automatically adjust to message, but will not be above this maxWidth
     /// Default value is 320
-    public var maxWidth: CGFloat = defaultMaxWidth {
+    public var maxWidth: CGFloat? {
         didSet {
             applyNewMaxWidth()
         }
@@ -80,7 +80,7 @@ public class VitaminSnackbar: UIView {
     public required init(
         contentConfiguration: VitaminSnackbar.ContentConfiguration,
         dismissConfiguration: VitaminSnackbar.DismissConfiguration,
-        maxWidth: CGFloat = defaultMaxWidth,
+        maxWidth: CGFloat? = nil,
         actionOnTap: (() -> Void)? = nil
     ) {
         super.init(frame: .zero)
@@ -119,22 +119,24 @@ public class VitaminSnackbar: UIView {
     private var imageLeftAndRightMargin = 24.0
     private var rightMargin = 24.0
 
+    private var internalMaxWidth = defaultMaxWidth
+
     // UILabel containing the title
-    lazy private var titleLabel: UILabel = {
+    lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         return titleLabel
     }()
 
     // UILabel containing the contet
-    lazy private var messageLabel: UILabel = {
+    lazy var messageLabel: UILabel = {
         let messageLabel = UILabel()
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         return messageLabel
     }()
 
     // UIImageView containing the image
-    lazy private var icon: UIImageView = {
+    lazy var icon: UIImageView = {
         let icon = UIImageView()
         icon.translatesAutoresizingMaskIntoConstraints = false
         return icon
@@ -154,7 +156,10 @@ public class VitaminSnackbar: UIView {
     private var withImageConstraints: [NSLayoutConstraint] = []
     // container for layout constraints when there is no image
     private var withoutImageConstraints: [NSLayoutConstraint] = []
+}
 
+// MARK: - public layout methods overriding
+extension VitaminSnackbar {
     public override func layoutSubviews() {
         self.layer.cornerRadius = min(self.intrinsicContentSize.height / 2, maxCornerRadius)
 
@@ -163,26 +168,35 @@ public class VitaminSnackbar: UIView {
     }
 
     public override var intrinsicContentSize: CGSize {
-        let width = min(titleLabel.intrinsicContentSize.width + 2 * rightMargin, maxWidth)
+        let width = min(
+            max(titleLabel.intrinsicContentSize.width, messageLabel.intrinsicContentSize.width)
+            + 2 * rightMargin, internalMaxWidth
+        )
 
         let height = titleLabel.intrinsicContentSize.height +
             messageLabel.intrinsicContentSize.height +
             2 * topBottomMargin
         return CGSize(width: width, height: height)
     }
-}
 
-// MARK: - public method for making VitaminSnackbar appear or disappear
-extension VitaminSnackbar {
-    /// Dismiss the `VitaminSnackbar` by fading it out
-    /// It will ignore any auto dismissal delay, and dismiss the snackbar instantly`
-    public func dismiss() {
-        timer?.invalidate()
-        self.internalDismiss()
-    }
+    public override func updateConstraints() {
+        self.removeConstraints(commonConstraints)
+        self.removeConstraints(withoutImageConstraints)
+        self.removeConstraints(withImageConstraints)
 
-    public func display() {
-        self.fadeIn(duration: Self.appearAndDisappearDuration)
+        setupCommonConstraints()
+        setupWithImageConstraints()
+        setupWithoutImageConstraints()
+
+        NSLayoutConstraint.activate(commonConstraints)
+        if image == nil {
+            NSLayoutConstraint.activate(withoutImageConstraints)
+            NSLayoutConstraint.deactivate(withImageConstraints)
+        } else {
+            NSLayoutConstraint.deactivate(withoutImageConstraints)
+            NSLayoutConstraint.activate(withImageConstraints)
+        }
+        super.updateConstraints()
     }
 }
 
@@ -190,10 +204,6 @@ extension VitaminSnackbar {
 extension VitaminSnackbar {
     // method that set ups subviews for the snackbar
     private func setUpViews() {
-        setupCommonConstraints()
-        setupWithImageConstraints()
-        setupWithoutImageConstraints()
-
         // setup container apperance
         self.backgroundColor = VitaminColor.Core.Background.tertiary
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -206,6 +216,7 @@ extension VitaminSnackbar {
         self.addSubview(messageLabel)
 
         // apply changes for every property
+        applyNewMaxWidth()
         applyNewTapBehavior()
         applyNewTexts()
         applyNewImage()
@@ -219,39 +230,35 @@ extension VitaminSnackbar {
 extension VitaminSnackbar {
     // set up common layout constraints without activating them
     private func setupCommonConstraints() {
-        commonConstraints.append(titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: topBottomMargin))
-        commonConstraints.append(
-            messageLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -topBottomMargin)
-        )
-        commonConstraints.append(titleLabel.widthAnchor.constraint(equalTo: messageLabel.widthAnchor))
-        commonConstraints.append(titleLabel.bottomAnchor.constraint(equalTo: messageLabel.topAnchor))
-        commonConstraints.append(widthAnchor.constraint(lessThanOrEqualToConstant: maxWidth))
+        commonConstraints = [
+            titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: topBottomMargin),
+            messageLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -topBottomMargin),
+            titleLabel.widthAnchor.constraint(equalTo: messageLabel.widthAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: messageLabel.topAnchor),
+            widthAnchor.constraint(lessThanOrEqualToConstant: internalMaxWidth)
+        ]
     }
 
     // set up layout constraints for image case without activating them
     private func setupWithImageConstraints() {
-        withImageConstraints.append(
-            titleLabel.leftAnchor.constraint(equalTo: icon.rightAnchor, constant: imageLeftAndRightMargin)
-        )
-        withImageConstraints.append(messageLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor))
-        withImageConstraints.append(icon.widthAnchor.constraint(equalToConstant: imageWidthAndHeight))
-        withImageConstraints.append(icon.heightAnchor.constraint(equalToConstant: imageWidthAndHeight))
-        withImageConstraints.append(
-            icon.leftAnchor.constraint(equalTo: self.leftAnchor, constant: imageLeftAndRightMargin)
-        )
-        withImageConstraints.append(icon.centerYAnchor.constraint(equalTo: self.centerYAnchor))
-        withImageConstraints.append(
+        withImageConstraints = [
+            titleLabel.leftAnchor.constraint(equalTo: icon.rightAnchor, constant: imageLeftAndRightMargin),
+            messageLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
+            icon.widthAnchor.constraint(equalToConstant: imageWidthAndHeight),
+            icon.heightAnchor.constraint(equalToConstant: imageWidthAndHeight),
+            icon.leftAnchor.constraint(equalTo: self.leftAnchor, constant: imageLeftAndRightMargin),
+            icon.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             messageLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -rightMargin)
-        )
+        ]
     }
 
     // set up layout constraints for no image case without activating them
     private func setupWithoutImageConstraints() {
-        withoutImageConstraints.append(titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor))
-        withoutImageConstraints.append(messageLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor))
-        withoutImageConstraints.append(
+        withoutImageConstraints = [
+            titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            messageLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             messageLabel.widthAnchor.constraint(lessThanOrEqualTo: self.widthAnchor, constant: -2 * rightMargin)
-        )
+        ]
     }
 
     // apply changes when title or message are changed
@@ -267,20 +274,26 @@ extension VitaminSnackbar {
             if icon.superview == nil {
                 self.addSubview(icon)
             }
-            NSLayoutConstraint.deactivate(withoutImageConstraints)
-            NSLayoutConstraint.activate(withImageConstraints)
             titleLabel.textAlignment = .left
             messageLabel.textAlignment = .left
-            let margins = rightMargin + imageWidthAndHeight + imageLeftAndRightMargin
-            messageLabel.preferredMaxLayoutWidth = maxWidth - margins
+            // let margins = rightMargin + imageWidthAndHeight + imageLeftAndRightMargin
+            // messageLabel.preferredMaxLayoutWidth = computeMessageLabelMaxWidth()
         } else {
-            NSLayoutConstraint.activate(withoutImageConstraints)
-            NSLayoutConstraint.deactivate(withImageConstraints)
             icon.removeFromSuperview()
             titleLabel.textAlignment = .center
             messageLabel.textAlignment = .center
-            messageLabel.preferredMaxLayoutWidth = maxWidth - 2 * rightMargin
+            // messageLabel.preferredMaxLayoutWidth = computeMessageLabelMaxWidth()
         }
+        updateMessageLabelPreferredMaxWidth()
+        setNeedsUpdateConstraints()
+    }
+
+    private func updateMessageLabelPreferredMaxWidth() {
+        if image != nil {
+            let margins = rightMargin + imageWidthAndHeight + imageLeftAndRightMargin
+            messageLabel.preferredMaxLayoutWidth = internalMaxWidth - margins
+        }
+        messageLabel.preferredMaxLayoutWidth = internalMaxWidth - 2 * rightMargin
     }
 
     // launch or invalidate timer for aut dismissal when the autodismiss prperty is set
@@ -300,6 +313,20 @@ extension VitaminSnackbar {
         }
     }
 
+    // apply layout changes when maxWidth property is set
+    private func applyNewMaxWidth() {
+        if let maxWidth = maxWidth {
+            internalMaxWidth = maxWidth
+        } else {
+            internalMaxWidth = Self.defaultMaxWidth
+        }
+        updateMessageLabelPreferredMaxWidth()
+        setNeedsUpdateConstraints()
+    }
+}
+
+// MARK: - tap handling
+extension VitaminSnackbar {
     // apply changes when dismissOnTap property is set
     private func applyNewTapBehavior() {
         if let gestureRecognizer = gestureRecognizer {
@@ -320,66 +347,11 @@ extension VitaminSnackbar {
         }
     }
 
-    // apply layout changes when maxWidth property is set
-    private func applyNewMaxWidth() {
-        NSLayoutConstraint.deactivate(commonConstraints)
-        commonConstraints = []
-        setupCommonConstraints()
-        NSLayoutConstraint.activate(commonConstraints)
-    }
-}
-
-extension VitaminSnackbar {
+    // Method called when snackbar is tapped
     @objc private func snackbarTapped() {
         actionOnTap?()
         if dismissOnTap {
             dismiss()
-        }
-    }
-}
-
-// MARK: Private methods for dismissal or display handling
-extension VitaminSnackbar {
-    // launch the timer that will automatically dismiss
-    private func launchAutoDismissal() {
-        timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(dismissDelay), repeats: false) { _ in
-            self.internalDismiss()
-        }
-    }
-
-    // internal method to dismiss the `VitaminSnackbar`
-    private func internalDismiss() {
-        UIView.animate(
-            withDuration: VitaminSnackbar.appearAndDisappearDuration,
-            delay: 0
-        ) {
-            self.titleLabel.layer.opacity = 0
-            self.messageLabel.layer.opacity = 0
-            self.icon.layer.opacity = 0
-            self.layer.opacity = 0
-        } completion: { _ in
-            self.removeFromSuperview()
-        }
-    }
-
-    /// Make the snackbar appear by fading it in
-    /// This method should only be called before first display of the snackbar, because it will force opacity to 0.
-    /// If the `VitaminSnackbar` is already displayed when you call this method, it will first instantly disappear, then fade in
-    func fadeIn(duration: TimeInterval, completion: (() -> Void )? = nil ) {
-        self.titleLabel.layer.opacity = 0
-        self.messageLabel.layer.opacity = 0
-        self.icon.layer.opacity = 0
-        self.layer.opacity = 0
-        UIView.animate(
-            withDuration: duration,
-            delay: 0
-        ) {
-            self.titleLabel.layer.opacity = 1
-            self.messageLabel.layer.opacity = 1
-            self.icon.layer.opacity = 1
-            self.layer.opacity = 1
-        } completion: { _ in
-            completion?()
         }
     }
 }

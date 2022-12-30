@@ -178,7 +178,6 @@ extension SnackbarViewController {
 
         autoDismissSwitch.addTarget(self, action: #selector(self.switchChanged), for: .valueChanged)
 
-
         formStackView.addArrangedSubview(titleTF)
         formStackView.addArrangedSubview(messageTF)
         formStackView.addArrangedSubview(switchImageStackView)

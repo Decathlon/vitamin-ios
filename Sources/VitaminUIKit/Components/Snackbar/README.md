@@ -7,8 +7,8 @@ You have two possibilities:
 - build your `VitaminSnackbar`, place it on your screen and make it appear
 - use the provided `UIViewController` extension to push a snackbar at the bottom of your ViewController's view
 
-### Basic properties
-A `VitaminSnackbar` has 3 basic properties
+### Setting Content
+A `VitaminSnackbar` has 3 properties to set content:
 - a `title` String, that should be short, and is mandatory
 - a `message` String, that should also be as short as possible, and is also mandatory
 - an optional `image` that will be displayed on the left hand side of the snackbar
@@ -37,10 +37,10 @@ anotherSnackbar.image = VitaminAssets.Placeholder.landscape.image
 ```
 
 ### Width of a snackbar
-The width of the snackbar will automattically adjust to content, but the `VitaminSnackbar` has a property to cap the width
-- `maxWidth` Double, whose default value is 320
+The width of the snackbar will automatically adjust to content, but the `VitaminSnackbar` has a property to cap the width
+- `maxWidth`, which is an optional `CGFloat`, whose default value is `nil`. If set to `nil`, a default `maxWidth` of 320px will be applied
 
-As for basic properties, it can be set by initializer or afterwards
+As for content properties, it can be set by initializer or afterwards
 
 ```swift
 // let's set properties in constructor
@@ -191,12 +191,13 @@ To ease the use of `VitaminSnackbar`, Vitamin provides a `UIViewController` exte
 
 The first parameter is a `VitaminSnackbar`.
 
-There are two others parameters:
-- `maxWidth`: it is optioanl, and default value is `nil`. If you do not set it, the max width of the snackbar will be the width of the View of the controller, with a margin of 10 on each side.
-- bottomMargin: snackbar will always be centered horizontally in view, but you can decide the space between the bottom of the view and the bottom of the snackbar. Default value is 10
+There is just one extra parameter:
+- bottomMargin: snackbar will always be centered horizontally in view, but you can set the space between the bottom of the view and the bottom of the snackbar. Default value is 10
 
 This method has also a great advantage: it automatically handles the fact that only one snackbar should be displayed.
 If you call it while a snackbar is already displayed, it will first dismiss it, then display the new one.
+
+If your snackbar has a `maxWidth`, it wil be applied. But if it is not set, a default max width will be applied, which is the width of the controller's view minus a padding of 10px on each side.
 
 ```swift
 // anywhere in your viewcontroller's code
