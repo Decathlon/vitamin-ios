@@ -6,8 +6,7 @@
 import UIKit
 
 public extension VitaminSnackbar {
-    /// Struct that can be provided to the initializer of `VitaminSnackBar` or `UIViewController.pushVitaminSncakbar()`
-    /// that groups all content configuration
+    /// Struct that can be provided to the initializer of `VitaminSnackBar` that groups all content configuration
     struct ContentConfiguration {
         public var title: String
         public var message: String
@@ -24,8 +23,7 @@ public extension VitaminSnackbar {
         }
     }
 
-    /// Struct that can be provided to the initializer of `VitaminSnackBar` or `UIViewController.pushVitaminSncakbar()`
-    /// that groups all basic configuration
+    /// Struct that can be provided to the initializer of `VitaminSnackBar` that groups all configuration about dismissal
     struct DismissConfiguration {
         public var autoDismiss: Bool
         public var dismissDelay: TimeInterval
