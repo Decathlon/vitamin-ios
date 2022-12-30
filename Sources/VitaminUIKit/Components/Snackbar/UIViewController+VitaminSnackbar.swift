@@ -10,7 +10,7 @@ public extension UIViewController {
     private static let horizontalPadding = 10.0
     static let snackbarVerticalPadding = 10.0
 
-    /// Method that will push a `VitaminSnackbar`at the bottom of the controller's view.
+    /// Method that will present a `VitaminSnackbar` at the bottom of the controller's view.
     /// Every property of the snackbar is settable
     /// - Parameters:
     ///   - snackbar: `VitaminSnackbar` to display. Mandatory

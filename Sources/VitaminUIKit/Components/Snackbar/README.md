@@ -45,7 +45,7 @@ As for basic properties, it can be set by initializer or afterwards
 ```swift
 // let's set properties in constructor
 let snackbar = VitaminSnackbar(
-        basicConfiguration: VitaminSnackbar.BasicConfiguration(
+        contentConfiguration: VitaminSnackbar.ContentConfiguration(
         title: "A short title is best",
         message: "A message should be short"
     ),
@@ -66,7 +66,7 @@ If you want to manaully display the snackbar, the `VitaminSnackbar` provides a `
 ```swift
 // let's set properties in constructor
 let snackbar = VitaminSnackbar(
-    basicConfiguration: VitaminSnackbar.BasicConfiguration(
+    contentConfiguration: VitaminSnackbar.ContentConfiguration(
         title: "A short title is best",
         message: "A message should be short",
         image: VitaminAssets.Placeholder.landscape.image
@@ -103,7 +103,7 @@ They can also be set separately afterwards
 // let's set properties in constructor
 // once displayed, snackbar will automatically be dismissed after 10 seconds, or if the user taps on it before
 let snackbar = VitaminSnackbar(
-    basicConfiguration: VitaminSnackbar.BasicConfiguration(
+    contentConfiguration: VitaminSnackbar.ContentConfiguration(
         title: "A short title is best",
         message: "A message should be short",
         image: VitaminAssets.Placeholder.landscape.image
@@ -116,7 +116,7 @@ let snackbar = VitaminSnackbar(
 )
 
 // or let's define an empty VitaminSnackbar and set its properties afterwards
-// once displayed, snackbar2 will automatically be dismissed after 5 seconds (default value), but tap on it will have no effect
+// once displayed, anotherSnackbar will automatically be dismissed after 5 seconds (default value), but tap on it will have no effect
 let anotherSnackbar = VitaminSnackbar()
 anotherSnackbar.title = "Another short title is best",
 anotherSnackbar.message = "A message should be shorter",
