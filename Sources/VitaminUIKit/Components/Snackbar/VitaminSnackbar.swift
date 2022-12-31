@@ -276,13 +276,10 @@ extension VitaminSnackbar {
             }
             titleLabel.textAlignment = .left
             messageLabel.textAlignment = .left
-            // let margins = rightMargin + imageWidthAndHeight + imageLeftAndRightMargin
-            // messageLabel.preferredMaxLayoutWidth = computeMessageLabelMaxWidth()
         } else {
             icon.removeFromSuperview()
             titleLabel.textAlignment = .center
             messageLabel.textAlignment = .center
-            // messageLabel.preferredMaxLayoutWidth = computeMessageLabelMaxWidth()
         }
         updateMessageLabelPreferredMaxWidth()
         setNeedsUpdateConstraints()
