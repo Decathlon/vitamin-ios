@@ -197,7 +197,7 @@ There is just one extra parameter:
 This method has also a great advantage: it automatically handles the fact that only one snackbar should be displayed.
 If you call it while a snackbar is already displayed, it will first dismiss it, then display the new one.
 
-If your snackbar has a `maxWidth`, it wil be applied. But if it is not set, a default max width will be applied, which is the width of the controller's view minus a padding of 10px on each side.
+If your snackbar has a `maxWidth`, it will be applied. But if it is not set, a default max width will be applied, which is the width of the controller's view minus a padding of 10px on each side.
 
 ```swift
 // anywhere in your viewcontroller's code

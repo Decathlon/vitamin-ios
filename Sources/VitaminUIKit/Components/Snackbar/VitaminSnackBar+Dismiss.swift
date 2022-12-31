@@ -8,7 +8,7 @@ import UIKit
 // MARK: - public method for making VitaminSnackbar appear or disappear
 extension VitaminSnackbar {
     /// Dismiss the `VitaminSnackbar` by fading it out
-    /// It will ignore any auto dismissal delay, and dismiss the snackbar instantly`
+    /// It will ignore any auto dismissal delay, and dismiss the snackbar instantly
     public func dismiss() {
         timer?.invalidate()
         self.internalDismiss()
