@@ -220,6 +220,7 @@ extension SnackbarViewController {
         aTextField.setContentCompressionResistancePriority(.required, for: .vertical)
         aTextField.horizontalPadding = false
         aTextField.fieldValue = defaultValue
+        aTextField.delegate = self
         return aTextField
     }
 
@@ -235,5 +236,12 @@ extension SnackbarViewController {
                 dismissDelayOk = false
             }
         }
+    }
+}
+
+extension SnackbarViewController: UITextFieldDelegate {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
     }
 }
