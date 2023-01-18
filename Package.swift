@@ -43,6 +43,7 @@ let package = Package(
             exclude: [
                 "Components/Badge/README.md",
                 "Components/Button/README.md",
+                "Components/Chip/README.md",
                 "Components/Progressbar/README.md",
                 "Components/Switch/README.md",
                 "Components/Tag/README.md",
