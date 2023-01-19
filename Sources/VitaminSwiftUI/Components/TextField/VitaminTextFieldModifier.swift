@@ -141,7 +141,10 @@ public struct VitaminTextFieldModifier: ViewModifier {
         content
             .font(VitaminTextStyle.body.scaledFont.swiftUIFont)
             .onReceive(Just(text)) { newValue in
-                text = truncateIfLimit(text: newValue)
+                let truncatedText = truncateIfLimit(text: newValue)
+                if text != truncatedText {
+                    text = truncatedText
+                }
                 counterText = makeCharactersCounterText(newValue)
             }
             .contentShape(Rectangle())
