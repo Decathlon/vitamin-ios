@@ -41,6 +41,15 @@ workflows:
               sed -i '' "s/[0-9]*\.[0-9]*\.[0-9]*/$DEPLOY_VERSION_NUMBER/g" README.md
               sed -i '' "s/\(s.version *= \)\"[0-9]*\.[0-9]*\.[0-9]*\"/\1\"$DEPLOY_VERSION_NUMBER\"/g" *.podspec
             fi
+    - xcode-build-for-simulator@0: {}
+    - script@1:
+        title: Commit and add tag
+        run_if: '{{getenv "DEPLOY_VERSION_NUMBER" | ne ""}}'
+        inputs:
+        - content: |-
+            #!/usr/bin/env bash
+            # fail if any commands fails
+            set -e
 
             # Commit
             git commit -a -m "chore: bump version to $DEPLOY_VERSION_NUMBER"
@@ -48,7 +57,6 @@ workflows:
             git tag -a $DEPLOY_VERSION_NUMBER -m "Vitamin $DEPLOY_VERSION_NUMBER"
             # Push modifications
             git push origin
-    - xcode-build-for-simulator@0: {}
     - script@1:
         title: Send version to CocoaPods
         inputs:
