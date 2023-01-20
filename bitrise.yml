@@ -69,9 +69,9 @@ workflows:
             pod trunk register
 
             # push to CocoaPods specs
-            pod trunk push VitaminCore --allow-warnings
-            pod trunk push Vitamin --allow-warnings
-            pod trunk push VitaminSwiftUI --allow-warnings
+            pod trunk push VitaminCore.podspec --allow-warnings --synchronous
+            pod trunk push Vitamin.podspec --allow-warnings --synchronous
+            pod trunk push VitaminSwiftUI.podspec --allow-warnings --synchronous
     - cache-push@2: {}
   primary:
     description: This workflow will build the project.
