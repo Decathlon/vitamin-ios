@@ -6,7 +6,7 @@ Vitamin provides a `VitaminChip` class which displays a chip
 ```swift
 import Vitamin
 
-// This chip progress bar will have a "Chip" text, should be used in filtering items, will be in unselected state with no badge, in medium size, and will be disables
+// This chip will have a "Chip" text, should be used in filtering items, will be in unselected state with no badge, in medium size, and will be disables
 let chip = VitaminChip(
             text: "Chip",
             variant: .filter(state: .unselected, badge: nil),

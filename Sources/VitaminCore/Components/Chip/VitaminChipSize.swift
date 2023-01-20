@@ -35,44 +35,6 @@ public enum VitaminChipSize {
         return 8
     }
 
-    /// Horizontal pading and spacing in VitaminChip depending on the size
-    public func leadingPadding(variant: VitaminChipVariant) -> CGFloat {
-        switch variant {
-        case let .filter(state, _):
-            // for
-            guard state == .selected  else {
-                return standardPadding
-            }
-            return reducedPadding
-        case let .input(icon, image):
-            guard icon != nil || image != nil else {
-                return standardPadding
-            }
-            return reducedPadding
-        case .singleChoice:
-            return standardPadding
-        case .action:
-            return reducedPadding
-        }
-    }
-
-    public func trailingPadding(variant: VitaminChipVariant) -> CGFloat {
-        switch variant {
-        case let .filter(_, badge):
-            // for
-            guard badge != nil  else {
-                return standardPadding
-            }
-            return reducedPadding
-        case .input:
-            return reducedPadding
-        case .singleChoice:
-            return standardPadding
-        case .action:
-            return standardPadding
-        }
-    }
-
     private var standardPadding: CGFloat {
         guard self == .medium else {
             return 12
