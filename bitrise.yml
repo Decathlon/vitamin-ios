@@ -56,7 +56,7 @@ workflows:
             # Create tag
             git tag -a $DEPLOY_VERSION_NUMBER -m "Vitamin $DEPLOY_VERSION_NUMBER"
             # Push modifications
-            git push origin
+            git push origin --tags
     - script@1:
         title: Send version to CocoaPods
         inputs:
