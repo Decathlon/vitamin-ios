@@ -35,7 +35,7 @@ This chip exists in two sizes:
 - Small
 - Medium
 
-Thi size is technically represented by the `VitaminChipSize` enum, which has two cases:
+The size is technically represented by the `VitaminChipSize` enum, which has two cases:
 - `.small`
 - `.medium`
 
@@ -60,7 +60,7 @@ This chip exists in 4 variants:
 - Single Choice
 - Filter
 
-These different variants are represented by the `VitaminChipVariant` enum, wifth 4 cases:
+These different variants are represented by the `VitaminChipVariant` enum, with 4 cases:
 - `.action`
 - `.input`
 - `.singleChoice`
@@ -92,12 +92,12 @@ It always has a close icon on the right hand side of the text, to indicate it ca
 It can have either an icon or an image on the left hand side of the text.
 
 If you provide an icon, it wil be colored and resized to 20px x 20px.
-If you provide an image, it will be ronded and resized to 20px x 20px.
+If you provide an image, it will be rounded and resized to 20px x 20px.
 If you provide both, only icon will be taken in account.
 
-You can specify icon or image via the `icon` or `image` associated values ofthe variant.
+You can specify icon or image via the `icon` or `image` associated values of the variant.
 
-⚠️ The dismissal of the chip is not iplemented in this library, it is up to you to dismiss the chip when clicked (see #action below)
+⚠️ The dismissal of the chip is not implemented in this library, it is up to you to dismiss the chip when clicked (see #action below)
 
 ```swift
 import Vitamin
@@ -126,9 +126,9 @@ It is an enum with two cases:
 To change the state, you have to change the whole variant property with a property new `VitaminChipVariant` with the opossite state.
 To help you in that, the `VitaminChipVariantState` provides a `toggle()` method that will return the opposite state.
 
-The change of state on click is handled by the component : each time you touch the component, it will toggle to opposite state.
+The change of state on click is handled by the component: each time you touch the component, it will toggle to the opposite state.
 
-⚠️ The change of state of other single choice `VitaminChip`in the same group is not handled by this library, it is up to you to ahndle that when clicked (see #action).
+⚠️ The change of state of other single choice `VitaminChip` in the same group is not handled by this library, it is up to you to handle that when clicked (see #action).
 
 let chip = VitaminChip(text: "test", variant: .singleChoice(state: .unselected))
 
@@ -151,7 +151,7 @@ chip.variant = .singleChoice(state: .unselected)
 This variant should be used when you want to express the filtering of a list.
 
 You can provide a `VitaminChipVariantState` in the state associated value of the variant.
-It is the same enum than for `.singleChoice` variant :
+It is the same enum as for `.singleChoice` variant:
 - `.selected`
 - `.unselected`
 
@@ -160,7 +160,7 @@ To help you in that, the `VitaminChipVariantState` provides a `toggle()` method 
 
 When selected, the chip will hazve a check icon on the left hand side of the text, thus its width will change.
 
-The change of state on click is handled by the component : each time you touch the component, it will toggle to opposite state.
+The change of state on click is handled by the component: each time you touch the component, it will toggle to the opposite state.
 
 It can also have a badge which indicates the number of elements matching the filter.
 
@@ -211,7 +211,7 @@ Typcally, it is here than you have to handle the change of state for other singl
 ```swift
 import Vitamin
 
-let action : (VitaminChip) -> Void = { chip in 
+let action: (VitaminChip) -> Void = { chip in 
     print chip.text
 }
 

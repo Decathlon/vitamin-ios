@@ -31,7 +31,7 @@ public class VitaminChip: UIView {
     /// Variant of the chip. Can be one among:
     /// - .filter
     /// - .input
-    /// - . singleChoice
+    /// - .singleChoice
     /// - .action
     /// Ecah if these type may have associated values
     /// Default value is .filter, deselected and without tag
@@ -74,7 +74,7 @@ public class VitaminChip: UIView {
         self.commonInit()
     }
 
-    /// An initializer that instantiate a `VitaminChip` in a frame, with all default valmues for properties
+    /// An initializer that instantiates a `VitaminChip` in a frame, with all default values for properties
     override public init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()

@@ -100,7 +100,7 @@ public enum VitaminChipVariantState {
         }
     }
 
-    /// Mathod that returns the opossite state
+    /// Method that returns the opposite state
     public func toggle() -> VitaminChipVariantState {
         guard self == .selected else {
             return .selected
