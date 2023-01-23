@@ -4,7 +4,7 @@
 //
 
 import UIKit
-import VitaminCore
+import Vitamin
 
 final class ChipViewController: UITableViewController {
     convenience init() {

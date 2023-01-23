@@ -35,14 +35,14 @@ public enum VitaminChipSize {
         return 8
     }
 
-    private var standardPadding: CGFloat {
+    public var standardPadding: CGFloat {
         guard self == .medium else {
             return 12
         }
         return 16
     }
 
-    private var reducedPadding: CGFloat {
+    public var reducedPadding: CGFloat {
         guard self == .medium else {
             return 8
         }
