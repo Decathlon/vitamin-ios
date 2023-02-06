@@ -53,6 +53,7 @@
 		6551745D27EDBDFA0043700F /* BadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551745A27EDBDFA0043700F /* BadgesViewController.swift */; };
 		6551746127EDBFAE0043700F /* BaseHeaderedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551745F27EDBFAE0043700F /* BaseHeaderedCollectionViewController.swift */; };
 		6551746227EDBFAE0043700F /* BaseImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551746027EDBFAE0043700F /* BaseImageCollectionViewController.swift */; };
+		657606FF295C4C1C00D2ECB1 /* SnackbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657606FE295C4C1C00D2ECB1 /* SnackbarViewController.swift */; };
 		659BBA7B288BEA2B00574333 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659BBA7A288BEA2B00574333 /* ButtonsView.swift */; };
 		659BBA7F288BFC7C00574333 /* ButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659BBA7E288BFC7C00574333 /* ButtonModel.swift */; };
 		65B52A1927392EDD008D9B5E /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B52A1827392EDD008D9B5E /* SwitchViewController.swift */; };
@@ -136,6 +137,7 @@
 		6551745A27EDBDFA0043700F /* BadgesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgesViewController.swift; sourceTree = "<group>"; };
 		6551745F27EDBFAE0043700F /* BaseHeaderedCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHeaderedCollectionViewController.swift; sourceTree = "<group>"; };
 		6551746027EDBFAE0043700F /* BaseImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseImageCollectionViewController.swift; sourceTree = "<group>"; };
+		657606FE295C4C1C00D2ECB1 /* SnackbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackbarViewController.swift; sourceTree = "<group>"; };
 		659BBA7A288BEA2B00574333 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 		659BBA7E288BFC7C00574333 /* ButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModel.swift; sourceTree = "<group>"; };
 		65B52A1827392EDD008D9B5E /* SwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 				AA68B4C7256811FC00F1A4D7 /* Button */,
 				6536D23D296F2C0500C14635 /* Chip */,
 				65F1BC1927CE8836002D08D8 /* Progressbar */,
+				657606FD295C4C1C00D2ECB1 /* Snackbar */,
 				4AAD2B6D2767A99900727D8E /* Switch */,
 				65C518C327D673FF00B87FF0 /* Tag */,
 				4AAD2B60276771DB00727D8E /* TextField */,
@@ -628,6 +631,14 @@
 				6551746027EDBFAE0043700F /* BaseImageCollectionViewController.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		657606FD295C4C1C00D2ECB1 /* Snackbar */ = {
+			isa = PBXGroup;
+			children = (
+				657606FE295C4C1C00D2ECB1 /* SnackbarViewController.swift */,
+			);
+			path = Snackbar;
 			sourceTree = "<group>";
 		};
 		659BBA79288BE9F700574333 /* Components */ = {
@@ -959,6 +970,7 @@
 				AAB029CE256805A900F08C74 /* ColorsViewController.swift in Sources */,
 				AAB029D4256805E200F08C74 /* ButtonsViewController.swift in Sources */,
 				4A35E47C2812FE77001526D8 /* ColorsModel+Semantic.swift in Sources */,
+				657606FF295C4C1C00D2ECB1 /* SnackbarViewController.swift in Sources */,
 				4A4643902806C91700942AD7 /* AssetsModel.swift in Sources */,
 				4A35E4772812B357001526D8 /* ColorsView.swift in Sources */,
 				65B52A1927392EDD008D9B5E /* SwitchViewController.swift in Sources */,
