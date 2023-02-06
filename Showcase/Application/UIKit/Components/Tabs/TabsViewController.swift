@@ -6,18 +6,18 @@
 import UIKit
 import Vitamin
 
-public final class TabViewController: UIViewController {
+public final class TabsViewController: UIViewController {
     lazy var scrollView = UIScrollView()
 
     lazy var fixedWithLabel = initLabel(text: "Fixed Width")
-    lazy var twoTabs: VitaminTab = initTabs(items: ["One", "Two"])
-    lazy var threeTabs: VitaminTab = initTabs(items: ["One", "Two", "Three"])
-    lazy var fourTabs: VitaminTab = initTabs(items: ["One", "Two", "Three", "Four"])
+    lazy var twoTabs = initTabs(items: ["One", "Two"])
+    lazy var threeTabs = initTabs(items: ["One", "Two", "Three"])
+    lazy var fourTabs = initTabs(items: ["One", "Two", "Three", "Four"])
 
     lazy var compactWidthLabel = initLabel(text: "Automatic Width")
-    lazy var compacTwoTabs: VitaminTab = initTabs(items: ["One", "Two"])
-    lazy var compactThreeTabs: VitaminTab = initTabs(items: ["One", "Two", "Three"])
-    lazy var compactFourTabs: VitaminTab = initTabs(items: ["One", "Two", "Three", "Four"])
+    lazy var compacTwoTabs = initTabs(items: ["One", "Two"])
+    lazy var compactThreeTabs = initTabs(items: ["One", "Two", "Three"])
+    lazy var compactFourTabs = initTabs(items: ["One", "Two", "Three", "Four"])
 
     private static let verticalPadding = 20.0
     private static let horizontalPadding = 10.0
@@ -36,7 +36,7 @@ public final class TabViewController: UIViewController {
         self.edgesForExtendedLayout = []
         self.extendedLayoutIncludesOpaqueBars = false
 
-        self.navigationItem.title = "Tab"
+        self.navigationItem.title = "Tabs"
 
         buildBlockOfTabs(
             label: fixedWithLabel,
@@ -55,7 +55,7 @@ public final class TabViewController: UIViewController {
 
     private func buildBlockOfTabs(
         label: UILabel,
-        tabs: [VitaminTab],
+        tabs: [VitaminTabs],
         topAnchor: NSLayoutYAxisAnchor,
         topMargin: CGFloat = 10.0,
         fullWidth: Bool = true
@@ -90,8 +90,8 @@ public final class TabViewController: UIViewController {
         }
     }
 
-    private func initTabs(items: [Any]) -> VitaminTab {
-        let tabs = VitaminTab(items: items)
+    private func initTabs(items: [Any]) -> VitaminTabs {
+        let tabs = VitaminTabs(items: items)
         tabs.selectedSegmentIndex = 0
         tabs.translatesAutoresizingMaskIntoConstraints = false
         return tabs
