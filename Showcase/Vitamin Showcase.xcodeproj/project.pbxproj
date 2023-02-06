@@ -51,6 +51,7 @@
 		6551746127EDBFAE0043700F /* BaseHeaderedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551745F27EDBFAE0043700F /* BaseHeaderedCollectionViewController.swift */; };
 		6551746227EDBFAE0043700F /* BaseImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551746027EDBFAE0043700F /* BaseImageCollectionViewController.swift */; };
 		657606FF295C4C1C00D2ECB1 /* SnackbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657606FE295C4C1C00D2ECB1 /* SnackbarViewController.swift */; };
+		658CB65A299169A900CD2EC7 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658CB659299169A900CD2EC7 /* TabViewController.swift */; };
 		659BBA7B288BEA2B00574333 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659BBA7A288BEA2B00574333 /* ButtonsView.swift */; };
 		659BBA7F288BFC7C00574333 /* ButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659BBA7E288BFC7C00574333 /* ButtonModel.swift */; };
 		65B52A1927392EDD008D9B5E /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B52A1827392EDD008D9B5E /* SwitchViewController.swift */; };
@@ -132,6 +133,7 @@
 		6551745F27EDBFAE0043700F /* BaseHeaderedCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHeaderedCollectionViewController.swift; sourceTree = "<group>"; };
 		6551746027EDBFAE0043700F /* BaseImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseImageCollectionViewController.swift; sourceTree = "<group>"; };
 		657606FE295C4C1C00D2ECB1 /* SnackbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackbarViewController.swift; sourceTree = "<group>"; };
+		658CB659299169A900CD2EC7 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		659BBA7A288BEA2B00574333 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 		659BBA7E288BFC7C00574333 /* ButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModel.swift; sourceTree = "<group>"; };
 		65B52A1827392EDD008D9B5E /* SwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
@@ -487,6 +489,7 @@
 				65F1BC1927CE8836002D08D8 /* Progressbar */,
 				657606FD295C4C1C00D2ECB1 /* Snackbar */,
 				4AAD2B6D2767A99900727D8E /* Switch */,
+				658CB658299169A900CD2EC7 /* Tab */,
 				65C518C327D673FF00B87FF0 /* Tag */,
 				4AAD2B60276771DB00727D8E /* TextField */,
 			);
@@ -614,6 +617,14 @@
 				657606FE295C4C1C00D2ECB1 /* SnackbarViewController.swift */,
 			);
 			path = Snackbar;
+			sourceTree = "<group>";
+		};
+		658CB658299169A900CD2EC7 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				658CB659299169A900CD2EC7 /* TabViewController.swift */,
+			);
+			path = Tab;
 			sourceTree = "<group>";
 		};
 		659BBA79288BE9F700574333 /* Components */ = {
@@ -911,6 +922,7 @@
 				6551745D27EDBDFA0043700F /* BadgesViewController.swift in Sources */,
 				4ACCCBD72805E7AE00FD184B /* ViewExtension.swift in Sources */,
 				65BD9F3F2768D06900EEDC0D /* IconsViewController.swift in Sources */,
+				658CB65A299169A900CD2EC7 /* TabViewController.swift in Sources */,
 				4A35E4902816D1B5001526D8 /* TypographyView.swift in Sources */,
 				659BBA7B288BEA2B00574333 /* ButtonsView.swift in Sources */,
 				AAB029D1256805CC00F08C74 /* TypographyViewController.swift in Sources */,

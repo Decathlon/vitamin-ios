@@ -75,6 +75,7 @@ extension MainTableViewController {
                 MenuItem(name: "⏳ Progressbar", viewController: ProgressbarViewController()),
                 MenuItem(name: "🌭 Snackbar", viewController: SnackbarViewController()),
                 MenuItem(name: "🎚 Switch", viewController: SwitchViewController()),
+                MenuItem(name: "🗂 Tab", viewController: TabViewController()),
                 MenuItem(name: "🏷 Tag", viewController: TagViewController()),
                 MenuItem(name: "💬 TextField", viewController: TextFieldViewController())
             ])
