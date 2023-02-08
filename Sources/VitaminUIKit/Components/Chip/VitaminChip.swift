@@ -219,6 +219,8 @@ private extension VitaminChip {
             variant = .filter(state: state.toggle(), badge: badge)
         case let .singleChoice(state):
             variant = .singleChoice(state: state.toggle())
+        case .input:
+            self.removeFromSuperview()
         default:
             break
         }
