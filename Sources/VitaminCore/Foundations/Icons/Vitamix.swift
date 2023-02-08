@@ -415,7 +415,6 @@ public enum Vitamix {
       public static let play = VitaminImageAsset(name: "line/media/play")
       public static let playCircle = VitaminImageAsset(name: "line/media/play_circle")
       public static let `repeat` = VitaminImageAsset(name: "line/media/repeat")
-      public static let shoppingBag = VitaminImageAsset(name: "line/media/shopping_bag")
       public static let stop = VitaminImageAsset(name: "line/media/stop")
       public static let stopCircle = VitaminImageAsset(name: "line/media/stop_circle")
       public static let volumeAlert = VitaminImageAsset(name: "line/media/volume_alert")
