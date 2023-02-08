@@ -49,17 +49,17 @@ For its [Digital section](https://www.decathlon.design/726f8c765/p/6145b2-overvi
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/Decathlon/vitamin-ios.git", .exact("0.8.0"))
+    .package(url: "https://github.com/Decathlon/vitamin-ios.git", .exact("0.9.1"))
 ]
 ```
 
 ### Cocoapods
 ```ruby
 # for UIKitVersion
-pod 'Vitamin', '= 0.8.0'
+pod 'Vitamin', '= 0.9.1'
 
 # for SwiftUI version
-pod 'VitaminSwiftUI', = '0.8.0'
+pod 'VitaminSwiftUI', = '0.9.1'
 ```
 
 ## Available elements
@@ -86,6 +86,7 @@ The following components are available :
 |Badge | Badges from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Badge#readme) [SwiftUI](./Sources/VitaminSwiftUI/Components/Badge#readme)|
 |Button | Different button styles from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Button#readme) [SwiftUI](./Sources/VitaminSwiftUI/Components/Button#readme)|
 |Progressbar | Different progressbar styles from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Progressbar#readme)|
+|Snackbar | Snackbar from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Snackbar#readme)|
 |Switch | Swicth from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Switch#readme)|
 |Tag | Tag from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Tag#readme)|
 |TextField | Different text fields styles from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/TextField#readme)  [SwiftUI](./Sources/VitaminSwiftUI/Components/TextField#readme)||

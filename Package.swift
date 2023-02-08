@@ -44,6 +44,7 @@ let package = Package(
                 "Components/Badge/README.md",
                 "Components/Button/README.md",
                 "Components/Progressbar/README.md",
+                "Components/Snackbar/README.md",
                 "Components/Switch/README.md",
                 "Components/Tag/README.md",
                 "Components/TextField/README.md",
