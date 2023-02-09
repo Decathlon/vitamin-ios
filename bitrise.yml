@@ -25,7 +25,7 @@ workflows:
   deploy:
     description: This workflow will bump podspecs to the new version and set a new tag. Use `DEPLOY_VERSION_NUMBER` environment variable to setup the wanted version number.
     steps:
-    - git-clone@6: {}
+    - git-clone@7: {}
     - cache-pull@2: {}
     - script@1:
         title: Update version number
@@ -41,14 +41,22 @@ workflows:
               sed -i '' "s/[0-9]*\.[0-9]*\.[0-9]*/$DEPLOY_VERSION_NUMBER/g" README.md
               sed -i '' "s/\(s.version *= \)\"[0-9]*\.[0-9]*\.[0-9]*\"/\1\"$DEPLOY_VERSION_NUMBER\"/g" *.podspec
             fi
+    - xcode-build-for-simulator@0: {}
+    - script@1:
+        title: Commit and add tag
+        run_if: '{{getenv "DEPLOY_VERSION_NUMBER" | ne ""}}'
+        inputs:
+        - content: |-
+            #!/usr/bin/env bash
+            # fail if any commands fails
+            set -e
 
             # Commit
             git commit -a -m "chore: bump version to $DEPLOY_VERSION_NUMBER"
             # Create tag
             git tag -a $DEPLOY_VERSION_NUMBER -m "Vitamin $DEPLOY_VERSION_NUMBER"
             # Push modifications
-            git push origin
-    - xcode-build-for-simulator@0: {}
+            git push origin --tags
     - script@1:
         title: Send version to CocoaPods
         inputs:
@@ -61,14 +69,14 @@ workflows:
             pod trunk register
 
             # push to CocoaPods specs
-            pod trunk push VitaminCore --allow-warnings
-            pod trunk push Vitamin --allow-warnings
-            pod trunk push VitaminSwiftUI --allow-warnings
+            pod trunk push VitaminCore.podspec --allow-warnings --synchronous
+            pod trunk push Vitamin.podspec --allow-warnings --synchronous
+            pod trunk push VitaminSwiftUI.podspec --allow-warnings --synchronous
     - cache-push@2: {}
   primary:
     description: This workflow will build the project.
     steps:
-    - git-clone@6: {}
+    - git-clone@7: {}
     - cache-pull@2: {}
     - xcode-build-for-simulator@0: {}
     - cache-push@2: {}
