@@ -286,9 +286,10 @@ extension VitaminSnackbar {
     }
 
     private func updateMessageLabelPreferredMaxWidth() {
-        if image != nil {
+        guard image == nil else {
             let margins = rightMargin + imageWidthAndHeight + imageLeftAndRightMargin
             messageLabel.preferredMaxLayoutWidth = internalMaxWidth - margins
+            return
         }
         messageLabel.preferredMaxLayoutWidth = internalMaxWidth - 2 * rightMargin
     }
