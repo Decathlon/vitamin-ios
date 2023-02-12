@@ -43,6 +43,7 @@ extension VitaminSnackbar {
             self.layer.opacity = 0
         } completion: { _ in
             self.removeFromSuperview()
+            completion?()
         }
     }
 
