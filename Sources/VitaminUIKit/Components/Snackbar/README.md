@@ -61,7 +61,7 @@ anotherSnackbar.maxWidth = 200.0
 
 
 ### Displaying a Snackbar
-If you want to manaully display the snackbar, the `VitaminSnackbar` provides a `display()` function, that will first set opacity of the snackbar (and its subviews) to 0, then fade it in by animating the opacity to 1.
+If you want to manaully display the snackbar, the `VitaminSnackbar` provides a `display(completion:)` function, that will first set opacity of the snackbar (and its subviews) to 0, then fade it in by animating the opacity to 1.
 
 ```swift
 // let's set properties in constructor
@@ -87,7 +87,9 @@ snackbar.display()
 
 ⚠️ This method should only be used before displaying the snackbar, because if it is already displayed, it will, disappear, then reappear with a fade in effect.
 
-Since only one snackbar is alowed at the same time, if you display manually the snackbar, it's up to you to remove any other snackbar before (see below)
+Since only one snackbar is allowed at the same time, if you display manually the snackbar, it's up to you to remove any other snackbar before (see below)
+The completion parameter is an optional closure that will be executed just after the dismissal.
+By default, the completion is nil.
 
 
 ### Dismissal of a Snackbar
@@ -124,7 +126,9 @@ anotherSnackbar.autoDismiss = true
 anotherSnackbar.dismissOnTap = false
 ```
 
-If you want to handle programmatically the dismissal, the `VitaminSnackbar` provides a `dismiss()` function, that will fade out the snackbar, and finally remove it from its superview.
+If you want to handle programmatically the dismissal, the `VitaminSnackbar` provides a `dismiss(completion:)` function, that will fade out the snackbar, and finally remove it from its superview.
+The completion parameter is an optional closure that will be executed just after the dismissal.
+By default, the completion is nil.
 
 ```swift
 // snackbar is a previously displayed VitaminSnackbar
@@ -185,7 +189,7 @@ anotherSnackbar.actionOnTap = self.action
 ```
 
 
-### Displaying a SnackBar in a ViewController
+### Displaying a Snackbar in a ViewController
 To ease the use of `VitaminSnackbar`, Vitamin provides a `UIViewController` extension, that adds the following method to any `UIViewController`:
 `present(_:bottomMargin:maxWidth:)`
 
@@ -223,5 +227,5 @@ self.present(
 )
 
 ...
-``
+```
 
