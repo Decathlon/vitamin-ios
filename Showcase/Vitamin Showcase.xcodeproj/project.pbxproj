@@ -38,6 +38,7 @@
 		4ACCCBD52805E71400FD184B /* AssetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCCBD42805E71400FD184B /* AssetsView.swift */; };
 		4ACCCBD72805E7AE00FD184B /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCCBD62805E7AE00FD184B /* ViewExtension.swift */; };
 		4ACCCBD92805FF7100FD184B /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCCBD82805FF7100FD184B /* ArrayExtension.swift */; };
+		6500D77229999B9300A1F154 /* SampleTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6500D77129999B9300A1F154 /* SampleTabViewController.swift */; };
 		651EF24D272BE8D500121F7A /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EF24C272BE8D500121F7A /* TextFieldTableViewCell.swift */; };
 		651EF252272C0AD500121F7A /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651EF251272C0AD500121F7A /* TextFieldTableViewCell.xib */; };
 		6521D85F27DA100A00A15A06 /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6521D85E27DA100A00A15A06 /* TagCollectionViewCell.xib */; };
@@ -118,6 +119,7 @@
 		4ACCCBD42805E71400FD184B /* AssetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsView.swift; sourceTree = "<group>"; };
 		4ACCCBD62805E7AE00FD184B /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		4ACCCBD82805FF7100FD184B /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		6500D77129999B9300A1F154 /* SampleTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTabViewController.swift; sourceTree = "<group>"; };
 		651EF24C272BE8D500121F7A /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		651EF251272C0AD500121F7A /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
 		6521D85E27DA100A00A15A06 /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -557,6 +559,14 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		6500D77029999B5900A1F154 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				6500D77129999B9300A1F154 /* SampleTabViewController.swift */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
 		6531B77D27A9A23600808E1E /* Radiuses */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,6 +624,7 @@
 		655A2C452991BAC90072AC6F /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				6500D77029999B5900A1F154 /* Sample */,
 				655A2C462991BAC90072AC6F /* TabsViewController.swift */,
 			);
 			path = Tabs;
@@ -932,6 +943,7 @@
 				30F95E44292FBA0500D6CEB7 /* TextFieldsView.swift in Sources */,
 				4A35E47E2812FEDE001526D8 /* ColorsModel+Base.swift in Sources */,
 				65F1BC1527CE2101002D08D8 /* AssetsViewController.swift in Sources */,
+				6500D77229999B9300A1F154 /* SampleTabViewController.swift in Sources */,
 				65D1B6692787422100C1560B /* ShadowsViewController.swift in Sources */,
 				6521D86127DA4B3400A15A06 /* TagCollectionViewCell.swift in Sources */,
 				4A4643932806D60B00942AD7 /* IconsView.swift in Sources */,
