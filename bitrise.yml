@@ -65,9 +65,6 @@ workflows:
             # fail if any commands fails
             set -e
 
-            # register to trunk
-            pod trunk register
-
             # push to CocoaPods specs
             pod trunk push VitaminCore.podspec --allow-warnings --synchronous
             pod trunk push Vitamin.podspec --allow-warnings --synchronous
