@@ -6,23 +6,23 @@
 import UIKit
 import Vitamin
 
-public final class TabsViewController: UIViewController {
+public final class SegmentedControlViewController: UIViewController {
     lazy var scrollView = UIScrollView()
 
     lazy var fixedWithLabel = initLabel(text: "Fixed Width")
-    lazy var twoTabs = initTabs(items: ["One", "Two"])
-    lazy var threeTabs = initTabs(items: ["One", "Two", "Three"])
-    lazy var fourTabs = initTabs(items: ["One", "Two", "Three", "Four"])
+    lazy var twoSegments = initSegmentedControl(items: ["One", "Two"])
+    lazy var threeSegments = initSegmentedControl(items: ["One", "Two", "Three"])
+    lazy var fourSegments = initSegmentedControl(items: ["One", "Two", "Three", "Four"])
 
     lazy var compactWidthLabel = initLabel(text: "Automatic Width")
-    lazy var compacTwoTabs = initTabs(items: ["One", "Two"])
-    lazy var compactThreeTabs = initTabs(items: ["One", "Two", "Three"])
-    lazy var compactFourTabs = initTabs(items: ["One", "Two", "Three", "Four"])
+    lazy var compacTwoSegments = initSegmentedControl(items: ["One", "Two"])
+    lazy var compactThreeSegments = initSegmentedControl(items: ["One", "Two", "Three"])
+    lazy var compactFourSegments = initSegmentedControl(items: ["One", "Two", "Three", "Four"])
 
     lazy var controllerLabel = initLabel(text: "ViewControllers use case")
-    lazy var buttonTabsController: VitaminButton = {
+    lazy var buttonSCController: VitaminButton = {
         let button = VitaminButton(style: .primary)
-        button.setTitle("Display VitaminTabsController sample", for: .normal)
+        button.setTitle("Display VitaminSegmentedControlController sample", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -44,28 +44,28 @@ public final class TabsViewController: UIViewController {
         self.edgesForExtendedLayout = []
         self.extendedLayoutIncludesOpaqueBars = false
 
-        self.navigationItem.title = "Tabs"
+        self.navigationItem.title = "SegmentedControl"
 
-        buildBlockOfTabs(
+        buildBlockOfSegmentedControl(
             label: fixedWithLabel,
-            tabs: [twoTabs, threeTabs, fourTabs],
+            segmentedControl: [twoSegments, threeSegments, fourSegments],
             topAnchor: scrollView.topAnchor
         )
 
-        buildBlockOfTabs(
+        buildBlockOfSegmentedControl(
             label: compactWidthLabel,
-            tabs: [compacTwoTabs, compactThreeTabs, compactFourTabs],
-            topAnchor: fourTabs.bottomAnchor,
+            segmentedControl: [compacTwoSegments, compactThreeSegments, compactFourSegments],
+            topAnchor: fourSegments.bottomAnchor,
             topMargin: 40.0,
             fullWidth: false
         )
 
-        buildButtonBlock(topAnchor: compactFourTabs.bottomAnchor)
+        buildButtonBlock(topAnchor: compactFourSegments.bottomAnchor)
     }
 
-    private func buildBlockOfTabs(
+    private func buildBlockOfSegmentedControl(
         label: UILabel,
-        tabs: [VitaminTabs],
+        segmentedControl: [VitaminSegmentedControl],
         topAnchor: NSLayoutYAxisAnchor,
         topMargin: CGFloat = 10.0,
         fullWidth: Bool = true
@@ -77,34 +77,34 @@ public final class TabsViewController: UIViewController {
         ).isActive = true
         label.topAnchor.constraint(equalTo: topAnchor, constant: topMargin).isActive = true
 
-        for (index, tab) in tabs.enumerated() {
-            scrollView.addSubview(tab)
-            tab.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        for (index, segment) in segmentedControl.enumerated() {
+            scrollView.addSubview(segment)
+            segment.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             if fullWidth {
-                tab.widthAnchor.constraint(
+                segment.widthAnchor.constraint(
                     equalTo: view.widthAnchor,
                     constant: -2 * Self.horizontalPadding
                 ).isActive = true
             }
             if index == 0 {
-                tab.topAnchor.constraint(
+                segment.topAnchor.constraint(
                     equalTo: label.bottomAnchor,
                     constant: Self.verticalPadding
                 ).isActive = true
             } else {
-                tab.topAnchor.constraint(
-                    equalTo: tabs[index - 1].bottomAnchor,
+                segment.topAnchor.constraint(
+                    equalTo: segmentedControl[index - 1].bottomAnchor,
                     constant: Self.verticalPadding
                 ).isActive = true
             }
         }
     }
 
-    private func initTabs(items: [Any]) -> VitaminTabs {
-        let tabs = VitaminTabs(items: items)
-        tabs.selectedSegmentIndex = 0
-        tabs.translatesAutoresizingMaskIntoConstraints = false
-        return tabs
+    private func initSegmentedControl(items: [Any]) -> VitaminSegmentedControl {
+        let segmentedControl = VitaminSegmentedControl(items: items)
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        return segmentedControl
     }
 
     private func initLabel(text: String) -> UILabel {
@@ -118,38 +118,38 @@ public final class TabsViewController: UIViewController {
         topAnchor: NSLayoutYAxisAnchor,
         verticalPadding: CGFloat = verticalPadding
     ) {
-        scrollView.addSubview(buttonTabsController)
+        scrollView.addSubview(buttonSCController)
         scrollView.addSubview(controllerLabel)
         controllerLabel.leftAnchor.constraint(
             equalTo: view.leftAnchor,
             constant: Self.horizontalPadding
         ).isActive = true
         controllerLabel.topAnchor.constraint(equalTo: topAnchor, constant: 40).isActive = true
-        buttonTabsController.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        buttonTabsController.topAnchor.constraint(
+        buttonSCController.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        buttonSCController.topAnchor.constraint(
             equalTo: controllerLabel.bottomAnchor,
             constant: verticalPadding
         ).isActive = true
-        buttonTabsController.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        buttonSCController.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
 
     @objc private func buttonTapped() {
-        let vc1 = SampleTabViewController()
+        let vc1 = SampleLabelViewController()
         vc1.sampleText = "First ViewController"
         vc1.title = "First"
 
-        let vc2 = SampleTabViewController()
+        let vc2 = SampleLabelViewController()
         vc2.sampleText = "Second ViewController"
         vc2.title = "Second"
 
-        let vc3 = SampleTabViewController()
+        let vc3 = SampleLabelViewController()
         vc3.sampleText = "Third ViewController"
         vc3.title = "Third"
 
-        let tabVc = VitaminTabsController([vc1, vc2, vc3], defaultTabIndex: 1)
-        tabVc.title = "VitaminTabsController"
-        tabVc.fullWidthTabs = true
+        let segmentedControlVc = VitaminSegmentedControlController([vc1, vc2, vc3], defaultSegmentIndex: 1)
+        segmentedControlVc.title = "VitaminSegmentedControlController"
+        segmentedControlVc.fullWidthSegmentedControl = true
 
-        self.navigationController?.pushViewController(tabVc, animated: true)
+        self.navigationController?.pushViewController(segmentedControlVc, animated: true)
     }
 }

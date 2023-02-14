@@ -5,7 +5,7 @@
 
 import UIKit
 
-public class SampleTabViewController: UIViewController {
+public class SampleLabelViewController: UIViewController {
     public var sampleText: String = "" {
         didSet {
             label.attributedText = sampleText.styled(as: .headline)

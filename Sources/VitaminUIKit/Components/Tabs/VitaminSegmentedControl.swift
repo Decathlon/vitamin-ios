@@ -7,7 +7,7 @@ import UIKit
 import VitaminCore
 
 @IBDesignable
-public class VitaminTabs: UISegmentedControl {
+public class VitaminSegmentedControl: UISegmentedControl {
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
