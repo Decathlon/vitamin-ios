@@ -135,6 +135,7 @@ enum IconsModel {
             Vitamix.Line.Finance.return,
             Vitamix.Line.Finance.refund,
             Vitamix.Line.Finance.securePayment,
+            Vitamix.Line.Finance.shoppingBag,
             Vitamix.Line.Finance.shoppingCart,
             Vitamix.Line.Finance.trophy,
             Vitamix.Line.Finance.visa,
@@ -153,6 +154,7 @@ enum IconsModel {
             Vitamix.Fill.Finance.return,
             Vitamix.Fill.Finance.refund,
             Vitamix.Fill.Finance.securePayment,
+            Vitamix.Fill.Finance.shoppingBag,
             Vitamix.Fill.Finance.shoppingCart,
             Vitamix.Fill.Finance.trophy,
             Vitamix.Fill.Finance.visa,
@@ -267,6 +269,7 @@ enum IconsModel {
             Vitamix.Line.Media.repeat,
             Vitamix.Line.Media.stop,
             Vitamix.Line.Media.stopCircle,
+            Vitamix.Line.Media.volumeAlert,
             Vitamix.Line.Media.volumeDown,
             Vitamix.Line.Media.volumeMute,
             Vitamix.Line.Media.volumeUp
@@ -288,6 +291,7 @@ enum IconsModel {
             Vitamix.Fill.Media.repeat,
             Vitamix.Fill.Media.stop,
             Vitamix.Fill.Media.stopCircle,
+            Vitamix.Fill.Media.volumeAlert,
             Vitamix.Fill.Media.volumeDown,
             Vitamix.Fill.Media.volumeMute,
             Vitamix.Fill.Media.volumeUp
@@ -300,7 +304,10 @@ enum IconsModel {
             Vitamix.Line.Others.scales,
             Vitamix.Line.Others.tShirt,
             Vitamix.Line.Others.hourglass,
-            Vitamix.Line.Others.sparkles
+            Vitamix.Line.Others.sparkles,
+            Vitamix.Line.Others.seed1,
+            Vitamix.Line.Others.seed2,
+            Vitamix.Line.Others.seed3
         ]),
         IconsModel.Section(name: "Others - Fill", items: [
             Vitamix.Fill.Others.football,
@@ -310,7 +317,10 @@ enum IconsModel {
             Vitamix.Fill.Others.scales,
             Vitamix.Fill.Others.tShirt,
             Vitamix.Fill.Others.hourglass,
-            Vitamix.Fill.Others.sparkles
+            Vitamix.Fill.Others.sparkles,
+            Vitamix.Fill.Others.seed1,
+            Vitamix.Fill.Others.seed2,
+            Vitamix.Fill.Others.seed3
         ]),
         IconsModel.Section(name: "Services - Line", items: [
             Vitamix.Line.Services.selectedByDecathlon,
