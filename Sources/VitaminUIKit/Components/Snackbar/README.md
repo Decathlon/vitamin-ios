@@ -85,10 +85,10 @@ snackbar.bottomAnchor.constraint(
 snackbar.display()
 ```
 
-⚠️ This method should only be used before displaying the snackbar, because if it is already displayed, it will, disappear, then reappear with a fade in effect.
+⚠️ This method should only be used before displaying the snackbar, because if it is already displayed, it will, disappear, then reappear with a fade-in effect.
 
 Since only one snackbar is allowed at the same time, if you display manually the snackbar, it's up to you to remove any other snackbar before (see below)
-The completion parameter is an optional closure that will be executed just after the dismissal.
+The completion parameter is an optional closure that will be executed just after the fade-in effect of the snackbar is finished.
 By default, the completion is nil.
 
 
@@ -191,7 +191,7 @@ anotherSnackbar.actionOnTap = self.action
 
 ### Displaying a Snackbar in a ViewController
 To ease the use of `VitaminSnackbar`, Vitamin provides a `UIViewController` extension, that adds the following method to any `UIViewController`:
-`present(_:bottomMargin:maxWidth:)`
+`present(_:bottomMargin:)`
 
 The first parameter is a `VitaminSnackbar`.
 
