@@ -86,9 +86,9 @@ The following components are available :
 |Badge | Badges from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Badge#readme) [SwiftUI](./Sources/VitaminSwiftUI/Components/Badge#readme)|
 |Button | Different button styles from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Button#readme) [SwiftUI](./Sources/VitaminSwiftUI/Components/Button#readme)|
 |Progressbar | Different progressbar styles from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Progressbar#readme)|
+|SegmentedControl | SegmentedControl from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/SegmentedControl#readme)|
 |Snackbar | Snackbar from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Snackbar#readme)|
-|Switch | Swicth from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Switch#readme)|
-|Tabs | Tabs from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Tabs#readme)|
+|Switch | Switch from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Switch#readme)|
 |Tag | Tag from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Tag#readme)|
 |TextField | Different text fields styles from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/TextField#readme)  [SwiftUI](./Sources/VitaminSwiftUI/Components/TextField#readme)||
 
