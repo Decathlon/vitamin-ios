@@ -36,7 +36,7 @@ extension VitaminTextFieldState {
         if self == .disabled {
             return VitaminColor.Core.Content.primary.disabledColor()
         } else {
-            return VitaminColor.Core.Content.tertiary
+            return VitaminColor.Core.Content.primary
         }
     }
 
