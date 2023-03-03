@@ -10,7 +10,6 @@ import VitaminCore
 public class VitaminChip: UIView {
     private var label = InsetLabel()
     private var iconOrImageView = UIImageView()
-    private var badge = VitaminBadge()
     private var dismissIcon = UIImageView()
     private var stackView = UIStackView()
 
@@ -35,7 +34,7 @@ public class VitaminChip: UIView {
     /// - .action
     /// Ecah if these type may have associated values
     /// Default value is .filter, deselected and without tag
-    public var variant: VitaminChipVariant = .filter(state: .unselected, badge: nil) {
+    public var variant: VitaminChipVariant = .filter(state: .unselected) {
         didSet {
             applyNewVariant()
         }
@@ -60,7 +59,7 @@ public class VitaminChip: UIView {
     /// An initializer that instantiates a `VitaminChip` by setting all its properties
     public init(
         text: String,
-        variant: VitaminChipVariant = .filter(state: .unselected, badge: nil),
+        variant: VitaminChipVariant = .filter(state: .unselected),
         size: VitaminChipSize = .medium,
         action: ((VitaminChip) -> Void)? = nil,
         enabled: Bool = true
@@ -123,8 +122,8 @@ private extension VitaminChip {
         layer.borderWidth = variant.borderWidth
 
         switch variant {
-        case let .filter(state, badgeValue):
-            applyFilterVariant(state: state, badgeValue: badgeValue)
+        case let .filter(state):
+            applyFilterVariant(state: state)
         case let .input(icon, image):
             applyInputVariant(icon: icon, image: image)
         case .singleChoice:
@@ -174,7 +173,6 @@ private extension VitaminChip {
 
         stackView.addArrangedSubview(iconOrImageView)
         stackView.addArrangedSubview(label)
-        stackView.addArrangedSubview(badge)
         stackView.addArrangedSubview(dismissIcon)
 
         label.numberOfLines = 1
@@ -215,8 +213,8 @@ private extension VitaminChip {
             return
         }
         switch variant {
-        case let .filter(state, badge):
-            variant = .filter(state: state.toggle(), badge: badge)
+        case let .filter(state):
+            variant = .filter(state: state.toggle())
         case let .singleChoice(state):
             variant = .singleChoice(state: state.toggle())
         case .input:
@@ -264,8 +262,7 @@ public extension VitaminChip {
 public extension VitaminChip {
     // Utility method to handle variant change when .filter variant is applied
     private func applyFilterVariant(
-        state: VitaminChipVariantState,
-        badgeValue: Int?
+        state: VitaminChipVariantState
     ) {
         if state == .selected {
             let image = Vitamix.Line.System.check.image.withRenderingMode(.alwaysTemplate)
@@ -275,16 +272,6 @@ public extension VitaminChip {
             iconOrImageView.clipsToBounds = false
         } else {
             self.iconOrImageView.isHidden = true
-        }
-
-        if let badgeValue = badgeValue {
-            self.badge.value = badgeValue
-            badge.isHidden = false
-            badge.textColor = enabled ?
-                VitaminBadgeVariant.standard.foregroundColor :
-                VitaminBadgeVariant.standard.foregroundColor.disabledColor()
-        } else {
-            badge.isHidden = true
         }
         dismissIcon.isHidden = true
     }
@@ -309,14 +296,12 @@ public extension VitaminChip {
         }
         dismissIcon.isHidden = false
         dismissIcon.tintColor = disableColor(variant.textColor())
-        badge.isHidden = true
     }
 
     // Utility method to handle variant change when .singleChoice variant is applied
     private func applySingleChoiceVariant() {
         dismissIcon.isHidden = true
         iconOrImageView.isHidden = true
-        badge.isHidden = true
     }
 
     // Utility method to handle variant change when .action variant is applied
@@ -328,7 +313,6 @@ public extension VitaminChip {
         self.iconOrImageView.isHidden = false
         iconOrImageView.clipsToBounds = false
         dismissIcon.isHidden = true
-        badge.isHidden = true
     }
 
     // Set constraints to size icon

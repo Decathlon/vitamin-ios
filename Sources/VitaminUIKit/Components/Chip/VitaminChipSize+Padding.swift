@@ -10,7 +10,7 @@ extension VitaminChipSize {
     /// Horizontal leading padding depending on the current size and variant
     public func leadingPadding(variant: VitaminChipVariant) -> CGFloat {
         switch variant {
-        case let .filter(state, _):
+        case let .filter(state):
             // for
             guard state == .selected  else {
                 return standardPadding
@@ -31,12 +31,8 @@ extension VitaminChipSize {
     /// Horizontal trailing padding depending on the current size and variant
     public func trailingPadding(variant: VitaminChipVariant) -> CGFloat {
         switch variant {
-        case let .filter(_, badge):
-            // for
-            guard badge != nil  else {
-                return standardPadding
-            }
-            return reducedPadding
+        case .filter:
+            return standardPadding
         case .input:
             return reducedPadding
         case .singleChoice:

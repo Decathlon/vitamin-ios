@@ -6,10 +6,10 @@ Vitamin provides a `VitaminChip` class which displays a chip
 ```swift
 import Vitamin
 
-// This chip will have a "Chip" text, should be used in filtering items, will be in unselected state with no badge, in medium size, and will be disables
+// This chip will have a "Chip" text, should be used in filtering items, will be in unselected state, in medium size, and will be disabled
 let chip = VitaminChip(
             text: "Chip",
-            variant: .filter(state: .unselected, badge: nil),
+            variant: .filter(state: .unselected),
             size: .medium,
             action: nil,
             enabled: false
@@ -68,7 +68,7 @@ These different variants are represented by the `VitaminChipVariant` enum, with 
 
 Each of these cases have associated values to specify additional properties only relevant for each variant.
 
-Default value is `.filter(state: .unselected, badge: nil)` (see below).
+Default value is `.filter(state: .unselected)` (see below).
 
 
 #### Action Variant
@@ -97,7 +97,8 @@ If you provide both, only icon will be taken in account.
 
 You can specify icon or image via the `icon` or `image` associated values of the variant.
 
-⚠️ The dismissal of the chip is not implemented in this library, it is up to you to dismiss the chip when clicked (see #action below)
+When an input chip is tapped, it is automatically removed from its superView, thus dismissed.
+That's your responsibility to deallocate this chip once removed from its superview.
 
 ```swift
 import Vitamin
@@ -158,27 +159,22 @@ It is the same enum as for `.singleChoice` variant:
 As for single choice variant, to change the state, you have to change the whole variant property with a property new `VitaminChipVariant` with the oposite state.
 To help you in that, the `VitaminChipVariantState` provides a `toggle()` method that will return the opposite state.
 
-When selected, the chip will hazve a check icon on the left hand side of the text, thus its width will change.
+When selected, the chip will have a check icon on the left hand side of the text, thus its width will change.
 
 The change of state on click is handled by the component: each time you touch the component, it will toggle to the opposite state.
-
-It can also have a badge which indicates the number of elements matching the filter.
 
 ```swift
 import Vitamin
 
-let chip = VitaminChip(text: "test", variant: .filter(state: .unselected, badge: 12)
+let chip = VitaminChip(text: "test", variant: .filter(state: .unselected)
 
-// you can toogle the state or modify the badge from the current value
-if case let .filter(state, badge) = chip.variant {
-    chip.variant = .filter(state: state.toggle(), badge + 1)
+// you can toogle the state
+if case let .filter(state) = chip.variant {
+    chip.variant = .filter(state: state.toggle())
 }
 
 // you can replace them
-chip.variant = .filter(state: .unselected, badge: 12)
-
-// You can also create a chip without badge
-let anotherChip = VitaminChip(text: "test", variant: .filter(state: .unselected)
+chip.variant = .filter(state: .unselected)
 ```
 
 
@@ -204,9 +200,9 @@ chip.enabled = true
 You can provide an action that will be triggered when you tap on the chip.
 This action is a closure, that takes the tapped `VitaminChip` as only parameter.
 
-This is settable through the `action` property, or the or the `action` constructor parameter.
+This is settable through the `action` property, or the `action` constructor parameter.
 
-Typcally, it is here than you have to handle the change of state for other single choice chips, or the dismissal of input chips.
+Typically, this is the place where you have to handle the change of state for other single choice chips (sonce only one single choice chip can be selected at a time)
 
 ```swift
 import Vitamin

@@ -7,7 +7,7 @@ import UIKit
 
 /// Enum that holds info about a var
 public enum VitaminChipVariant {
-    case filter(state: VitaminChipVariantState, badge: Int?)
+    case filter(state: VitaminChipVariantState)
     case input(icon: UIImage? = nil, image: UIImage? = nil)
     case singleChoice(state: VitaminChipVariantState)
     case action(icon: UIImage)
@@ -18,7 +18,7 @@ public enum VitaminChipVariant {
     /// Bakground color of the chip depending on the variant
     public func backgroundColor(pressed: Bool = false) -> UIColor {
         switch self {
-        case let .filter(state, _), let .singleChoice(state):
+        case let .filter(state), let .singleChoice(state):
             return pressed ? VitaminColor.Core.Active.brand : state.backgroundColor
         case .input, .action:
             return pressed ? VitaminColor.Core.Active.secondaryTransparent : VitaminColor.Core.Background.primary
@@ -28,7 +28,7 @@ public enum VitaminChipVariant {
     /// Border color of the chip depending on the variant
     public var borderColor: UIColor {
         switch self {
-        case let .filter(state, _), let .singleChoice(state):
+        case let .filter(state), let .singleChoice(state):
             return state.borderColor
         case .input, .action:
             return VitaminColor.Core.Border.inactive
@@ -38,7 +38,7 @@ public enum VitaminChipVariant {
     /// Border width of the chip depending on the variant
     public var borderWidth: CGFloat {
         switch self {
-        case let .filter(state, _), let .singleChoice(state):
+        case let .filter(state), let .singleChoice(state):
             return state.borderWidth
         case .input, .action:
             return Self.borderUnselected
@@ -48,7 +48,7 @@ public enum VitaminChipVariant {
     /// Text color of the chip depending on the variant
     public func textColor(pressed: Bool = false) -> UIColor {
         switch self {
-        case let .filter(state, _), let .singleChoice(state):
+        case let .filter(state), let .singleChoice(state):
             return pressed ? VitaminColor.Core.Content.primaryReversed : state.textColor
         case .input, .action:
             return VitaminColor.Core.Content.action

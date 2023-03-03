@@ -95,16 +95,10 @@ extension ChipViewController {
         var chips: [VitaminChipDemoConfig] = []
 
         chips.append(
-            VitaminChipDemoConfig(text: "filter1", variant: .filter(state: .selected, badge: nil), enabled: enabled)
+            VitaminChipDemoConfig(text: "filter1", variant: .filter(state: .selected), enabled: enabled)
         )
         chips.append(
-            VitaminChipDemoConfig(text: "filter2", variant: .filter(state: .unselected, badge: nil), enabled: enabled)
-        )
-        chips.append(
-            VitaminChipDemoConfig(text: "filter3", variant: .filter(state: .selected, badge: 59), enabled: enabled)
-        )
-        chips.append(
-            VitaminChipDemoConfig(text: "filter4", variant: .filter(state: .unselected, badge: 59), enabled: enabled)
+            VitaminChipDemoConfig(text: "filter2", variant: .filter(state: .unselected), enabled: enabled)
         )
         return chips
     }
