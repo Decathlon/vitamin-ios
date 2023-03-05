@@ -202,7 +202,7 @@ This action is a closure, that takes the tapped `VitaminChip` as only parameter.
 
 This is settable through the `action` property, or the `action` constructor parameter.
 
-Typically, this is the place where you have to handle the change of state for other single choice chips (sonce only one single choice chip can be selected at a time)
+Typically, this is the place where you have to handle the change of state for other single choice chips (since only one single choice chip can be selected at a time)
 
 ```swift
 import Vitamin
