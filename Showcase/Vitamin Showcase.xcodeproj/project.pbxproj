@@ -45,6 +45,9 @@
 		6531B78227A9A23600808E1E /* RadiusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6531B77F27A9A23600808E1E /* RadiusTableViewCell.swift */; };
 		6531B78327A9A23600808E1E /* RadiusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6531B78027A9A23600808E1E /* RadiusTableViewCell.xib */; };
 		6531B78427A9A23600808E1E /* RadiusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6531B78127A9A23600808E1E /* RadiusViewController.swift */; };
+		6536D23F296F2C0500C14635 /* ChipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536D23E296F2C0500C14635 /* ChipViewController.swift */; };
+		6548C67929718EB4005FFDC4 /* ChipTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6548C67729718EB4005FFDC4 /* ChipTableViewCell.xib */; };
+		6548C67A29718EB4005FFDC4 /* ChipTableVewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6548C67829718EB4005FFDC4 /* ChipTableVewCell.swift */; };
 		6551745B27EDBDFA0043700F /* BadgeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6551745827EDBDFA0043700F /* BadgeCollectionViewCell.xib */; };
 		6551745C27EDBDFA0043700F /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551745927EDBDFA0043700F /* BadgeCollectionViewCell.swift */; };
 		6551745D27EDBDFA0043700F /* BadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551745A27EDBDFA0043700F /* BadgesViewController.swift */; };
@@ -124,8 +127,11 @@
 		6531B77F27A9A23600808E1E /* RadiusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusTableViewCell.swift; sourceTree = "<group>"; };
 		6531B78027A9A23600808E1E /* RadiusTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadiusTableViewCell.xib; sourceTree = "<group>"; };
 		6531B78127A9A23600808E1E /* RadiusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusViewController.swift; sourceTree = "<group>"; };
+		6536D23E296F2C0500C14635 /* ChipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipViewController.swift; sourceTree = "<group>"; };
 		654642B3276A513C00213415 /* vitamin-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "vitamin-ios"; path = ..; sourceTree = "<group>"; };
 		654642B4276A528C00213415 /* vitamin-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "vitamin-ios"; path = ..; sourceTree = "<group>"; };
+		6548C67729718EB4005FFDC4 /* ChipTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChipTableViewCell.xib; sourceTree = "<group>"; };
+		6548C67829718EB4005FFDC4 /* ChipTableVewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipTableVewCell.swift; sourceTree = "<group>"; };
 		6551745827EDBDFA0043700F /* BadgeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BadgeCollectionViewCell.xib; sourceTree = "<group>"; };
 		6551745927EDBDFA0043700F /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
 		6551745A27EDBDFA0043700F /* BadgesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgesViewController.swift; sourceTree = "<group>"; };
@@ -484,6 +490,7 @@
 			children = (
 				6551745627EDBDFA0043700F /* Badge */,
 				AA68B4C7256811FC00F1A4D7 /* Button */,
+				6536D23D296F2C0500C14635 /* Chip */,
 				65F1BC1927CE8836002D08D8 /* Progressbar */,
 				657606FD295C4C1C00D2ECB1 /* Snackbar */,
 				4AAD2B6D2767A99900727D8E /* Switch */,
@@ -572,6 +579,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		6536D23D296F2C0500C14635 /* Chip */ = {
+			isa = PBXGroup;
+			children = (
+				6548C67629718EB4005FFDC4 /* Cell */,
+				6536D23E296F2C0500C14635 /* ChipViewController.swift */,
+			);
+			path = Chip;
+			sourceTree = "<group>";
+		};
 		654642B2276A513C00213415 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,6 +595,15 @@
 				654642B4276A528C00213415 /* vitamin-ios */,
 			);
 			name = Packages;
+			sourceTree = "<group>";
+		};
+		6548C67629718EB4005FFDC4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6548C67729718EB4005FFDC4 /* ChipTableViewCell.xib */,
+				6548C67829718EB4005FFDC4 /* ChipTableVewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		6551745627EDBDFA0043700F /* Badge */ = {
@@ -859,6 +884,7 @@
 				6551745B27EDBDFA0043700F /* BadgeCollectionViewCell.xib in Resources */,
 				AA68B4CE25681A6700F1A4D7 /* ButtonTableViewCell.xib in Resources */,
 				65F1BC2027CE8836002D08D8 /* LinearProgressbarTableViewCell.xib in Resources */,
+				6548C67929718EB4005FFDC4 /* ChipTableViewCell.xib in Resources */,
 				65F1BC2127CE8836002D08D8 /* CircularProgressbarTableViewCell.xib in Resources */,
 				65B52A1F273944DC008D9B5E /* SwitchTableViewCell.xib in Resources */,
 				6521D85F27DA100A00A15A06 /* TagCollectionViewCell.xib in Resources */,
@@ -929,6 +955,7 @@
 				4A35E4872816C1F4001526D8 /* ShadowsView.swift in Sources */,
 				65C518CA27D673FF00B87FF0 /* TagTableViewCell.swift in Sources */,
 				65C518C827D673FF00B87FF0 /* TagViewController.swift in Sources */,
+				6536D23F296F2C0500C14635 /* ChipViewController.swift in Sources */,
 				65F1BC2227CE8836002D08D8 /* ProgressbarTableViewCells.swift in Sources */,
 				4A35E483281304A1001526D8 /* RadiusesView.swift in Sources */,
 				AAC5D4412567FE710070667D /* AppDelegate.swift in Sources */,
@@ -959,6 +986,7 @@
 				4A4C0B1D292EB187002653E1 /* TextFieldModel.swift in Sources */,
 				651EF24D272BE8D500121F7A /* TextFieldTableViewCell.swift in Sources */,
 				AAB029E925680D8D00F08C74 /* ColorTableViewCell.swift in Sources */,
+				6548C67A29718EB4005FFDC4 /* ChipTableVewCell.swift in Sources */,
 				65BD9F3E2768D06900EEDC0D /* IconCollectionViewCell.swift in Sources */,
 				6531B78227A9A23600808E1E /* RadiusTableViewCell.swift in Sources */,
 				6551746127EDBFAE0043700F /* BaseHeaderedCollectionViewController.swift in Sources */,
