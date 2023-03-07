@@ -13,7 +13,7 @@ REGEX="^[0-9]*\.[0-9]*\.[0-9]*$"
 # Set version
 if [[ $NEW_VERSION =~ $REGEX ]]; then
   echo "Update version in README."
-  sed -i '' "s/[0-9]*\.[0-9]*\.[0-9]/$NEW_VERSION/g" README.md
+  sed -E -i '' "s/[0-9]+\.[0-9]+\.[0-9]+/$NEW_VERSION/g" README.md
   echo "Update podspecs version."
   sed -i '' "s/\(s.version *= \)\"[0-9]*\.[0-9]*\.[0-9]\"/\1\"$NEW_VERSION\"/g" *.podspec
 else
