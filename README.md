@@ -47,10 +47,56 @@ For its [Digital section](https://www.decathlon.design/726f8c765/p/6145b2-overvi
 
 ### SPM
 
+Add Vitamin to the dependencies array of your package:  
 ```swift
 dependencies: [
-    .package(url: "https://github.com/Decathlon/vitamin-ios.git", .exact("0.10.0"))
-]
+  .package(url: "https://github.com/Decathlon/vitamin-ios.git", .exact("0.10.0")),
+  // Any other dependencies...
+],
+```
+Then, add Vitamin to the dependencies array of any target that depends on Vitamin.  
+For `SwiftUI`:  
+```swift
+.target(name: "YourSwiftUITarget",
+        dependencies: [
+            .product(name: "VitaminSwiftUI", package: "vitamin-ios"),
+            // Any other dependencies...
+        ]),
+```
+For `UIKit`:  
+```swift
+.target(name: "YourUIKitTarget",
+        dependencies: [
+            .product(name: "Vitamin", package: "vitamin-ios"),
+            // Any other dependencies...
+        ]),
+```
+
+A full example:  
+```swift
+let package = Package(
+    name: "YourPackage",
+    products: [
+        // Your products
+    ],
+    dependencies: [
+        .package(url: "https://github.com/Decathlon/vitamin-ios.git", .exact("0.10.0")),
+        // Any other dependencies...
+    ],
+    targets: [
+        // Your target
+        .target(name: "YourUIKitTarget",
+                dependencies: [
+                    .product(name: "Vitamin", package: "vitamin-ios"),
+                    // Any other dependencies...
+                ]), 
+        .target(name: "YourSwiftUITarget",
+                dependencies: [
+                    .product(name: "VitaminSwiftUI", package: "vitamin-ios"),
+                    // Any other dependencies...
+                ]),
+    ]
+)
 ```
 
 ### Cocoapods
