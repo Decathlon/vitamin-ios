@@ -10,12 +10,15 @@ import VitaminCore
 
 @available(iOS 13, *)
 struct ButtonsView: View {
-    @State var enabled = true
+    @State private var enabled = true
+    @State private var fullWidth = false
 
     var body: some View {
         VStack {
-            Toggle("Show enabled state", isOn: $enabled)
-                .padding()
+            VStack {
+                Toggle("Show enabled state", isOn: $enabled.animation())
+                Toggle("Show full width", isOn: $fullWidth.animation())
+            }.padding()
             List {
                 makeButtonRows()
             }
@@ -81,6 +84,7 @@ extension ButtonsView {
             text: style.rawValue,
             style: style,
             size: size,
+            fullWidth: fullWidth,
             iconType: iconType) {
                     // no action defined
         }
