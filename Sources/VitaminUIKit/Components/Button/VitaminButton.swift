@@ -180,6 +180,7 @@ extension VitaminButton {
         }
         self.setImage(imageUpdated, for: state)
         self.imageView?.tintColor = style.foregroundColor
+        self.imageView?.tintAdjustmentMode = .normal
         self.tintColor = style.foregroundColor
         self.imageEdgeInsets = iconType.imageEdgeInsets
         self.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
