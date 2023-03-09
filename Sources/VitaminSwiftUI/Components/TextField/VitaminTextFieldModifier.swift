@@ -102,7 +102,7 @@ public struct VitaminTextFieldModifier: ViewModifier {
     /// Create the icon view to display on the right of the text field if needed.
     /// - Returns: The icon view.
     private func makeIconView() -> some View {
-        if let icon = state.icon?.swiftUIImage ?? iconConfiguration?.icon {
+        if let icon = state.icon?.image ?? iconConfiguration?.icon {
             makeImageView(image: icon,
                           foregroundColor: state.iconColor.swiftUIColor)
         }

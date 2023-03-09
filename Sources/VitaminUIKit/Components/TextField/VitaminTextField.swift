@@ -439,7 +439,7 @@ extension VitaminTextField {
     // handling of new icon
     private func applyNewIcon() {
         if self.icon == nil, let stateIcon = self.state.icon {
-            self.textField.rightImage = stateIcon
+            self.textField.rightImage = stateIcon.image
             self.textField.rightImageColor = self.state.iconColor
         } else {
             self.textField.rightImage = self.icon
