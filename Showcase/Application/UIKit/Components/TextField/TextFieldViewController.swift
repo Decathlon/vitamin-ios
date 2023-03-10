@@ -58,7 +58,7 @@ final class TextFieldViewController: UITableViewController {
                 initialState: .standard),
             style: VitaminTextFieldStyle.outlined,
             maxLength: nil,
-            icon: VitaminTextField.IconConfiguration(initialIcon: Vitamix.Line.Health.heart.image)
+            icon: VitaminTextField.IconConfiguration(initialIcon: UIImage.Vitamix.heartLine)
         ),
         TextFieldDemoConfig(
             textsConfiguration: VitaminTextField.TextConfiguration(
@@ -88,7 +88,7 @@ final class TextFieldViewController: UITableViewController {
                 initialState: .disabled),
             style: VitaminTextFieldStyle.outlined,
             maxLength: 20,
-            icon: VitaminTextField.IconConfiguration(initialIcon: Vitamix.Line.Health.heart.image)
+            icon: VitaminTextField.IconConfiguration(initialIcon: UIImage.Vitamix.heartLine)
         ),
         TextFieldDemoConfig(
             textsConfiguration: VitaminTextField.TextConfiguration(
@@ -163,7 +163,7 @@ final class TextFieldViewController: UITableViewController {
                 initialState: .standard),
             style: VitaminTextFieldStyle.filled,
             maxLength: nil,
-            icon: VitaminTextField.IconConfiguration(initialIcon: Vitamix.Line.Health.heart.image)
+            icon: VitaminTextField.IconConfiguration(initialIcon: UIImage.Vitamix.heartLine)
         ),
         TextFieldDemoConfig(
             textsConfiguration: VitaminTextField.TextConfiguration(
@@ -193,7 +193,7 @@ final class TextFieldViewController: UITableViewController {
                 initialState: .disabled),
             style: VitaminTextFieldStyle.filled,
             maxLength: 20,
-            icon: VitaminTextField.IconConfiguration(initialIcon: Vitamix.Line.Health.heart.image)
+            icon: VitaminTextField.IconConfiguration(initialIcon: UIImage.Vitamix.heartLine)
         ),
         TextFieldDemoConfig(
             textsConfiguration: VitaminTextField.TextConfiguration(
@@ -270,7 +270,7 @@ final class TextFieldViewController: UITableViewController {
                 initialState: .standard),
             style: VitaminTextFieldStyle.outlined,
             maxLength: nil,
-            icon: VitaminTextField.IconConfiguration(initialIcon: Vitamix.Line.Health.heart.image)
+            icon: VitaminTextField.IconConfiguration(initialIcon: UIImage.Vitamix.heartLine)
         ),
         TextFieldDemoConfig(
             textsConfiguration: VitaminTextField.TextConfiguration(
@@ -286,7 +286,7 @@ final class TextFieldViewController: UITableViewController {
                 activeOnEditing: true),
             style: VitaminTextFieldStyle.outlined,
             maxLength: 20,
-            icon: VitaminTextField.IconConfiguration(initialIcon: Vitamix.Line.Health.heart.image)
+            icon: VitaminTextField.IconConfiguration(initialIcon: UIImage.Vitamix.heartLine)
         ),
         TextFieldDemoConfig(
             textsConfiguration: VitaminTextField.TextConfiguration(
@@ -304,7 +304,7 @@ final class TextFieldViewController: UITableViewController {
             style: VitaminTextFieldStyle.outlined,
             maxLength: 20,
             icon: VitaminTextField.IconConfiguration(
-                initialIcon: Vitamix.Line.System.eye.image,
+                initialIcon: UIImage.Vitamix.eyeLine,
                 iconAction: iconActionPasswordShowHide)
         ),
         TextFieldDemoConfig(
@@ -322,7 +322,7 @@ final class TextFieldViewController: UITableViewController {
             style: VitaminTextFieldStyle.outlined,
             maxLength: 20,
             icon: VitaminTextField.IconConfiguration(
-                initialIcon: Vitamix.Line.Health.heart.image,
+                initialIcon: UIImage.Vitamix.heartLine,
                 iconActionDelegate: self)
         ),
         TextFieldDemoConfig(
@@ -353,7 +353,7 @@ final class TextFieldViewController: UITableViewController {
                 initialState: .standard),
             style: VitaminTextFieldStyle.filled,
             maxLength: nil,
-            icon: VitaminTextField.IconConfiguration(initialIcon: Vitamix.Line.Health.heart.image)
+            icon: VitaminTextField.IconConfiguration(initialIcon: UIImage.Vitamix.heartLine)
         ),
         TextFieldDemoConfig(
             textsConfiguration: VitaminTextField.TextConfiguration(
@@ -387,7 +387,7 @@ final class TextFieldViewController: UITableViewController {
             style: VitaminTextFieldStyle.filled,
             maxLength: 20,
             icon: VitaminTextField.IconConfiguration(
-                initialIcon: Vitamix.Line.System.eye.image,
+                initialIcon: UIImage.Vitamix.eyeLine,
                 iconAction: iconActionPasswordShowHide)
         ),
         TextFieldDemoConfig(
@@ -406,7 +406,7 @@ final class TextFieldViewController: UITableViewController {
             style: VitaminTextFieldStyle.filled,
             maxLength: 20,
             icon: VitaminTextField.IconConfiguration(
-                initialIcon: Vitamix.Line.Health.heart.image,
+                initialIcon: UIImage.Vitamix.heartLine,
                 iconActionDelegate: self
             )
         )
@@ -428,7 +428,7 @@ final class TextFieldViewController: UITableViewController {
     let iconActionPasswordShowHide: VitaminTextFieldIconAction = { vitaminTextField in
         vitaminTextField.isSecureTextEntry.toggle()
         vitaminTextField.icon = vitaminTextField.isSecureTextEntry ?
-            Vitamix.Line.System.eye.image : Vitamix.Line.System.eyeOff.image
+            UIImage.Vitamix.eyeLine : UIImage.Vitamix.eyeOffLine
     }
 }
 

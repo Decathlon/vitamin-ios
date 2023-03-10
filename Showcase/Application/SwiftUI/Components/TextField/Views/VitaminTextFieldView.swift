@@ -102,11 +102,11 @@ extension VitaminTextFieldView {
         }
     }
 
-    private func makeIcon() -> VitaminImageAsset {
+    private func makeIcon() -> VitaminAsset {
         if selected {
-            return Vitamix.Fill.Health.heart
+            return Vitamix.heartFill
         } else {
-            return Vitamix.Line.Health.heart
+            return Vitamix.heartLine
         }
     }
 }

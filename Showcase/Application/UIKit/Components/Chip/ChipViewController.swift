@@ -120,7 +120,7 @@ extension ChipViewController {
         chips.append(
             VitaminChipDemoConfig(
                 text: "input2",
-                variant: .input(icon: Vitamix.Line.Map.mapPin.image),
+                variant: .input(icon: UIImage.Vitamix.mapPinLine),
                 enabled: enabled)
         )
 
@@ -150,7 +150,7 @@ extension ChipViewController {
         chips.append(
             VitaminChipDemoConfig(
                 text: "action1",
-                variant: .action(icon: Vitamix.Line.System.settings.image),
+                variant: .action(icon: UIImage.Vitamix.settingsLine),
                 enabled: enabled)
         )
 
