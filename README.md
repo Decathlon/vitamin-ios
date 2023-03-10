@@ -47,19 +47,65 @@ For its [Digital section](https://www.decathlon.design/726f8c765/p/6145b2-overvi
 
 ### SPM
 
+Add Vitamin to the dependencies array of your package:  
 ```swift
 dependencies: [
-    .package(url: "https://github.com/Decathlon/vitamin-ios.git", .exact("0.9.1"))
-]
+  .package(url: "https://github.com/Decathlon/vitamin-ios.git", .exact("0.10.0")),
+  // Any other dependencies...
+],
+```
+Then, add Vitamin to the dependencies array of any target that depends on Vitamin.  
+For `SwiftUI`:  
+```swift
+.target(name: "YourSwiftUITarget",
+        dependencies: [
+            .product(name: "VitaminSwiftUI", package: "vitamin-ios"),
+            // Any other dependencies...
+        ]),
+```
+For `UIKit`:  
+```swift
+.target(name: "YourUIKitTarget",
+        dependencies: [
+            .product(name: "Vitamin", package: "vitamin-ios"),
+            // Any other dependencies...
+        ]),
+```
+
+A full example:  
+```swift
+let package = Package(
+    name: "YourPackage",
+    products: [
+        // Your products
+    ],
+    dependencies: [
+        .package(url: "https://github.com/Decathlon/vitamin-ios.git", .exact("0.10.0")),
+        // Any other dependencies...
+    ],
+    targets: [
+        // Your target
+        .target(name: "YourUIKitTarget",
+                dependencies: [
+                    .product(name: "Vitamin", package: "vitamin-ios"),
+                    // Any other dependencies...
+                ]), 
+        .target(name: "YourSwiftUITarget",
+                dependencies: [
+                    .product(name: "VitaminSwiftUI", package: "vitamin-ios"),
+                    // Any other dependencies...
+                ]),
+    ]
+)
 ```
 
 ### Cocoapods
 ```ruby
 # for UIKitVersion
-pod 'Vitamin', '= 0.9.1'
+pod 'Vitamin', '= 0.10.0'
 
 # for SwiftUI version
-pod 'VitaminSwiftUI', = '0.9.1'
+pod 'VitaminSwiftUI', = '0.10.0'
 ```
 
 ## Available elements
@@ -86,8 +132,9 @@ The following components are available :
 |Badge | Badges from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Badge#readme) [SwiftUI](./Sources/VitaminSwiftUI/Components/Badge#readme)|
 |Button | Different button styles from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Button#readme) [SwiftUI](./Sources/VitaminSwiftUI/Components/Button#readme)|
 |Progressbar | Different progressbar styles from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Progressbar#readme)|
+|SegmentedControl | SegmentedControl from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/SegmentedControl#readme)|
 |Snackbar | Snackbar from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Snackbar#readme)|
-|Switch | Swicth from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Switch#readme)|
+|Switch | Switch from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Switch#readme)|
 |Tag | Tag from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/Tag#readme)|
 |TextField | Different text fields styles from the Vitamin Design System. | [UIKit](./Sources/VitaminUIKit/Components/TextField#readme)  [SwiftUI](./Sources/VitaminSwiftUI/Components/TextField#readme)||
 

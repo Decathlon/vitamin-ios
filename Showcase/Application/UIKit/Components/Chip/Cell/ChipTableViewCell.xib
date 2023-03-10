@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chipCell" rowHeight="93" id="oYK-LA-MhX" customClass="ChipTableViewCell" customModule="Showcase">
+            <rect key="frame" x="0.0" y="0.0" width="426" height="93"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oYK-LA-MhX" id="bRj-ws-6Oz">
+                <rect key="frame" x="0.0" y="0.0" width="426" height="93"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EJE-qp-0GH">
+                        <rect key="frame" x="20" y="5" width="386" height="83"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GZT-YV-qC0">
+                                <rect key="frame" x="0.0" y="0.0" width="386" height="83"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pd6-fe-V3a" customClass="VitaminChip" customModule="Vitamin">
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="83"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wcP-H9-EBW" customClass="VitaminChip" customModule="Vitamin">
+                                        <rect key="frame" x="386" y="0.0" width="0.0" height="83"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="EJE-qp-0GH" secondAttribute="bottom" constant="5" id="3h4-Mo-GQj"/>
+                    <constraint firstItem="EJE-qp-0GH" firstAttribute="leading" secondItem="bRj-ws-6Oz" secondAttribute="leading" constant="20" id="EV5-wQ-5As"/>
+                    <constraint firstItem="EJE-qp-0GH" firstAttribute="top" secondItem="bRj-ws-6Oz" secondAttribute="top" constant="5" id="t9T-JM-R3l"/>
+                    <constraint firstAttribute="trailing" secondItem="EJE-qp-0GH" secondAttribute="trailing" constant="20" id="yjj-4K-cNL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="mediumChip" destination="wcP-H9-EBW" id="zik-VT-baw"/>
+                <outlet property="smallChip" destination="Pd6-fe-V3a" id="7wB-HR-Xd7"/>
+            </connections>
+            <point key="canvasLocation" x="95.652173913043484" y="98.772321428571431"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -9,13 +9,17 @@ import UIKit
 extension VitaminSnackbar {
     /// Dismiss the `VitaminSnackbar` by fading it out
     /// It will ignore any auto dismissal delay, and dismiss the snackbar instantly
-    public func dismiss() {
+    /// - Parameter completion: a closure with no arguments that will be executed after the dismissal
+    public func dismiss(completion: (() -> Void )? = nil) {
         timer?.invalidate()
-        self.internalDismiss()
+        self.internalDismiss(completion: completion)
     }
 
-    public func display() {
-        self.fadeIn(duration: Self.appearAndDisappearDuration)
+    /// Display the `VitaminSnackbar` by fading it in
+    /// It does not check if any snackbar is displayed yet.
+    /// - Parameter completion: a closure with no arguments that will be executed after the fade in is complete
+    public func display(completion: (() -> Void )? = nil) {
+        self.fadeIn(duration: Self.appearAndDisappearDuration, completion: completion)
     }
 }
 
@@ -28,7 +32,7 @@ extension VitaminSnackbar {
     }
 
     // internal method to dismiss the `VitaminSnackbar`
-    private func internalDismiss() {
+    private func internalDismiss(completion: (() -> Void )? = nil) {
         UIView.animate(
             withDuration: VitaminSnackbar.appearAndDisappearDuration,
             delay: 0
@@ -39,6 +43,7 @@ extension VitaminSnackbar {
             self.layer.opacity = 0
         } completion: { _ in
             self.removeFromSuperview()
+            completion?()
         }
     }
 
