@@ -9,30 +9,65 @@ import Vitamin
 class BadgeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var fakeView: UIView!
     @IBOutlet weak var badge: VitaminBadge!
-    @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var button: VitaminButton!
+    @IBOutlet weak var variantLabel: UILabel!
 
     private var badgeValue: Int?
     private var badgeVariant: VitaminBadgeVariant = .standard
+    private var badgeSize: VitaminBadgeSize = .small
 
-    func update(with value: Int?, variant: VitaminBadgeVariant, automatic: Bool = false) {
+    func update(
+        with value: Int?,
+        variant: VitaminBadgeVariant,
+        size: VitaminBadgeSize = .small,
+        automatic: Bool = false
+    ) {
         badgeValue = value
         badgeVariant = variant
+        badgeSize = size
         contentView.backgroundColor = VitaminColor.Core.Background.primary
         fakeView.backgroundColor = VitaminColor.Core.Background.tertiary
-        detailLabel.textColor = VitaminColor.Core.Content.primary
+
+        variantLabel.numberOfLines = 2
+        variantLabel.attributedText = "\(variant.name)\n\(size.name)".styled(
+            as: .caption2,
+            with: VitaminColor.Core.Content.primary
+        )
+        variantLabel.textAlignment = .center
 
         button.style = .ghost
         button.size = .medium
+        // Specific colors for reversed variant
+        if variant == .reversed || variant == .standard {
+            contentView.backgroundColor = VitaminColor.Core.Background.brandPrimary
+            fakeView.backgroundColor = VitaminColor.Core.Background.brandSecondary
+            button.style = .ghostReversed
+        }
+        button.setIconType(
+            .alone(
+                image: Vitamix.Line.System.add.image,
+                renderingMode: UIImage.RenderingMode.alwaysTemplate),
+            for: .normal
+        )
 
         if automatic {
             badge.isHidden = true
             button.isHidden = false
             if fakeView.hasBadge() {
-                fakeView.modifyBadge(with: badgeValue, variant: badgeVariant)
-                button.setTitle("Remove badge", for: .normal)
+                fakeView.modifyBadge(with: badgeValue, variant: badgeVariant, size: badgeSize)
+                button.setIconType(
+                    .alone(
+                        image: Vitamix.Line.System.subtract.image,
+                        renderingMode: UIImage.RenderingMode.alwaysTemplate),
+                    for: .normal
+                )
             } else {
-                button.setTitle("Add badge", for: .normal)
+                button.setIconType(
+                    .alone(
+                        image: Vitamix.Line.System.add.image,
+                        renderingMode: UIImage.RenderingMode.alwaysTemplate),
+                    for: .normal
+                )
             }
         } else {
             fakeView.removeBadge()
@@ -40,46 +75,18 @@ class BadgeCollectionViewCell: UICollectionViewCell {
             button.isHidden = true
             badge.value = value
             badge.variant = variant
-        }
-
-        var displayableNbDigits = "no digit"
-        if let value = value {
-            let nbDigits = "\(value)".count
-            displayableNbDigits = nbDigits < 3 ? "\(nbDigits) digits" : "more than 2 digits"
-        }
-
-        let text = "\(variant.name) badge with \(displayableNbDigits)"
-        detailLabel.attributedText = text.styled(
-            as: .footnote,
-            with: VitaminColor.Core.Content.primary)
-
-        // Specific colors for reversed variant
-        if variant == .reversed {
-            contentView.backgroundColor = VitaminColor.Core.Background.brandPrimary
-            fakeView.backgroundColor = VitaminColor.Core.Background.brandSecondary
-            detailLabel.textColor = VitaminColor.Core.Content.primaryReversed
-            detailLabel.attributedText = text.styled(
-                as: .footnote,
-                with: VitaminColor.Core.Content.primaryReversed
-            )
-            button.style = .ghostReversed
+            badge.size = size
         }
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         contentView.backgroundColor = VitaminColor.Core.Background.primary
         fakeView.backgroundColor = VitaminColor.Core.Background.tertiary
-        detailLabel.textColor = VitaminColor.Core.Content.primary
         button.style = .ghost
 
         if badgeVariant == .reversed {
             contentView.backgroundColor = VitaminColor.Core.Background.brandPrimary
             fakeView.backgroundColor = VitaminColor.Core.Background.brandSecondary
-            detailLabel.textColor = VitaminColor.Core.Content.primaryReversed
-            detailLabel.attributedText = detailLabel.text?.styled(
-                as: .footnote,
-                with: VitaminColor.Core.Content.primaryReversed
-            )
             button.style = .ghostReversed
         }
     }
@@ -87,27 +94,33 @@ class BadgeCollectionViewCell: UICollectionViewCell {
     @IBAction func addRemoveButtonClicked() {
         if fakeView.hasBadge() {
             fakeView.removeBadge()
-            button.setTitle("Add badge", for: .normal)
+            button.setIconType(
+                .alone(
+                    image: Vitamix.Line.System.add.image,
+                    renderingMode: UIImage.RenderingMode.alwaysTemplate),
+                for: .normal
+            )
         } else {
-            fakeView.addBadge(with: badgeValue, variant: badgeVariant)
-            button.setTitle("Remove badge", for: .normal)
+            fakeView.addBadge(with: badgeValue, variant: badgeVariant, size: badgeSize)
+            button.setIconType(
+                .alone(
+                    image: Vitamix.Line.System.subtract.image,
+                    renderingMode: UIImage.RenderingMode.alwaysTemplate),
+                for: .normal
+            )
         }
     }
 }
 
-extension VitaminBadgeVariant {
+extension VitaminBadgeSize {
     var name: String {
         switch self {
-        case .standard:
-            return "Standard"
-        case .brand:
-            return "Brand"
-        case .reversed:
-            return "Reversed"
-        case .accent:
-            return "Accent"
-        case .alert:
-            return "Alert"
+        case .small:
+            return "Small"
+        case .medium:
+            return "Medium"
+        case .large:
+            return "Large"
         }
     }
 }

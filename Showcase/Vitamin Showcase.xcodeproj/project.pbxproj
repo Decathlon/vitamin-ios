@@ -49,9 +49,9 @@
 		6536D23F296F2C0500C14635 /* ChipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536D23E296F2C0500C14635 /* ChipViewController.swift */; };
 		6548C67929718EB4005FFDC4 /* ChipTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6548C67729718EB4005FFDC4 /* ChipTableViewCell.xib */; };
 		6548C67A29718EB4005FFDC4 /* ChipTableVewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6548C67829718EB4005FFDC4 /* ChipTableVewCell.swift */; };
+		6536D23C295E480B00C14635 /* BadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536D23B295E480B00C14635 /* BadgesViewController.swift */; };
 		6551745B27EDBDFA0043700F /* BadgeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6551745827EDBDFA0043700F /* BadgeCollectionViewCell.xib */; };
 		6551745C27EDBDFA0043700F /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551745927EDBDFA0043700F /* BadgeCollectionViewCell.swift */; };
-		6551745D27EDBDFA0043700F /* BadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551745A27EDBDFA0043700F /* BadgesViewController.swift */; };
 		6551746127EDBFAE0043700F /* BaseHeaderedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551745F27EDBFAE0043700F /* BaseHeaderedCollectionViewController.swift */; };
 		6551746227EDBFAE0043700F /* BaseImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551746027EDBFAE0043700F /* BaseImageCollectionViewController.swift */; };
 		655A2C472991BAC90072AC6F /* SegmentedControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655A2C462991BAC90072AC6F /* SegmentedControlViewController.swift */; };
@@ -131,13 +131,13 @@
 		6531B78027A9A23600808E1E /* RadiusTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadiusTableViewCell.xib; sourceTree = "<group>"; };
 		6531B78127A9A23600808E1E /* RadiusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusViewController.swift; sourceTree = "<group>"; };
 		6536D23E296F2C0500C14635 /* ChipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipViewController.swift; sourceTree = "<group>"; };
+		6536D23B295E480B00C14635 /* BadgesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgesViewController.swift; sourceTree = "<group>"; };
 		654642B3276A513C00213415 /* vitamin-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "vitamin-ios"; path = ..; sourceTree = "<group>"; };
 		654642B4276A528C00213415 /* vitamin-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "vitamin-ios"; path = ..; sourceTree = "<group>"; };
 		6548C67729718EB4005FFDC4 /* ChipTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChipTableViewCell.xib; sourceTree = "<group>"; };
 		6548C67829718EB4005FFDC4 /* ChipTableVewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipTableVewCell.swift; sourceTree = "<group>"; };
 		6551745827EDBDFA0043700F /* BadgeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BadgeCollectionViewCell.xib; sourceTree = "<group>"; };
 		6551745927EDBDFA0043700F /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
-		6551745A27EDBDFA0043700F /* BadgesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgesViewController.swift; sourceTree = "<group>"; };
 		6551745F27EDBFAE0043700F /* BaseHeaderedCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHeaderedCollectionViewController.swift; sourceTree = "<group>"; };
 		6551746027EDBFAE0043700F /* BaseImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseImageCollectionViewController.swift; sourceTree = "<group>"; };
 		655A2C462991BAC90072AC6F /* SegmentedControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlViewController.swift; sourceTree = "<group>"; };
@@ -623,7 +623,7 @@
 			isa = PBXGroup;
 			children = (
 				6551745727EDBDFA0043700F /* Cell */,
-				6551745A27EDBDFA0043700F /* BadgesViewController.swift */,
+				6536D23B295E480B00C14635 /* BadgesViewController.swift */,
 			);
 			path = Badge;
 			sourceTree = "<group>";
@@ -956,7 +956,6 @@
 				659BBA7F288BFC7C00574333 /* ButtonModel.swift in Sources */,
 				4A35E4892816C20A001526D8 /* ShadowsModel.swift in Sources */,
 				6531B78427A9A23600808E1E /* RadiusViewController.swift in Sources */,
-				6551745D27EDBDFA0043700F /* BadgesViewController.swift in Sources */,
 				4ACCCBD72805E7AE00FD184B /* ViewExtension.swift in Sources */,
 				65BD9F3F2768D06900EEDC0D /* IconsViewController.swift in Sources */,
 				4A35E4902816D1B5001526D8 /* TypographyView.swift in Sources */,
@@ -972,6 +971,7 @@
 				6500D77229999B9300A1F154 /* SampleLabelViewController.swift in Sources */,
 				65D1B6692787422100C1560B /* ShadowsViewController.swift in Sources */,
 				6521D86127DA4B3400A15A06 /* TagCollectionViewCell.swift in Sources */,
+				6536D23C295E480B00C14635 /* BadgesViewController.swift in Sources */,
 				4A4643932806D60B00942AD7 /* IconsView.swift in Sources */,
 				4A35E48128130495001526D8 /* RadiusesModel.swift in Sources */,
 				4A90D1542938EC7D00E15A44 /* AdaptiveStack.swift in Sources */,

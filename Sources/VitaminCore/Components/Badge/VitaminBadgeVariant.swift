@@ -41,7 +41,7 @@ public enum VitaminBadgeVariant: CaseIterable {
 
     public var borderColor: UIColor {
         if self == .standard {
-            return VitaminColor.Core.Border.secondary
+            return VitaminColor.Core.Border.primary
         }
         return .clear
     }
