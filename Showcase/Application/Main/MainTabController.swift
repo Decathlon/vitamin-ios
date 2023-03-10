@@ -34,8 +34,8 @@ final class MainTabController: UITabBarController {
     private func setupUIKitTab() {
         if let uiKitTab = tabBar.items?.first {
             uiKitTab.title = "UIKit"
-            uiKitTab.image = Vitamix.Line.Buildings.home.image
-            uiKitTab.selectedImage = Vitamix.Fill.Buildings.home.image
+            uiKitTab.image = makeTabBarItemImage(image: UIImage.Vitamix.homeLine)
+            uiKitTab.selectedImage = makeTabBarItemImage(image: UIImage.Vitamix.homeFill)
         }
     }
 
@@ -43,11 +43,15 @@ final class MainTabController: UITabBarController {
         if #available(iOS 13.0.0, *) {
             let hostingController = UIHostingController(rootView: MainView())
             let icon = UITabBarItem(title: "SwiftUI",
-                                    image: Vitamix.Line.Business.award.image,
-                                    selectedImage: Vitamix.Fill.Business.award.image)
+                                    image: makeTabBarItemImage(image: UIImage.Vitamix.awardLine),
+                                    selectedImage: makeTabBarItemImage(image: UIImage.Vitamix.awardFill))
             hostingController.tabBarItem = icon
             self.viewControllers?.append(hostingController)
         }
+    }
+
+    private func makeTabBarItemImage(image: UIImage) -> UIImage? {
+        image.resize(CGSize(width: 23, height: 23))
     }
 }
 #endif

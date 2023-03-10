@@ -48,5 +48,9 @@ extension VitaminAsset: AssetProtocol {
     var label: String {
         name
     }
+
+    var swiftUIImage: Image {
+        image
+    }
 }
 #endif

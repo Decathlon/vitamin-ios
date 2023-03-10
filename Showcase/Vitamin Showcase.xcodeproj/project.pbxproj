@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30F95E44292FBA0500D6CEB7 /* TextFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F95E43292FBA0500D6CEB7 /* TextFieldsView.swift */; };
+		4A01623729BB8A1800FC964E /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A01623629BB8A1800FC964E /* UIImage+Resize.swift */; };
 		4A038B54293A7CCD00ADFDE6 /* VitaminTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A038B53293A7CCD00ADFDE6 /* VitaminTextFieldView.swift */; };
 		4A07433927D94BB0005BD446 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07433827D94BB0005BD446 /* MainView.swift */; };
 		4A07433E27D9541F005BD446 /* NavigationTitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07433D27D9541F005BD446 /* NavigationTitleModifier.swift */; };
@@ -95,6 +96,7 @@
 
 /* Begin PBXFileReference section */
 		30F95E43292FBA0500D6CEB7 /* TextFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsView.swift; sourceTree = "<group>"; };
+		4A01623629BB8A1800FC964E /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		4A038B53293A7CCD00ADFDE6 /* VitaminTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminTextFieldView.swift; sourceTree = "<group>"; };
 		4A07433827D94BB0005BD446 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4A07433A27D94C90005BD446 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
@@ -195,6 +197,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A01623529BB8A1800FC964E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4A01623629BB8A1800FC964E /* UIImage+Resize.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		4A038B402939F7D200ADFDE6 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,6 +542,7 @@
 			children = (
 				AAC5D4462567FE710070667D /* Main.storyboard */,
 				4A07433A27D94C90005BD446 /* MainTabController.swift */,
+				4A01623529BB8A1800FC964E /* Utils */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -966,6 +977,7 @@
 				655A2C472991BAC90072AC6F /* SegmentedControlViewController.swift in Sources */,
 				4A9BE58C29352B5600445337 /* OnChangeModifier.swift in Sources */,
 				30F95E44292FBA0500D6CEB7 /* TextFieldsView.swift in Sources */,
+				4A01623729BB8A1800FC964E /* UIImage+Resize.swift in Sources */,
 				4A35E47E2812FEDE001526D8 /* ColorsModel+Base.swift in Sources */,
 				65F1BC1527CE2101002D08D8 /* AssetsViewController.swift in Sources */,
 				6500D77229999B9300A1F154 /* SampleLabelViewController.swift in Sources */,
