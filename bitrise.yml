@@ -21,6 +21,8 @@ trigger_map:
   workflow: primary
 - pull_request_source_branch: '*'
   workflow: primary
+- tag: '*'
+  workflow: deploy
 workflows:
   deploy:
     description: This workflow will build the project and deploy to CocoaPods.
