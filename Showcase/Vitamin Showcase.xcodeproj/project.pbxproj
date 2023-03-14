@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		30F95E44292FBA0500D6CEB7 /* TextFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F95E43292FBA0500D6CEB7 /* TextFieldsView.swift */; };
 		4A01623729BB8A1800FC964E /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A01623629BB8A1800FC964E /* UIImage+Resize.swift */; };
-		4A01623929BB8AD200FC964E /* IconModel+Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A01623829BB8AD200FC964E /* IconModel+Sections.swift */; };
+		4A01623929BB8AD200FC964E /* IconsModel+Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A01623829BB8AD200FC964E /* IconsModel+Sections.swift */; };
 		4A038B54293A7CCD00ADFDE6 /* VitaminTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A038B53293A7CCD00ADFDE6 /* VitaminTextFieldView.swift */; };
 		4A07433927D94BB0005BD446 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07433827D94BB0005BD446 /* MainView.swift */; };
 		4A07433E27D9541F005BD446 /* NavigationTitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07433D27D9541F005BD446 /* NavigationTitleModifier.swift */; };
@@ -48,10 +48,10 @@
 		6531B78227A9A23600808E1E /* RadiusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6531B77F27A9A23600808E1E /* RadiusTableViewCell.swift */; };
 		6531B78327A9A23600808E1E /* RadiusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6531B78027A9A23600808E1E /* RadiusTableViewCell.xib */; };
 		6531B78427A9A23600808E1E /* RadiusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6531B78127A9A23600808E1E /* RadiusViewController.swift */; };
+		6536D23C295E480B00C14635 /* BadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536D23B295E480B00C14635 /* BadgesViewController.swift */; };
 		6536D23F296F2C0500C14635 /* ChipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536D23E296F2C0500C14635 /* ChipViewController.swift */; };
 		6548C67929718EB4005FFDC4 /* ChipTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6548C67729718EB4005FFDC4 /* ChipTableViewCell.xib */; };
 		6548C67A29718EB4005FFDC4 /* ChipTableVewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6548C67829718EB4005FFDC4 /* ChipTableVewCell.swift */; };
-		6536D23C295E480B00C14635 /* BadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536D23B295E480B00C14635 /* BadgesViewController.swift */; };
 		6551745B27EDBDFA0043700F /* BadgeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6551745827EDBDFA0043700F /* BadgeCollectionViewCell.xib */; };
 		6551745C27EDBDFA0043700F /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551745927EDBDFA0043700F /* BadgeCollectionViewCell.swift */; };
 		6551746127EDBFAE0043700F /* BaseHeaderedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551745F27EDBFAE0043700F /* BaseHeaderedCollectionViewController.swift */; };
@@ -98,7 +98,7 @@
 /* Begin PBXFileReference section */
 		30F95E43292FBA0500D6CEB7 /* TextFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsView.swift; sourceTree = "<group>"; };
 		4A01623629BB8A1800FC964E /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
-		4A01623829BB8AD200FC964E /* IconModel+Sections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconModel+Sections.swift"; sourceTree = "<group>"; };
+		4A01623829BB8AD200FC964E /* IconsModel+Sections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconsModel+Sections.swift"; sourceTree = "<group>"; };
 		4A038B53293A7CCD00ADFDE6 /* VitaminTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminTextFieldView.swift; sourceTree = "<group>"; };
 		4A07433827D94BB0005BD446 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4A07433A27D94C90005BD446 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
@@ -134,8 +134,8 @@
 		6531B77F27A9A23600808E1E /* RadiusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusTableViewCell.swift; sourceTree = "<group>"; };
 		6531B78027A9A23600808E1E /* RadiusTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadiusTableViewCell.xib; sourceTree = "<group>"; };
 		6531B78127A9A23600808E1E /* RadiusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusViewController.swift; sourceTree = "<group>"; };
-		6536D23E296F2C0500C14635 /* ChipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipViewController.swift; sourceTree = "<group>"; };
 		6536D23B295E480B00C14635 /* BadgesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgesViewController.swift; sourceTree = "<group>"; };
+		6536D23E296F2C0500C14635 /* ChipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipViewController.swift; sourceTree = "<group>"; };
 		654642B3276A513C00213415 /* vitamin-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "vitamin-ios"; path = ..; sourceTree = "<group>"; };
 		654642B4276A528C00213415 /* vitamin-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "vitamin-ios"; path = ..; sourceTree = "<group>"; };
 		6548C67729718EB4005FFDC4 /* ChipTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChipTableViewCell.xib; sourceTree = "<group>"; };
@@ -441,7 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				4A91BAAD2864CC5C0032B31E /* IconsModel.swift */,
-				4A01623829BB8AD200FC964E /* IconModel+Sections.swift */,
+				4A01623829BB8AD200FC964E /* IconsModel+Sections.swift */,
 			);
 			path = Icons;
 			sourceTree = "<group>";
@@ -999,7 +999,7 @@
 				4A35E483281304A1001526D8 /* RadiusesView.swift in Sources */,
 				AAC5D4412567FE710070667D /* AppDelegate.swift in Sources */,
 				65B52A1D27394136008D9B5E /* SwitchTableViewCell.swift in Sources */,
-				4A01623929BB8AD200FC964E /* IconModel+Sections.swift in Sources */,
+				4A01623929BB8AD200FC964E /* IconsModel+Sections.swift in Sources */,
 				4AAD2B67276772D200727D8E /* MainTableViewController.swift in Sources */,
 				4A35E4752812B34E001526D8 /* ColorsModel.swift in Sources */,
 				65D1B66A2787422100C1560B /* ShadowTableViewCell.swift in Sources */,
