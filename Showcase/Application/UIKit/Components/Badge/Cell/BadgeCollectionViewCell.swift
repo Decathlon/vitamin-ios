@@ -45,7 +45,7 @@ class BadgeCollectionViewCell: UICollectionViewCell {
         }
         button.setIconType(
             .alone(
-                image: Vitamix.Line.System.add.image,
+                image: UIImage.Vitamix.addLine,
                 renderingMode: UIImage.RenderingMode.alwaysTemplate),
             for: .normal
         )
@@ -57,14 +57,14 @@ class BadgeCollectionViewCell: UICollectionViewCell {
                 fakeView.modifyBadge(with: badgeValue, variant: badgeVariant, size: badgeSize)
                 button.setIconType(
                     .alone(
-                        image: Vitamix.Line.System.subtract.image,
+                        image: UIImage.Vitamix.subtractLine,
                         renderingMode: UIImage.RenderingMode.alwaysTemplate),
                     for: .normal
                 )
             } else {
                 button.setIconType(
                     .alone(
-                        image: Vitamix.Line.System.add.image,
+                        image: UIImage.Vitamix.addLine,
                         renderingMode: UIImage.RenderingMode.alwaysTemplate),
                     for: .normal
                 )
@@ -96,7 +96,7 @@ class BadgeCollectionViewCell: UICollectionViewCell {
             fakeView.removeBadge()
             button.setIconType(
                 .alone(
-                    image: Vitamix.Line.System.add.image,
+                    image: UIImage.Vitamix.addLine,
                     renderingMode: UIImage.RenderingMode.alwaysTemplate),
                 for: .normal
             )
@@ -104,7 +104,7 @@ class BadgeCollectionViewCell: UICollectionViewCell {
             fakeView.addBadge(with: badgeValue, variant: badgeVariant, size: badgeSize)
             button.setIconType(
                 .alone(
-                    image: Vitamix.Line.System.subtract.image,
+                    image: UIImage.Vitamix.subtractLine,
                     renderingMode: UIImage.RenderingMode.alwaysTemplate),
                 for: .normal
             )
