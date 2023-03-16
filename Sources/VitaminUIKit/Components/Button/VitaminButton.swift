@@ -72,6 +72,7 @@ public class VitaminButton: UIButton {
     public override func setTitle(_ title: String?, for state: UIControl.State) {
         super.setTitle(title, for: state)
         applyNewTextStyle()
+        setTitleColor(style.foregroundColor, for: state)
     }
 }
 
@@ -179,6 +180,7 @@ extension VitaminButton {
         }
         self.setImage(imageUpdated, for: state)
         self.imageView?.tintColor = style.foregroundColor
+        self.imageView?.tintAdjustmentMode = .normal
         self.tintColor = style.foregroundColor
         self.imageEdgeInsets = iconType.imageEdgeInsets
         self.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)

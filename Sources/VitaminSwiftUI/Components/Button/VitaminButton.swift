@@ -12,6 +12,7 @@ public struct VitaminButton: View {
     var text: String?
     let style: VitaminButtonStyle
     let size: VitaminButtonSize
+    let fullWidth: Bool
     let iconType: IconType
     let action: () -> Void
 
@@ -19,12 +20,14 @@ public struct VitaminButton: View {
         text: String? = nil,
         style: VitaminButtonStyle = .primary,
         size: VitaminButtonSize = .medium,
+        fullWidth: Bool = false,
         iconType: IconType = .none,
         action: @escaping () -> Void
     ) {
             self.text = text
             self.style = style
             self.size = size
+            self.fullWidth = fullWidth
             self.iconType = iconType
             self.action = action
     }
@@ -35,7 +38,10 @@ public struct VitaminButton: View {
         } label: {
             makeLabel()
         }
-        .buttonStyle(VitaminButtonUIStyle(style: style, size: size, iconType: iconType.underlyingUIKitIconType))
+        .buttonStyle(VitaminButtonUIStyle(style: style,
+                                          size: size,
+                                          fullWidth: fullWidth,
+                                          iconType: iconType.underlyingUIKitIconType))
     }
 
     @ViewBuilder
@@ -102,16 +108,19 @@ public struct VitaminButton: View {
 public struct VitaminButtonUIStyle: ButtonStyle {
     let style: VitaminButtonStyle
     let size: VitaminButtonSize
+    let fullWidth: Bool
     let iconType: VitaminButtonIconType
     @Environment(\.isEnabled) private var isEnabled
 
     public init(
         style: VitaminButtonStyle = .primary,
         size: VitaminButtonSize = .medium,
+        fullWidth: Bool = false,
         iconType: VitaminButtonIconType = .none
     ) {
         self.style = style
         self.size = size
+        self.fullWidth = fullWidth
         self.iconType = iconType
     }
 
@@ -125,6 +134,7 @@ public struct VitaminButtonUIStyle: ButtonStyle {
                 leading: size.horizontalInset(iconType: self.iconType),
                 bottom: size.verticalInset(iconType: self.iconType),
                 trailing: size.horizontalInset(iconType: self.iconType)))
+            .frame(maxWidth: fullWidth ? .infinity : nil)
             .background(RoundedRectangle(
                 cornerRadius: size.cornerRadius,
                 style: .continuous)

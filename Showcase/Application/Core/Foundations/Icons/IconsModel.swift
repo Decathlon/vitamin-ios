@@ -68,13 +68,15 @@ enum IconsModel {
             Vitamix.Line.Design.edit,
             Vitamix.Line.Design.focus,
             Vitamix.Line.Design.grid,
-            Vitamix.Line.Design.ruler
+            Vitamix.Line.Design.ruler,
+            Vitamix.Line.Design.tools
         ]),
         IconsModel.Section(name: "Design - Fill", items: [
             Vitamix.Fill.Design.edit,
             Vitamix.Fill.Design.focus,
             Vitamix.Fill.Design.grid,
-            Vitamix.Fill.Design.ruler
+            Vitamix.Fill.Design.ruler,
+            Vitamix.Fill.Design.tools
         ]),
         IconsModel.Section(name: "Device - Line", items: [
             Vitamix.Line.Device.database,
@@ -85,7 +87,8 @@ enum IconsModel {
             Vitamix.Line.Device.shutdown,
             Vitamix.Line.Device.smartphone,
             Vitamix.Line.Device.barcode,
-            Vitamix.Line.Device.qrScan
+            Vitamix.Line.Device.qrScan,
+            Vitamix.Line.Device.tablet
         ]),
         IconsModel.Section(name: "Device - Fill", items: [
             Vitamix.Fill.Device.database,
@@ -96,7 +99,8 @@ enum IconsModel {
             Vitamix.Fill.Device.shutdown,
             Vitamix.Fill.Device.smartphone,
             Vitamix.Fill.Device.barcode,
-            Vitamix.Fill.Device.qrScan
+            Vitamix.Fill.Device.qrScan,
+            Vitamix.Fill.Device.tablet
         ]),
         IconsModel.Section(name: "Documents - Line", items: [
             Vitamix.Line.Documents.bill,
@@ -131,6 +135,7 @@ enum IconsModel {
             Vitamix.Line.Finance.return,
             Vitamix.Line.Finance.refund,
             Vitamix.Line.Finance.securePayment,
+            Vitamix.Line.Finance.shoppingBag,
             Vitamix.Line.Finance.shoppingCart,
             Vitamix.Line.Finance.trophy,
             Vitamix.Line.Finance.visa,
@@ -149,6 +154,7 @@ enum IconsModel {
             Vitamix.Fill.Finance.return,
             Vitamix.Fill.Finance.refund,
             Vitamix.Fill.Finance.securePayment,
+            Vitamix.Fill.Finance.shoppingBag,
             Vitamix.Fill.Finance.shoppingCart,
             Vitamix.Fill.Finance.trophy,
             Vitamix.Fill.Finance.visa,
@@ -228,7 +234,8 @@ enum IconsModel {
             Vitamix.Line.Map.train,
             Vitamix.Line.Map.truck,
             Vitamix.Line.Map.walk,
-            Vitamix.Line.Map.rocket
+            Vitamix.Line.Map.rocket,
+            Vitamix.Line.Map.run
         ]),
         IconsModel.Section(name: "Map - Fill", items: [
             Vitamix.Fill.Map.car,
@@ -242,7 +249,8 @@ enum IconsModel {
             Vitamix.Fill.Map.train,
             Vitamix.Fill.Map.truck,
             Vitamix.Fill.Map.walk,
-            Vitamix.Fill.Map.rocket
+            Vitamix.Fill.Map.rocket,
+            Vitamix.Fill.Map.run
         ]),
         IconsModel.Section(name: "Media - Line", items: [
             Vitamix.Line.Media.camera,
@@ -261,6 +269,7 @@ enum IconsModel {
             Vitamix.Line.Media.repeat,
             Vitamix.Line.Media.stop,
             Vitamix.Line.Media.stopCircle,
+            Vitamix.Line.Media.volumeAlert,
             Vitamix.Line.Media.volumeDown,
             Vitamix.Line.Media.volumeMute,
             Vitamix.Line.Media.volumeUp
@@ -282,6 +291,7 @@ enum IconsModel {
             Vitamix.Fill.Media.repeat,
             Vitamix.Fill.Media.stop,
             Vitamix.Fill.Media.stopCircle,
+            Vitamix.Fill.Media.volumeAlert,
             Vitamix.Fill.Media.volumeDown,
             Vitamix.Fill.Media.volumeMute,
             Vitamix.Fill.Media.volumeUp
@@ -292,7 +302,12 @@ enum IconsModel {
             Vitamix.Line.Others.lightbulb,
             Vitamix.Line.Others.recycle,
             Vitamix.Line.Others.scales,
-            Vitamix.Line.Others.tShirt
+            Vitamix.Line.Others.tShirt,
+            Vitamix.Line.Others.hourglass,
+            Vitamix.Line.Others.sparkles,
+            Vitamix.Line.Others.seed1,
+            Vitamix.Line.Others.seed2,
+            Vitamix.Line.Others.seed3
         ]),
         IconsModel.Section(name: "Others - Fill", items: [
             Vitamix.Fill.Others.football,
@@ -300,7 +315,12 @@ enum IconsModel {
             Vitamix.Fill.Others.lightbulb,
             Vitamix.Fill.Others.recycle,
             Vitamix.Fill.Others.scales,
-            Vitamix.Fill.Others.tShirt
+            Vitamix.Fill.Others.tShirt,
+            Vitamix.Fill.Others.hourglass,
+            Vitamix.Fill.Others.sparkles,
+            Vitamix.Fill.Others.seed1,
+            Vitamix.Fill.Others.seed2,
+            Vitamix.Fill.Others.seed3
         ]),
         IconsModel.Section(name: "Services - Line", items: [
             Vitamix.Line.Services.selectedByDecathlon,
@@ -388,7 +408,8 @@ enum IconsModel {
             Vitamix.Line.System.zoomOut,
             Vitamix.Line.System.fileCopy,
             Vitamix.Line.System.addCircle,
-            Vitamix.Line.System.shareIos
+            Vitamix.Line.System.shareIos,
+            Vitamix.Line.System.logout
         ]),
         IconsModel.Section(name: "System - Line", items: [
             Vitamix.Fill.System.add,
@@ -468,7 +489,8 @@ enum IconsModel {
             Vitamix.Fill.System.zoomOut,
             Vitamix.Fill.System.fileCopy,
             Vitamix.Fill.System.addCircle,
-            Vitamix.Fill.System.shareIos
+            Vitamix.Fill.System.shareIos,
+            Vitamix.Fill.System.logout
         ]),
         IconsModel.Section(name: "Task - Line", items: [
             Vitamix.Line.Tasks.task

@@ -43,7 +43,10 @@ let package = Package(
             exclude: [
                 "Components/Badge/README.md",
                 "Components/Button/README.md",
+                "Components/Chip/README.md",
                 "Components/Progressbar/README.md",
+                "Components/SegmentedControl/README.md",
+                "Components/Snackbar/README.md",
                 "Components/Switch/README.md",
                 "Components/Tag/README.md",
                 "Components/TextField/README.md",
@@ -63,7 +66,9 @@ let package = Package(
             path: "Sources/VitaminSwiftUI",
             exclude: [
                 "README.md",
+                "Components/Badge/README.md",
                 "Components/Button/README.md",
+                "Components/TextField/README.md",
                 "Foundations/Assets/README.md",
                 "Foundations/Colors/README.md",
                 "Foundations/Icons/README.md",

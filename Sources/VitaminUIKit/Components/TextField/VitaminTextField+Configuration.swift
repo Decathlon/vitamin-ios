@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import VitaminCore
 
 // MARK: - configuration structs
 
@@ -59,12 +60,12 @@ public extension VitaminTextField {
     /// Struct that can be provided to the initializer of `VitaminTextField`
     /// that groups all state configuration
     struct StateConfiguration {
-        public var initialState: VitaminTextField.State
+        public var initialState: VitaminTextFieldState
         public var activeOnEditing = false
         public var horizontalPadding = true
 
         public init(
-            initialState: VitaminTextField.State,
+            initialState: VitaminTextFieldState,
             activeOnEditing: Bool = false,
             horizontalPadding: Bool = true
         ) {

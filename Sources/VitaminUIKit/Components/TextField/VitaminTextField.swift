@@ -25,30 +25,21 @@ public class VitaminTextField: UIView {
         case otherError
     }
 
-    /// Enum representing the type of `VitaminTextField`
-    public enum Style: String {
-        case outline
-        case filled
-    }
+    @available(*, deprecated, renamed: "VitaminTextFieldStyle")
+    public typealias Style = VitaminTextFieldStyle
 
-    /// Enum representing the state of a `VitaminTextField`
-    public enum State: String {
-        case error
-        case success
-        case disabled
-        case active
-        case standard
-    }
+    @available(*, deprecated, renamed: "VitaminTextFieldState")
+    public typealias State = VitaminTextFieldState
 
     /// The `VitaminTextField.State`value of the `VitaminTextField`
-    public var state: State = .standard {
+    public var state: VitaminTextFieldState = .standard {
         didSet {
             applyNewState()
         }
     }
 
     /// The `VitaminTextField.Style`value of the `VitaminTextField`
-    public var style: Style = .outline {
+    public var style: VitaminTextFieldStyle = .outlined {
         didSet {
             applyNewStyle()
         }
@@ -231,7 +222,7 @@ public class VitaminTextField: UIView {
 
     /// An initializer that inits a `VitaminTextField` in a `.zero` frame and initializes all properties programmatically, in a .zero
     public required init(
-        style: VitaminTextField.Style = .outline,
+        style: VitaminTextFieldStyle = .outlined,
         state: VitaminTextField.StateConfiguration,
         texts: VitaminTextField.TextConfiguration,
         validation: VitaminTextField.ValidationConfiguration? = nil,
@@ -349,9 +340,9 @@ extension VitaminTextField {
     }
 
     // convenience method to handle colors and borders when style and/or state changes
-    private func applyBorders(for state: VitaminTextField.State, and style: VitaminTextField.Style) {
+    private func applyBorders(for state: VitaminTextFieldState, and style: VitaminTextFieldStyle) {
         switch style {
-        case .outline:
+        case .outlined:
             textField.layer.borderColor = state.borderColor.cgColor
             textField.layer.borderWidth = state.borderWidth
             textField.borderStyle = .roundedRect
@@ -449,10 +440,10 @@ extension VitaminTextField {
     private func applyNewIcon() {
         if self.icon == nil, let stateIcon = self.state.icon {
             self.textField.rightImage = stateIcon
-            self.textField.rightImageColor = self.state.standardIconColor
+            self.textField.rightImageColor = self.state.iconColor
         } else {
             self.textField.rightImage = self.icon
-            self.textField.rightImageColor = self.state.customIconColor
+            self.textField.rightImageColor = self.state.iconColor
         }
     }
 
@@ -648,102 +639,11 @@ public class DesignableUITextField: UITextField {
                 imageView.isUserInteractionEnabled = true
             }
             rightView = imageView
+            // Due to a keyboard animation issue, we need to fix the frame of the right icon
+            rightView?.frame = rightViewRect(forBounds: bounds)
         } else {
             rightViewMode = UITextField.ViewMode.never
             rightView = nil
-        }
-    }
-}
-
-extension VitaminTextField.State {
-    /// the border color of a `VitaminTextField` for a specific state
-    var borderColor: UIColor {
-        switch self {
-        case .error:
-            return VitaminColor.Core.Border.negative
-        case .success:
-            return VitaminColor.Core.Border.positive
-        case .disabled:
-            return VitaminColor.Core.Border.inactive
-        case .active:
-            return VitaminColor.Core.Border.active
-        case .standard:
-            return VitaminColor.Core.Border.primary
-        }
-    }
-
-    /// The text color of a `VitaminTextField` for a specific state
-    var textColor: UIColor {
-        if self == .disabled {
-            return VitaminColor.Core.Content.primary.disabledColor()
-        } else {
-            return VitaminColor.Core.Content.primary
-        }
-    }
-
-    /// the icon color of a `VitaminTextField` for a specific state
-    /// It is only applied for default icon, i.e. success and failure icons
-    ///  For custom icons, cutomIconColor will be used
-    var standardIconColor: UIColor {
-        switch self {
-        case .error:
-            return VitaminColor.Core.Content.negative
-        case .success:
-            return VitaminColor.Core.Content.positive
-        default:
-            return VitaminColor.Core.Content.primary
-        }
-    }
-
-    /// the icon color of a `VitaminTextField` for a specific state
-    /// It is only applied for custom icon, i.e. ison provided by the caller
-    var customIconColor: UIColor {
-        if self == .disabled {
-            return VitaminColor.Core.Content.primary.disabledColor()
-        } else {
-            return VitaminColor.Core.Content.primary
-        }
-    }
-
-    /// the color of the optionals helper text and counter of a `VitaminTextField` for a specific state
-    var helperAndCounterColor: UIColor {
-        switch self {
-        case .error:
-            return VitaminColor.Core.Content.negative
-        case .disabled:
-            return VitaminColor.Core.Content.secondary.disabledColor()
-        default:
-            return VitaminColor.Core.Content.secondary
-        }
-    }
-
-    /// the placeholder color of a `VitaminTextField`for a specific state
-    var placeholderColor: UIColor {
-        if self == .disabled {
-            return VitaminColor.Core.Content.tertiary.disabledColor()
-        } else {
-            return VitaminColor.Core.Content.tertiary
-        }
-    }
-
-    /// the default icon diaplyed in a `VitaminTextField` for a specific state
-    var icon: UIImage? {
-        switch self {
-        case .error:
-            return Vitamix.Line.System.alert.image
-        case .success:
-            return Vitamix.Line.System.check.image
-        default:
-            return nil
-        }
-    }
-
-    /// the border width of a `VitaminTextField` for a specific state
-    var borderWidth: CGFloat {
-        if self == .error || self == .active || self == .success {
-            return 2.0
-        } else {
-            return 1.0
         }
     }
 }

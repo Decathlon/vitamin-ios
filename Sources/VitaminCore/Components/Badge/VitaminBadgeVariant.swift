@@ -5,8 +5,8 @@
 
 import UIKit
 
-/// enum containing the different variants of VitaminTag
-public enum VitaminBadgeVariant {
+/// enum containing the different variants of VitaminBadge
+public enum VitaminBadgeVariant: CaseIterable {
     case standard
     case brand
     case reversed
@@ -41,7 +41,7 @@ public enum VitaminBadgeVariant {
 
     public var borderColor: UIColor {
         if self == .standard {
-            return VitaminColor.Core.Border.secondary
+            return VitaminColor.Core.Border.primary
         }
         return .clear
     }

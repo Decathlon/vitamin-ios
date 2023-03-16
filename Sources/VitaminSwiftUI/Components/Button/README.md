@@ -17,10 +17,11 @@ struct ExampleView: View {
             VitaminButton(
                 text: "Button",
                 style: .secondary)
-            // This button will have a white background with a dark border
+            // This button will have a white background with a dark border and expand to full width
             VitaminButton(
                 text: "Button",
-                style: .ghost,)
+                style: .ghost,
+                fullWidth: true)
         }
     }
 }
@@ -30,7 +31,7 @@ struct ExampleView: View {
 
 ### Style and Size management
 You must provide `VitaminButton` with a `style` property, which is a `VitaminButtonStyle` enum case.
-Refernce for different styles of button is available in design reference documentation.
+Reference for different styles of button is available in design reference documentation.
 
 Default style is `.primary`.
  
@@ -40,6 +41,8 @@ The size of the `VitaminButton` will adapt itself with the content you provide (
 Default style is `.medium`.
 
 Note: `VitaminButton` styles its title as  `TextStyle.xxxbutton`, so make sure you setup the Roboto fonts properly.
+
+If you set the `fullWidth` property to `true` (default is `false`), the button will expand to full width of its container.
 
 
 ### Icon management
