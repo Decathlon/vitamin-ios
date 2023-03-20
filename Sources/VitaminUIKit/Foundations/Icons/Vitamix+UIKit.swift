@@ -12,6 +12,8 @@ import VitaminCore
 
 extension UIImage {
     public enum Vitamix {
+        public static let accessibilityFill = VitaminCore.Vitamix.accessibilityFill.image
+        public static let accessibilityLine = VitaminCore.Vitamix.accessibilityLine.image
         public static let addCircleFill = VitaminCore.Vitamix.addCircleFill.image
         public static let addCircleLine = VitaminCore.Vitamix.addCircleLine.image
         public static let addFill = VitaminCore.Vitamix.addFill.image
@@ -220,6 +222,8 @@ extension UIImage {
         public static let instagramLine = VitaminCore.Vitamix.instagramLine.image
         public static let kakaoTalkFill = VitaminCore.Vitamix.kakaoTalkFill.image
         public static let kakaoTalkLine = VitaminCore.Vitamix.kakaoTalkLine.image
+        public static let keyboardFill = VitaminCore.Vitamix.keyboardFill.image
+        public static let keyboardLine = VitaminCore.Vitamix.keyboardLine.image
         public static let leafFill = VitaminCore.Vitamix.leafFill.image
         public static let leafLine = VitaminCore.Vitamix.leafLine.image
         public static let lightbulbFill = VitaminCore.Vitamix.lightbulbFill.image
@@ -460,6 +464,10 @@ extension UIImage {
         public static let walletLine = VitaminCore.Vitamix.walletLine.image
         public static let whatsappFill = VitaminCore.Vitamix.whatsappFill.image
         public static let whatsappLine = VitaminCore.Vitamix.whatsappLine.image
+        public static let wifiOffFill = VitaminCore.Vitamix.wifiOffFill.image
+        public static let wifiOffLine = VitaminCore.Vitamix.wifiOffLine.image
+        public static let wifiOnFill = VitaminCore.Vitamix.wifiOnFill.image
+        public static let wifiOnLine = VitaminCore.Vitamix.wifiOnLine.image
         public static let windyFill = VitaminCore.Vitamix.windyFill.image
         public static let windyLine = VitaminCore.Vitamix.windyLine.image
         public static let youtubeFill = VitaminCore.Vitamix.youtubeFill.image
