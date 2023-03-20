@@ -42,22 +42,22 @@ final class ButtonTableViewCell: UITableViewCell {
 
         mediumButton.setIconType(
             .trailing(
-                image: Vitamix.Line.Logos.apple.image,
+                image: UIImage.Vitamix.appleLine,
                 renderingMode: .alwaysTemplate),
             for: .normal)
         largeButton.setIconType(
             .leading(
-                image: Vitamix.Line.System.arrowRightS.image,
+                image: UIImage.Vitamix.arrowRightLine,
                 renderingMode: .alwaysTemplate),
             for: .normal)
         mediumIconAloneButton.setIconType(
             .alone(
-                image: Vitamix.Line.Logos.apple.image,
+                image: UIImage.Vitamix.appleLine,
                 renderingMode: .alwaysTemplate),
             for: .normal)
         largeIconAloneButton.setIconType(
             .alone(
-                image: Vitamix.Line.System.arrowRightS.image,
+                image: UIImage.Vitamix.arrowRightLine,
                 renderingMode: .alwaysTemplate),
             for: .normal)
 

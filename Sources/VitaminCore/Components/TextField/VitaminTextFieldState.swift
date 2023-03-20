@@ -91,12 +91,12 @@ extension VitaminTextFieldState {
     }
 
     /// The default icon displayed in a `VitaminTextField` for a specific state.
-    public var icon: UIImage? {
+    public var icon: VitaminAsset? {
         switch self {
         case .error:
-            return Vitamix.Line.System.errorWarning.image
+            return Vitamix.errorWarningLine
         case .success:
-            return Vitamix.Line.System.check.image
+            return Vitamix.checkLine
         default:
             return nil
         }

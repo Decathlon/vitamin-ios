@@ -21,11 +21,4 @@ struct IconsView: View {
         .customNavigationTitle("Icons", displayMode: .inline)
     }
 }
-
-@available(iOS 13, *)
-extension VitaminImageAsset: AssetProtocol {
-    var label: String {
-        name.components(separatedBy: "/").last ?? name
-    }
-}
 #endif

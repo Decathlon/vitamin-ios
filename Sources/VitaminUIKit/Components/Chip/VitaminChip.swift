@@ -167,7 +167,7 @@ private extension VitaminChip {
 
         iconOrImageView = UIImageView()
         setIconConstraints(width: 20, height: 20)
-        let dismissIconImage = Vitamix.Line.System.close.image.withRenderingMode(.alwaysTemplate)
+        let dismissIconImage = Vitamix.closeLine.image.withRenderingMode(.alwaysTemplate)
         dismissIcon = UIImageView(image: dismissIconImage)
         dismissIcon.tintColor = disableColor(variant.textColor())
 
@@ -265,7 +265,7 @@ public extension VitaminChip {
         state: VitaminChipVariantState
     ) {
         if state == .selected {
-            let image = Vitamix.Line.System.check.image.withRenderingMode(.alwaysTemplate)
+            let image = Vitamix.checkLine.image.withRenderingMode(.alwaysTemplate)
             iconOrImageView.image = image
             iconOrImageView.tintColor = disableColor(variant.textColor())
             iconOrImageView.isHidden = false

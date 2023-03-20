@@ -71,56 +71,6 @@ import UIKit
   {% endif %}
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
-
-// MARK: - Implementation Details
-{% if resourceCount.image > 0 %}
-
-{{accessModifier}} struct {{imageType}} {
-  {{accessModifier}} fileprivate(set) var name: String
-
-  {{accessModifier}} var image: UIImage {
-    guard let resultImage = optionalImage else {
-      fatalError("Unable to load image asset named \(name).")
-    }
-    return resultImage
-  }
-
-  {{accessModifier}} var optionalImage: UIImage? {
-    let bundle = {{param.bundle|default:"BundleToken.bundle"}}
-    #if os(iOS) || os(tvOS)
-    let resultImage = UIImage(named: name, in: bundle, compatibleWith: nil)
-    #elseif os(watchOS)
-    let resultImage = UIImage(named: name)
-    #endif
-    return resultImage
-  }
-}
-
-{{accessModifier}} extension UIImage {
-  convenience init?(asset: {{imageType}}) {
-    #if os(iOS) || os(tvOS)
-    let bundle = {{param.bundle|default:"BundleToken.bundle"}}
-    self.init(named: asset.name, in: bundle, compatibleWith: nil)
-    #elseif os(watchOS)
-    self.init(named: asset.name)
-    #endif
-  }
-}
-{% endif %}
-{% if not param.bundle %}
-
-// swiftlint:disable convenience_type
-private final class BundleToken {
-  static let bundle: Bundle = {
-    #if SWIFT_PACKAGE
-    return Bundle.module
-    #else
-    return Bundle(for: BundleToken.self)
-    #endif
-  }()
-}
-// swiftlint:enable convenience_type
-{% endif %}
 {% else %}
 // No assets found
 {% endif %}

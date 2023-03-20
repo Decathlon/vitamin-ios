@@ -44,26 +44,26 @@ extension ButtonsView {
                 style: buttonStyle.style,
                 size: .medium,
                 iconType: .trailing(
-                    image: Vitamix.Line.Logos.apple.image,
+                    image: UIImage.Vitamix.appleLine,
                     renderingMode: .template))
             makeButton(
                 style: buttonStyle.style,
                 size: .large,
                 iconType: .leading(
-                    image: Vitamix.Line.System.arrowRightS.image,
+                    image: UIImage.Vitamix.arrowRightLine,
                     renderingMode: .template))
             HStack {
                 makeButton(
                     style: buttonStyle.style,
                     size: .medium,
                     iconType: .alone(
-                        image: Vitamix.Line.Logos.apple.image,
+                        image: UIImage.Vitamix.appleLine,
                         renderingMode: .template))
                 makeButton(
                     style: buttonStyle.style,
                     size: .large,
                     iconType: .alone(
-                        image: Vitamix.Line.System.arrowRightS.image,
+                        image: UIImage.Vitamix.arrowRightLine,
                         renderingMode: .template))
             }
         }

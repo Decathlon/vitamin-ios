@@ -15,7 +15,7 @@ struct VitaminTextFieldView: View {
     @State private var selected = false
     @State var state: VitaminTextFieldState
     @State var helperText: String
-    @State var icon = Vitamix.Line.Health.heart.swiftUIImage
+    @State var icon = Image.Vitamix.heartLine
 
     var style: VitaminTextFieldStyle
     var showIcon = false
@@ -102,11 +102,11 @@ extension VitaminTextFieldView {
         }
     }
 
-    private func makeIcon() -> VitaminImageAsset {
+    private func makeIcon() -> VitaminAsset {
         if selected {
-            return Vitamix.Fill.Health.heart
+            return Vitamix.heartFill
         } else {
-            return Vitamix.Line.Health.heart
+            return Vitamix.heartLine
         }
     }
 }
