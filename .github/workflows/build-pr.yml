@@ -18,19 +18,19 @@ jobs:
           node-version: '14.x'
           
       - uses: juztcode/pr-updater@1.0.0
-        if: ${{ github.head_ref == 'feat/update-icons' }}
+        if: ${{ github.head_ref == 'feat/update-icons-sources' }}
         with:
-          title: 'feat: update icons'
+          title: 'feat: update icons sources'
           body: '**Automated Pull Request to update icons.**'
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: danielswensson/auto-assign-owner-action@v1
-        if: ${{ github.head_ref == 'feat/update-icons' }}
+        if: ${{ github.head_ref == 'feat/update-icons-sources' }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           
       - uses: actions-ecosystem/action-add-labels@v1
-        if: ${{ github.head_ref == 'feat/update-icons' }}
+        if: ${{ github.head_ref == 'feat/update-icons-sources' }}
         with:
           labels: |
             enhancement 🚀
@@ -38,7 +38,33 @@ jobs:
             run 💨
           
       - uses: actions/add-to-project@v0.4.0
-        if: ${{ github.head_ref == 'feat/update-icons' }}
+        if: ${{ github.head_ref == 'feat/update-icons-sources' }}
+        with:
+          project-url: https://github.com/orgs/Decathlon/projects/3
+          github-token: ${{ secrets.API_TOKEN_GITHUB }}
+
+      - uses: juztcode/pr-updater@1.0.0
+        if: ${{ github.head_ref == 'feat/update-icons-showcase' }}
+        with:
+          title: 'feat: update icons showcase'
+          body: '**Automated Pull Request to update icons.**'
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: danielswensson/auto-assign-owner-action@v1
+        if: ${{ github.head_ref == 'feat/update-icons-showcase' }}
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ github.head_ref == 'feat/update-icons-showcase' }}
+        with:
+          labels: |
+            enhancement 🚀
+            icons ✨
+            run 💨
+          
+      - uses: actions/add-to-project@v0.4.0
+        if: ${{ github.head_ref == 'feat/update-icons-showcase' }}
         with:
           project-url: https://github.com/orgs/Decathlon/projects/3
           github-token: ${{ secrets.API_TOKEN_GITHUB }}
