@@ -10,6 +10,8 @@
 import Foundation
 
 public enum Vitamix {
+    public static let accessibilityFill = VitaminAsset(name: "AccessibilityFill")
+    public static let accessibilityLine = VitaminAsset(name: "AccessibilityLine")
     public static let addCircleFill = VitaminAsset(name: "AddCircleFill")
     public static let addCircleLine = VitaminAsset(name: "AddCircleLine")
     public static let addFill = VitaminAsset(name: "AddFill")
@@ -218,6 +220,8 @@ public enum Vitamix {
     public static let instagramLine = VitaminAsset(name: "InstagramLine")
     public static let kakaoTalkFill = VitaminAsset(name: "KakaoTalkFill")
     public static let kakaoTalkLine = VitaminAsset(name: "KakaoTalkLine")
+    public static let keyboardFill = VitaminAsset(name: "KeyboardFill")
+    public static let keyboardLine = VitaminAsset(name: "KeyboardLine")
     public static let leafFill = VitaminAsset(name: "LeafFill")
     public static let leafLine = VitaminAsset(name: "LeafLine")
     public static let lightbulbFill = VitaminAsset(name: "LightbulbFill")
@@ -458,6 +462,10 @@ public enum Vitamix {
     public static let walletLine = VitaminAsset(name: "WalletLine")
     public static let whatsappFill = VitaminAsset(name: "WhatsappFill")
     public static let whatsappLine = VitaminAsset(name: "WhatsappLine")
+    public static let wifiOffFill = VitaminAsset(name: "WifiOffFill")
+    public static let wifiOffLine = VitaminAsset(name: "WifiOffLine")
+    public static let wifiOnFill = VitaminAsset(name: "WifiOnFill")
+    public static let wifiOnLine = VitaminAsset(name: "WifiOnLine")
     public static let windyFill = VitaminAsset(name: "WindyFill")
     public static let windyLine = VitaminAsset(name: "WindyLine")
     public static let youtubeFill = VitaminAsset(name: "YoutubeFill")
