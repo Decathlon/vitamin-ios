@@ -18,7 +18,7 @@ extension VitaminAsset {
 
     public var optionalImage: Image? {
 #if os(iOS) || os(tvOS)
-        let resultImage = Image(name, bundle: bundle)
+        let resultImage = Image(paymentMapper[name, default: name], bundle: bundle)
 #elseif os(watchOS)
         let resultImage = Image(name)
 #endif

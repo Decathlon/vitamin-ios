@@ -156,7 +156,7 @@ extension AssetsViewController {
                       image: VitaminAssets.Logo.logo.image,
                       type: .large),
             AssetItem(name: "VitaminAssets.Logo.logoOutlined.image",
-                      image: VitaminAssets.Logo.logoOutlined.image,
+                      image: VitaminAssets.Logo.logoWithOutline.image,
                       type: .large),
             AssetItem(name: "VitaminAssets.Logo.favicon.image",
                       image: VitaminAssets.Logo.favicon.image,

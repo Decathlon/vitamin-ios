@@ -278,6 +278,7 @@ public enum VitaminAssets {
     public static let faviconBlack = VitaminAsset(name: "favicon-black")
     public static let favicon = VitaminAsset(name: "favicon")
     public static let logoWithOutline = VitaminAsset(name: "logo-with-outline")
+    public static let logoOutlined = VitaminAsset(name: "logo-with-outline")
     public static let logo = VitaminAsset(name: "logo")
   }
   public enum Payment {
