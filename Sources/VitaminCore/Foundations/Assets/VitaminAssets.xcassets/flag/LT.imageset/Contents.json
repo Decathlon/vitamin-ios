@@ -1,15 +1,15 @@
 {
-  "images" : [
+  "images": [
     {
-      "filename" : "LT.pdf",
-      "idiom" : "universal"
+      "filename": "LT.pdf",
+      "idiom": "universal"
     }
   ],
-  "info" : {
-    "author" : "xcode",
-    "version" : 1
+  "info": {
+    "author": "xcode",
+    "version": 1
   },
-  "properties" : {
-    "preserves-vector-representation" : true
+  "properties": {
+    "preserves-vector-representation": true
   }
 }
