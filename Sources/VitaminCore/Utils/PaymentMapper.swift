@@ -1,5 +1,7 @@
 import Foundation
 
+/// This mapper is used to transform payment names from a non-uniform format to a uniform format.
+/// A dictionary that maps old, non-uniform payment names to new, uniform payment names.
 public let paymentMapper: [String:String] = [
   "AmazonPay" : "amazon-pay",
   "Amex" : "amex",
