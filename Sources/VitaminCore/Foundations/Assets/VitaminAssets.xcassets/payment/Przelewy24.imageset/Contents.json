@@ -1,15 +1,15 @@
 {
-  "images" : [
+  "images": [
     {
-      "filename" : "Przelewy24.pdf",
-      "idiom" : "universal"
+      "filename": "przelewy24.pdf",
+      "idiom": "universal"
     }
   ],
-  "info" : {
-    "author" : "xcode",
-    "version" : 1
+  "info": {
+    "author": "xcode",
+    "version": 1
   },
-  "properties" : {
-    "preserves-vector-representation" : true
+  "properties": {
+    "preserves-vector-representation": true
   }
 }
