@@ -26,7 +26,7 @@ extension AssetsView {
     private func makeLogosSection() -> some View {
         makeSpacedSection("Logos") {
             makeRow(asset: VitaminAssets.Logo.logo)
-            makeRow(asset: VitaminAssets.Logo.logoOutlined)
+            makeRow(asset: VitaminAssets.Logo.logoWithOutline)
             HStack {
                 makeSmallRow(asset: VitaminAssets.Logo.favicon)
                 makeSmallRow(asset: VitaminAssets.Logo.faviconBlack)
