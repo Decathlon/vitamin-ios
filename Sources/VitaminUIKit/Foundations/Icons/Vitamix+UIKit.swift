@@ -202,6 +202,8 @@ extension UIImage {
         public static let groupLine = VitaminCore.Vitamix.groupLine.image
         public static let hailFill = VitaminCore.Vitamix.hailFill.image
         public static let hailLine = VitaminCore.Vitamix.hailLine.image
+        public static let hearingImpairmentFill = VitaminCore.Vitamix.hearingImpairmentFill.image
+        public static let hearingImpairmentLine = VitaminCore.Vitamix.hearingImpairmentLine.image
         public static let heartFill = VitaminCore.Vitamix.heartFill.image
         public static let heartLine = VitaminCore.Vitamix.heartLine.image
         public static let heartPulseFill = VitaminCore.Vitamix.heartPulseFill.image

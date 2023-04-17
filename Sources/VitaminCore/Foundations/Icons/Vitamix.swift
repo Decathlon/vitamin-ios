@@ -200,6 +200,8 @@ public enum Vitamix {
     public static let groupLine = VitaminAsset(name: "GroupLine")
     public static let hailFill = VitaminAsset(name: "HailFill")
     public static let hailLine = VitaminAsset(name: "HailLine")
+    public static let hearingImpairmentFill = VitaminAsset(name: "HearingImpairmentFill")
+    public static let hearingImpairmentLine = VitaminAsset(name: "HearingImpairmentLine")
     public static let heartFill = VitaminAsset(name: "HeartFill")
     public static let heartLine = VitaminAsset(name: "HeartLine")
     public static let heartPulseFill = VitaminAsset(name: "HeartPulseFill")
