@@ -1,5 +1,9 @@
 import Foundation
 
+/// This mapper is used to transform Vitamix names from to SF Symbol conterparts.
+/// 465 - Total
+/// 106 - 23% are not available
+/// 359 - 77%
 public let VitamixToSFSymbol: [String: String] = [
 //  "AccessibilityFill" : "",
 //  "AccessibilityLine" : "",
