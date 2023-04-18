@@ -27,6 +27,7 @@ struct MainView: View {
             NavigationLink("⭕️ Radius", destination: RadiusesView())
             NavigationLink("🌘 Shadows", destination: ShadowsView())
             NavigationLink("🖋 Typography", destination: TypographyView())
+            NavigationLink("🎢 SFSymbols", destination: SFSymbolMapper())
         }
     }
 

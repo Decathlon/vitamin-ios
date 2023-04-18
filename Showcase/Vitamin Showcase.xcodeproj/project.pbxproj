@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30F95E44292FBA0500D6CEB7 /* TextFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F95E43292FBA0500D6CEB7 /* TextFieldsView.swift */; };
+		3D2A6EAB29EDDECC00243031 /* SFSymbolMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A6EAA29EDDECC00243031 /* SFSymbolMapper.swift */; };
 		4A01623729BB8A1800FC964E /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A01623629BB8A1800FC964E /* UIImage+Resize.swift */; };
 		4A01623929BB8AD200FC964E /* IconsModel+Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A01623829BB8AD200FC964E /* IconsModel+Sections.swift */; };
 		4A038B54293A7CCD00ADFDE6 /* VitaminTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A038B53293A7CCD00ADFDE6 /* VitaminTextFieldView.swift */; };
@@ -97,6 +98,7 @@
 
 /* Begin PBXFileReference section */
 		30F95E43292FBA0500D6CEB7 /* TextFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsView.swift; sourceTree = "<group>"; };
+		3D2A6EAA29EDDECC00243031 /* SFSymbolMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolMapper.swift; sourceTree = "<group>"; };
 		4A01623629BB8A1800FC964E /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		4A01623829BB8AD200FC964E /* IconsModel+Sections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconsModel+Sections.swift"; sourceTree = "<group>"; };
 		4A038B53293A7CCD00ADFDE6 /* VitaminTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminTextFieldView.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				4A35E48F2816D1B5001526D8 /* TypographyView.swift */,
+				3D2A6EAA29EDDECC00243031 /* SFSymbolMapper.swift */,
 			);
 			path = Typography;
 			sourceTree = "<group>";
@@ -1002,6 +1005,7 @@
 				4A01623929BB8AD200FC964E /* IconsModel+Sections.swift in Sources */,
 				4AAD2B67276772D200727D8E /* MainTableViewController.swift in Sources */,
 				4A35E4752812B34E001526D8 /* ColorsModel.swift in Sources */,
+				3D2A6EAB29EDDECC00243031 /* SFSymbolMapper.swift in Sources */,
 				65D1B66A2787422100C1560B /* ShadowTableViewCell.swift in Sources */,
 				6551746227EDBFAE0043700F /* BaseImageCollectionViewController.swift in Sources */,
 				4A90D1532938EC7D00E15A44 /* DynamicFrameModifier.swift in Sources */,
