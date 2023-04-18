@@ -7,7 +7,7 @@
 import SwiftUI
 import VitaminCore
 
-@available(iOS 13, *)
+@available(iOS 14, *)
 struct SFSymbolMapper: View {
   
   let assets: [VitaminAsset] = [
@@ -478,15 +478,19 @@ struct SFSymbolMapper: View {
     Vitamix.zoomOutFill,
     Vitamix.zoomOutLine,
   ]
-  
+
   var body: some View {
     ScrollView(.vertical) {
-      VStack {
-        HStack {
+      LazyVStack {
+        HStack(spacing: 0) {
           Spacer()
-          Text("Vitamix")
-          Text("SFSymbol")
-        }
+            Text("Vitamix")
+              .lineLimit(1)
+              .rotationEffect(.degrees(-70))
+            Text("SFSymbol")
+              .lineLimit(1)
+              .rotationEffect(.degrees(-70))
+        }.padding(.bottom, 4)
         ForEach(assets, id:\.name) { asset in
           HStack {
             Text(asset.name)
@@ -494,7 +498,7 @@ struct SFSymbolMapper: View {
             Spacer()
             
             asset.image
-            
+
             if let mapped = VitamixToSFSymbol[asset.name] {
               Image(systemName: mapped)
                 .imageScale(.large)
@@ -510,11 +514,10 @@ struct SFSymbolMapper: View {
   }
 }
 
-@available(iOS 13, *)
+@available(iOS 14, *)
 struct SFSymbolMapper_Previews: PreviewProvider {
   static var previews: some View {
     SFSymbolMapper()
   }
 }
 #endif
-
