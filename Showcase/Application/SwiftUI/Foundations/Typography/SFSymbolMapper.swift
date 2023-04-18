@@ -509,7 +509,8 @@ struct SFSymbolMapper: View {
             }
           }
         }
-      }.padding()
+      }
+      .padding()
     }
   }
 }
