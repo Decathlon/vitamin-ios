@@ -278,7 +278,6 @@ public enum VitaminAssets {
     public static let faviconBlack = VitaminAsset(name: "favicon-black")
     public static let favicon = VitaminAsset(name: "favicon")
     public static let logoWithOutline = VitaminAsset(name: "logo-with-outline")
-    public static let logoOutlined = VitaminAsset(name: "logo-with-outline")
     public static let logo = VitaminAsset(name: "logo")
   }
   public enum Payment {
@@ -351,6 +350,10 @@ public enum VitaminAssets {
   }
   public enum Placeholder {
     public static let landscape = VitaminAsset(name: "landscape")
+  }
+  public enum Shipping {
+    public static let colissimo = VitaminAsset(name: "colissimo")
+    public static let mondialRelay = VitaminAsset(name: "mondial-relay")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
