@@ -357,6 +357,10 @@ enum AssetsModel {
         ]),
         AssetsModel.Section(name: "Placeholders", items: [
             VitaminAssets.Placeholder.landscape
+        ]),
+        AssetsModel.Section(name: "Shipping", items: [
+            VitaminAssets.Shipping.colissimo,
+            VitaminAssets.Shipping.mondialRelay
         ])
     ]
 }
