@@ -35,7 +35,6 @@ jobs:
           labels: |
             enhancement 🚀
             icons ✨
-            run 💨
           
       - uses: actions/add-to-project@v0.4.0
         if: ${{ github.head_ref == 'feat/update-icons-sources' }}
@@ -61,10 +60,59 @@ jobs:
           labels: |
             enhancement 🚀
             icons ✨
-            run 💨
           
       - uses: actions/add-to-project@v0.4.0
         if: ${{ github.head_ref == 'feat/update-icons-showcase' }}
+        with:
+          project-url: https://github.com/orgs/Decathlon/projects/3
+          github-token: ${{ secrets.API_TOKEN_GITHUB }}
+
+      - uses: juztcode/pr-updater@1.0.0
+        if: ${{ github.head_ref == 'feat/update-assets-sources' }}
+        with:
+          title: 'feat: update assets sources'
+          body: '**Automated Pull Request to update assets.**'
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: danielswensson/auto-assign-owner-action@v1
+        if: ${{ github.head_ref == 'feat/update-assets-sources' }}
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ github.head_ref == 'feat/update-assets-sources' }}
+        with:
+          labels: |
+            enhancement 🚀
+            assets 🏞
+          
+      - uses: actions/add-to-project@v0.4.0
+        if: ${{ github.head_ref == 'feat/update-assets-sources' }}
+        with:
+          project-url: https://github.com/orgs/Decathlon/projects/3
+          github-token: ${{ secrets.API_TOKEN_GITHUB }}
+
+      - uses: juztcode/pr-updater@1.0.0
+        if: ${{ github.head_ref == 'feat/update-assets-showcase' }}
+        with:
+          title: 'feat: update assets showcase'
+          body: '**Automated Pull Request to update assets.**'
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: danielswensson/auto-assign-owner-action@v1
+        if: ${{ github.head_ref == 'feat/update-assets-showcase' }}
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ github.head_ref == 'feat/update-assets-showcase' }}
+        with:
+          labels: |
+            enhancement 🚀
+            assets 🏞
+          
+      - uses: actions/add-to-project@v0.4.0
+        if: ${{ github.head_ref == 'feat/update-assets-showcase' }}
         with:
           project-url: https://github.com/orgs/Decathlon/projects/3
           github-token: ${{ secrets.API_TOKEN_GITHUB }}
