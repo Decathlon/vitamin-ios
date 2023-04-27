@@ -15,7 +15,7 @@ app:
 meta:
   bitrise.io:
     machine_type_id: g2.4core
-    stack: osx-xcode-14.3.x
+    stack: osx-xcode-14.3.x-ventura
 trigger_map:
 - push_branch: main
   workflow: primary
