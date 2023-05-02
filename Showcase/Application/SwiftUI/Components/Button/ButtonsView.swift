@@ -92,10 +92,29 @@ extension ButtonsView {
     }
 }
 
+#if canImport(PreviewSnapshots)
+import PreviewSnapshots
+#endif
+
 @available(iOS 13, *)
 struct ButtonsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ButtonsView()
-    }
+  static var previews: some View {
+    snapshots.previews.previewLayout(.sizeThatFits)
+  }
+  
+  static var snapshots: PreviewSnapshots<Void> {
+    PreviewSnapshots(
+      configurations: [
+        .init(name: "Buttons", state: ())
+      ],
+      configure: { _ in
+        VStack {
+          ButtonsView()
+            .frame(width: 390, height: 1700)
+            .padding()
+        }
+      }
+    )
+  }
 }
 #endif

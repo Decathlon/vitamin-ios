@@ -40,16 +40,19 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "VitaminTests"
-               BuildableName = "VitaminTests"
-               BlueprintName = "VitaminTests"
-               ReferencedContainer = "container:..">
+               BlueprintIdentifier = "3D98630D2A01687E0071CC8C"
+               BuildableName = "ShowcaseSnapshotTests.xctest"
+               BlueprintName = "ShowcaseSnapshotTests"
+               ReferencedContainer = "container:Vitamin Showcase.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

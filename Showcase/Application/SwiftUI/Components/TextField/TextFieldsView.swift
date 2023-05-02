@@ -94,11 +94,30 @@ extension TextFieldsView {
     }
 }
 
+#if canImport(PreviewSnapshots)
+import PreviewSnapshots
+#endif
+
 @available(iOS 13, *)
 struct TextFieldsView_Previews: PreviewProvider {
-    static var previews: some View {
-        TextFieldsView()
-    }
+  static var previews: some View {
+    snapshots.previews.previewLayout(.sizeThatFits)
+  }
+  
+  static var snapshots: PreviewSnapshots<Void> {
+    PreviewSnapshots(
+      configurations: [
+        .init(name: "TextFields", state: ())
+      ],
+      configure: { _ in
+        VStack {
+          TextFieldsView()
+            .frame(width: 390, height: 800)
+            .padding()
+        }
+      }
+    )
+  }
 }
 
 #endif
