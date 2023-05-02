@@ -52,6 +52,17 @@
                ReferencedContainer = "container:..">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3DF5BF8C2A01448400A67B3E"
+               BuildableName = "ShowcaseSnapshotTests.xctest"
+               BlueprintName = "ShowcaseSnapshotTests"
+               ReferencedContainer = "container:Vitamin Showcase.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
