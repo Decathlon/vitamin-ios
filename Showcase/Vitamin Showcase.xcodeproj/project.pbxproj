@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		30F95E44292FBA0500D6CEB7 /* TextFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F95E43292FBA0500D6CEB7 /* TextFieldsView.swift */; };
 		3D9863042A0159E10071CC8C /* ShowcaseSnapshotSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9863032A0159E10071CC8C /* ShowcaseSnapshotSwiftUITests.swift */; };
+		3D9863072A0160BA0071CC8C /* PreviewSnapshots in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9863062A0160BA0071CC8C /* PreviewSnapshots */; };
+		3D9863092A0160BA0071CC8C /* PreviewSnapshotsTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9863082A0160BA0071CC8C /* PreviewSnapshotsTesting */; };
 		3DF5BF902A01448400A67B3E /* ShowcaseSnapshotUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF5BF8F2A01448400A67B3E /* ShowcaseSnapshotUIKitTests.swift */; };
 		3DF5BF982A01452A00A67B3E /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 3DF5BF972A01452A00A67B3E /* SnapshotTesting */; };
 		4A01623729BB8A1800FC964E /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A01623629BB8A1800FC964E /* UIImage+Resize.swift */; };
@@ -206,6 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D9863092A0160BA0071CC8C /* PreviewSnapshotsTesting in Frameworks */,
 				3DF5BF982A01452A00A67B3E /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AB763AE2825725300092033 /* VitaminCore in Frameworks */,
+				3D9863072A0160BA0071CC8C /* PreviewSnapshots in Frameworks */,
 				4A35E4642811EE2E001526D8 /* VitaminSwiftUI in Frameworks */,
 				4A35E4602811EE2E001526D8 /* Vitamin in Frameworks */,
 			);
@@ -898,6 +902,7 @@
 			name = ShowcaseSnapshotTests;
 			packageProductDependencies = (
 				3DF5BF972A01452A00A67B3E /* SnapshotTesting */,
+				3D9863082A0160BA0071CC8C /* PreviewSnapshotsTesting */,
 			);
 			productName = ShowcaseSnapshotTests;
 			productReference = 3DF5BF8D2A01448400A67B3E /* ShowcaseSnapshotTests.xctest */;
@@ -921,6 +926,7 @@
 				4A35E45F2811EE2E001526D8 /* Vitamin */,
 				4A35E4632811EE2E001526D8 /* VitaminSwiftUI */,
 				4AB763AD2825725300092033 /* VitaminCore */,
+				3D9863062A0160BA0071CC8C /* PreviewSnapshots */,
 			);
 			productName = VitaminDemo;
 			productReference = AAC5D43D2567FE710070667D /* Showcase.app */;
@@ -955,6 +961,7 @@
 			mainGroup = AAC5D4342567FE710070667D;
 			packageReferences = (
 				3DF5BF962A01452A00A67B3E /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				3D9863052A0160BA0071CC8C /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */,
 			);
 			productRefGroup = AAC5D43E2567FE710070667D /* Products */;
 			projectDirPath = "";
@@ -1296,7 +1303,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6F8Y5QNU44;
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1317,7 +1324,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = EZELTPWNWS;
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1363,6 +1370,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3D9863052A0160BA0071CC8C /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/doordash-oss/swiftui-preview-snapshots.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		3DF5BF962A01452A00A67B3E /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
@@ -1374,6 +1389,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3D9863062A0160BA0071CC8C /* PreviewSnapshots */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D9863052A0160BA0071CC8C /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */;
+			productName = PreviewSnapshots;
+		};
+		3D9863082A0160BA0071CC8C /* PreviewSnapshotsTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D9863052A0160BA0071CC8C /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */;
+			productName = PreviewSnapshotsTesting;
+		};
 		3DF5BF972A01452A00A67B3E /* SnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3DF5BF962A01452A00A67B3E /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;

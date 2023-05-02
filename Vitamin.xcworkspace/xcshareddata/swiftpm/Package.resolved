@@ -9,6 +9,15 @@
           "revision": "cef5b3f6f11781dd4591bdd1dd0a3d22bd609334",
           "version": "1.11.0"
         }
+      },
+      {
+        "package": "swiftui-preview-snapshots",
+        "repositoryURL": "https://github.com/doordash-oss/swiftui-preview-snapshots.git",
+        "state": {
+          "branch": "main",
+          "revision": "5ff751e487e0f043857d111571bf2c2e7b0a46be",
+          "version": null
+        }
       }
     ]
   },

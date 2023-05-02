@@ -1,26 +1,25 @@
 import XCTest
 import SnapshotTesting
 import SwiftUI
+import PreviewSnapshotsTesting
 
+@testable import Showcase
 @testable import VitaminSwiftUI
+@testable import VitaminCore
 
+@available(iOS 13, *)
 final class ShowcaseSnapshotSwiftUITests: XCTestCase {
   
-  func testVitaminButton() throws {
-    let button = VitaminButton(style: .primary, action: {})
-      .frame(width: 150, height: 60)
+  func testButtonsView() throws {
+    ButtonsView_Previews.snapshots.assertSnapshots()
   }
   
-  func testTextInput() throws {
-    let textField = VitaminTextField()
+  func testTextFields() throws {
+    TextFieldsView_Previews.snapshots.assertSnapshots()
   }
   
   
-  func testVitaminBadge() throws {
-    let badge1 = VitaminBadge(value: nil)
-    let badge2 = VitaminBadge(value: 0)
-    let badge3 = VitaminBadge(value: 5)
-    let badge4 = VitaminBadge(value: 99)
-    let badge5 = VitaminBadge(value: 150)
+  func testBadgesView() throws {
+    BadgesView_Previews.snapshots.assertSnapshots()
   }
 }
