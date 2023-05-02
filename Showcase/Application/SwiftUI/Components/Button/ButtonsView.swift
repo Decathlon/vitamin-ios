@@ -92,9 +92,7 @@ extension ButtonsView {
     }
 }
 
-#if canImport(PreviewSnapshots)
 import PreviewSnapshots
-#endif
 
 @available(iOS 13, *)
 struct ButtonsView_Previews: PreviewProvider {

@@ -94,9 +94,7 @@ extension TextFieldsView {
     }
 }
 
-#if canImport(PreviewSnapshots)
 import PreviewSnapshots
-#endif
 
 @available(iOS 13, *)
 struct TextFieldsView_Previews: PreviewProvider {

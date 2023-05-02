@@ -41,7 +41,31 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "Vitamin"
+            BuildableName = "Vitamin"
+            BlueprintName = "Vitamin"
+            ReferencedContainer = "container:..">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "VitaminCore"
+            BuildableName = "VitaminCore"
+            BlueprintName = "VitaminCore"
+            ReferencedContainer = "container:..">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "VitaminSwiftUI"
+            BuildableName = "VitaminSwiftUI"
+            BlueprintName = "VitaminSwiftUI"
+            ReferencedContainer = "container:..">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO"
