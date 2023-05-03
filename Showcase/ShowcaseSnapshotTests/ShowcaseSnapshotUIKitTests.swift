@@ -3,45 +3,52 @@ import SnapshotTesting
 import UIKit
 
 @testable import Vitamin
+@testable import Showcase
 
 final class ShowcaseSnapshotUIKitTests: XCTestCase {
   
   func testVitaminButton() throws {
-    let button = VitaminButton(style: .primary)
-    button.setTitle("Vitamin", for: .normal)
-    button.frame = CGRect(origin: .zero, size: CGSize(width: 150, height: 60))
-    button.setIconType(.trailing(image: .add), for: .normal)
-    button.applyNewTextStyle()
-    assertSnapshot(matching: button, as: .image)
+    let vc = UINavigationController(rootViewController: ButtonsViewController())
+    assertSnapshot(matching: vc, as: .image)
   }
   
-  func testTextInput() throws {
-    let textField = VitaminTextField(state: .init(initialState: .active), texts: .init(labelText: "Vitamin"))
-    textField.frame = CGRect(origin: .zero, size: CGSize(width: 150, height: 60))
+  func testTextFieldViewController() throws {
+    let vc = UINavigationController(rootViewController: TextFieldViewController())
+    assertSnapshot(matching: vc, as: .image)
   }
   
-  
-  func testVitaminBadge() throws {
-    let badge1 = VitaminBadge(value: nil)
-    let badge2 = VitaminBadge(value: 0)
-    let badge3 = VitaminBadge(value: 5)
-    let badge4 = VitaminBadge(value: 99)
-    let badge5 = VitaminBadge(value: 150)
+  func testBadgesViewController() throws {
+    let vc = UINavigationController(rootViewController: BadgesViewController())
+    assertSnapshot(matching: vc, as: .image)
   }
   
-  func testVitaminProgressbar() throws {
-    let progress = VitaminProgressbar(progressType: .determinate)
+  func testProgressbarViewController() throws {
+    let vc = UINavigationController(rootViewController: ProgressbarViewController())
+    assertSnapshot(matching: vc, as: .image)
   }
   
-  func testVitaminTag() throws {
-    let tag = VitaminTag()
+  func testTagViewController() throws {
+    let vc = UINavigationController(rootViewController: TagViewController())
+    assertSnapshot(matching: vc, as: .image)
   }
   
-  func testVitaminSnackbar() throws {
-    let tag = VitaminSnackbar()
+  func testSnackbarViewController() throws {
+    let vc = UINavigationController(rootViewController: SnackbarViewController())
+    assertSnapshot(matching: vc, as: .image)
   }
   
-  func testVitaminChip() throws {
-    let tag = VitaminChip()
+  func testChipViewController() throws {
+    let vc = UINavigationController(rootViewController: ChipViewController())
+    assertSnapshot(matching: vc, as: .image)
+  }
+  
+  func testSwitchViewController() throws {
+    let vc = UINavigationController(rootViewController: SwitchViewController())
+    assertSnapshot(matching: vc, as: .image)
+  }
+  
+  func testSegmentedControlViewController() throws {
+    let vc = UINavigationController(rootViewController: SegmentedControlViewController())
+    assertSnapshot(matching: vc, as: .image)
   }
 }
