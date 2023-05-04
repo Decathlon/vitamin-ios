@@ -1,3 +1,8 @@
+//
+//  Vitamin iOS
+//  Apache License 2.0
+//
+
 import XCTest
 import SnapshotTesting
 import UIKit
