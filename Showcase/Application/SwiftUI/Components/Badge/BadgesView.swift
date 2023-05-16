@@ -93,10 +93,27 @@ struct BadgesView: View {
     }
 }
 
+import PreviewSnapshots
+
 @available(iOS 13, *)
 struct BadgesView_Previews: PreviewProvider {
     static var previews: some View {
-        BadgesView()
+      snapshots.previews.previewLayout(.sizeThatFits)
     }
+  
+  static var snapshots: PreviewSnapshots<Void> {
+    PreviewSnapshots(
+      configurations: [
+        .init(name: "Badges", state: ())
+      ],
+      configure: { _ in
+        VStack {
+          BadgesView()
+            .frame(width: 390, height: 1500)
+            .padding()
+        }
+      }
+    )
+  }
 }
 #endif

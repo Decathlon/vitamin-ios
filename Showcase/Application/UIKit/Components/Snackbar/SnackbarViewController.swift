@@ -129,7 +129,7 @@ public class SnackbarViewController: UIViewController {
         pushButton.isEnabled = buttonEnabled
     }
 
-    @objc private func pushButtonTapped(sender: UIButton) {
+    @objc internal func pushButtonTapped(sender: UIButton) {
         let image = self.withImageSwitch.isOn ? VitaminAssets.Placeholder.landscape.image : nil
         var dismissDelay = 5.0
 

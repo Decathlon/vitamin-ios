@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		30F95E44292FBA0500D6CEB7 /* TextFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F95E43292FBA0500D6CEB7 /* TextFieldsView.swift */; };
+		3D9863192A01689A0071CC8C /* PreviewSnapshots in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9863182A01689A0071CC8C /* PreviewSnapshots */; };
+		3D98631B2A01689A0071CC8C /* PreviewSnapshotsTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 3D98631A2A01689A0071CC8C /* PreviewSnapshotsTesting */; };
+		3D98631D2A0168DE0071CC8C /* ShowcaseSnapshotUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98631C2A0168DE0071CC8C /* ShowcaseSnapshotUIKitTests.swift */; };
+		3D98631F2A0168FA0071CC8C /* ShowcaseSnapshotSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98631E2A0168FA0071CC8C /* ShowcaseSnapshotSwiftUITests.swift */; };
 		4A01623729BB8A1800FC964E /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A01623629BB8A1800FC964E /* UIImage+Resize.swift */; };
 		4A01623929BB8AD200FC964E /* IconsModel+Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A01623829BB8AD200FC964E /* IconsModel+Sections.swift */; };
 		4A038B54293A7CCD00ADFDE6 /* VitaminTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A038B53293A7CCD00ADFDE6 /* VitaminTextFieldView.swift */; };
@@ -95,8 +99,21 @@
 		AAC5D44D2567FE720070667D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC5D44B2567FE720070667D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3D9863122A01687E0071CC8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAC5D4352567FE710070667D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAC5D43C2567FE710070667D;
+			remoteInfo = Showcase;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		30F95E43292FBA0500D6CEB7 /* TextFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsView.swift; sourceTree = "<group>"; };
+		3D98630E2A01687E0071CC8C /* ShowcaseSnapshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShowcaseSnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D98631C2A0168DE0071CC8C /* ShowcaseSnapshotUIKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowcaseSnapshotUIKitTests.swift; sourceTree = "<group>"; };
+		3D98631E2A0168FA0071CC8C /* ShowcaseSnapshotSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseSnapshotSwiftUITests.swift; sourceTree = "<group>"; };
 		4A01623629BB8A1800FC964E /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		4A01623829BB8AD200FC964E /* IconsModel+Sections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconsModel+Sections.swift"; sourceTree = "<group>"; };
 		4A038B53293A7CCD00ADFDE6 /* VitaminTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminTextFieldView.swift; sourceTree = "<group>"; };
@@ -186,11 +203,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3D98630B2A01687E0071CC8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D98631B2A01689A0071CC8C /* PreviewSnapshotsTesting in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AAC5D43A2567FE710070667D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4AB763AE2825725300092033 /* VitaminCore in Frameworks */,
+				3D9863192A01689A0071CC8C /* PreviewSnapshots in Frameworks */,
 				4A35E4642811EE2E001526D8 /* VitaminSwiftUI in Frameworks */,
 				4A35E4602811EE2E001526D8 /* Vitamin in Frameworks */,
 			);
@@ -199,6 +225,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D98630F2A01687E0071CC8C /* ShowcaseSnapshotTests */ = {
+			isa = PBXGroup;
+			children = (
+				3D98631C2A0168DE0071CC8C /* ShowcaseSnapshotUIKitTests.swift */,
+				3D98631E2A0168FA0071CC8C /* ShowcaseSnapshotSwiftUITests.swift */,
+			);
+			path = ShowcaseSnapshotTests;
+			sourceTree = "<group>";
+		};
 		4A01623529BB8A1800FC964E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -839,6 +874,7 @@
 				654642B2276A513C00213415 /* Packages */,
 				4AAD2B5C2767714B00727D8E /* Application */,
 				4A8962EF276366EB00D9B8E9 /* Supporting Files */,
+				3D98630F2A01687E0071CC8C /* ShowcaseSnapshotTests */,
 				AA8CB0F52568752900C35F74 /* Frameworks */,
 				AAC5D43E2567FE710070667D /* Products */,
 			);
@@ -848,6 +884,7 @@
 			isa = PBXGroup;
 			children = (
 				AAC5D43D2567FE710070667D /* Showcase.app */,
+				3D98630E2A01687E0071CC8C /* ShowcaseSnapshotTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -855,6 +892,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3D98630D2A01687E0071CC8C /* ShowcaseSnapshotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D9863162A01687E0071CC8C /* Build configuration list for PBXNativeTarget "ShowcaseSnapshotTests" */;
+			buildPhases = (
+				3D98630A2A01687E0071CC8C /* Sources */,
+				3D98630B2A01687E0071CC8C /* Frameworks */,
+				3D98630C2A01687E0071CC8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D9863132A01687E0071CC8C /* PBXTargetDependency */,
+			);
+			name = ShowcaseSnapshotTests;
+			packageProductDependencies = (
+				3D98631A2A01689A0071CC8C /* PreviewSnapshotsTesting */,
+			);
+			productName = ShowcaseSnapshotTests;
+			productReference = 3D98630E2A01687E0071CC8C /* ShowcaseSnapshotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AAC5D43C2567FE710070667D /* Showcase */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AAC5D4512567FE720070667D /* Build configuration list for PBXNativeTarget "Showcase" */;
@@ -873,6 +931,7 @@
 				4A35E45F2811EE2E001526D8 /* Vitamin */,
 				4A35E4632811EE2E001526D8 /* VitaminSwiftUI */,
 				4AB763AD2825725300092033 /* VitaminCore */,
+				3D9863182A01689A0071CC8C /* PreviewSnapshots */,
 			);
 			productName = VitaminDemo;
 			productReference = AAC5D43D2567FE710070667D /* Showcase.app */;
@@ -884,9 +943,14 @@
 		AAC5D4352567FE710070667D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1220;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
+					3D98630D2A01687E0071CC8C = {
+						CreatedOnToolsVersion = 14.3;
+						LastSwiftMigration = 1430;
+						TestTargetID = AAC5D43C2567FE710070667D;
+					};
 					AAC5D43C2567FE710070667D = {
 						CreatedOnToolsVersion = 12.2;
 					};
@@ -902,17 +966,26 @@
 			);
 			mainGroup = AAC5D4342567FE710070667D;
 			packageReferences = (
+				3D9863172A01689A0071CC8C /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */,
 			);
 			productRefGroup = AAC5D43E2567FE710070667D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				AAC5D43C2567FE710070667D /* Showcase */,
+				3D98630D2A01687E0071CC8C /* ShowcaseSnapshotTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3D98630C2A01687E0071CC8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AAC5D43B2567FE710070667D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -963,6 +1036,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3D98630A2A01687E0071CC8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D98631F2A0168FA0071CC8C /* ShowcaseSnapshotSwiftUITests.swift in Sources */,
+				3D98631D2A0168DE0071CC8C /* ShowcaseSnapshotUIKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AAC5D4392567FE710070667D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1036,6 +1118,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3D9863132A01687E0071CC8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AAC5D43C2567FE710070667D /* Showcase */;
+			targetProxy = 3D9863122A01687E0071CC8C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		AAC5D4462567FE710070667D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -1056,6 +1146,47 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3D9863142A01687E0071CC8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.decathlon.ShowcaseSnapshotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Showcase.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Showcase";
+			};
+			name = Debug;
+		};
+		3D9863152A01687E0071CC8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.decathlon.ShowcaseSnapshotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Showcase.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Showcase";
+			};
+			name = Release;
+		};
 		AAC5D44F2567FE720070667D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1180,7 +1311,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6F8Y5QNU44;
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1201,7 +1332,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = EZELTPWNWS;
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1217,6 +1348,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3D9863162A01687E0071CC8C /* Build configuration list for PBXNativeTarget "ShowcaseSnapshotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D9863142A01687E0071CC8C /* Debug */,
+				3D9863152A01687E0071CC8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AAC5D4382567FE710070667D /* Build configuration list for PBXProject "Vitamin Showcase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1237,7 +1377,28 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		3D9863172A01689A0071CC8C /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/doordash-oss/swiftui-preview-snapshots.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		3D9863182A01689A0071CC8C /* PreviewSnapshots */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D9863172A01689A0071CC8C /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */;
+			productName = PreviewSnapshots;
+		};
+		3D98631A2A01689A0071CC8C /* PreviewSnapshotsTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D9863172A01689A0071CC8C /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */;
+			productName = PreviewSnapshotsTesting;
+		};
 		4A35E45F2811EE2E001526D8 /* Vitamin */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Vitamin;
