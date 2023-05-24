@@ -165,7 +165,7 @@ extension VitaminTextStyle {
     private func baselineOffset(lineHeight: CGFloat, size: CGFloat) -> CGFloat {
         // Computing the baselineOffset needed to center the text in its line height.
         // The baselineOffset should be the quarter of the difference between size and lineheight.
-        (lineHeight - size) / 4
+        (lineHeight - size) / 6
     }
 }
 
@@ -239,7 +239,7 @@ extension VitaminTextStyle {
     ) -> [NSAttributedString.Key: Any] {
         let adjustedFont = scaledFont
         let adjustedSize = adjustedFont.pointSize
-        let adjustedLineHeight = scaledLineHeight(for: adjustedFont)
+        let adjustedLineHeight = adjustedFont.lineHeight
         let paragraphStyle = paragraphStyle(lineHeight: adjustedLineHeight,
                                             lineBreakMode: lineBreakMode ?? .byTruncatingTail)
         let baselineOffset = baselineOffset(lineHeight: adjustedLineHeight, size: adjustedSize)
