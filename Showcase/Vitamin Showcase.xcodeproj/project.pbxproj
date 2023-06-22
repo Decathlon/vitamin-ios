@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		30F95E44292FBA0500D6CEB7 /* TextFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F95E43292FBA0500D6CEB7 /* TextFieldsView.swift */; };
+		3D54BF912A44392900D77578 /* NonRegressionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D54BF902A44392900D77578 /* NonRegressionTests.swift */; };
 		3D9863192A01689A0071CC8C /* PreviewSnapshots in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9863182A01689A0071CC8C /* PreviewSnapshots */; };
 		3D98631B2A01689A0071CC8C /* PreviewSnapshotsTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 3D98631A2A01689A0071CC8C /* PreviewSnapshotsTesting */; };
 		3D98631D2A0168DE0071CC8C /* ShowcaseSnapshotUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98631C2A0168DE0071CC8C /* ShowcaseSnapshotUIKitTests.swift */; };
@@ -111,6 +112,7 @@
 
 /* Begin PBXFileReference section */
 		30F95E43292FBA0500D6CEB7 /* TextFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsView.swift; sourceTree = "<group>"; };
+		3D54BF902A44392900D77578 /* NonRegressionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonRegressionTests.swift; sourceTree = "<group>"; };
 		3D98630E2A01687E0071CC8C /* ShowcaseSnapshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShowcaseSnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D98631C2A0168DE0071CC8C /* ShowcaseSnapshotUIKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowcaseSnapshotUIKitTests.swift; sourceTree = "<group>"; };
 		3D98631E2A0168FA0071CC8C /* ShowcaseSnapshotSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseSnapshotSwiftUITests.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				3D98631C2A0168DE0071CC8C /* ShowcaseSnapshotUIKitTests.swift */,
+				3D54BF902A44392900D77578 /* NonRegressionTests.swift */,
 				3D98631E2A0168FA0071CC8C /* ShowcaseSnapshotSwiftUITests.swift */,
 			);
 			path = ShowcaseSnapshotTests;
@@ -1040,6 +1043,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D54BF912A44392900D77578 /* NonRegressionTests.swift in Sources */,
 				3D98631F2A0168FA0071CC8C /* ShowcaseSnapshotSwiftUITests.swift in Sources */,
 				3D98631D2A0168DE0071CC8C /* ShowcaseSnapshotUIKitTests.swift in Sources */,
 			);
