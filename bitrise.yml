@@ -12,9 +12,6 @@ app:
   - BITRISE_EXPORT_METHOD: development
     opts:
       is_expand: false
-meta:
-  bitrise.io:
-    stack: osx-xcode-13.3.x
 trigger_map:
 - push_branch: main
   workflow: primary
