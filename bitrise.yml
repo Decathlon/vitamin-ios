@@ -46,3 +46,7 @@ workflows:
     - cache-pull@2: {}
     - xcode-build-for-simulator@0: {}
     - cache-push@2: {}
+meta:
+  bitrise.io:
+    stack: osx-xcode-14.2.x-ventura
+    machine_type_id: g2.4core
