@@ -49,4 +49,3 @@ workflows:
 meta:
   bitrise.io:
     stack: osx-xcode-14.2.x-ventura
-    machine_type_id: g2.4core
