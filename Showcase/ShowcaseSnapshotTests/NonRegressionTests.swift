@@ -55,14 +55,17 @@ final class NonRegressionUIKitTests: XCTestCase {
         size: .medium,
         iconType: .leading(image: UIImage(systemName: "person")!, renderingMode: .template),
         action: {})
+      .fixedSize()
       .readSize(onChange: { bt1 = $0 })
       VitaminButton(
         style: .tertiary,
         size: .medium,
         iconType: .alone(image: UIImage(systemName: "gear")!, renderingMode: .template),
         action: {})
+      .fixedSize()
       .readSize(onChange: { bt2 = $0 })
-    }
+    }.padding()
     assertSnapshot(matching: UIHostingController(rootView: container), as: .recursiveDescription(on: .iPhone12))
+    assertSnapshot(matching: UIHostingController(rootView: container), as: .image)
   }
 }
