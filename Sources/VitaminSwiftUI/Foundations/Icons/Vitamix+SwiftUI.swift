@@ -22,6 +22,18 @@ extension Image {
         public static let addLine = VitaminCore.Vitamix.addLine.image
         public static let alertFill = VitaminCore.Vitamix.alertFill.image
         public static let alertLine = VitaminCore.Vitamix.alertLine.image
+        public static let alignBottomFill = VitaminCore.Vitamix.alignBottomFill.image
+        public static let alignBottomLine = VitaminCore.Vitamix.alignBottomLine.image
+        public static let alignCenterFill = VitaminCore.Vitamix.alignCenterFill.image
+        public static let alignCenterLine = VitaminCore.Vitamix.alignCenterLine.image
+        public static let alignLeftFill = VitaminCore.Vitamix.alignLeftFill.image
+        public static let alignLeftLine = VitaminCore.Vitamix.alignLeftLine.image
+        public static let alignRightFill = VitaminCore.Vitamix.alignRightFill.image
+        public static let alignRightLine = VitaminCore.Vitamix.alignRightLine.image
+        public static let alignTopFill = VitaminCore.Vitamix.alignTopFill.image
+        public static let alignTopLine = VitaminCore.Vitamix.alignTopLine.image
+        public static let alignVerticallyFill = VitaminCore.Vitamix.alignVerticallyFill.image
+        public static let alignVerticallyLine = VitaminCore.Vitamix.alignVerticallyLine.image
         public static let amazonFill = VitaminCore.Vitamix.amazonFill.image
         public static let amazonLine = VitaminCore.Vitamix.amazonLine.image
         public static let androidFill = VitaminCore.Vitamix.androidFill.image
@@ -74,6 +86,8 @@ extension Image {
         public static let billLine = VitaminCore.Vitamix.billLine.image
         public static let bodyScanFill = VitaminCore.Vitamix.bodyScanFill.image
         public static let bodyScanLine = VitaminCore.Vitamix.bodyScanLine.image
+        public static let boldFill = VitaminCore.Vitamix.boldFill.image
+        public static let boldLine = VitaminCore.Vitamix.boldLine.image
         public static let calendar2Fill = VitaminCore.Vitamix.calendar2Fill.image
         public static let calendar2Line = VitaminCore.Vitamix.calendar2Line.image
         public static let calendarCheckFill = VitaminCore.Vitamix.calendarCheckFill.image
@@ -184,6 +198,8 @@ extension Image {
         public static let focusLine = VitaminCore.Vitamix.focusLine.image
         public static let foggyFill = VitaminCore.Vitamix.foggyFill.image
         public static let foggyLine = VitaminCore.Vitamix.foggyLine.image
+        public static let fontSizeFill = VitaminCore.Vitamix.fontSizeFill.image
+        public static let fontSizeLine = VitaminCore.Vitamix.fontSizeLine.image
         public static let footballFill = VitaminCore.Vitamix.footballFill.image
         public static let footballLine = VitaminCore.Vitamix.footballLine.image
         public static let forbidFill = VitaminCore.Vitamix.forbidFill.image
@@ -224,6 +240,8 @@ extension Image {
         public static let informationLine = VitaminCore.Vitamix.informationLine.image
         public static let instagramFill = VitaminCore.Vitamix.instagramFill.image
         public static let instagramLine = VitaminCore.Vitamix.instagramLine.image
+        public static let italicFill = VitaminCore.Vitamix.italicFill.image
+        public static let italicLine = VitaminCore.Vitamix.italicLine.image
         public static let kakaoTalkFill = VitaminCore.Vitamix.kakaoTalkFill.image
         public static let kakaoTalkLine = VitaminCore.Vitamix.kakaoTalkLine.image
         public static let keyboardFill = VitaminCore.Vitamix.keyboardFill.image
@@ -232,6 +250,8 @@ extension Image {
         public static let leafLine = VitaminCore.Vitamix.leafLine.image
         public static let lightbulbFill = VitaminCore.Vitamix.lightbulbFill.image
         public static let lightbulbLine = VitaminCore.Vitamix.lightbulbLine.image
+        public static let lightningFill = VitaminCore.Vitamix.lightningFill.image
+        public static let lightningLine = VitaminCore.Vitamix.lightningLine.image
         public static let lineChartFill = VitaminCore.Vitamix.lineChartFill.image
         public static let lineChartLine = VitaminCore.Vitamix.lineChartLine.image
         public static let lineFill = VitaminCore.Vitamix.lineFill.image
@@ -412,6 +432,8 @@ extension Image {
         public static let sunLine = VitaminCore.Vitamix.sunLine.image
         public static let tShirtFill = VitaminCore.Vitamix.tShirtFill.image
         public static let tShirtLine = VitaminCore.Vitamix.tShirtLine.image
+        public static let tShirtNumberFill = VitaminCore.Vitamix.tShirtNumberFill.image
+        public static let tShirtNumberLine = VitaminCore.Vitamix.tShirtNumberLine.image
         public static let tabletFill = VitaminCore.Vitamix.tabletFill.image
         public static let tabletLine = VitaminCore.Vitamix.tabletLine.image
         public static let taskFill = VitaminCore.Vitamix.taskFill.image
@@ -422,6 +444,10 @@ extension Image {
         public static let tempColdLine = VitaminCore.Vitamix.tempColdLine.image
         public static let tempHotFill = VitaminCore.Vitamix.tempHotFill.image
         public static let tempHotLine = VitaminCore.Vitamix.tempHotLine.image
+        public static let textCurvedFill = VitaminCore.Vitamix.textCurvedFill.image
+        public static let textCurvedLine = VitaminCore.Vitamix.textCurvedLine.image
+        public static let textFill = VitaminCore.Vitamix.textFill.image
+        public static let textLine = VitaminCore.Vitamix.textLine.image
         public static let thumbDownFill = VitaminCore.Vitamix.thumbDownFill.image
         public static let thumbDownLine = VitaminCore.Vitamix.thumbDownLine.image
         public static let thumbUpFill = VitaminCore.Vitamix.thumbUpFill.image
