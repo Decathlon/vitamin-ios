@@ -7,8 +7,10 @@ import XCTest
 import SnapshotTesting
 import PreviewSnapshotsTesting
 import UIKit
+import SwiftUI
 
 @testable import Vitamin
+@testable import VitaminSwiftUI
 @testable import Showcase
 
 final class NonRegressionUIKitTests: XCTestCase {
@@ -41,5 +43,29 @@ final class NonRegressionUIKitTests: XCTestCase {
     deleteButton.setTitleColor(VitaminColor.Core.Content.negative, for: .highlighted)
     deleteButton.frame = CGRect(origin: .zero, size: CGSize(width: 320, height: 80))
     assertSnapshot(matching: deleteButton, as: .image)
+  }
+  
+  func testButtonAlignement() throws {
+    @State var bt1: CGSize = .zero
+    @State var bt2: CGSize = .zero
+    let container = HStack {
+      VitaminButton(
+        text: "Modifier le profil",
+        style: .tertiary,
+        size: .medium,
+        iconType: .leading(image: UIImage(systemName: "person")!, renderingMode: .template),
+        action: {})
+      .fixedSize()
+      .readSize(onChange: { bt1 = $0 })
+      VitaminButton(
+        style: .tertiary,
+        size: .medium,
+        iconType: .alone(image: UIImage(systemName: "gear")!, renderingMode: .template),
+        action: {})
+      .fixedSize()
+      .readSize(onChange: { bt2 = $0 })
+    }.padding()
+    assertSnapshot(matching: UIHostingController(rootView: container), as: .recursiveDescription(on: .iPhone12))
+    assertSnapshot(matching: UIHostingController(rootView: container), as: .image)
   }
 }
