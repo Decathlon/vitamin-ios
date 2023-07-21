@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Vitamin"
-  s.version      = "0.12.1"
+  s.version      = "0.12.2"
   s.summary      = "The iOS implement of Decathlon's design system"
 
   s.homepage     = "https://github.com/Decathlon/vitamin-ios"

@@ -54,7 +54,7 @@ For its [Digital section](https://www.decathlon.design/726f8c765/p/6145b2-overvi
 Add Vitamin to the dependencies array of your package:  
 ```swift
 dependencies: [
-  .package(url: "https://github.com/Decathlon/vitamin-ios.git", .exact("0.12.0")),
+  .package(url: "https://github.com/Decathlon/vitamin-ios.git", .exact("0.12.2")),
   // Any other dependencies...
 ],
 ```
@@ -84,7 +84,7 @@ let package = Package(
         // Your products
     ],
     dependencies: [
-        .package(url: "https://github.com/Decathlon/vitamin-ios.git", .exact("0.12.0")),
+        .package(url: "https://github.com/Decathlon/vitamin-ios.git", .exact("0.12.2")),
         // Any other dependencies...
     ],
     targets: [
@@ -106,10 +106,10 @@ let package = Package(
 ### Cocoapods
 ```ruby
 # for UIKitVersion
-pod 'Vitamin', '= 0.12.1'
+pod 'Vitamin', '= 0.12.2'
 
 # for SwiftUI version
-pod 'VitaminSwiftUI', = '0.12.1'
+pod 'VitaminSwiftUI', = '0.12.2'
 ```
 
 ## Available elements
