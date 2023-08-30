@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/pointfreeco/swift-snapshot-testing",
         "state": {
           "branch": null,
-          "revision": "cef5b3f6f11781dd4591bdd1dd0a3d22bd609334",
-          "version": "1.11.0"
+          "revision": "dc46eeb3928a75390651fac6c1ef7f93ad59a73b",
+          "version": "1.11.1"
         }
       },
       {
@@ -15,7 +15,7 @@
         "repositoryURL": "https://github.com/doordash-oss/swiftui-preview-snapshots.git",
         "state": {
           "branch": "main",
-          "revision": "5ff751e487e0f043857d111571bf2c2e7b0a46be",
+          "revision": "0f59f24b7adab01b5c4271d42790032506868892",
           "version": null
         }
       }
