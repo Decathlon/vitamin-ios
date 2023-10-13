@@ -1,15 +1,16 @@
 {
-  "images": [
+  "images" : [
     {
-      "filename": "chevron-left-line.pdf",
-      "idiom": "universal"
+      "filename" : "chevron-left-line.pdf",
+      "idiom" : "universal"
     }
   ],
-  "info": {
-    "author": "xcode",
-    "version": 1
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
   },
-  "properties": {
-    "preserves-vector-representation": true
+  "properties" : {
+    "preserves-vector-representation" : true,
+    "template-rendering-intent" : "template"
   }
 }
