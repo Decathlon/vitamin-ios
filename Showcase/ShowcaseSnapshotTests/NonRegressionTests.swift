@@ -13,24 +13,18 @@ import SwiftUI
 @testable import VitaminSwiftUI
 @testable import Showcase
 
-extension Image {
-  public init(asset: VitaminAsset) {
-    self.init(asset.name, bundle: asset.bundle)
-  }
-}
-
 final class NonRegressionUIKitTests: XCTestCase {
   
   func testIconsTemplateMode() throws {
     assertSnapshot(
-      matching: Image(asset: Vitamix.searchLine)
+      matching: Image.Vitamix.searchLine
         .frame(width: 100, height: 100)
         .foregroundStyle(.red),
       as: .image,
       named: "red"
     )
     assertSnapshot(
-      matching: Image(asset: Vitamix.searchLine)
+      matching: Image.Vitamix.searchLine
         .frame(width: 100, height: 100),
       as: .image,
       named: "black"
