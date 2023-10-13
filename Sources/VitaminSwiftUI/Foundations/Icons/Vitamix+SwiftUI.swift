@@ -13,6 +13,13 @@ import VitaminCore
 
 @available(iOS 13, *)
 extension Image {
+  public init(asset: VitaminAsset) {
+    self.init(asset.name, bundle: asset.bundle)
+  }
+}
+
+@available(iOS 13, *)
+extension Image {
     public enum Vitamix {
         public static let accessibilityFill = VitaminCore.Vitamix.accessibilityFill.image
         public static let accessibilityLine = VitaminCore.Vitamix.accessibilityLine.image
