@@ -13,18 +13,18 @@ import PreviewSnapshotsTesting
 @testable import VitaminCore
 
 @available(iOS 13, *)
-final class ShowcaseSnapshotSwiftUITests: XCTestCase {
+final class ShowcaseSnapshotSwiftUITests: VitaminTestCase {
   
   func testButtonsView() throws {
-    ButtonsView_Previews.snapshots.assertSnapshots()
+    ButtonsView_Previews.snapshots.assertSnapshots(as: .image(perceptualPrecision: perceptualPrecision))
   }
   
   func testTextFields() throws {
-    TextFieldsView_Previews.snapshots.assertSnapshots()
+    TextFieldsView_Previews.snapshots.assertSnapshots(as: .image(perceptualPrecision: perceptualPrecision))
   }
   
   
   func testBadgesView() throws {
-    BadgesView_Previews.snapshots.assertSnapshots()
+    BadgesView_Previews.snapshots.assertSnapshots(as: .image(perceptualPrecision: perceptualPrecision))
   }
 }
